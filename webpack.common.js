@@ -3,12 +3,18 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+  // // *** origin function ***
+  // entry: {
+  //   index: path.join(__dirname, './src/js/index.js'),
+  //   about: path.join(__dirname, './src/js/index2.js'),
+  // },
   entry: {
-    index: path.join(__dirname, './src/js/index.js'),
+    index: [path.join(__dirname, './src/js/index.js'), path.join(__dirname, './src/js/index2.js')],
+    index3: path.join(__dirname, './src/js/index3.js'),
   },
   output: {
     path: path.join(__dirname, './dist'),
-    filename: 'index.bundle.js',
+    filename: '[name].bundle.js',
   },
   plugins: [
     new webpack.BannerPlugin('版權所有，翻版必究'),
