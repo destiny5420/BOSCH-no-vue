@@ -5,6 +5,41 @@ const common = require('./webpack.common');
 
 module.exports = merge(common, {
   mode: 'development',
+  module: {
+    rules: [
+      {
+        test: /\.(js)$/,
+        exclude: /(node_mosules)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+          },
+        },
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.(scss|sass)$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+      {
+        test: /\.(png|jpg|jpeg|svg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'myPrefix.[name].[ext]',
+              publicPath: '/dist/images',
+              outputPath: 'images/',
+            },
+          },
+        ],
+      },
+    ],
+  },
   devServer: {
     contentBase: path.join(__dirname, './dist'),
     hot: true,
