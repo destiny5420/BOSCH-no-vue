@@ -1,0 +1,40 @@
+{
+  "name": "bosch-no-vue",
+  "version": "1.0.0",
+  "description": "bosch for website.",
+  "main": "app.js",
+  "scripts": {
+    "serve": "webpack-dev-server --open --config webpack.development.js",
+    "build": "webpack --config webpack.production.js",
+    "watch": "webpack --mode development --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/destiny5420/BOSCH-no-vue.git"
+  },
+  "author": "paper hsiao",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/destiny5420/BOSCH-no-vue/issues"
+  },
+  "homepage": "https://github.com/destiny5420/BOSCH-no-vue#readme",
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^4.3.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^6.1.0",
+    "html-webpack-plugin": "^4.5.0",
+    "mini-css-extract-plugin": "^0.11.2",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^10.0.2",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.1.4"
+  },
+  "dependencies": {}
+}
