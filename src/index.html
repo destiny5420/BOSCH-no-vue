@@ -6,11 +6,84 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
-    <h1>這是首頁的h1</h1>
-    <h2>這是首頁的h2</h2>
-    <p>這是首頁的p元素</p>
-    <a href="./about.html">關於我</a>
+    <div id="menu-window">
+      <button id="menu-window-close">close</button>
+    </div>
+    <nav>
+      <div class="logo">
+        <h1>BOSCH</h1>
+      </div>
+      <div id="menu">
+        <i class="fas fa-bars"></i>
+        Menu
+      </div>
+    </nav>
+    <header>
+      <p>
+        東臨碣石，以觀滄海。 水何澹澹，山島竦峙。 樹木叢生，百草豐茂。
+        秋風蕭瑟，洪波涌起...春風一夜到衡陽，楚水燕山萬里長。 莫道春來便歸去，江南雖好是他鄉。
+        花光濃爛柳輕明，酌酒花前送我行。 我亦且如常日醉，莫教弦管作離聲。 去遠即相忘，歸近不可忍。
+        兒女已在眼，眉目略不省。 喜極不得語，淚盡方一唒。 了知不...
+      </p>
+    </header>
+    <div class="button-container">
+      <div id="btn-about" class="button">
+        <div class="btn-text">關於BOSCH</div>
+        <div class="btn-arrow">
+          <i class="fas fa-arrow-right"></i>
+        </div>
+      </div>
+      <div id="btn-install" class="button">
+        <div class="btn-text">專業安裝</div>
+        <div class="btn-arrow">
+          <i class="fas fa-arrow-right"></i>
+        </div>
+      </div>
+      <div id="btn-issue" class="button">
+        <div class="btn-text">常見問題</div>
+        <div class="btn-arrow">
+          <i class="fas fa-arrow-right"></i>
+        </div>
+      </div>
+      <div id="btn-contact" class="button">
+        <div class="btn-text">聯絡我們</div>
+        <div class="btn-arrow">
+          <i class="fas fa-arrow-right"></i>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer-content">
+        <div class="title">ABOUT US</div>
+        <div class="link">關於BOSCH</div>
+        <div class="link">聯絡我們</div>
+      </div>
+      <div class="footer-content">
+        <div class="title">PRODUCTS</div>
+        <div class="link">智能門鎖</div>
+      </div>
+      <div class="footer-content">
+        <div class="link">專業安裝</div>
+      </div>
+      <div class="footer-content">
+        <div class="link">常見問題</div>
+      </div>
+      <div class="footer-content">
+        <div class="title">HOW TO BUY</div>
+        <div class="link">直營店</div>
+        <div class="link">經銷商</div>
+        <div class="link">網路通路</div>
+      </div>
+      <div class="footer-content">
+        <div class="title">CONTACT WITH US</div>
+        <div class="link">電話</div>
+        <div class="link">Mail</div>
+        <div class="link">Line</div>
+        <div class="link">地址</div>
+      </div>
+    </div>
+    <!-- <a href="./about.html">關於我</a>
     <a href="./files/BOSCH-price-table.pdf" download>下載PDF</a>
-    <div class="box-3"></div>
+    <div class="box-3"></div> -->
   </body>
 </html>
