@@ -2,10 +2,20 @@ import '../style/index.scss';
 import '@fortawesome/fontawesome-free/js/all.js';
 import $ from 'jquery';
 
-console.log('this is index.js');
-$(function () {
+function onAwake() {
+  console.log('*** onAwake ***');
+
+  // register event to element
   $('#menu').on('click', function () {
-    console.log('menu be click!');
     $('#menu-window').show();
   });
+
+  $('#menu-window-close').on('click', function () {
+    $('#menu-window').hide();
+  });
+}
+
+console.log('this is index.js');
+$(function () {
+  onAwake();
 });
