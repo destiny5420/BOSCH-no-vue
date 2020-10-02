@@ -13,7 +13,7 @@ module.exports = {
     index3: path.join(__dirname, './src/js/index3.js'),
   },
   output: {
-    path: path.join(__dirname, './dist'),
+    path: path.join(__dirname, './docs'),
     filename: '[name].bundle.js',
   },
   plugins: [
