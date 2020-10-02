@@ -31,8 +31,8 @@ module.exports = merge(common, {
           {
             loader: 'file-loader',
             options: {
-              name: 'myPrefix.[name].[ext]',
-              publicPath: '/dist/images',
+              name: '[name].[ext]',
+              publicPath: '../images',
               outputPath: 'images/',
             },
           },
@@ -40,22 +40,22 @@ module.exports = merge(common, {
       },
     ],
   },
-  devServer: {
-    contentBase: path.join(__dirname, './dist'),
-    hot: true,
-    port: '8090',
-    inline: true,
-    open: true,
-    overlay: true,
-    proxy: {
-      '/api': {
-        target: '',
-        changeOrigin: true,
-        pathRewrite: {
-          '^/api': '',
-        },
-      },
-    },
-  },
+  // devServer: {
+  //   contentBase: path.join(__dirname, './dist'),
+  //   hot: true,
+  //   port: '8091',
+  //   inline: true,
+  //   // open: true,
+  //   overlay: true,
+  //   // proxy: {
+  //   //   '/api': {
+  //   //     target: '',
+  //   //     changeOrigin: true,
+  //   //     pathRewrite: {
+  //   //       '^/api': '',
+  //   //     },
+  //   //   },
+  //   // },
+  // },
   plugins: [new webpack.HotModuleReplacementPlugin()],
 });

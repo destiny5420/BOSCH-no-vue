@@ -39,7 +39,7 @@ module.exports = merge(common, {
           {
             loader: 'file-loader',
             options: {
-              name: 'myPrefix.[name].[ext]',
+              name: '[name].[ext]',
               publicPath: '../images',
               outputPath: 'images/',
             },

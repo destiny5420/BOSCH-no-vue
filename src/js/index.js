@@ -1,4 +1,3 @@
 import '../style/index.css';
 
-const hello = require('./hello');
-hello();
+console.log('this is index.js');
