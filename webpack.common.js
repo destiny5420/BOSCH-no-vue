@@ -13,7 +13,7 @@ module.exports = {
     index3: path.join(__dirname, './src/js/index3.js'),
   },
   output: {
-    path: path.join(__dirname, './docs/BOSCH-no-vue'),
+    path: path.join(__dirname, './docs'),
     filename: '[name].bundle.js',
   },
   plugins: [
