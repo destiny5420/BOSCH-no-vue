@@ -100,6 +100,12 @@ nav .logo {
   display: inline-block;
 }
 
+@media all and (max-width: 479px) {
+  nav .logo h1 {
+    font-size: 30px;
+  }
+}
+
 #loading-bar {
   position: absolute;
   content: '';
@@ -271,6 +277,15 @@ nav .logo {
   right: 10px;
 }
 
+@media all and (max-width: 479px) {
+  #menu {
+    top: 10px;
+    right: 20px;
+    width: auto;
+    height: 50px;
+  }
+}
+
 header {
   border: 1px solid black;
   width: 100%;
@@ -297,6 +312,13 @@ header > p {
   -webkit-transform: translateX(100px);
           transform: translateX(100px);
   opacity: 0;
+}
+
+@media all and (max-width: 479px) {
+  header > p {
+    width: 85%;
+    height: 300px;
+  }
 }
 
 .button-container {
@@ -405,6 +427,14 @@ header > p {
   padding: 10px;
 }
 
+@media all and (max-width: 479px) {
+  .footer {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    height: auto;
+  }
+}
+
 .footer-content {
   border: 1px solid black;
   width: auto;
@@ -415,6 +445,12 @@ header > p {
 
 .footer-content .title {
   font-weight: 700;
+}
+
+@media all and (max-width: 479px) {
+  .footer-content {
+    width: 100%;
+  }
 }
 
 .box-3 {

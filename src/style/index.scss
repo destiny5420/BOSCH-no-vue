@@ -17,8 +17,13 @@ nav {
 
   .logo {
     @include border();
-
     display: inline-block;
+
+    @include phone-width() {
+      h1 {
+        font-size: 30px;
+      }
+    }
   }
 }
 
@@ -107,6 +112,12 @@ nav {
   padding: 0 10px;
   top: 10px;
   right: 10px;
+
+  @include phone-width() {
+    top: 10px;
+    right: 20px;
+    @include size(auto, 50px);
+  }
 }
 
 header {
@@ -119,6 +130,10 @@ header {
     @include size(50%, 225px);
     transform: translateX(100px);
     opacity: 0;
+
+    @include phone-width() {
+      @include size(85%, 300px);
+    }
   }
 }
 
@@ -196,6 +211,11 @@ header {
   @include size(100%, 200px);
   @include flex-layout(row, space-around, flex-start);
   padding: 10px;
+
+  @include phone-width() {
+    flex-wrap: wrap;
+    height: auto;
+  }
 }
 
 .footer-content {
@@ -203,10 +223,13 @@ header {
   @include size(auto, auto);
   display: inline-block;
   padding: 10px;
-  // @include flex-layout(column, space-around, center);
 
   .title {
     font-weight: 700;
+  }
+
+  @include phone-width() {
+    width: 100%;
   }
 }
 

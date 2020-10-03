@@ -16,11 +16,11 @@ let isDebug = false;
 
 function onEventBinding() {
   $('#menu').on('click', function () {
-    $('#menu-window').show();
+    $('#menu-window').fadeIn(100);
   });
 
   $('#menu-window-close').on('click', function () {
-    $('#menu-window').hide();
+    $('#menu-window').fadeOut(100);
   });
 }
 
@@ -32,8 +32,8 @@ function onGSAP() {
 
   let headerContent = gsap.timeline({
     scrollTrigger: {
-      start: '0 top',
-      markers: isDebug,
+      start: '5vh top',
+      markers: false,
     },
   });
 
