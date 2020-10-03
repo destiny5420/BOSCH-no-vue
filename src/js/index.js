@@ -7,28 +7,12 @@ import '@fortawesome/fontawesome-free/js/all.js';
 // import jquery
 import $ from 'jquery';
 
-// import scroll-magic
-import ScrollMagic from 'ScrollMagic';
-import 'ScrollMagic/scrollmagic/uncompressed/plugins/debug.addIndicators';
-
 // import gsap
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
-function onInitScrollMagic() {
-  console.log('*** onInitScrollMagic ***');
-  let controller = new ScrollMagic.Controller({});
-
-  new ScrollMagic.Scene({
-    triggerElement: '#btn-about',
-    duration: 100,
-    offset: -100,
-  })
-    .addIndicators({
-      name: 'about BOSCH',
-    })
-    .addTo(controller);
-}
+// ***** variable *****
+let isDebug = false;
 
 function onGSAP() {
   console.log('*** onGSAP ***');
@@ -39,21 +23,21 @@ function onGSAP() {
   let headerContent = gsap.timeline({
     scrollTrigger: {
       start: '0 top',
-      markers: true,
+      markers: isDebug,
     },
   });
 
-  headerContent.from('header p', {
-    x: 100,
+  headerContent.to('header p', {
+    x: 0,
+    opacity: 1,
     duration: 1,
-    opacity: 0,
   });
 
   let buttons = gsap.timeline({
     scrollTrigger: {
       trigger: '.button-container',
       start: 'top center',
-      markers: true,
+      markers: isDebug,
     },
   });
   buttons
@@ -99,7 +83,6 @@ function onAwake() {
     $('#menu-window').hide();
   });
 
-  // onInitScrollMagic();
   onGSAP();
 }
 

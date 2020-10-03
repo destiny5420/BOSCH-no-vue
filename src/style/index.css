@@ -167,6 +167,9 @@ header > p {
   border: 1px solid black;
   width: 50%;
   height: 225px;
+  -webkit-transform: translateX(100px);
+          transform: translateX(100px);
+  opacity: 0;
 }
 
 .button-container {

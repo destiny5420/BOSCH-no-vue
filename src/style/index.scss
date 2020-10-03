@@ -55,6 +55,8 @@ header {
   > p {
     @include border();
     @include size(50%, 225px);
+    transform: translateX(100px);
+    opacity: 0;
   }
 }
 
