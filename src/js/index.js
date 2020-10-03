@@ -1,8 +1,8 @@
 // import style
 import '../style/index.css';
 
-// import font-awesome
-import '@fortawesome/fontawesome-free/js/all.js';
+// // import font-awesome
+// import '@fortawesome/fontawesome-free/js/all.js';
 
 // import jquery
 import $ from 'jquery';
@@ -13,6 +13,16 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 
 // ***** variable *****
 let isDebug = false;
+
+function onEventBinding() {
+  $('#menu').on('click', function () {
+    $('#menu-window').show();
+  });
+
+  $('#menu-window-close').on('click', function () {
+    $('#menu-window').hide();
+  });
+}
 
 function onGSAP() {
   console.log('*** onGSAP ***');
@@ -74,16 +84,10 @@ function onGSAP() {
 function onAwake() {
   console.log('*** onAwake ***');
 
-  // register event to element
-  $('#menu').on('click', function () {
-    $('#menu-window').show();
-  });
-
-  $('#menu-window-close').on('click', function () {
-    $('#menu-window').hide();
-  });
-
+  onEventBinding();
   onGSAP();
+
+  $('#loading-bar').fadeOut();
 }
 
 $(function () {
