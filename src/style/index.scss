@@ -26,7 +26,7 @@ nav {
   @include size(100%, 100vh);
   @include independent(rgba($color: black, $alpha: 0.5), 1000);
   position: fixed;
-  visibility: hidden;
+  display: none;
 
   #menu-window-close {
     float: right;
