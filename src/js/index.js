@@ -1,5 +1,5 @@
 // import style
-import '../style/index.scss';
+import '../style/index.css';
 
 // import font-awesome
 import '@fortawesome/fontawesome-free/js/all.js';
