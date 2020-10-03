@@ -1,8 +1,8 @@
 // import style
 import '../style/index.css';
 
-// // import font-awesome
-// import '@fortawesome/fontawesome-free/js/all.js';
+// import vue
+// import Vue from 'vue/dist/vue';
 
 // import jquery
 import $ from 'jquery';
@@ -86,7 +86,6 @@ function onAwake() {
 
   onEventBinding();
   onGSAP();
-
   $('#loading-bar').fadeOut();
 }
 
