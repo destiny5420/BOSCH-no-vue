@@ -20,10 +20,10 @@ nav {
     @include border();
     display: inline-block;
 
-    p[name="regular"] {
-      font-family: 'Bosch Sans CHS Regular';
-      font-size: 34px;
-    }
+    // p[name="regular"] {
+    //   font-family: 'Bosch Sans CHS Regular';
+    //   font-size: 34px;
+    // }
 
     p[name="bold"] {
       font-family: 'Bosch Sans CHS Bold';
