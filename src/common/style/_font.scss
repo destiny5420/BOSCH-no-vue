@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "Bosch Sans Medium Italic";
+  src: url("../files/fonts/BoschSans-MediumItalic.eot");
+  src: url('../files/fonts/BoschSans-MediumItalic.eot?#iefix') format('embedded-opentype'), 
+  url('../files/fonts/BoschSans-MediumItalic.woff') format('woff'), 
+  url('../files/fonts/BoschSans-MediumItalic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bosch Sans Bold';
+  src: url('../files/fonts/BoschSans-Bold.eot');
+  src: url('../files/fonts/BoschSans-Bold.eot?#iefix') format('embedded-opentype'),
+  url('../files/fonts/BoschSans-Bold.woff') format('woff'),
+  url('../files/fonts/BoschSans-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bosch Sans CHS Bold';
+  src: url('../files/fonts/BoschSansCHS-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bosch Sans CHS Regular';
+  src: url('../files/fonts/BoschSansCHS-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
