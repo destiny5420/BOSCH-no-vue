@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const loader = require('sass-loader');
 
 module.exports = {
   // // *** origin function ***
@@ -16,6 +17,23 @@ module.exports = {
     path: path.join(__dirname, './docs'),
     filename: 'js/[name].bundle.js',
     // publicPath: '/assets/',
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: '[name].[ext]',
+                publicPath: '../fonts/',
+                outputPath: 'fonts/'
+              }
+            }
+        ]
+      }
+    ],
   },
   devServer: {
     contentBase: path.join(__dirname, './dist'),

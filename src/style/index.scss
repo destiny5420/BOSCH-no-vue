@@ -1,6 +1,14 @@
 @import '../common/style/globalconfigure';
 @import '../common/style/_globalstyle.scss';
 
+@font-face {
+  font-family: "Bosch Sans Medium Italic";
+  src: url("../files/fonts/BoschSans-MediumItalic.eot");
+  src: url('../files/fonts/BoschSans-MediumItalic.eot?#iefix') format('embedded-opentype'), url('../files/fonts/BoschSans-MediumItalic.woff') format('woff'), url('../files/fonts/BoschSans-MediumItalic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  }
+
 * {
   margin: 0px;
   padding: 0px;
@@ -19,9 +27,14 @@ nav {
     @include border();
     display: inline-block;
 
+    h1 {
+      font-family: 'Bosch Sans Medium Italic';
+    }
+
     @include phone-width() {
       h1 {
         font-size: 30px;
+        
       }
     }
   }
