@@ -21,20 +21,9 @@
 }
 
 nav {
-  @include size(100%, 80px);
+  @include size(100%, auto);
   @include flex-layout(row, space-between, center);
-  padding: 0 20px;
   position: relative;
-
-  .logo {
-    display: inline-block;
-
-    @include phone-width() {
-      h1 {
-        font-size: 30px;
-      }
-    }
-  }
 }
 
 #loading-bar {
@@ -113,14 +102,20 @@ nav {
   }
 }
 
+#home {
+  @include independent(transparent);
+  top: 35px;
+  left: 300px;
+}
+
 #menu {
   @include size(auto, 30px);
   @include independent(transparent);
   @include flex-layout(row, space-around, center);
   cursor: pointer;
   padding: 0 10px;
-  top: 10px;
-  right: 10px;
+  top: 35px;
+  right: 300px;
 
   @include phone-width() {
     top: 10px;
@@ -129,12 +124,52 @@ nav {
   }
 }
 
+#scroll-point {
+  @include independent(transparent);
+  right: 215px;
+  bottom: 120px;
+  transform: rotate(90deg);
+
+  > P {
+    display: inline-block;
+    margin: 0;
+    font-size: 12px;
+  }
+
+  #point {
+    @include size(150px, 10px);
+    display: inline-block;
+    position: relative;
+    margin-left: 10px;
+
+    &::after {
+      @include independent(transparent);
+      @include size(100%, 1px);
+      content: '';
+      background-color: black;
+      bottom: 50%;
+      left: 0px;
+    }
+
+    &::before {
+      @include independent(transparent);
+      @include size(20px, 1px);
+      content: '';
+      background-color: black;
+      right: 0px;
+      bottom: 50%;
+      transform-origin: right center;
+      transform: rotate(25deg);
+    }
+  }
+}
+
 header {
-  @include size(100%, 600px);
+  @include size(100%, 100vh);
   @include flex-layout(row, center, center);
 
-  > p {
-    @include size(50%, 225px);
+  #slogan {
+    font-size: 34px;
     transform: translateX(100px);
     opacity: 0;
 
@@ -241,7 +276,6 @@ header {
   padding: 10px;
 
   .title {
-    font-family: 'Bosch Sans CHS Bold';
     font-size: 18px;
   }
 
@@ -250,12 +284,10 @@ header {
   }
 
   .sub-title {
-    font-family: 'Bosch Sans CHS Bold';
     font-size: 16px;
   }
 
   .sub-link {
-    font-family: 'Bosch Sans CHS Regular';
     font-size: 14px;
     padding-left: 18px;
   }
