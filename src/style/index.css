@@ -211,6 +211,7 @@ ul {
   padding: 0px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  border: 1px solid black;
 }
 
 .main-container {
@@ -513,89 +514,9 @@ header #slogan {
   }
 }
 
-.button-container {
+.install-container {
   width: 100%;
-  height: 600px;
-  position: relative;
-}
-
-.button-container .button {
-  width: auto;
-  height: 75px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: relative;
-  cursor: pointer;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  padding: 10px;
-}
-
-.button-container .button .btn-text {
-  display: inline-block;
-  font-size: 20px;
-  margin-right: 20px;
-}
-
-.button-container .button .btn-arrow {
-  display: inline-block;
-}
-
-.button-container .button::after {
-  position: absolute;
-  content: '';
-  width: 0%;
-  height: 3px;
-  background-color: black;
-  bottom: 20%;
-  left: 0;
-  -webkit-transform-origin: 0 0;
-          transform-origin: 0 0;
-  z-index: 1;
-  -webkit-transition: all 0.2s linear;
-  transition: all 0.2s linear;
-}
-
-.button-container .button:hover::after {
-  -webkit-transform-origin: 0 0;
-          transform-origin: 0 0;
-  width: 100%;
-}
-
-#btn-about {
-  position: absolute;
-  top: 10%;
-  left: 40%;
-}
-
-#btn-install {
-  position: absolute;
-  top: 30%;
-  right: 40%;
-}
-
-#btn-issue {
-  position: absolute;
-  top: 50%;
-  left: 40%;
-}
-
-#btn-contact {
-  position: absolute;
-  top: 70%;
-  right: 40%;
+  height: 100vh;
 }
 
 .faq-container .faq-title {

@@ -6,7 +6,7 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  // @include border();
+  @include border();
 }
 
 .main-container {
@@ -179,71 +179,8 @@ header {
   }
 }
 
-.button-container {
-  @include size(100%, 600px);
-  position: relative;
-  .button {
-    @include size(auto, 75px);
-    @include flex-layout(row, center, center);
-    position: relative;
-    cursor: pointer;
-    display: inline-flex;
-    padding: 10px;
-
-    .btn-text {
-      display: inline-block;
-      font-size: 20px;
-      margin-right: 20px;
-    }
-
-    .btn-arrow {
-      display: inline-block;
-    }
-
-    &::after {
-      position: absolute;
-      content: '';
-      @include size(0%, 3px);
-      background-color: black;
-      bottom: 20%;
-      left: 0;
-      transform-origin: 0 0;
-      z-index: 1;
-
-      transition: all 0.2s linear;
-    }
-
-    &:hover {
-      &::after {
-        transform-origin: 0 0;
-        width: 100%;
-      }
-    }
-  }
-}
-
-#btn-about {
-  position: absolute;
-  top: 10%;
-  left: 40%;
-}
-
-#btn-install {
-  position: absolute;
-  top: 30%;
-  right: 40%;
-}
-
-#btn-issue {
-  position: absolute;
-  top: 50%;
-  left: 40%;
-}
-
-#btn-contact {
-  position: absolute;
-  top: 70%;
-  right: 40%;
+.install-container {
+  @include size(100%, 100vh);
 }
 
 .faq-container {

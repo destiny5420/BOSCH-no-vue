@@ -1,6 +1,8 @@
 // import style
 import '../style/index.css';
 
+import '../images/home_logo.jpg';
+
 // import vue
 // import Vue from 'vue/dist/vue';
 
@@ -43,42 +45,42 @@ function onGSAP() {
     duration: 1,
   });
 
-  let buttons = gsap.timeline({
-    scrollTrigger: {
-      trigger: '.button-container',
-      start: 'top center',
-      markers: isDebug,
-    },
-  });
-  buttons
-    .from('#btn-about', { x: 100, opacity: 0, duration: 1 })
-    .from(
-      '#btn-install',
-      {
-        x: -100,
-        opacity: 0,
-        duration: 1,
-      },
-      '-=0.75',
-    )
-    .from(
-      '#btn-issue',
-      {
-        x: 100,
-        opacity: 0,
-        duration: 1,
-      },
-      '-=0.75',
-    )
-    .from(
-      '#btn-contact',
-      {
-        x: -100,
-        opacity: 0,
-        duration: 1,
-      },
-      '-=0.75',
-    );
+  // let buttons = gsap.timeline({
+  //   scrollTrigger: {
+  //     trigger: '.button-container',
+  //     start: 'top center',
+  //     markers: isDebug,
+  //   },
+  // });
+  // buttons
+  //   .from('#btn-about', { x: 100, opacity: 0, duration: 1 })
+  //   .from(
+  //     '#btn-install',
+  //     {
+  //       x: -100,
+  //       opacity: 0,
+  //       duration: 1,
+  //     },
+  //     '-=0.75',
+  //   )
+  //   .from(
+  //     '#btn-issue',
+  //     {
+  //       x: 100,
+  //       opacity: 0,
+  //       duration: 1,
+  //     },
+  //     '-=0.75',
+  //   )
+  //   .from(
+  //     '#btn-contact',
+  //     {
+  //       x: -100,
+  //       opacity: 0,
+  //       duration: 1,
+  //     },
+  //     '-=0.75',
+  //   );
 }
 
 function onAwake() {
