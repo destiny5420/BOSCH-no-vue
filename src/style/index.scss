@@ -10,7 +10,7 @@
 
 nav {
   @include border();
-  @include size(100vw, auto);
+  @include size(100vw, 80px);
   @include flex-layout(row, space-between, center);
   padding: 0 20px;
   position: relative;

@@ -110,7 +110,7 @@ ul {
 nav {
   border: 1px solid black;
   width: 100vw;
-  height: auto;
+  height: 80px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
