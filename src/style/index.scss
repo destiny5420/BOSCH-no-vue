@@ -180,10 +180,84 @@ header {
 }
 
 .install-container {
-  @include size(100%, 100vh);
+  @include size(100%, auto);
+  position: relative;
+
+  .background {
+    @include size(1552px, 1153px);
+    background: rgb(0, 142, 207);
+    background: linear-gradient(90deg, rgba(0, 142, 207, 1) 0%, rgba(0, 168, 176, 1) 100%);
+  }
+
+  .content {
+    @include size(auto, auto);
+    @include independent(transparent);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+
+    .title {
+      @include size(650px, auto);
+      font-size: 64px;
+
+      line-height: 1.25;
+    }
+
+    .sub-title {
+      font-size: 24px;
+      display: inline-block;
+      padding: 10px 0;
+      position: relative;
+
+      &::after {
+        @include independent(transparent);
+        @include size(100%, 4px);
+        content: '';
+        background: #ffffff;
+        left: 0px;
+        bottom: 0px;
+      }
+    }
+
+    .info-container {
+      @include size(auto, 650px);
+      @include flex-layout(row, center, flex-start);
+      margin-top: 60px;
+
+      img {
+        margin-bottom: 20px;
+      }
+
+      > :nth-child(n) {
+        @include size(450px, 100%);
+        position: relative;
+        display: inline-block;
+      }
+
+      > :first-child {
+        margin-right: 75px;
+      }
+
+      .right {
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+      }
+    }
+
+    .info-title {
+      font-size: 36px;
+    }
+
+    .info-content {
+      font-size: 20px;
+    }
+  }
 }
 
 .faq-container {
+  padding-top: 50px;
   .faq-title {
     text-align: center;
     font-size: 64px;
