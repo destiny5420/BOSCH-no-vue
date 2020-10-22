@@ -105,11 +105,17 @@ ul {
   padding: 0px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  border: 1px solid black;
+}
+
+.main-container {
+  background: #d6d8d9;
+  background: -webkit-gradient(linear, left top, right top, color-stop(3%, #d6d8d9), color-stop(41%, #fdfbfb), color-stop(75%, #dbddde), to(#d6d8d9));
+  background: linear-gradient(90deg, #d6d8d9 3%, #fdfbfb 41%, #dbddde 75%, #d6d8d9 100%);
 }
 
 nav {
-  border: 1px solid black;
-  width: 100vw;
+  width: 100%;
   height: 80px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -126,11 +132,9 @@ nav {
           align-items: center;
   padding: 0 20px;
   position: relative;
-  border: 1px solid black;
 }
 
 nav .logo {
-  border: 1px solid black;
   display: inline-block;
 }
 
@@ -286,7 +290,6 @@ nav .logo {
 }
 
 #menu {
-  border: 1px solid black;
   width: auto;
   height: 30px;
   position: absolute;
@@ -321,7 +324,6 @@ nav .logo {
 }
 
 header {
-  border: 1px solid black;
   width: 100%;
   height: 600px;
   display: -webkit-box;
@@ -340,7 +342,6 @@ header {
 }
 
 header > p {
-  border: 1px solid black;
   width: 50%;
   height: 225px;
   -webkit-transform: translateX(100px);
@@ -356,14 +357,12 @@ header > p {
 }
 
 .button-container {
-  border: 1px solid black;
   width: 100%;
   height: 600px;
   position: relative;
 }
 
 .button-container .button {
-  border: 1px solid black;
   width: auto;
   height: 75px;
   display: -webkit-box;
@@ -442,10 +441,9 @@ header > p {
   right: 40%;
 }
 
-.footer {
-  border: 1px solid black;
+.footer .top {
   width: 100%;
-  height: 200px;
+  height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -453,8 +451,9 @@ header > p {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
@@ -462,38 +461,55 @@ header > p {
 }
 
 @media all and (max-width: 479px) {
-  .footer {
+  .footer .top {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     height: auto;
   }
 }
 
+.footer .bottom {
+  width: 100%;
+  height: 22px;
+}
+
+.footer .bottom svg {
+  width: 100%;
+  height: auto;
+}
+
 .footer-content {
-  border: 1px solid black;
   width: auto;
   height: auto;
   display: inline-block;
+  margin-right: 100px;
   padding: 10px;
 }
 
 .footer-content .title {
-  font-weight: 700;
+  font-family: 'Bosch Sans CHS Bold';
+  font-size: 18px;
+}
+
+.footer-content .main-link {
+  font-size: 16px;
+}
+
+.footer-content .sub-title {
+  font-family: 'Bosch Sans CHS Bold';
+  font-size: 16px;
+}
+
+.footer-content .sub-link {
+  font-family: 'Bosch Sans CHS Regular';
+  font-size: 14px;
+  padding-left: 18px;
 }
 
 @media all and (max-width: 479px) {
   .footer-content {
     width: 100%;
   }
-}
-
-.box-3 {
-  width: 100px;
-  height: 100px;
-  background-color: brown;
-  background-position: center;
-  background-size: cover;
-  background-image: url("../images/dessert.jpg");
 }
 
 .link {
@@ -509,5 +525,11 @@ header > p {
 
 .link a:hover {
   color: gray;
+}
+
+#copy-right {
+  display: inline-block;
+  margin: 10px 0px 0px 30px;
+  padding: 5px;
 }
 /*# sourceMappingURL=index.css.map */
