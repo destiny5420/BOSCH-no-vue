@@ -57,10 +57,6 @@ b {
   font-weight: 500;
 }
 
-p {
-  margin-bottom: 2.5rem;
-}
-
 ol,
 ul {
   padding-left: 1.7rem;
@@ -74,22 +70,44 @@ ul {
   font-family: 'Bosch Sans CHS Bold';
 }
 
-@font-face {
-  font-family: "Bosch Sans Medium Italic";
-  src: url("../files/fonts/BoschSans-MediumItalic.eot");
-  /* IE9*/
-  src: url("../files/fonts/BoschSans-MediumItalic.eot?#iefix") format("embedded-opentype"), url("../files/fonts/BoschSans-MediumItalic.woff") format("woff"), url("../files/fonts/BoschSans-MediumItalic.ttf") format("truetype");
-  /* chrome firefox opera Safari, Android, iOS 4.2+*/
-  font-weight: normal;
-  font-style: normal;
+.eng-bl {
+  font-family: 'Bosch Sans Black';
 }
 
-@font-face {
+.eng-bl-l {
+  font-family: 'Bosch Sans BlackItalic';
+}
+
+.eng-b {
   font-family: 'Bosch Sans Bold';
-  src: url("../files/fonts/BoschSans-Bold.eot");
-  src: url("../files/fonts/BoschSans-Bold.eot?#iefix") format("embedded-opentype"), url("../files/fonts/BoschSans-Bold.woff") format("woff"), url("../files/fonts/BoschSans-Bold.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
+}
+
+.eng-b-l {
+  font-family: 'Bosch Sans BoldItalic';
+}
+
+.eng-l {
+  font-family: 'Bosch Sans Light';
+}
+
+.eng-l-l {
+  font-family: 'Bosch Sans LightItalic';
+}
+
+.eng-m {
+  font-family: 'Bosch Sans Medium';
+}
+
+.eng-m-l {
+  font-family: 'Bosch Sans MediumItalic';
+}
+
+.eng-r {
+  font-family: 'Bosch Sans Regular';
+}
+
+.eng-r-i {
+  font-family: 'Bosch Sans RegularItalic';
 }
 
 @font-face {
@@ -104,6 +122,86 @@ ul {
   font-family: 'Bosch Sans CHS Bold';
   src: url("../files/fonts/BoschSansCHS-Bold.eot");
   src: url("../files/fonts/BoschSansCHS-Bold.eot?#iefix") format("embedded-opentype"), url("../files/fonts/BoschSansCHS-Bold.woff") format("woff"), url("../files/fonts/BoschSansCHS-Bold.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bosch Sans Black';
+  src: url("../files/fonts/BoschSans-Black.eot");
+  src: url("../files/fonts/BoschSans-Black.eot?#iefix") format("embedded-opentype"), url("../files/fonts/BoschSans-Black.woff") format("woff"), url("../files/fonts/BoschSans-Black.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bosch Sans BlackItalic';
+  src: url("../files/fonts/BoschSans-BlackItalic.eot");
+  src: url("../files/fonts/BoschSans-BlackItalic.eot?#iefix") format("embedded-opentype"), url("../files/fonts/BoschSans-BlackItalic.woff") format("woff"), url("../files/fonts/BoschSans-BlackItalic.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bosch Sans Bold';
+  src: url("../files/fonts/BoschSans-Bold.eot");
+  src: url("../files/fonts/BoschSans-Bold.eot?#iefix") format("embedded-opentype"), url("../files/fonts/BoschSans-Bold.woff") format("woff"), url("../files/fonts/BoschSans-Bold.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bosch Sans BoldItalic';
+  src: url("../files/fonts/BoschSans-BoldItalic.eot");
+  src: url("../files/fonts/BoschSans-BoldItalic.eot?#iefix") format("embedded-opentype"), url("../files/fonts/BoschSans-BoldItalic.woff") format("woff"), url("../files/fonts/BoschSans-BoldItalic.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bosch Sans Light';
+  src: url("../files/fonts/BoschSans-Light.eot");
+  src: url("../files/fonts/BoschSans-Light.eot?#iefix") format("embedded-opentype"), url("../files/fonts/BoschSans-Light.woff") format("woff"), url("../files/fonts/BoschSans-Light.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bosch Sans LightItalic';
+  src: url("../files/fonts/BoschSans-LightItalic.eot");
+  src: url("../files/fonts/BoschSans-LightItalic.eot?#iefix") format("embedded-opentype"), url("../files/fonts/BoschSans-LightItalic.woff") format("woff"), url("../files/fonts/BoschSans-LightItalic.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bosch Sans Medium';
+  src: url("../files/fonts/BoschSans-Medium.eot");
+  src: url("../files/fonts/BoschSans-Medium.eot?#iefix") format("embedded-opentype"), url("../files/fonts/BoschSans-Medium.woff") format("woff"), url("../files/fonts/BoschSans-Medium.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bosch Sans MediumItalic';
+  src: url("../files/fonts/BoschSans-MediumItalic.eot");
+  src: url("../files/fonts/BoschSans-MediumItalic.eot?#iefix") format("embedded-opentype"), url("../files/fonts/BoschSans-MediumItalic.woff") format("woff"), url("../files/fonts/BoschSans-MediumItalic.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bosch Sans Regular';
+  src: url("../files/fonts/BoschSans-Regular.eot");
+  src: url("../files/fonts/BoschSans-Regular.eot?#iefix") format("embedded-opentype"), url("../files/fonts/BoschSans-Regular.woff") format("woff"), url("../files/fonts/BoschSans-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bosch Sans RegularItalic';
+  src: url("../files/fonts/BoschSans-RegularItalic.eot");
+  src: url("../files/fonts/BoschSans-RegularItalic.eot?#iefix") format("embedded-opentype"), url("../files/fonts/BoschSans-RegularItalic.woff") format("woff"), url("../files/fonts/BoschSans-RegularItalic.ttf");
   font-weight: normal;
   font-style: normal;
 }
