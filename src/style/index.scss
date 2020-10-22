@@ -6,7 +6,7 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  @include border();
+  // @include border();
 }
 
 .main-container {
@@ -247,13 +247,89 @@ header {
 }
 
 .faq-container {
+  .faq-title {
+    text-align: center;
+    font-size: 64px;
+    color: #525f6b;
+    margin: 0px auto;
+  }
+
+  .faq-sub-title {
+    text-align: center;
+    font-size: 24px;
+
+    div {
+      position: relative;
+      display: inline-block;
+
+      &::after {
+        @include size(100%, 3px);
+        @include independent(transparent);
+        content: '';
+        background-color: black;
+        left: 0px;
+        bottom: 0px;
+      }
+    }
+  }
+
+  .faq-blocks {
+    @include size(1200px, auto);
+    @include flex-layout(row, center, flex-start);
+    flex-wrap: wrap;
+    margin: 60px auto;
+    color: #ffffff;
+
+    // padding: 20px;
+    .block-layout {
+      margin-right: 40px;
+      margin-bottom: 40px;
+    }
+
+    .block {
+      @include size(360px, 320px);
+      display: inline-block;
+      position: relative;
+      padding: 20px;
+
+      background-color: #50237f;
+      box-shadow: 15px 15px 30px 1px rgba(0, 0, 0, 0.12);
+
+      .title {
+        font-size: 24px;
+      }
+
+      .content {
+        font-size: 20px;
+        line-height: 1;
+      }
+
+      .btn-more {
+        font-size: 30px;
+        @include independent(transparent);
+        bottom: 20px;
+        right: 20px;
+      }
+    }
+
+    .empty-block {
+      @include size(360px, 320px);
+      display: inline-block;
+    }
+
+    :nth-child(3n) {
+      margin-right: 0px;
+    }
+  }
 }
 
 .footer {
+  background-color: #ffffff;
+
   .top {
     @include size(100%, auto);
     @include flex-layout(row, center, flex-start);
-    padding: 10px;
+    padding: 100px 0px 15px 0px;
 
     @include phone-width() {
       flex-wrap: wrap;

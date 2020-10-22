@@ -211,7 +211,6 @@ ul {
   padding: 0px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border: 1px solid black;
 }
 
 .main-container {
@@ -599,6 +598,107 @@ header #slogan {
   right: 40%;
 }
 
+.faq-container .faq-title {
+  text-align: center;
+  font-size: 64px;
+  color: #525f6b;
+  margin: 0px auto;
+}
+
+.faq-container .faq-sub-title {
+  text-align: center;
+  font-size: 24px;
+}
+
+.faq-container .faq-sub-title div {
+  position: relative;
+  display: inline-block;
+}
+
+.faq-container .faq-sub-title div::after {
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  content: '';
+  background-color: transparent;
+  z-index: 1;
+  content: '';
+  background-color: black;
+  left: 0px;
+  bottom: 0px;
+}
+
+.faq-container .faq-blocks {
+  width: 1200px;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 60px auto;
+  color: #ffffff;
+}
+
+.faq-container .faq-blocks .block-layout {
+  margin-right: 40px;
+  margin-bottom: 40px;
+}
+
+.faq-container .faq-blocks .block {
+  width: 360px;
+  height: 320px;
+  display: inline-block;
+  position: relative;
+  padding: 20px;
+  background-color: #50237f;
+  -webkit-box-shadow: 15px 15px 30px 1px rgba(0, 0, 0, 0.12);
+          box-shadow: 15px 15px 30px 1px rgba(0, 0, 0, 0.12);
+}
+
+.faq-container .faq-blocks .block .title {
+  font-size: 24px;
+}
+
+.faq-container .faq-blocks .block .content {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.faq-container .faq-blocks .block .btn-more {
+  font-size: 30px;
+  position: absolute;
+  content: '';
+  background-color: transparent;
+  z-index: 1;
+  bottom: 20px;
+  right: 20px;
+}
+
+.faq-container .faq-blocks .empty-block {
+  width: 360px;
+  height: 320px;
+  display: inline-block;
+}
+
+.faq-container .faq-blocks :nth-child(3n) {
+  margin-right: 0px;
+}
+
+.footer {
+  background-color: #ffffff;
+}
+
 .footer .top {
   width: 100%;
   height: auto;
@@ -615,7 +715,7 @@ header #slogan {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  padding: 10px;
+  padding: 100px 0px 15px 0px;
 }
 
 @media all and (max-width: 479px) {
