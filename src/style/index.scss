@@ -1,4 +1,4 @@
-// @import '../common/style/globalconfigure';
+@import '../common/style/globalconfigure';
 @import '../common/style/_globalstyle.scss';
 @import '../common/style/_font.scss';
 
@@ -19,16 +19,6 @@ nav {
   .logo {
     @include border();
     display: inline-block;
-
-    // p[name="regular"] {
-    //   font-family: 'Bosch Sans CHS Regular';
-    //   font-size: 34px;
-    // }
-
-    p[name="bold"] {
-      font-family: 'Bosch Sans CHS Bold';
-      font-size: 34px;
-    }
 
     @include phone-width() {
       h1 {

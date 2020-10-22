@@ -1,3 +1,4 @@
+// Eng
 @font-face {
   font-family: "Bosch Sans Medium Italic";
   src: url("../files/fonts/BoschSans-MediumItalic.eot"); /* IE9*/
@@ -18,10 +19,22 @@
   font-style: normal;
 }
 
+// TCH
+@font-face {
+  font-family: 'Bosch Sans CHS Regular';
+  src: url('../files/fonts/BoschSansCHS-Regular.eot');
+  src: url('../files/fonts/BoschSansCHS-Regular.eot?#iefix') format('embedded-opentype'),
+  url('../files/fonts/BoschSansCHS-Regular.woff') format('woff'),
+  url('../files/fonts/BoschSansCHS-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @font-face {
   font-family: 'Bosch Sans CHS Bold';
   src: url('../files/fonts/BoschSansCHS-Bold.eot');
   src: url('../files/fonts/BoschSansCHS-Bold.eot?#iefix') format('embedded-opentype'),
+  url('../files/fonts/BoschSansCHS-Bold.woff') format('woff'),
   url('../files/fonts/BoschSansCHS-Bold.ttf');
   font-weight: normal;
   font-style: normal;
