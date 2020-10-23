@@ -110,6 +110,34 @@ ul {
   font-family: 'Bosch Sans RegularItalic';
 }
 
+.title {
+  font-size: 64px;
+}
+
+.sub-title {
+  font-size: 24px;
+}
+
+.bottom-line {
+  position: relative;
+  display: inline-block;
+  line-height: 2.75;
+}
+
+.bottom-line::after {
+  position: absolute;
+  content: '';
+  background-color: transparent;
+  z-index: 1;
+  width: 100%;
+  height: 4px;
+  content: '';
+  background-color: #000000;
+  left: 0px;
+  bottom: 0px;
+  z-index: 10;
+}
+
 @font-face {
   font-family: 'Bosch Sans CHS Regular';
   src: url("../files/fonts/BoschSansCHS-Regular.eot");
@@ -514,14 +542,37 @@ header #slogan {
   }
 }
 
-.products .top {
-  width: 100%;
-  height: 100px;
+.about-us {
+  margin: 50px 0px;
 }
 
-.products .bottom {
+.about-us .top {
   width: 100%;
-  height: 200px;
+  height: 160px;
+  text-align: center;
+  margin: 100px 0;
+}
+
+.about-us .top svg {
+  width: 100px;
+  height: 100%;
+  display: inline-block;
+}
+
+.about-us .top svg line {
+  stroke: #bfc0c2;
+  stroke-width: 1;
+}
+
+.about-us .top svg circle {
+  stroke: #bfc0c2;
+  stroke-width: 2px;
+  fill: #fff;
+}
+
+.about-us .bottom {
+  width: 100%;
+  height: 550px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -537,9 +588,59 @@ header #slogan {
           align-items: flex-start;
 }
 
-.products .bottom > :nth-child(n) {
+.about-us .bottom #head {
+  position: relative;
+}
+
+.about-us .bottom #head img {
+  position: absolute;
+  content: '';
+  background-color: transparent;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+}
+
+.about-us .bottom #head svg {
+  position: absolute;
+  content: '';
+  background-color: transparent;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+}
+
+.about-us .bottom #content {
+  font-size: 30px;
+}
+
+.about-us .bottom #content .title {
+  color: #525f6b;
+}
+
+.about-us .bottom #content .sub-title {
+  position: relative;
+  display: inline-block;
+  line-height: 2.5;
+}
+
+.about-us .bottom #description {
+  position: relative;
+}
+
+.about-us .bottom #description img {
+  position: absolute;
+  content: '';
+  background-color: transparent;
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+}
+
+.about-us .bottom > :nth-child(n) {
   width: 450px;
   height: 100%;
+  text-align: center;
 }
 
 .install-container {
@@ -570,31 +671,14 @@ header #slogan {
   color: #ffffff;
 }
 
-.install-container .content .title {
+.install-container .content .install-title-title {
   width: 650px;
   height: auto;
-  font-size: 64px;
   line-height: 1.25;
 }
 
-.install-container .content .sub-title {
-  font-size: 24px;
-  display: inline-block;
-  padding: 10px 0;
-  position: relative;
-}
-
-.install-container .content .sub-title::after {
-  position: absolute;
-  content: '';
-  background-color: transparent;
-  z-index: 1;
-  width: 100%;
-  height: 4px;
-  content: '';
-  background: #ffffff;
-  left: 0px;
-  bottom: 0px;
+.install-container .content .install-sub-title::after {
+  background-color: #fff;
 }
 
 .install-container .content .info-container {
@@ -646,37 +730,30 @@ header #slogan {
 }
 
 .faq-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding-top: 50px;
 }
 
 .faq-container .faq-title {
   text-align: center;
-  font-size: 64px;
   color: #525f6b;
   margin: 0px auto;
 }
 
 .faq-container .faq-sub-title {
   text-align: center;
-  font-size: 24px;
-}
-
-.faq-container .faq-sub-title div {
-  position: relative;
-  display: inline-block;
-}
-
-.faq-container .faq-sub-title div::after {
-  width: 100%;
-  height: 3px;
-  position: absolute;
-  content: '';
-  background-color: transparent;
-  z-index: 1;
-  content: '';
-  background-color: black;
-  left: 0px;
-  bottom: 0px;
 }
 
 .faq-container .faq-blocks {
@@ -697,7 +774,7 @@ header #slogan {
           align-items: flex-start;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin: 60px auto;
+  margin: 60px 0px;
   color: #ffffff;
 }
 

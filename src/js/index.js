@@ -2,9 +2,11 @@
 import '../style/index.css';
 
 // import image
-import '../images/home_logo.jpg';
+import '../images/home_logo.png';
 import '../images/home_img_01.png';
 import '../images/home_img_02.png';
+import '../images/home_img_03.png';
+import '../images/home_img_04.png';
 
 // import vue
 // import Vue from 'vue/dist/vue';

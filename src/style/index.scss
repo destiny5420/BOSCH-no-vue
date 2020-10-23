@@ -180,21 +180,81 @@ header {
 }
 
 .products {
-  .top {
-    @include size(100%, 100px);
-  }
-
-  .bottom {
-    @include size(100%, 200px);
-    @include flex-layout(row, center, flex-start);
-
-    > :nth-child(n) {
-      @include size(450px, 100%);
-    }
-  }
 }
 
 .about-us {
+  margin: 50px 0px;
+  .top {
+    @include size(100%, 160px);
+    text-align: center;
+    margin: 100px 0;
+    svg {
+      @include size(100px, 100%);
+
+      display: inline-block;
+
+      line {
+        stroke: #bfc0c2;
+        stroke-width: 1;
+      }
+
+      circle {
+        stroke: #bfc0c2;
+        stroke-width: 2px;
+        fill: #fff;
+      }
+    }
+  }
+
+  .bottom {
+    @include size(100%, 550px);
+    @include flex-layout(row, center, flex-start);
+
+    #head {
+      position: relative;
+
+      img {
+        @include independent(transparent);
+        bottom: 0;
+        left: 0;
+      }
+
+      svg {
+        @include independent(transparent);
+        bottom: 0;
+        left: 0;
+      }
+    }
+
+    #content {
+      font-size: 30px;
+
+      .title {
+        color: #525f6b;
+      }
+
+      .sub-title {
+        position: relative;
+        display: inline-block;
+        line-height: 2.5;
+      }
+    }
+
+    #description {
+      position: relative;
+
+      img {
+        @include independent(transparent);
+        bottom: 0;
+        right: 0;
+      }
+    }
+
+    > :nth-child(n) {
+      @include size(450px, 100%);
+      text-align: center;
+    }
+  }
 }
 
 .install-container {
@@ -215,26 +275,14 @@ header {
     transform: translate(-50%, -50%);
     color: #ffffff;
 
-    .title {
+    .install-title-title {
       @include size(650px, auto);
-      font-size: 64px;
-
       line-height: 1.25;
     }
 
-    .sub-title {
-      font-size: 24px;
-      display: inline-block;
-      padding: 10px 0;
-      position: relative;
-
+    .install-sub-title {
       &::after {
-        @include independent(transparent);
-        @include size(100%, 4px);
-        content: '';
-        background: #ffffff;
-        left: 0px;
-        bottom: 0px;
+        background-color: #fff;
       }
     }
 
@@ -275,38 +323,24 @@ header {
 }
 
 .faq-container {
+  @include flex-layout(column, flex-start, center);
   padding-top: 50px;
+
   .faq-title {
     text-align: center;
-    font-size: 64px;
     color: #525f6b;
     margin: 0px auto;
   }
 
   .faq-sub-title {
     text-align: center;
-    font-size: 24px;
-
-    div {
-      position: relative;
-      display: inline-block;
-
-      &::after {
-        @include size(100%, 3px);
-        @include independent(transparent);
-        content: '';
-        background-color: black;
-        left: 0px;
-        bottom: 0px;
-      }
-    }
   }
 
   .faq-blocks {
     @include size(1200px, auto);
     @include flex-layout(row, center, flex-start);
     flex-wrap: wrap;
-    margin: 60px auto;
+    margin: 60px 0px;
     color: #ffffff;
 
     // padding: 20px;
@@ -424,11 +458,3 @@ header {
   margin: 10px 0px 0px 30px;
   padding: 5px;
 }
-
-// .title {
-//   font-size: 64px;
-// }
-
-// .sub-title {
-//   font-size: 24px;
-// }

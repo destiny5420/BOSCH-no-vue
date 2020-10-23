@@ -155,3 +155,27 @@ $color_font_main: #868e9c;
 .eng-r-i {
   font-family: 'Bosch Sans RegularItalic';
 }
+
+.title {
+  font-size: 64px;
+}
+
+.sub-title {
+  font-size: 24px;
+}
+
+.bottom-line {
+  position: relative;
+  display: inline-block;
+  line-height: 2.75;
+
+  &::after {
+    @include independent(transparent);
+    @include size(100%, 4px);
+    content: '';
+    background-color: #000000;
+    left: 0px;
+    bottom: 0px;
+    z-index: 10;
+  }
+}

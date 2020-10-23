@@ -23,16 +23,16 @@ module.exports = {
       {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         use: [
-            {
-              loader: 'file-loader',
-              options: {
-                name: '[name].[ext]',
-                publicPath: '../fonts/',
-                outputPath: 'fonts/'
-              }
-            }
-        ]
-      }
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              publicPath: '../fonts/',
+              outputPath: 'fonts/',
+            },
+          },
+        ],
+      },
     ],
   },
   devServer: {
@@ -55,7 +55,7 @@ module.exports = {
   plugins: [
     new webpack.BannerPlugin('版權所有，翻版必究'),
     new HtmlWebpackPlugin({
-      title: '首頁',
+      title: 'BOSCH',
       filename: 'index.html',
       template: path.join(__dirname, './src/index.html'),
       favicon: './src/images/favicon.ico',
