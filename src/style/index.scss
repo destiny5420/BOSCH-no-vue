@@ -179,6 +179,24 @@ header {
   }
 }
 
+.products {
+  .top {
+    @include size(100%, 100px);
+  }
+
+  .bottom {
+    @include size(100%, 200px);
+    @include flex-layout(row, center, flex-start);
+
+    > :nth-child(n) {
+      @include size(450px, 100%);
+    }
+  }
+}
+
+.about-us {
+}
+
 .install-container {
   @include size(100%, auto);
   position: relative;
@@ -406,3 +424,11 @@ header {
   margin: 10px 0px 0px 30px;
   padding: 5px;
 }
+
+// .title {
+//   font-size: 64px;
+// }
+
+// .sub-title {
+//   font-size: 24px;
+// }
