@@ -1107,7 +1107,7 @@ header #slogan {
   height: 320px;
   display: inline-block;
   position: relative;
-  padding: 20px;
+  padding: 20px 50px;
   background-color: #50237f;
   -webkit-box-shadow: 15px 15px 30px 1px rgba(0, 0, 0, 0.12);
           box-shadow: 15px 15px 30px 1px rgba(0, 0, 0, 0.12);
@@ -1115,11 +1115,12 @@ header #slogan {
 
 .faq-container .faq-blocks .block .title {
   font-size: 24px;
+  line-height: 2.75;
 }
 
 .faq-container .faq-blocks .block .content {
   font-size: 20px;
-  line-height: 1;
+  line-height: 1.25;
 }
 
 .faq-container .faq-blocks .block .btn-more {

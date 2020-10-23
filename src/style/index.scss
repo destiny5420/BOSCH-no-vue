@@ -466,18 +466,19 @@ header {
       @include size(360px, 320px);
       display: inline-block;
       position: relative;
-      padding: 20px;
+      padding: 20px 50px;
 
       background-color: #50237f;
       box-shadow: 15px 15px 30px 1px rgba(0, 0, 0, 0.12);
 
       .title {
         font-size: 24px;
+        line-height: 2.75;
       }
 
       .content {
         font-size: 20px;
-        line-height: 1;
+        line-height: 1.25;
       }
 
       .btn-more {
