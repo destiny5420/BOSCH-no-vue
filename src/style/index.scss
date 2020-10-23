@@ -167,6 +167,7 @@ nav {
 header {
   @include size(100%, 100vh);
   @include flex-layout(row, center, center);
+  margin-bottom: 200px;
 
   #slogan {
     font-size: 34px;
@@ -180,10 +181,100 @@ header {
 }
 
 .products {
+  @include size(100%, 750px);
+  @include flex-layout(row, center, flex-start);
+  margin-bottom: 200px;
+
+  .introduction {
+    @include size(1000px, 100%);
+    @include flex-layout(row, center, center);
+    position: relative;
+
+    .intro {
+      @include independent(transparent);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .intro-1 {
+      @include size(850px, 850px);
+      @include flex-layout(column, center, center);
+
+      svg {
+        @include size(850px, 850px);
+        @include independent(transparent);
+        top: 0;
+        left: 0;
+        z-index: 2;
+      }
+
+      .info {
+        @include flex-layout(column, center, center);
+        color: #fff;
+        position: relative;
+        z-index: 3;
+
+        .title {
+          font-size: 48px;
+        }
+
+        .content {
+          @include size(420px, auto);
+          font-size: 30px;
+        }
+      }
+    }
+  }
+
+  .options {
+    @include size(400px, 100%);
+
+    .option {
+      @include flex-layout(row, flex-end, center);
+      margin-bottom: 25px;
+    }
+
+    .option-offset {
+      margin-right: 65px;
+    }
+
+    .main-option,
+    .sub-option {
+      display: inline-block;
+    }
+
+    .main-option {
+      font-size: 64px;
+      margin-right: 14px;
+    }
+
+    .sub-option {
+      font-size: 36px;
+      margin-right: 14px;
+    }
+
+    .main-symbol,
+    .sub-symbol {
+      display: inline-block;
+    }
+
+    .main-symbol {
+      svg {
+        @include size(50px, 50px);
+      }
+    }
+
+    .sub-symbol {
+      svg {
+        @include size(25px, 25px);
+      }
+    }
+  }
 }
 
 .about-us {
-  margin: 50px 0px;
+  margin-bottom: 200px;
   .top {
     @include size(100%, 160px);
     text-align: center;
@@ -259,6 +350,7 @@ header {
 
 .install-container {
   @include size(100%, auto);
+  margin-bottom: 100px;
   position: relative;
 
   .background {
@@ -293,6 +385,7 @@ header {
 
       img {
         margin-bottom: 20px;
+        box-shadow: 10px 10px 18px -8px rgba(0, 0, 0, 0.32);
       }
 
       > :nth-child(n) {
@@ -324,7 +417,6 @@ header {
 
 .faq-container {
   @include flex-layout(column, flex-start, center);
-  padding-top: 50px;
 
   .faq-title {
     text-align: center;
@@ -340,7 +432,7 @@ header {
     @include size(1200px, auto);
     @include flex-layout(row, center, flex-start);
     flex-wrap: wrap;
-    margin: 60px 0px;
+    margin: 40px 0px;
     color: #ffffff;
 
     // padding: 20px;
