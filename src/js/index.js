@@ -20,15 +20,22 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 
 // ***** variable *****
 let isDebug = false;
+let menuOpen = false;
 
 function onEventBinding() {
-  $('#menu').on('click', function () {
-    $('#menu-window').fadeIn(100);
+  $('#menu').on('click', function (e) {
+    if (menuOpen) {
+      menuOpen = false;
+      $('#menu').removeClass('show');
+      $('#menu-window').fadeOut(100);
+    } else {
+      menuOpen = true;
+      $('#menu').addClass('show');
+      $('#menu-window').fadeIn(100);
+    }
   });
 
-  $('#menu-window-close').on('click', function () {
-    $('#menu-window').fadeOut(100);
-  });
+  $('#menu-window-close').on('click', function () {});
 }
 
 function onGSAP() {
