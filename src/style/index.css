@@ -138,6 +138,137 @@ ul {
   z-index: 10;
 }
 
+.btn-more {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  cursor: pointer;
+}
+
+.btn-more .bg-circle {
+  position: absolute;
+  content: '';
+  background-color: transparent;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  cursor: auto;
+  pointer-events: none;
+  left: calc((150px / 2 * (-1)) + 10px);
+  z-index: 1;
+  -webkit-transform: scale(0.15);
+          transform: scale(0.15);
+  opacity: 0;
+  -webkit-transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.btn-more .bg-circle svg {
+  width: 150px;
+  height: 150px;
+}
+
+.btn-more .bg-circle svg circle {
+  fill: #8f8f8f;
+}
+
+.btn-more > svg {
+  z-index: 2;
+  margin-right: 20px;
+}
+
+.btn-more > p {
+  z-index: 2;
+  display: inline-block;
+  -webkit-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+}
+
+.btn-more:hover .bg-circle {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.btn-more-color-orange .bg-circle svg circle {
+  fill: #ffb34a;
+}
+
+.btn-more-color-black .bg-circle svg circle {
+  fill: #2c3238;
+}
+
+.btn-more-color-apple-green .bg-circle svg circle {
+  fill: #78be20;
+}
+
+.btn-more-hover-right-5:hover > p {
+  -webkit-transform: translateX(5px);
+          transform: translateX(5px);
+}
+
+.btn-more-hover-right-10:hover > p {
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
+}
+
+.btn-more-hover-right-15:hover > p {
+  -webkit-transform: translateX(15px);
+          transform: translateX(15px);
+}
+
+.btn-more-hover-right-20:hover > p {
+  -webkit-transform: translateX(20px);
+          transform: translateX(20px);
+}
+
+.btn-more-size-75 .bg-circle {
+  width: 75px;
+  height: 75px;
+  left: calc((75px / 2 * (-1)) + 10px);
+}
+
+.btn-more-size-75 .bg-circle svg {
+  width: 75px;
+  height: 75px;
+}
+
+.btn-more-size-85 .bg-circle {
+  width: 85px;
+  height: 85px;
+  left: calc((85px / 2 * (-1)) + 10px);
+}
+
+.btn-more-size-85 .bg-circle svg {
+  width: 85px;
+  height: 85px;
+}
+
+.btn-more-size-100 .bg-circle {
+  width: 100px;
+  height: 100px;
+  left: calc((100px / 2 * (-1)) + 10px);
+}
+
+.btn-more-size-100 .bg-circle svg {
+  width: 100px;
+  height: 100px;
+}
+
 @font-face {
   font-family: 'Bosch Sans CHS Regular';
   src: url("../files/fonts/BoschSansCHS-Regular.eot");
@@ -998,7 +1129,11 @@ header #slogan {
   background-color: transparent;
   z-index: 1;
   bottom: 20px;
-  right: 20px;
+  right: 35px;
+}
+
+.faq-container .faq-blocks .block .btn-more svg {
+  fill: #fff;
 }
 
 .faq-container .faq-blocks .empty-block {
@@ -1102,32 +1237,5 @@ header #slogan {
   display: inline-block;
   margin: 10px 0px 0px 30px;
   padding: 5px;
-}
-
-.btn-more {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-.btn-more svg {
-  margin-right: 20px;
-}
-
-.btn-more > p {
-  display: inline-block;
 }
 /*# sourceMappingURL=index.css.map */

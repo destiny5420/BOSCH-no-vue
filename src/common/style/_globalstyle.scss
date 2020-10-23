@@ -69,6 +69,7 @@ $color_third_hover: #b7c2d6;
 $color_white: #fff;
 $color_orange: #ffb34a;
 $color_yellow: #ffd633;
+$color_apple_green: #78be20;
 $color_green: #2ebc4f;
 $color_black: #333;
 $color_blue_start: #19283d;
@@ -177,5 +178,155 @@ $color_font_main: #868e9c;
     left: 0px;
     bottom: 0px;
     z-index: 10;
+  }
+}
+
+// Btn for more
+.btn-more {
+  @include flex-layout(row, center, center);
+  position: relative;
+  display: inline-flex;
+  cursor: pointer;
+
+  .bg-circle {
+    $circle-radius: 150px;
+    @include independent(transparent);
+    @include size($circle-radius, $circle-radius);
+
+    cursor: auto;
+    pointer-events: none;
+    left: calc((#{$circle-radius} / 2 * (-1)) + 10px);
+    z-index: 1;
+    transform: scale(0.15);
+    opacity: 0;
+
+    transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+
+    svg {
+      @include size($circle-radius, $circle-radius);
+
+      circle {
+        fill: rgb(143, 143, 143);
+      }
+    }
+  }
+
+  > svg {
+    z-index: 2;
+    margin-right: 20px;
+  }
+
+  > p {
+    z-index: 2;
+    display: inline-block;
+    transition: all 0.15s linear;
+  }
+
+  &:hover {
+    .bg-circle {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+// Btn - color for background
+.btn-more-color-orange {
+  .bg-circle {
+    svg {
+      circle {
+        fill: $color_orange;
+      }
+    }
+  }
+}
+.btn-more-color-black {
+  .bg-circle {
+    svg {
+      circle {
+        fill: $color_main;
+      }
+    }
+  }
+}
+.btn-more-color-apple-green {
+  .bg-circle {
+    svg {
+      circle {
+        fill: $color_apple_green;
+      }
+    }
+  }
+}
+
+// Btn - direction for move
+.btn-more-hover-right-5 {
+  &:hover {
+    > p {
+      transform: translateX(5px);
+    }
+  }
+}
+.btn-more-hover-right-10 {
+  &:hover {
+    > p {
+      transform: translateX(10px);
+    }
+  }
+}
+.btn-more-hover-right-15 {
+  &:hover {
+    > p {
+      transform: translateX(15px);
+    }
+  }
+}
+.btn-more-hover-right-20 {
+  &:hover {
+    > p {
+      transform: translateX(20px);
+    }
+  }
+}
+
+// Btn - size fo radius
+$circle-radius-75: 75px;
+$circle-radius-85: 85px;
+$circle-radius-100: 100px;
+
+$circle-radius-offset-10: 10px;
+$circle-radius-offset-20: 20px;
+$circle-radius-offset-30: 30px;
+$circle-radius-offset-40: 40px;
+$circle-radius-offset-50: 50px;
+
+.btn-more-size-75 {
+  .bg-circle {
+    @include size($circle-radius-75, $circle-radius-75);
+    left: calc((#{$circle-radius-75} / 2 * (-1)) + #{$circle-radius-offset-10});
+
+    svg {
+      @include size($circle-radius-75, $circle-radius-75);
+    }
+  }
+}
+.btn-more-size-85 {
+  .bg-circle {
+    @include size($circle-radius-85, $circle-radius-85);
+    left: calc((#{$circle-radius-85} / 2 * (-1)) + #{$circle-radius-offset-10});
+
+    svg {
+      @include size($circle-radius-85, $circle-radius-85);
+    }
+  }
+}
+.btn-more-size-100 {
+  .bg-circle {
+    @include size($circle-radius-100, $circle-radius-100);
+    left: calc((#{$circle-radius-100} / 2 * (-1)) + #{$circle-radius-offset-10});
+
+    svg {
+      @include size($circle-radius-100, $circle-radius-100);
+    }
   }
 }

@@ -484,7 +484,11 @@ header {
         font-size: 30px;
         @include independent(transparent);
         bottom: 20px;
-        right: 20px;
+        right: 35px;
+
+        svg {
+          fill: #fff;
+        }
       }
     }
 
@@ -570,17 +574,4 @@ header {
   display: inline-block;
   margin: 10px 0px 0px 30px;
   padding: 5px;
-}
-
-.btn-more {
-  @include flex-layout(row, center, center);
-  display: inline-flex;
-
-  svg {
-    margin-right: 20px;
-  }
-
-  > p {
-    display: inline-block;
-  }
 }
