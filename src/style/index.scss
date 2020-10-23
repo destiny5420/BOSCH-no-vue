@@ -183,7 +183,7 @@ header {
 .products {
   @include size(100%, 750px);
   @include flex-layout(row, center, flex-start);
-  margin-bottom: 200px;
+  margin-bottom: 100px;
 
   .introduction {
     @include size(1000px, 100%);
@@ -275,10 +275,12 @@ header {
 
 .about-us {
   margin-bottom: 200px;
+
   .top {
     @include size(100%, 160px);
     text-align: center;
-    margin: 100px 0;
+    margin-bottom: 75px;
+
     svg {
       @include size(100px, 100%);
 
@@ -319,6 +321,7 @@ header {
 
     #content {
       font-size: 30px;
+      position: relative;
 
       .title {
         color: #525f6b;
@@ -328,6 +331,15 @@ header {
         position: relative;
         display: inline-block;
         line-height: 2.5;
+        margin-bottom: 35px;
+      }
+
+      .btn-more {
+        @include independent(transparent);
+        font-size: 30px;
+        left: 50%;
+        bottom: 0px;
+        transform: translateX(-50%);
       }
     }
 
@@ -367,8 +379,8 @@ header {
     transform: translate(-50%, -50%);
     color: #ffffff;
 
-    .install-title-title {
-      @include size(650px, auto);
+    .install-title {
+      // @include size(650px, auto);
       line-height: 1.25;
     }
 
@@ -411,6 +423,15 @@ header {
 
     .info-content {
       font-size: 20px;
+    }
+
+    .btn-more {
+      margin-top: 60px;
+      font-size: 30px;
+
+      svg {
+        fill: #fff;
+      }
     }
   }
 }
@@ -549,4 +570,17 @@ header {
   display: inline-block;
   margin: 10px 0px 0px 30px;
   padding: 5px;
+}
+
+.btn-more {
+  @include flex-layout(row, center, center);
+  display: inline-flex;
+
+  svg {
+    margin-right: 20px;
+  }
+
+  > p {
+    display: inline-block;
+  }
 }
