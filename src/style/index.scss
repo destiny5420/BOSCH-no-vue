@@ -20,12 +20,6 @@
   );
 }
 
-nav {
-  @include size(100%, auto);
-  @include flex-layout(row, space-between, center);
-  position: relative;
-}
-
 #loading-bar {
   @include independent(#fff, 1100);
   @include size(100%, 100vh);
@@ -102,81 +96,87 @@ nav {
   }
 }
 
-#home {
-  @include independent(transparent);
-  top: 35px;
-  left: 300px;
-}
+nav {
+  @include size(100%, auto);
+  @include flex-layout(row, space-between, center);
+  position: relative;
 
-#menu {
-  $menu-height: 20px;
-  $ham-width: 2px;
-  @include size(35px, $menu-height);
-  @include independent(transparent, 1001);
-  @include flex-layout(row, space-around, center);
-  cursor: pointer;
-  top: 35px;
-  right: 300px;
+  #home {
+    @include independent(transparent);
+    top: 35px;
+    left: 300px;
+  }
 
-  span {
+  #menu {
+    $menu-height: 20px;
+    $ham-width: 2px;
+    @include size(35px, $menu-height);
+    @include independent(transparent, 1001);
+    @include flex-layout(row, space-around, center);
+    cursor: pointer;
+    top: 35px;
+    right: 300px;
+
+    span {
+      &::before {
+        @include independent(#000);
+        @include size(100%, $ham-width);
+        left: 0;
+        top: 0;
+        transition: width 0.35s 0.45s;
+      }
+
+      &::after {
+        @include independent(#000);
+        @include size(100%, $ham-width);
+        right: 0;
+        bottom: 0;
+        transition: width 0.35s 0.45s;
+      }
+    }
+
     &::before {
       @include independent(#000);
       @include size(100%, $ham-width);
       left: 0;
-      top: 0;
-      transition: width 0.35s 0.45s;
+      top: calc((#{$menu-height} / 2) - ($ham-width / 2));
+      transform-origin: center center;
+      transition: 0.45s cubic-bezier(0.33, 1, 0.68, 1);
     }
 
     &::after {
       @include independent(#000);
       @include size(100%, $ham-width);
       right: 0;
-      bottom: 0;
-      transition: width 0.35s 0.45s;
+      bottom: calc((#{$menu-height} / 2) - ($ham-width / 2));
+      transform-origin: center center;
+      transition: 0.45s cubic-bezier(0.33, 1, 0.68, 1);
     }
   }
 
-  &::before {
-    @include independent(#000);
-    @include size(100%, $ham-width);
-    left: 0;
-    top: calc((#{$menu-height} / 2) - ($ham-width / 2));
-    transform-origin: center center;
-    transition: 0.45s cubic-bezier(0.33, 1, 0.68, 1);
-  }
+  #menu.show {
+    span {
+      &::before {
+        right: 0;
+        width: 0;
+        transition: width 0.8s;
+      }
 
-  &::after {
-    @include independent(#000);
-    @include size(100%, $ham-width);
-    right: 0;
-    bottom: calc((#{$menu-height} / 2) - ($ham-width / 2));
-    transform-origin: center center;
-    transition: 0.45s cubic-bezier(0.33, 1, 0.68, 1);
-  }
-}
+      &::after {
+        width: 0;
+        transition: width 0.8s;
+      }
+    }
 
-#menu.show {
-  span {
     &::before {
-      right: 0;
-      width: 0;
-      transition: width 0.8s;
+      transform: rotate(-45deg);
+      transition: transform 0.5s 0.65s cubic-bezier(0.33, 1, 0.68, 1);
     }
 
     &::after {
-      width: 0;
-      transition: width 0.8s;
+      transform: rotate(45deg);
+      transition: transform 0.5s 0.65s cubic-bezier(0.33, 1, 0.68, 1);
     }
-  }
-
-  &::before {
-    transform: rotate(-45deg);
-    transition: transform 0.5s 0.65s cubic-bezier(0.33, 1, 0.68, 1);
-  }
-
-  &::after {
-    transform: rotate(45deg);
-    transition: transform 0.5s 0.65s cubic-bezier(0.33, 1, 0.68, 1);
   }
 }
 
@@ -592,46 +592,46 @@ header {
       @include size(100%, auto);
     }
   }
-}
 
-.footer-content {
-  @include size(auto, auto);
-  display: inline-block;
-  margin-right: 100px;
-  padding: 10px;
+  .footer-content {
+    @include size(auto, auto);
+    display: inline-block;
+    margin-right: 100px;
+    padding: 10px;
 
-  .title {
-    font-size: 18px;
+    .title {
+      font-size: 18px;
+    }
+
+    .main-link {
+      font-size: 16px;
+    }
+
+    .sub-title {
+      font-size: 16px;
+    }
+
+    .sub-link {
+      font-size: 14px;
+      padding-left: 18px;
+    }
+
+    @include phone-width() {
+      width: 100%;
+    }
   }
 
-  .main-link {
-    font-size: 16px;
-  }
+  .link {
+    cursor: pointer;
 
-  .sub-title {
-    font-size: 16px;
-  }
+    a {
+      text-decoration: none;
+      color: black;
+      transition: 0.2s linear;
 
-  .sub-link {
-    font-size: 14px;
-    padding-left: 18px;
-  }
-
-  @include phone-width() {
-    width: 100%;
-  }
-}
-
-.link {
-  cursor: pointer;
-
-  a {
-    text-decoration: none;
-    color: black;
-    transition: 0.2s linear;
-
-    &:hover {
-      color: gray;
+      &:hover {
+        color: gray;
+      }
     }
   }
 }

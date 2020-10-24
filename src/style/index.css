@@ -378,25 +378,6 @@ ul {
   background: linear-gradient(90deg, #d6d8d9 3%, #fdfbfb 41%, #dbddde 75%, #d6d8d9 100%);
 }
 
-nav {
-  width: 100%;
-  height: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: relative;
-}
-
 #loading-bar {
   position: absolute;
   content: '';
@@ -542,7 +523,26 @@ nav {
   padding: 20px;
 }
 
-#home {
+nav {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+nav #home {
   position: absolute;
   content: '';
   background-color: transparent;
@@ -551,7 +551,7 @@ nav {
   left: 300px;
 }
 
-#menu {
+nav #menu {
   width: 35px;
   height: 20px;
   position: absolute;
@@ -575,7 +575,7 @@ nav {
   right: 300px;
 }
 
-#menu span::before {
+nav #menu span::before {
   position: absolute;
   content: '';
   background-color: #000;
@@ -588,7 +588,7 @@ nav {
   transition: width 0.35s 0.45s;
 }
 
-#menu span::after {
+nav #menu span::after {
   position: absolute;
   content: '';
   background-color: #000;
@@ -601,7 +601,7 @@ nav {
   transition: width 0.35s 0.45s;
 }
 
-#menu::before {
+nav #menu::before {
   position: absolute;
   content: '';
   background-color: #000;
@@ -616,7 +616,7 @@ nav {
   transition: 0.45s cubic-bezier(0.33, 1, 0.68, 1);
 }
 
-#menu::after {
+nav #menu::after {
   position: absolute;
   content: '';
   background-color: #000;
@@ -631,20 +631,20 @@ nav {
   transition: 0.45s cubic-bezier(0.33, 1, 0.68, 1);
 }
 
-#menu.show span::before {
+nav #menu.show span::before {
   right: 0;
   width: 0;
   -webkit-transition: width 0.8s;
   transition: width 0.8s;
 }
 
-#menu.show span::after {
+nav #menu.show span::after {
   width: 0;
   -webkit-transition: width 0.8s;
   transition: width 0.8s;
 }
 
-#menu.show::before {
+nav #menu.show::before {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
   -webkit-transition: -webkit-transform 0.5s 0.65s cubic-bezier(0.33, 1, 0.68, 1);
@@ -653,7 +653,7 @@ nav {
   transition: transform 0.5s 0.65s cubic-bezier(0.33, 1, 0.68, 1), -webkit-transform 0.5s 0.65s cubic-bezier(0.33, 1, 0.68, 1);
 }
 
-#menu.show::after {
+nav #menu.show::after {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
   -webkit-transition: -webkit-transform 0.5s 0.65s cubic-bezier(0.33, 1, 0.68, 1);
@@ -1275,7 +1275,7 @@ header #slogan {
   height: auto;
 }
 
-.footer-content {
+.footer .footer-content {
   width: auto;
   height: auto;
   display: inline-block;
@@ -1283,41 +1283,41 @@ header #slogan {
   padding: 10px;
 }
 
-.footer-content .title {
+.footer .footer-content .title {
   font-size: 18px;
 }
 
-.footer-content .main-link {
+.footer .footer-content .main-link {
   font-size: 16px;
 }
 
-.footer-content .sub-title {
+.footer .footer-content .sub-title {
   font-size: 16px;
 }
 
-.footer-content .sub-link {
+.footer .footer-content .sub-link {
   font-size: 14px;
   padding-left: 18px;
 }
 
 @media all and (max-width: 479px) {
-  .footer-content {
+  .footer .footer-content {
     width: 100%;
   }
 }
 
-.link {
+.footer .link {
   cursor: pointer;
 }
 
-.link a {
+.footer .link a {
   text-decoration: none;
   color: black;
   -webkit-transition: 0.2s linear;
   transition: 0.2s linear;
 }
 
-.link a:hover {
+.footer .link a:hover {
   color: gray;
 }
 

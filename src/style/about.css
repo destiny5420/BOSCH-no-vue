@@ -1,4 +1,824 @@
-p {
-  color: blueviolet;
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Noto Sans TC', sans-serif, Arial !important;
+  font-size: 1.7rem;
+  line-height: 1.75;
+  color: #1a1a1a;
+  font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0;
+}
+
+h1 {
+  font-size: 3.2rem;
+}
+
+h1 {
+  font-size: 2.8rem;
+}
+
+h1 {
+  font-size: 2.4rem;
+}
+
+h1 {
+  font-size: 2.2rem;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h1 {
+  font-size: 1.8rem;
+}
+
+b {
+  font-weight: 500;
+}
+
+ol,
+ul {
+  padding-left: 1.7rem;
+}
+
+.tch-r {
+  font-family: 'Bosch Sans CHS Regular';
+}
+
+.tch-b {
+  font-family: 'Bosch Sans CHS Bold';
+}
+
+.eng-bl {
+  font-family: 'Bosch Sans Black';
+}
+
+.eng-bl-l {
+  font-family: 'Bosch Sans BlackItalic';
+}
+
+.eng-b {
+  font-family: 'Bosch Sans Bold';
+}
+
+.eng-b-l {
+  font-family: 'Bosch Sans BoldItalic';
+}
+
+.eng-l {
+  font-family: 'Bosch Sans Light';
+}
+
+.eng-l-l {
+  font-family: 'Bosch Sans LightItalic';
+}
+
+.eng-m {
+  font-family: 'Bosch Sans Medium';
+}
+
+.eng-m-l {
+  font-family: 'Bosch Sans MediumItalic';
+}
+
+.eng-r {
+  font-family: 'Bosch Sans Regular';
+}
+
+.eng-r-i {
+  font-family: 'Bosch Sans RegularItalic';
+}
+
+.title {
+  font-size: 64px;
+}
+
+.sub-title {
+  font-size: 24px;
+}
+
+.bottom-line {
+  position: relative;
+  display: inline-block;
+  line-height: 2.75;
+}
+
+.bottom-line::after {
+  position: absolute;
+  content: '';
+  background-color: transparent;
+  z-index: 1;
+  width: 100%;
+  height: 4px;
+  content: '';
+  background-color: #000000;
+  left: 0px;
+  bottom: 0px;
+  z-index: 10;
+}
+
+.btn-more {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  cursor: pointer;
+}
+
+.btn-more .bg-circle {
+  position: absolute;
+  content: '';
+  background-color: transparent;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  cursor: auto;
+  pointer-events: none;
+  left: calc((150px / 2 * (-1)) + 10px);
+  z-index: 1;
+  -webkit-transform: scale(0.15);
+          transform: scale(0.15);
+  opacity: 0;
+  -webkit-transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.btn-more .bg-circle svg {
+  width: 150px;
+  height: 150px;
+}
+
+.btn-more .bg-circle svg circle {
+  fill: #8f8f8f;
+}
+
+.btn-more > svg {
+  z-index: 2;
+  margin-right: 20px;
+}
+
+.btn-more > p {
+  z-index: 2;
+  display: inline-block;
+  -webkit-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+}
+
+.btn-more:hover .bg-circle {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.btn-more-color-orange .bg-circle svg circle {
+  fill: #ffb34a;
+}
+
+.btn-more-color-black .bg-circle svg circle {
+  fill: #2c3238;
+}
+
+.btn-more-color-apple-green .bg-circle svg circle {
+  fill: #78be20;
+}
+
+.btn-more-hover-right-5:hover > p {
+  -webkit-transform: translateX(5px);
+          transform: translateX(5px);
+}
+
+.btn-more-hover-right-10:hover > p {
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
+}
+
+.btn-more-hover-right-15:hover > p {
+  -webkit-transform: translateX(15px);
+          transform: translateX(15px);
+}
+
+.btn-more-hover-right-20:hover > p {
+  -webkit-transform: translateX(20px);
+          transform: translateX(20px);
+}
+
+.btn-more-size-75 .bg-circle {
+  width: 75px;
+  height: 75px;
+  left: calc((75px / 2 * (-1)) + 10px);
+}
+
+.btn-more-size-75 .bg-circle svg {
+  width: 75px;
+  height: 75px;
+}
+
+.btn-more-size-85 .bg-circle {
+  width: 85px;
+  height: 85px;
+  left: calc((85px / 2 * (-1)) + 10px);
+}
+
+.btn-more-size-85 .bg-circle svg {
+  width: 85px;
+  height: 85px;
+}
+
+.btn-more-size-100 .bg-circle {
+  width: 100px;
+  height: 100px;
+  left: calc((100px / 2 * (-1)) + 10px);
+}
+
+.btn-more-size-100 .bg-circle svg {
+  width: 100px;
+  height: 100px;
+}
+
+@font-face {
+  font-family: 'Bosch Sans CHS Regular';
+  src: url("../files/fonts/BoschSansCHS-Regular.eot");
+  src: url("../files/fonts/BoschSansCHS-Regular.eot?#iefix") format("embedded-opentype"), url("../files/fonts/BoschSansCHS-Regular.woff") format("woff"), url("../files/fonts/BoschSansCHS-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bosch Sans CHS Bold';
+  src: url("../files/fonts/BoschSansCHS-Bold.eot");
+  src: url("../files/fonts/BoschSansCHS-Bold.eot?#iefix") format("embedded-opentype"), url("../files/fonts/BoschSansCHS-Bold.woff") format("woff"), url("../files/fonts/BoschSansCHS-Bold.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bosch Sans Black';
+  src: url("../files/fonts/BoschSans-Black.eot");
+  src: url("../files/fonts/BoschSans-Black.eot?#iefix") format("embedded-opentype"), url("../files/fonts/BoschSans-Black.woff") format("woff"), url("../files/fonts/BoschSans-Black.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bosch Sans BlackItalic';
+  src: url("../files/fonts/BoschSans-BlackItalic.eot");
+  src: url("../files/fonts/BoschSans-BlackItalic.eot?#iefix") format("embedded-opentype"), url("../files/fonts/BoschSans-BlackItalic.woff") format("woff"), url("../files/fonts/BoschSans-BlackItalic.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bosch Sans Bold';
+  src: url("../files/fonts/BoschSans-Bold.eot");
+  src: url("../files/fonts/BoschSans-Bold.eot?#iefix") format("embedded-opentype"), url("../files/fonts/BoschSans-Bold.woff") format("woff"), url("../files/fonts/BoschSans-Bold.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bosch Sans BoldItalic';
+  src: url("../files/fonts/BoschSans-BoldItalic.eot");
+  src: url("../files/fonts/BoschSans-BoldItalic.eot?#iefix") format("embedded-opentype"), url("../files/fonts/BoschSans-BoldItalic.woff") format("woff"), url("../files/fonts/BoschSans-BoldItalic.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bosch Sans Light';
+  src: url("../files/fonts/BoschSans-Light.eot");
+  src: url("../files/fonts/BoschSans-Light.eot?#iefix") format("embedded-opentype"), url("../files/fonts/BoschSans-Light.woff") format("woff"), url("../files/fonts/BoschSans-Light.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bosch Sans LightItalic';
+  src: url("../files/fonts/BoschSans-LightItalic.eot");
+  src: url("../files/fonts/BoschSans-LightItalic.eot?#iefix") format("embedded-opentype"), url("../files/fonts/BoschSans-LightItalic.woff") format("woff"), url("../files/fonts/BoschSans-LightItalic.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bosch Sans Medium';
+  src: url("../files/fonts/BoschSans-Medium.eot");
+  src: url("../files/fonts/BoschSans-Medium.eot?#iefix") format("embedded-opentype"), url("../files/fonts/BoschSans-Medium.woff") format("woff"), url("../files/fonts/BoschSans-Medium.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bosch Sans MediumItalic';
+  src: url("../files/fonts/BoschSans-MediumItalic.eot");
+  src: url("../files/fonts/BoschSans-MediumItalic.eot?#iefix") format("embedded-opentype"), url("../files/fonts/BoschSans-MediumItalic.woff") format("woff"), url("../files/fonts/BoschSans-MediumItalic.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bosch Sans Regular';
+  src: url("../files/fonts/BoschSans-Regular.eot");
+  src: url("../files/fonts/BoschSans-Regular.eot?#iefix") format("embedded-opentype"), url("../files/fonts/BoschSans-Regular.woff") format("woff"), url("../files/fonts/BoschSans-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bosch Sans RegularItalic';
+  src: url("../files/fonts/BoschSans-RegularItalic.eot");
+  src: url("../files/fonts/BoschSans-RegularItalic.eot?#iefix") format("embedded-opentype"), url("../files/fonts/BoschSans-RegularItalic.woff") format("woff"), url("../files/fonts/BoschSans-RegularItalic.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.main-container {
+  background: #d6d8d9;
+  background: -webkit-gradient(linear, left top, right top, color-stop(3%, #d6d8d9), color-stop(41%, #fdfbfb), color-stop(75%, #dbddde), to(#d6d8d9));
+  background: linear-gradient(90deg, #d6d8d9 3%, #fdfbfb 41%, #dbddde 75%, #d6d8d9 100%);
+}
+
+#loading-bar {
+  position: absolute;
+  content: '';
+  background-color: #fff;
+  z-index: 1100;
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+}
+
+#loading-bar .spinner {
+  -webkit-animation: rotator 1.4s linear infinite;
+          animation: rotator 1.4s linear infinite;
+}
+
+@-webkit-keyframes rotator {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+  }
+}
+
+@keyframes rotator {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+  }
+}
+
+#loading-bar .path {
+  stroke-dasharray: 187;
+  stroke-dashoffset: 0;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+          animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+}
+
+@-webkit-keyframes colors {
+  0% {
+    stroke: #4285f4;
+  }
+  25% {
+    stroke: #de3e35;
+  }
+  50% {
+    stroke: #f7c223;
+  }
+  75% {
+    stroke: #1b9a59;
+  }
+  100% {
+    stroke: #4285f4;
+  }
+}
+
+@keyframes colors {
+  0% {
+    stroke: #4285f4;
+  }
+  25% {
+    stroke: #de3e35;
+  }
+  50% {
+    stroke: #f7c223;
+  }
+  75% {
+    stroke: #1b9a59;
+  }
+  100% {
+    stroke: #4285f4;
+  }
+}
+
+@-webkit-keyframes dash {
+  0% {
+    stroke-dashoffset: 187;
+  }
+  50% {
+    stroke-dashoffset: 46.75;
+    -webkit-transform: rotate(135deg);
+            transform: rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: 187;
+    -webkit-transform: rotate(450deg);
+            transform: rotate(450deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 187;
+  }
+  50% {
+    stroke-dashoffset: 46.75;
+    -webkit-transform: rotate(135deg);
+            transform: rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: 187;
+    -webkit-transform: rotate(450deg);
+            transform: rotate(450deg);
+  }
+}
+
+#menu-window {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  content: '';
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  position: fixed;
+  display: none;
+}
+
+#menu-window #menu-window-close {
+  float: right;
+  margin-top: 20px;
+  margin-right: 20px;
+  padding: 20px;
+}
+
+nav {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+nav #home {
+  position: absolute;
+  content: '';
+  background-color: transparent;
+  z-index: 1;
+  top: 35px;
+  left: 300px;
+}
+
+nav #menu {
+  width: 35px;
+  height: 20px;
+  position: absolute;
+  content: '';
+  background-color: transparent;
+  z-index: 1001;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  top: 35px;
+  right: 300px;
+}
+
+nav #menu span::before {
+  position: absolute;
+  content: '';
+  background-color: #000;
+  z-index: 1;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  top: 0;
+  -webkit-transition: width 0.35s 0.45s;
+  transition: width 0.35s 0.45s;
+}
+
+nav #menu span::after {
+  position: absolute;
+  content: '';
+  background-color: #000;
+  z-index: 1;
+  width: 100%;
+  height: 2px;
+  right: 0;
+  bottom: 0;
+  -webkit-transition: width 0.35s 0.45s;
+  transition: width 0.35s 0.45s;
+}
+
+nav #menu::before {
+  position: absolute;
+  content: '';
+  background-color: #000;
+  z-index: 1;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  top: calc((20px / 2) - ($ham-width / 2));
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transition: 0.45s cubic-bezier(0.33, 1, 0.68, 1);
+  transition: 0.45s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+nav #menu::after {
+  position: absolute;
+  content: '';
+  background-color: #000;
+  z-index: 1;
+  width: 100%;
+  height: 2px;
+  right: 0;
+  bottom: calc((20px / 2) - ($ham-width / 2));
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transition: 0.45s cubic-bezier(0.33, 1, 0.68, 1);
+  transition: 0.45s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+nav #menu.show span::before {
+  right: 0;
+  width: 0;
+  -webkit-transition: width 0.8s;
+  transition: width 0.8s;
+}
+
+nav #menu.show span::after {
+  width: 0;
+  -webkit-transition: width 0.8s;
+  transition: width 0.8s;
+}
+
+nav #menu.show::before {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-transition: -webkit-transform 0.5s 0.65s cubic-bezier(0.33, 1, 0.68, 1);
+  transition: -webkit-transform 0.5s 0.65s cubic-bezier(0.33, 1, 0.68, 1);
+  transition: transform 0.5s 0.65s cubic-bezier(0.33, 1, 0.68, 1);
+  transition: transform 0.5s 0.65s cubic-bezier(0.33, 1, 0.68, 1), -webkit-transform 0.5s 0.65s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+nav #menu.show::after {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transition: -webkit-transform 0.5s 0.65s cubic-bezier(0.33, 1, 0.68, 1);
+  transition: -webkit-transform 0.5s 0.65s cubic-bezier(0.33, 1, 0.68, 1);
+  transition: transform 0.5s 0.65s cubic-bezier(0.33, 1, 0.68, 1);
+  transition: transform 0.5s 0.65s cubic-bezier(0.33, 1, 0.68, 1), -webkit-transform 0.5s 0.65s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.slogan {
+  width: 100%;
+  height: 330px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 155px;
+  background: #e20015;
+  background: -webkit-gradient(linear, left top, right top, from(#e20015), to(#b90276));
+  background: linear-gradient(90deg, #e20015 0%, #b90276 100%);
+}
+
+.slogan .slogan-wrap {
+  width: 500px;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+}
+
+.slogan .slogan-wrap > :first-child {
+  font-size: 20px;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.slogan .slogan-wrap > :last-child {
+  font-size: 60px;
+  line-height: 1;
+}
+
+.slogan .text-char {
+  margin: 0;
+  display: inline-block;
+  line-height: 1;
+}
+
+.description {
+  width: 100%;
+  height: 500px;
+}
+
+.proxy {
+  width: 100%;
+  height: 500px;
+}
+
+.footer {
+  background-color: #ffffff;
+}
+
+.footer .top {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 100px 0px 15px 0px;
+}
+
+@media all and (max-width: 479px) {
+  .footer .top {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    height: auto;
+  }
+}
+
+.footer .bottom {
+  width: 100%;
+  height: 22px;
+}
+
+.footer .bottom svg {
+  width: 100%;
+  height: auto;
+}
+
+.footer .footer-content {
+  width: auto;
+  height: auto;
+  display: inline-block;
+  margin-right: 100px;
+  padding: 10px;
+}
+
+.footer .footer-content .title {
+  font-size: 18px;
+}
+
+.footer .footer-content .main-link {
+  font-size: 16px;
+}
+
+.footer .footer-content .sub-title {
+  font-size: 16px;
+}
+
+.footer .footer-content .sub-link {
+  font-size: 14px;
+  padding-left: 18px;
+}
+
+@media all and (max-width: 479px) {
+  .footer .footer-content {
+    width: 100%;
+  }
+}
+
+.footer .link {
+  cursor: pointer;
+}
+
+.footer .link a {
+  text-decoration: none;
+  color: black;
+  -webkit-transition: 0.2s linear;
+  transition: 0.2s linear;
+}
+
+.footer .link a:hover {
+  color: gray;
+}
+
+.text-effect {
+  display: inline-block;
+  overflow: hidden;
 }
 /*# sourceMappingURL=about.css.map */
