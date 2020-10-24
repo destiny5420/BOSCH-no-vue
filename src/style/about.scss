@@ -203,16 +203,19 @@ nav {
       line-height: 1;
     }
   }
-
-  .text-char {
-    margin: 0;
-    display: inline-block;
-    line-height: 1;
-  }
 }
 
 .description {
   @include size(100%, 500px);
+  @include flex-layout(column, center, center);
+  padding: 20px 50px;
+
+  .content-wrap {
+    @include flex-layout(column, center, center);
+    @include size(800px, 300px);
+
+    font-size: 20px;
+  }
 }
 
 .proxy {
@@ -289,4 +292,11 @@ nav {
 .text-effect {
   display: inline-block;
   overflow: hidden;
+  white-space: nowrap;
+}
+
+.text-char {
+  margin: 0;
+  display: inline-block;
+  line-height: 1;
 }

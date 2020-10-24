@@ -10,8 +10,22 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 // ***** variable *****
 let menuOpen = false;
 let anim_sloganShow;
+let animsDescription = [];
 
 function onEventBinding() {
+  // keydown
+  $(document).on('keydown', function (e) {
+    switch (e.keyCode) {
+      case 65: // A
+        console.log('key a');
+        animsDescription.forEach((element) => element.play());
+        break;
+      default:
+        break;
+    }
+  });
+
+  // menu button
   $('#menu').on('click', function (e) {
     if (menuOpen) {
       menuOpen = false;
@@ -24,8 +38,6 @@ function onEventBinding() {
       $('#menu-window').fadeIn(100);
     }
   });
-
-  $('#menu-window-close').on('click', function () {});
 }
 
 function onGSAP() {
@@ -36,18 +48,39 @@ function onGSAP() {
 
   anim_sloganShow = gsap.timeline({ delay: 1 });
 
-  let tmp = document.querySelectorAll('.slogan .text-char');
-  tmp.forEach((element) => {
+  let sloganWordList = document.querySelectorAll('.slogan .text-char');
+  sloganWordList.forEach((element) => {
     anim_sloganShow.from(
       element,
-      { duration: 0.75, opacity: 0.5, y: 60, ease: 'power2.out' },
-      '-=0.65',
+      { duration: 0.75, opacity: 0.5, y: 65, ease: 'power1.out' },
+      '-=0.685',
     );
   });
 
-  // console.log('tmp: ', tmp);
-  // sloganShow.from('.slogan .text-1', { duration: 0.75, opacity: 0.5, y: 30 });
-  // sloganShow.from('.slogan .text-2', { duration: 0.75, opacity: 0.5, y: 30 }, '-=0.25');
+  let tmpAry = Array.from(document.querySelectorAll('.description .text-effect'));
+  for (let i = 0; i < tmpAry.length; i++) {
+    animsDescription.push(
+      gsap.timeline({ scrollTrigger: { start: '20vh top', markers: true, end: '+=0' } }),
+    );
+  }
+
+  tmpAry.forEach((element, index) => {
+    let list = Array.from(element.children);
+    list.forEach((element) => {
+      animsDescription[index].from(
+        element,
+        { duration: 0.75, opacity: 0.5, y: 65, ease: 'power1.out' },
+        '-=0.735',
+      );
+    });
+  });
+
+  console.log(tmpAry);
+  // let tmpList_0 = Array.from(tmp[0].children);
+  // console.log('tmpList_0: ', tmpList_0);
+  // tmpList_0.forEach((element) => {
+  //   tmpAnim.from(element, { duration: 0.75, opacity: 0.5, y: 65, ease: 'power1.out' }, '-=0.72');
+  // });
 }
 
 function onAwake() {
