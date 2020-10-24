@@ -8,6 +8,7 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
 // ***** variable *****
+let isDebug = false;
 let menuOpen = false;
 let anim_sloganShow;
 let animsDescription = [];
@@ -53,14 +54,14 @@ function onGSAP() {
     anim_sloganShow.from(
       element,
       { duration: 0.75, opacity: 0.5, y: 65, ease: 'power1.out' },
-      '-=0.685',
+      '-=0.7',
     );
   });
 
   let tmpAry = Array.from(document.querySelectorAll('.description .text-effect'));
   for (let i = 0; i < tmpAry.length; i++) {
     animsDescription.push(
-      gsap.timeline({ scrollTrigger: { start: '20vh top', markers: true, end: '+=0' } }),
+      gsap.timeline({ scrollTrigger: { start: '100vh top', markers: isDebug, end: '+=0' } }),
     );
   }
 

@@ -23,6 +23,7 @@ let isDebug = false;
 let menuOpen = false;
 
 function onEventBinding() {
+  // menu btn
   $('#menu').on('click', function (e) {
     if (menuOpen) {
       menuOpen = false;
@@ -35,7 +36,11 @@ function onEventBinding() {
     }
   });
 
-  $('#menu-window-close').on('click', function () {});
+  // about more
+  $('#more-about').on('click', function (e) {
+    console.log('be clicked!!');
+    window.location.href = '../about.html';
+  });
 }
 
 function onGSAP() {
@@ -56,43 +61,6 @@ function onGSAP() {
     opacity: 1,
     duration: 1,
   });
-
-  // let buttons = gsap.timeline({
-  //   scrollTrigger: {
-  //     trigger: '.button-container',
-  //     start: 'top center',
-  //     markers: isDebug,
-  //   },
-  // });
-  // buttons
-  //   .from('#btn-about', { x: 100, opacity: 0, duration: 1 })
-  //   .from(
-  //     '#btn-install',
-  //     {
-  //       x: -100,
-  //       opacity: 0,
-  //       duration: 1,
-  //     },
-  //     '-=0.75',
-  //   )
-  //   .from(
-  //     '#btn-issue',
-  //     {
-  //       x: 100,
-  //       opacity: 0,
-  //       duration: 1,
-  //     },
-  //     '-=0.75',
-  //   )
-  //   .from(
-  //     '#btn-contact',
-  //     {
-  //       x: -100,
-  //       opacity: 0,
-  //       duration: 1,
-  //     },
-  //     '-=0.75',
-  //   );
 }
 
 function onAwake() {
