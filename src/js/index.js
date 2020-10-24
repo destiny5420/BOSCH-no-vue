@@ -39,7 +39,7 @@ function onEventBinding() {
   // about more
   $('#more-about').on('click', function (e) {
     console.log('be clicked!!');
-    window.location.href = '../about.html';
+    window.location.href = './about.html';
   });
 }
 

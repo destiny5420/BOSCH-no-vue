@@ -75,13 +75,6 @@ function onGSAP() {
       );
     });
   });
-
-  console.log(tmpAry);
-  // let tmpList_0 = Array.from(tmp[0].children);
-  // console.log('tmpList_0: ', tmpList_0);
-  // tmpList_0.forEach((element) => {
-  //   tmpAnim.from(element, { duration: 0.75, opacity: 0.5, y: 65, ease: 'power1.out' }, '-=0.72');
-  // });
 }
 
 function onAwake() {
