@@ -180,6 +180,12 @@ nav {
   }
 }
 
+#copy-right {
+  display: inline-block;
+  margin: 10px 0px 0px 30px;
+  padding: 5px;
+}
+
 .slogan {
   @include size(100%, 330px);
   @include flex-layout(row, center, center);

@@ -180,6 +180,12 @@ nav {
   }
 }
 
+#copy-right {
+  display: inline-block;
+  margin: 10px 0px 0px 30px;
+  padding: 5px;
+}
+
 #scroll-point {
   @include independent(transparent);
   right: 215px;
@@ -634,10 +640,4 @@ header {
       }
     }
   }
-}
-
-#copy-right {
-  display: inline-block;
-  margin: 10px 0px 0px 30px;
-  padding: 5px;
 }
