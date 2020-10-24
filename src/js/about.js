@@ -1,4 +1,4 @@
-import '../style/about.scss';
+import '../style/about.css';
 
 // import jquery
 import $ from 'jquery';
@@ -18,7 +18,6 @@ function onEventBinding() {
   $(document).on('keydown', function (e) {
     switch (e.keyCode) {
       case 65: // A
-        console.log('key a');
         animsDescription.forEach((element) => element.play());
         break;
       default:
@@ -32,7 +31,6 @@ function onEventBinding() {
       menuOpen = false;
       $('#menu').removeClass('show');
       $('#menu-window').fadeOut(100);
-      console.log(anim_sloganShow);
     } else {
       menuOpen = true;
       $('#menu').addClass('show');
