@@ -139,7 +139,7 @@ nav {
       @include independent(#000);
       @include size(100%, $ham-width);
       left: 0;
-      top: calc((#{$menu-height} / 2) - ($ham-width / 2));
+      top: calc((#{$menu-height} / 2) - (#{$ham-width} / 2));
       transform-origin: center center;
       transition: 0.45s cubic-bezier(0.33, 1, 0.68, 1);
     }
@@ -148,7 +148,7 @@ nav {
       @include independent(#000);
       @include size(100%, $ham-width);
       right: 0;
-      bottom: calc((#{$menu-height} / 2) - ($ham-width / 2));
+      bottom: calc((#{$menu-height} / 2) - (#{$ham-width} / 2));
       transform-origin: center center;
       transition: 0.45s cubic-bezier(0.33, 1, 0.68, 1);
     }
