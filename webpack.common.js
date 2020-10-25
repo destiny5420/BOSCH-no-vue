@@ -12,6 +12,7 @@ module.exports = {
   entry: {
     index: [path.join(__dirname, './src/js/index.js')],
     about: [path.join(__dirname, './src/js/about.js')],
+    support: [path.join(__dirname, './src/js/support.js')],
   },
   output: {
     path: path.join(__dirname, './docs'),
@@ -67,6 +68,13 @@ module.exports = {
       template: path.join(__dirname, './src/about.html'),
       favicon: './src/images/favicon.ico',
       chunks: ['about'],
+    }),
+    new HtmlWebpackPlugin({
+      title: '支援',
+      filename: 'support.html',
+      template: path.join(__dirname, './src/support.html'),
+      favicon: './src/images/favicon.ico',
+      chunks: ['support'],
     }),
   ],
 };

@@ -1,0 +1,11 @@
+@import '../common/style/globalconfigure';
+@import '../common/style/_globalstyle.scss';
+@import '../common/style/_font.scss';
+
+.slogan {
+  @include size(100%, 500px);
+}
+
+.list {
+  @include size(100%, 500px);
+}
