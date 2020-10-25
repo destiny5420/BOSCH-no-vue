@@ -581,7 +581,7 @@ header {
   .top {
     @include size(100%, auto);
     @include flex-layout(row, center, flex-start);
-    padding: 100px 0px 15px 0px;
+    padding: 90px 0px 25px 0px;
 
     @include phone-width() {
       flex-wrap: wrap;

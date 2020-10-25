@@ -212,20 +212,76 @@ nav {
 }
 
 .description {
-  @include size(100%, 500px);
+  @include size(100%, auto);
   @include flex-layout(column, center, center);
-  padding: 20px 50px;
+  padding: 206px 0px 161px 0px;
 
   .content-wrap {
     @include flex-layout(column, center, center);
     @include size(800px, 300px);
-
+    margin-bottom: 164px;
     font-size: 20px;
+  }
+
+  .tip-box {
+    @include flex-layout(row);
+
+    .left {
+      @include flex-layout(row, center, center);
+      margin-right: 50px;
+    }
+
+    .right {
+      @include size(630px, 100%);
+
+      > :first-child {
+        font-size: 36px;
+      }
+
+      > :last-child {
+        font-size: 20px;
+      }
+    }
   }
 }
 
 .proxy {
-  @include size(100%, 500px);
+  @include size(100%, 887px);
+  @include flex-layout(row, center, center);
+
+  background: rgb(226, 0, 21);
+  background: linear-gradient(90deg, rgba(226, 0, 21, 1) 0%, rgba(185, 2, 118, 1) 100%);
+
+  .left,
+  .right {
+    flex: 1;
+    height: 100%;
+  }
+
+  .left {
+    @include flex-layout(column, center, center);
+    .info {
+      @include size(510px, auto);
+
+      color: #fff;
+
+      .title {
+        line-height: 1.25;
+        margin-bottom: 40px;
+      }
+
+      .content {
+        font-size: 20px;
+        text-align: justify;
+        text-justify: inter-ideograph;
+      }
+    }
+  }
+
+  .document {
+    height: 100%;
+    //@include size(300px, auto);
+  }
 }
 
 .footer {
@@ -234,7 +290,7 @@ nav {
   .top {
     @include size(100%, auto);
     @include flex-layout(row, center, flex-start);
-    padding: 100px 0px 15px 0px;
+    padding: 90px 0px 25px 0px;
 
     @include phone-width() {
       flex-wrap: wrap;

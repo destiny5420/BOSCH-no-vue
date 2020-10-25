@@ -8,10 +8,12 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
 // ***** variable *****
-let isDebug = false;
+let isDebug = true;
 let menuOpen = false;
 let anim_sloganShow;
 let animsDescription = [];
+let anim_description;
+let anim_proxy;
 
 function onEventBinding() {
   // keydown
@@ -56,7 +58,8 @@ function onGSAP() {
     );
   });
 
-  let tmpAry = Array.from(document.querySelectorAll('.description .text-effect'));
+  // description content
+  let tmpAry = Array.from(document.querySelectorAll('.description .content-wrap .text-effect'));
   for (let i = 0; i < tmpAry.length; i++) {
     animsDescription.push(
       gsap.timeline({ scrollTrigger: { start: '100vh top', markers: isDebug, end: '+=0' } }),
@@ -73,6 +76,22 @@ function onGSAP() {
       );
     });
   });
+
+  // description tip-box
+  anim_description = gsap.timeline({
+    scrollTrigger: { trigger: '.tip-box', start: '-650px top', markers: isDebug, end: '+=0' },
+  });
+  anim_description
+    .from('.tip-box #img-head', { duration: 1.5, opacity: 0, y: 200 })
+    .from('.tip-box .right', { duration: 1, opacity: 0, y: -60 }, '-=0.95');
+
+  // proxy left
+  anim_proxy = gsap.timeline({
+    scrollTrigger: { trigger: '.proxy', start: '-400px top', markers: isDebug, end: '+=0' },
+  });
+  anim_proxy
+    .from('.proxy .info .title', { duration: 1.5, opacity: 0, y: 60 })
+    .from('.proxy .info .content', { duration: 1, opacity: 0, y: 60 }, '-=1.25');
 }
 
 function onAwake() {
