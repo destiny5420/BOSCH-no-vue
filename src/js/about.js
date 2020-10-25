@@ -8,7 +8,7 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
 // ***** variable *****
-let isDebug = true;
+let isDebug = false;
 let menuOpen = false;
 let anim_sloganShow;
 let animsDescription = [];
