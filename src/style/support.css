@@ -771,13 +771,13 @@ nav #menu.show::after {
   padding: 0px 20%;
 }
 
-.lists .lists-container .title {
-  font-size: 36px;
-  line-height: 2;
+.lists .lists-container > :nth-child(n) {
+  margin-bottom: 75px;
 }
 
-.lists .lists-container .block {
-  margin-bottom: 50px;
+.lists .lists-container .title {
+  font-size: 36px;
+  line-height: 3;
 }
 
 .lists .lists-container .list {
@@ -875,7 +875,7 @@ nav #menu.show::after {
 
 .lists .lists-container .list .list-symbol {
   display: inline-block;
-  margin-right: 30px;
+  margin-right: 20px;
 }
 
 .lists .lists-container .list .list-text {

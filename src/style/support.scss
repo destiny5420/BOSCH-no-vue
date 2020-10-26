@@ -13,13 +13,16 @@
     @include size(100%, auto);
     padding: 0px 20%;
 
+    > :nth-child(n) {
+      margin-bottom: 75px;
+    }
+
     .title {
       font-size: 36px;
-      line-height: 2;
+      line-height: 3;
     }
 
     .block {
-      margin-bottom: 50px;
     }
 
     .list {
@@ -81,7 +84,7 @@
 
       .list-symbol {
         display: inline-block;
-        margin-right: 30px;
+        margin-right: 20px;
       }
 
       .list-text {
