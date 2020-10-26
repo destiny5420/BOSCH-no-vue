@@ -67,7 +67,6 @@ ul {
   padding: 0px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border: 1px solid black;
 }
 
 .main-container {
@@ -772,29 +771,88 @@ nav #menu.show::after {
   padding: 0px 20%;
 }
 
-.lists .lists-container .list-title {
+.lists .lists-container .title {
   font-size: 36px;
   line-height: 2;
 }
 
-.lists .lists-container .list-block {
+.lists .lists-container .block {
   margin-bottom: 50px;
 }
 
 .lists .lists-container .list {
-  width: 100%;
-  height: auto;
   color: #fff;
-  background-color: #50237f;
+  position: relative;
   font-size: 20px;
   margin-bottom: 30px;
-  padding: 22px 35px;
+  -webkit-transition: -webkit-transform 0.25s ease-out;
+  transition: -webkit-transform 0.25s ease-out;
+  transition: transform 0.25s ease-out;
+  transition: transform 0.25s ease-out, -webkit-transform 0.25s ease-out;
+  color: #fff;
+}
+
+.lists .lists-container .list div[name='list-block'] {
+  width: 100%;
+  height: auto;
+  max-height: 80px;
+  opacity: 0.5;
+  background-color: #50237f;
+  -webkit-box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.25);
+          box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.25);
   overflow: hidden;
+  -webkit-transition: all 0.65s ease-out;
+  transition: all 0.65s ease-out;
+}
+
+.lists .lists-container .list input[name='toggle'] {
+  position: absolute;
+  content: '';
+  background-color: transform;
+  z-index: 1;
+  width: 100%;
+  height: 80px;
+  cursor: pointer;
+  opacity: 0;
+  top: 0px;
+  left: 0px;
+}
+
+.lists .lists-container .list input[name='toggle']:checked + div[name='list-block'] {
+  max-height: 240px;
+  opacity: 1;
+  -webkit-transition: all 0.45s ease-in;
+  transition: all 0.45s ease-in;
+}
+
+.lists .lists-container .list input[name='toggle']:checked + div[name='list-block'] .que-btn::before, .lists .lists-container .list input[name='toggle']:checked + div[name='list-block'] .que-btn::after {
+  -webkit-transform: rotateZ(45deg);
+          transform: rotateZ(45deg);
 }
 
 .lists .lists-container .list .question {
+  width: 100%;
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0px 35px;
   position: relative;
-  margin-bottom: 30px;
+}
+
+.lists .lists-container .list:hover {
+  -webkit-transform: translateX(-15px);
+          transform: translateX(-15px);
 }
 
 .lists .lists-container .list .answer {
@@ -811,6 +869,8 @@ nav #menu.show::after {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  padding: 0px 35px 22px 35px;
+  line-height: 1.75;
 }
 
 .lists .lists-container .list .list-symbol {
@@ -823,12 +883,44 @@ nav #menu.show::after {
 }
 
 .lists .lists-container .list .que-btn {
+  width: 25px;
+  height: 25px;
+  pointer-events: none;
+  position: relative;
+  float: right;
+}
+
+.lists .lists-container .list .que-btn::before {
   position: absolute;
   content: '';
-  background-color: transparent;
+  background-color: #fff;
   z-index: 1;
-  top: 0;
-  right: 0;
-  display: inline-block;
+  width: 100%;
+  height: 4px;
+  content: '';
+  top: calc(50% - (4px / 2));
+  -webkit-transform: rotateZ(0deg);
+          transform: rotateZ(0deg);
+  -webkit-transition: -webkit-transform 0.25s linear;
+  transition: -webkit-transform 0.25s linear;
+  transition: transform 0.25s linear;
+  transition: transform 0.25s linear, -webkit-transform 0.25s linear;
+}
+
+.lists .lists-container .list .que-btn::after {
+  position: absolute;
+  content: '';
+  background-color: #fff;
+  z-index: 1;
+  width: 4px;
+  height: 100%;
+  content: '';
+  left: calc(50% - (4px / 2));
+  -webkit-transform: rotateZ(0deg);
+          transform: rotateZ(0deg);
+  -webkit-transition: -webkit-transform 0.25s linear;
+  transition: -webkit-transform 0.25s linear;
+  transition: transform 0.25s linear;
+  transition: transform 0.25s linear, -webkit-transform 0.25s linear;
 }
 /*# sourceMappingURL=support.css.map */
