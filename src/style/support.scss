@@ -92,7 +92,7 @@
       }
 
       .que-btn {
-        $vh-unit: 25px;
+        $vh-unit: 20px;
         $line-width: 4px;
         @include size($vh-unit, $vh-unit);
         pointer-events: none;

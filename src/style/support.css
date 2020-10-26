@@ -883,8 +883,8 @@ nav #menu.show::after {
 }
 
 .lists .lists-container .list .que-btn {
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   pointer-events: none;
   position: relative;
   float: right;
