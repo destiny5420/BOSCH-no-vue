@@ -761,8 +761,74 @@ nav #menu.show::after {
   height: 500px;
 }
 
-.list {
+.lists {
   width: 100%;
-  height: 500px;
+  height: auto;
+}
+
+.lists .lists-container {
+  width: 100%;
+  height: auto;
+  padding: 0px 20%;
+}
+
+.lists .lists-container .list-title {
+  font-size: 36px;
+  line-height: 2;
+}
+
+.lists .lists-container .list-block {
+  margin-bottom: 50px;
+}
+
+.lists .lists-container .list {
+  width: 100%;
+  height: auto;
+  color: #fff;
+  background-color: #50237f;
+  font-size: 20px;
+  margin-bottom: 30px;
+  padding: 22px 35px;
+  overflow: hidden;
+}
+
+.lists .lists-container .list .question {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.lists .lists-container .list .answer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.lists .lists-container .list .list-symbol {
+  display: inline-block;
+  margin-right: 30px;
+}
+
+.lists .lists-container .list .list-text {
+  display: inline-block;
+}
+
+.lists .lists-container .list .que-btn {
+  position: absolute;
+  content: '';
+  background-color: transparent;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  display: inline-block;
 }
 /*# sourceMappingURL=support.css.map */

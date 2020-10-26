@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.0",
+    "axios": "^0.21.0",
     "gsap": "^3.5.1",
     "jquery": "^3.5.1",
     "vue": "^2.6.12"

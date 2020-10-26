@@ -6,6 +6,55 @@
   @include size(100%, 500px);
 }
 
-.list {
-  @include size(100%, 500px);
+.lists {
+  @include size(100%, auto);
+
+  .lists-container {
+    @include size(100%, auto);
+    padding: 0px 20%;
+
+    .list-title {
+      font-size: 36px;
+      line-height: 2;
+    }
+
+    .list-block {
+      margin-bottom: 50px;
+    }
+
+    .list {
+      @include size(100%, auto);
+      color: #fff;
+      background-color: #50237f;
+      font-size: 20px;
+      margin-bottom: 30px;
+      padding: 22px 35px;
+      overflow: hidden;
+
+      .question {
+        position: relative;
+        margin-bottom: 30px;
+      }
+
+      .answer {
+        @include flex-layout(row, flex-start, flex-start);
+      }
+
+      .list-symbol {
+        display: inline-block;
+        margin-right: 30px;
+      }
+
+      .list-text {
+        display: inline-block;
+      }
+
+      .que-btn {
+        @include independent(transparent);
+        top: 0;
+        right: 0;
+        display: inline-block;
+      }
+    }
+  }
 }
