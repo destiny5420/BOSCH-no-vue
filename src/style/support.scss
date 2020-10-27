@@ -34,39 +34,15 @@
       font-size: 20px;
       margin-bottom: 30px;
       transition: all 0.55s ease-out;
-
+      cursor: pointer;
       color: $color_white;
+      box-shadow: 7px 7px 15px 0px rgba(0, 0, 0, 0.25);
 
       div[name='list-block'] {
         @include size(100%, auto);
-        // max-height: $view-height;
         opacity: 0.5;
         background-color: #50237f;
-        box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.25);
-        overflow: hidden;
-        transition: all 0.65s ease-out;
         pointer-events: none;
-      }
-
-      input[name='toggle'] {
-        @include independent(transform);
-        @include size(100%, $view-height);
-        cursor: pointer;
-        opacity: 0;
-        top: 0px;
-        left: 0px;
-      }
-
-      input[name='toggle']:checked + div[name='list-block'] {
-        max-height: 240px;
-        opacity: 1;
-        .que-btn {
-          &::before,
-          &::after {
-            transform: rotateZ(45deg);
-          }
-        }
-        transition: all 0.45s ease-in;
       }
 
       .question {
@@ -74,7 +50,17 @@
         @include flex-layout(row, space-between, center);
         position: relative;
         padding: 0px 35px;
-        pointer-events: none;
+        // pointer-events: none;
+        cursor: pointer;
+      }
+
+      .question.show {
+        .que-btn {
+          &::before,
+          &::after {
+            transform: rotateZ(45deg);
+          }
+        }
       }
 
       &:hover {

@@ -789,7 +789,10 @@ nav #menu.show::after {
   margin-bottom: 30px;
   -webkit-transition: all 0.55s ease-out;
   transition: all 0.55s ease-out;
+  cursor: pointer;
   color: #fff;
+  -webkit-box-shadow: 7px 7px 15px 0px rgba(0, 0, 0, 0.25);
+          box-shadow: 7px 7px 15px 0px rgba(0, 0, 0, 0.25);
 }
 
 .lists .lists-container .list div[name='list-block'] {
@@ -797,37 +800,7 @@ nav #menu.show::after {
   height: auto;
   opacity: 0.5;
   background-color: #50237f;
-  -webkit-box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.25);
-          box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.25);
-  overflow: hidden;
-  -webkit-transition: all 0.65s ease-out;
-  transition: all 0.65s ease-out;
   pointer-events: none;
-}
-
-.lists .lists-container .list input[name='toggle'] {
-  position: absolute;
-  content: '';
-  background-color: transform;
-  z-index: 1;
-  width: 100%;
-  height: 80px;
-  cursor: pointer;
-  opacity: 0;
-  top: 0px;
-  left: 0px;
-}
-
-.lists .lists-container .list input[name='toggle']:checked + div[name='list-block'] {
-  max-height: 240px;
-  opacity: 1;
-  -webkit-transition: all 0.45s ease-in;
-  transition: all 0.45s ease-in;
-}
-
-.lists .lists-container .list input[name='toggle']:checked + div[name='list-block'] .que-btn::before, .lists .lists-container .list input[name='toggle']:checked + div[name='list-block'] .que-btn::after {
-  -webkit-transform: rotateZ(45deg);
-          transform: rotateZ(45deg);
 }
 
 .lists .lists-container .list .question {
@@ -848,7 +821,12 @@ nav #menu.show::after {
           align-items: center;
   position: relative;
   padding: 0px 35px;
-  pointer-events: none;
+  cursor: pointer;
+}
+
+.lists .lists-container .list .question.show .que-btn::before, .lists .lists-container .list .question.show .que-btn::after {
+  -webkit-transform: rotateZ(45deg);
+          transform: rotateZ(45deg);
 }
 
 .lists .lists-container .list:hover {
