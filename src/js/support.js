@@ -128,7 +128,8 @@ function onGSAP() {
       .timeline({
         scrollTrigger: {
           trigger: move_blocks[i],
-          start: 'bottom bottom',
+          toggleActions: 'restart none none none',
+          start: '-=60px bottom',
         },
       })
       .from(move_blocks[i], {
@@ -152,7 +153,12 @@ function onGSAP() {
   for (let i = 0; i < all_title.length; i++) {
     gsap
       .timeline({
-        scrollTrigger: { trigger: all_title[i], start: 'bottom 95%', markers: marker },
+        scrollTrigger: {
+          trigger: all_title[i],
+          toggleActions: 'restart none none none',
+          start: '-=120px 95%',
+          markers: true,
+        },
       })
       .from(all_title[i], { opacity: 0, y: 100, duration: 0.75, ease: 'power1.out' });
   }
@@ -160,9 +166,19 @@ function onGSAP() {
   // setting company info trigger animation
   gsap
     .timeline({
-      scrollTrigger: { trigger: $('#company .info'), start: 'middle bottom' },
+      scrollTrigger: {
+        trigger: $('#company .info'),
+        toggleActions: 'restart none none none',
+        start: '-=60px bottom',
+      },
     })
-    .from($('#company .info'), { opacity: 0, y: 60, duration: 0.75, ease: 'power1.out' });
+    .from($('#company .info'), {
+      delay: 0.25,
+      opacity: 0,
+      y: 60,
+      duration: 0.75,
+      ease: 'power1.out',
+    });
 
   // console.log('all_list: ', all_list);
 

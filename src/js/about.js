@@ -100,7 +100,7 @@ function onGSAP() {
   });
   anim_proxy
     .from('.proxy .info .title', { duration: 1.5, opacity: 0, y: 60 })
-    .from('.proxy .info .content', { duration: 1, opacity: 0, y: 60 }, '-=1.25');
+    .from('.proxy .info .content', { duration: 1, opacity: 0, y: 60 }, '-=1');
 }
 
 function onAwake() {
