@@ -157,7 +157,6 @@ function onGSAP() {
           trigger: all_title[i],
           toggleActions: 'restart none none none',
           start: '-=120px 95%',
-          markers: true,
         },
       })
       .from(all_title[i], { opacity: 0, y: 100, duration: 0.75, ease: 'power1.out' });
