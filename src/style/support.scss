@@ -28,20 +28,24 @@
     .list {
       $view-height: 80px;
       color: $color_white;
+      max-height: $view-height;
+      overflow: hidden;
       position: relative;
       font-size: 20px;
       margin-bottom: 30px;
-      transition: transform 0.25s ease-out;
+      transition: all 0.55s ease-out;
+
       color: $color_white;
 
       div[name='list-block'] {
         @include size(100%, auto);
-        max-height: $view-height;
+        // max-height: $view-height;
         opacity: 0.5;
         background-color: #50237f;
         box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.25);
         overflow: hidden;
         transition: all 0.65s ease-out;
+        pointer-events: none;
       }
 
       input[name='toggle'] {
@@ -68,8 +72,9 @@
       .question {
         @include size(100%, $view-height);
         @include flex-layout(row, space-between, center);
-        padding: 0px 35px;
         position: relative;
+        padding: 0px 35px;
+        pointer-events: none;
       }
 
       &:hover {
