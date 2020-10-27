@@ -9,11 +9,28 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 
 // ***** variable *****
 let isDebug = false;
-let menuOpen = false;
 let anim_sloganShow;
 let animsDescription = [];
 let anim_description;
 let anim_proxy;
+
+let menu = (function () {
+  var menuOpen = false;
+
+  return {
+    toggleMenu: function () {
+      if (menuOpen) {
+        menuOpen = false;
+        $('#menu').removeClass('show');
+        $('#menu-window').fadeOut(100);
+      } else {
+        menuOpen = true;
+        $('#menu').addClass('show');
+        $('#menu-window').fadeIn(100);
+      }
+    },
+  };
+})();
 
 function onEventBinding() {
   // keydown
@@ -29,15 +46,7 @@ function onEventBinding() {
 
   // menu button
   $('#menu').on('click', function (e) {
-    if (menuOpen) {
-      menuOpen = false;
-      $('#menu').removeClass('show');
-      $('#menu-window').fadeOut(100);
-    } else {
-      menuOpen = true;
-      $('#menu').addClass('show');
-      $('#menu-window').fadeIn(100);
-    }
+    menu.toggleMenu();
   });
 }
 

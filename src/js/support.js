@@ -19,6 +19,24 @@ let faqDatas = {
   clickAnim: [],
 };
 
+let menu = (function () {
+  var menuOpen = false;
+
+  return {
+    toggleMenu: function () {
+      if (menuOpen) {
+        menuOpen = false;
+        $('#menu').removeClass('show');
+        $('#menu-window').fadeOut(100);
+      } else {
+        menuOpen = true;
+        $('#menu').addClass('show');
+        $('#menu-window').fadeIn(100);
+      }
+    },
+  };
+})();
+
 function onLoadingData() {
   console.log('*** onLoadingData ***');
 
@@ -79,6 +97,11 @@ function onEventBinding() {
       faqDatas.toggle[i] = !faqDatas.toggle[i];
     });
   }
+
+  // menu button
+  $('#menu').on('click', function (e) {
+    menu.toggleMenu();
+  });
 }
 
 function onGSAP() {
