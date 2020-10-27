@@ -24,7 +24,7 @@ function onLoadingData() {
 
   // setting template append result to DOM
   var template_html =
-    "<div class='list'><div name='list-block'><div class='question'><div><div class='tch-b list-symbol'>Q</div><div class='tch-b list-text'>{{question}}</div></div><div class='que-btn'></div></div><div class='answer'><div class='tch-b list-symbol'>A</div><div class='tch-r list-text'>{{answer}}</div></div></div></div>";
+    "<div class='move-block'><div class='list'><div name='list-block'><div class='question'><div><div class='tch-b list-symbol'>Q</div><div class='tch-b list-text'>{{question}}</div></div><div class='que-btn'></div></div><div class='answer'><div class='tch-b list-symbol'>A</div><div class='tch-r list-text'>{{answer}}</div></div></div></div></div>";
 
   for (let i = 0; i < faq_collections.common.length; i++) {
     var current_list = template_html
@@ -38,6 +38,13 @@ function onLoadingData() {
       .replace('{{question}}', faq_collections.service[i].question)
       .replace('{{answer}}', faq_collections.service[i].answer);
     $('#service .block').append(current_list);
+  }
+
+  for (let i = 0; i < faq_collections.shopinfo.length; i++) {
+    var current_list = template_html
+      .replace('{{question}}', faq_collections.shopinfo[i].question)
+      .replace('{{answer}}', faq_collections.shopinfo[i].answer);
+    $('#shopinfo .block').append(current_list);
   }
 
   // setting originHeight
@@ -56,7 +63,7 @@ function onEventBinding() {
     faqDatas.showMaxHeight.push(allList[i].children[0].clientHeight);
 
     allList[i].addEventListener('click', (e) => {
-      console.log(e);
+      // console.log(e);
 
       if (faqDatas.toggle[i] === false) {
         e.target.style.transitionDuration = faqDatas.showMaxHeight[i] >= 200 ? '' : '0.35s';
@@ -72,8 +79,6 @@ function onEventBinding() {
       faqDatas.toggle[i] = !faqDatas.toggle[i];
     });
   }
-
-  // console.log('allList: ', allList);
 }
 
 function onGSAP() {
@@ -89,25 +94,36 @@ function onGSAP() {
   headAnim
     .from('#common', { duration: 1, opacity: 0, x: -100 })
     .from('#service', { duration: 1, opacity: 0, x: -100 }, '-=1')
-    .from('#shopinfo', { duration: 1, opacity: 0, x: -100 }, '-=1');
+    .from('#shopinfo', { duration: 1, opacity: 0, x: -100 }, '-=1')
+    .from('#company', { duration: 1, opacity: 0, x: -100 }, '-=1');
 
   // list show animation
-  let all_list = $('.lists-container .list');
-  for (let i = 0; i < all_list.length; i++) {
-    // setting trigger anim
+  let move_blocks = $('.lists-container .move-block');
+  for (let i = 0; i < move_blocks.length; i++) {
     gsap
       .timeline({
-        scrollTrigger: { trigger: all_list[i], start: 'bottom bottom' },
+        scrollTrigger: {
+          trigger: move_blocks[i],
+          start: 'bottom bottom',
+        },
       })
-      .from(all_list[i], { opacity: 0, y: 40, duration: 0.55, ease: 'power1.out' });
+      .from(move_blocks[i], {
+        opacity: 0,
+        y: 60,
+        duration: 0.75,
+        ease: 'power1.out',
+      });
 
     faqDatas.clickAnim.push(
-      gsap
-        .timeline({ paused: true })
-        .to(all_list[i].children[0], { duration: 0.45, opacity: 1, ease: 'power1.inOut' }),
+      gsap.timeline({ paused: true }).to(move_blocks[i].children[0].children[0], {
+        duration: 0.45,
+        opacity: 1,
+        ease: 'power1.inOut',
+      }),
     );
   }
 
+  // setting list of title trigger animation
   let all_title = $('.lists-container .title');
   for (let i = 0; i < all_title.length; i++) {
     gsap
@@ -117,7 +133,15 @@ function onGSAP() {
       .from(all_title[i], { opacity: 0, y: 60, duration: 0.75, ease: 'power1.out' });
   }
 
-  console.log('all_list: ', all_list);
+  // setting company info trigger animation
+  gsap
+    .timeline({
+      scrollTrigger: { trigger: $('#company .info'), start: 'middle bottom' },
+    })
+    .from($('#company .info'), { opacity: 0, y: 60, duration: 0.75, ease: 'power1.out' });
+
+  // console.log('all_list: ', all_list);
+
   // list click animation
   tmpAnim = gsap.timeline({ paused: true });
   tmpAnim.to($('div[name="list-block"]')[0], { duration: 0.35, opacity: 1, ease: 'power1.out' });

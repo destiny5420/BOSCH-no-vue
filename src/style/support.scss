@@ -11,10 +11,66 @@
 
   .lists-container {
     @include size(100%, auto);
-    padding: 0px 20%;
+    padding: 0px 20% 220px 20%;
 
     > :nth-child(n) {
       margin-bottom: 75px;
+    }
+
+    > :last-child {
+      margin-bottom: 0px;
+    }
+
+    #company {
+      .title {
+        position: relative;
+        font-size: 72px;
+        line-height: 2;
+
+        &::before {
+          @include independent(black);
+          @include size(8%, 9px);
+          content: '';
+          background-color: $color_purple;
+          opacity: 0.5;
+          box-shadow: 7px 7px 15px 0px rgba(0, 0, 0, 0.25);
+          bottom: 0px;
+          left: 0px;
+        }
+      }
+
+      .info {
+        @include size(100%, auto);
+        @include flex-layout(row, center, flex-start);
+
+        #title {
+          flex: 1;
+          height: 100%;
+          font-size: 36px;
+          display: inline-block;
+        }
+
+        #content {
+          flex: 4;
+          height: 100%;
+          display: inline-block;
+          background-color: $color_purple;
+          padding: 37px;
+
+          font-size: 20px;
+          color: $color_white;
+
+          > div {
+            :first-child {
+              @include size(125px, auto);
+            }
+          }
+
+          p {
+            display: inline-block;
+          }
+        }
+      }
     }
 
     .title {
@@ -23,89 +79,88 @@
     }
 
     .block {
-    }
-
-    .list {
-      $view-height: 80px;
-      color: $color_white;
-      max-height: $view-height;
-      overflow: hidden;
-      position: relative;
-      font-size: 20px;
-      margin-bottom: 30px;
-      transition: all 0.55s ease-out;
-      cursor: pointer;
-      color: $color_white;
-      box-shadow: 7px 7px 15px 0px rgba(0, 0, 0, 0.25);
-
-      div[name='list-block'] {
-        @include size(100%, auto);
-        opacity: 0.5;
-        background-color: #50237f;
-        pointer-events: none;
-      }
-
-      .question {
-        @include size(100%, $view-height);
-        @include flex-layout(row, space-between, center);
+      .list {
+        $view-height: 80px;
+        color: $color_white;
+        max-height: $view-height;
+        overflow: hidden;
         position: relative;
-        padding: 0px 35px;
-        // pointer-events: none;
+        font-size: 20px;
+        margin-bottom: 30px;
+        transition: all 0.35s ease-out;
         cursor: pointer;
-      }
+        color: $color_white;
+        box-shadow: 7px 7px 15px 0px rgba(0, 0, 0, 0.25);
 
-      .question.show {
-        .que-btn {
-          &::before,
-          &::after {
-            transform: rotateZ(45deg);
+        div[name='list-block'] {
+          @include size(100%, auto);
+          background-color: $color_purple;
+          opacity: 0.5;
+          pointer-events: none;
+        }
+
+        .question {
+          @include size(100%, $view-height);
+          @include flex-layout(row, space-between, center);
+          position: relative;
+          padding: 0px 35px;
+          // pointer-events: none;
+          cursor: pointer;
+        }
+
+        .question.show {
+          .que-btn {
+            &::before,
+            &::after {
+              transform: rotateZ(45deg);
+            }
           }
         }
-      }
 
-      &:hover {
-        transform: translateX(-15px);
-      }
-
-      .answer {
-        @include flex-layout(row, flex-start, flex-start);
-        padding: 0px 35px 22px 35px;
-        line-height: 1.75;
-      }
-
-      .list-symbol {
-        display: inline-block;
-        margin-right: 20px;
-      }
-
-      .list-text {
-        display: inline-block;
-      }
-
-      .que-btn {
-        $vh-unit: 20px;
-        $line-width: 4px;
-        @include size($vh-unit, $vh-unit);
-        pointer-events: none;
-        position: relative;
-        float: right;
-
-        &::before {
-          @include independent($color_white);
-          @include size(100%, $line-width);
-          content: '';
-          top: calc(50% - (#{$line-width} / 2));
-          transform: rotateZ(0deg);
-          transition: transform 0.25s linear;
+        &:hover {
+          transform: translateX(-25px);
         }
 
-        &::after {
-          @include independent($color_white);
-          @include size($line-width, 100%);
-          content: '';
-          left: calc(50% - (#{$line-width} / 2));
-          transform: rotateZ(0deg);
-          transition: transform 0.25s linear;
+        .answer {
+          @include flex-layout(row, flex-start, flex-start);
+          padding: 0px 35px 22px 35px;
+          line-height: 1.75;
+        }
+
+        .list-symbol {
+          display: inline-block;
+          margin-right: 20px;
+        }
+
+        .list-text {
+          display: inline-block;
+        }
+
+        .que-btn {
+          $vh-unit: 20px;
+          $line-width: 4px;
+          @include size($vh-unit, $vh-unit);
+          pointer-events: none;
+          position: relative;
+          float: right;
+
+          &::before {
+            @include independent($color_white);
+            @include size(100%, $line-width);
+            content: '';
+            top: calc(50% - (#{$line-width} / 2));
+            transform: rotateZ(0deg);
+            transition: transform 0.25s linear;
+          }
+
+          &::after {
+            @include independent($color_white);
+            @include size($line-width, 100%);
+            content: '';
+            left: calc(50% - (#{$line-width} / 2));
+            transform: rotateZ(0deg);
+            transition: transform 0.25s linear;
+          }
         }
       }
     }
