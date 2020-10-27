@@ -33,12 +33,13 @@
   }
 
   .bg {
+    @include flex-layout(row, flex-start, center);
     .txt-faq {
+      @include flex-layout(row, flex-start, center);
       overflow: hidden;
       white-space: nowrap;
-
       :nth-child(n) {
-        margin-right: 50px;
+        margin-right: 60px;
       }
     }
   }
