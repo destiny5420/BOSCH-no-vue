@@ -452,6 +452,10 @@ nav #menu.show::after {
   padding: 5px;
 }
 
+.frame {
+  overflow: hidden;
+}
+
 .tch-r {
   font-family: 'Bosch Sans CHS Regular';
 }

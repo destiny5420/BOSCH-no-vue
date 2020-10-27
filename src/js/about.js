@@ -62,7 +62,7 @@ function onGSAP() {
   sloganWordList.forEach((element) => {
     anim_sloganShow.from(
       element,
-      { duration: 0.75, opacity: 0.5, y: 65, ease: 'power1.out' },
+      { duration: 0.75, opacity: 0, y: 65, ease: 'power1.out' },
       '-=0.7',
     );
   });

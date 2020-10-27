@@ -11,6 +11,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 import faq_collections from '../files/jsons/question.json';
 
 // ***** variable *****
+let marker = false;
 let tmpAnim = null;
 let faqDatas = {
   originHeight: 0,
@@ -151,9 +152,9 @@ function onGSAP() {
   for (let i = 0; i < all_title.length; i++) {
     gsap
       .timeline({
-        scrollTrigger: { trigger: all_title[i], start: 'middle bottom' },
+        scrollTrigger: { trigger: all_title[i], start: 'bottom 95%', markers: marker },
       })
-      .from(all_title[i], { opacity: 0, y: 60, duration: 0.75, ease: 'power1.out' });
+      .from(all_title[i], { opacity: 0, y: 100, duration: 0.75, ease: 'power1.out' });
   }
 
   // setting company info trigger animation
@@ -168,6 +169,12 @@ function onGSAP() {
   // list click animation
   tmpAnim = gsap.timeline({ paused: true });
   tmpAnim.to($('div[name="list-block"]')[0], { duration: 0.35, opacity: 1, ease: 'power1.out' });
+
+  // scroll pointer
+  gsap
+    .timeline({ repeat: -1 })
+    .from('#scroll-point', { delay: 0.5, y: 20, opacity: 0, duration: 0.75, ease: 'linear' })
+    .to('#scroll-point', { y: -12, opacity: 0, duration: 0.75, ease: 'power1.out' });
 }
 
 function onAwake() {

@@ -452,6 +452,10 @@ nav #menu.show::after {
   padding: 5px;
 }
 
+.frame {
+  overflow: hidden;
+}
+
 .tch-r {
   font-family: 'Bosch Sans CHS Regular';
 }
@@ -763,6 +767,7 @@ nav #menu.show::after {
 .lists {
   width: 100%;
   height: auto;
+  position: relative;
 }
 
 .lists .lists-container {
@@ -975,5 +980,58 @@ nav #menu.show::after {
   transition: -webkit-transform 0.25s linear;
   transition: transform 0.25s linear;
   transition: transform 0.25s linear, -webkit-transform 0.25s linear;
+}
+
+.lists #scroll-point {
+  width: 50px;
+  height: 100px;
+  position: absolute;
+  content: '';
+  background-color: transform;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  bottom: calc(0px - (100px / 2));
+  left: calc(50% - (50px / 2));
+}
+
+.lists #scroll-point #point {
+  width: 1px;
+  height: 75px;
+  opacity: 0.75;
+  background-color: black;
+  margin-bottom: 10px;
+}
+
+.lists #scroll-point #point::before {
+  width: 1px;
+  height: 10px;
+  position: absolute;
+  content: '';
+  background-color: black;
+  z-index: 1;
+  content: '';
+  top: 0px;
+  left: calc(50% - (1px / 2));
+  -webkit-transform-origin: top center;
+          transform-origin: top center;
+  -webkit-transform: rotateZ(25deg);
+          transform: rotateZ(25deg);
+}
+
+.lists #scroll-point P {
+  text-align: center;
+  line-height: 1;
 }
 /*# sourceMappingURL=support.css.map */
