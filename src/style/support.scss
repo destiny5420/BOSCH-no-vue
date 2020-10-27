@@ -3,7 +3,45 @@
 @import '../common/style/_font.scss';
 
 .slogan {
-  @include size(100%, 500px);
+  @include size(100%, 700px);
+  @include flex-layout(column, center, center);
+  padding: 100px 0px;
+  position: relative;
+
+  .content {
+    $width: 150px;
+    $height: 300px;
+    @include size($width, $height);
+    @include independent(transform);
+    @include flex-layout(column, center, center);
+    top: calc(50% - (#{$height / 2}));
+    left: calc(50% - (#{$width / 2}));
+
+    > p {
+      line-height: 1;
+      color: #525f6b;
+    }
+
+    p[name='issue'] {
+      font-size: 20px;
+    }
+
+    p[name='eng'] {
+      font-size: 60px;
+      margin-bottom: 30px;
+    }
+  }
+
+  .bg {
+    .txt-faq {
+      overflow: hidden;
+      white-space: nowrap;
+
+      :nth-child(n) {
+        margin-right: 50px;
+      }
+    }
+  }
 }
 
 .lists {

@@ -761,7 +761,69 @@ nav #menu.show::after {
 
 .slogan {
   width: 100%;
-  height: 500px;
+  height: 700px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 100px 0px;
+  position: relative;
+}
+
+.slogan .content {
+  width: 150px;
+  height: 300px;
+  position: absolute;
+  content: '';
+  background-color: transform;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: calc(50% - (150px));
+  left: calc(50% - (75px));
+}
+
+.slogan .content > p {
+  line-height: 1;
+  color: #525f6b;
+}
+
+.slogan .content p[name='issue'] {
+  font-size: 20px;
+}
+
+.slogan .content p[name='eng'] {
+  font-size: 60px;
+  margin-bottom: 30px;
+}
+
+.slogan .bg .txt-faq {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.slogan .bg .txt-faq :nth-child(n) {
+  margin-right: 50px;
 }
 
 .lists {
