@@ -8,6 +8,9 @@ import '../images/support_pic_01.png';
 // import jquery
 import $ from 'jquery';
 
+// import global.js
+import globalCommand from '../js/global.js';
+
 // import gsap
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -118,6 +121,9 @@ function onEventBinding() {
   $('#menu').on('click', function (e) {
     menu.toggleMenu();
   });
+
+  // global binging
+  globalCommand.globalBinding();
 }
 
 function onGSAP() {

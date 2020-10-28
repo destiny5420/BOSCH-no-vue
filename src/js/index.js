@@ -16,6 +16,9 @@ import '../images/home_txt_01.png';
 // import jquery
 import $ from 'jquery';
 
+// import global.js
+import globalCommand from '../js/global.js';
+
 // import gsap
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -53,6 +56,9 @@ function onEventBinding() {
     window.location.href = './about.html';
   });
 
+  // global binging
+  globalCommand.globalBinding();
+
   $('.faq-container #btn-question').on('click', () => {
     window.location.href = './support.html';
   });
@@ -80,7 +86,7 @@ function onGSAP() {
   var imgList = Array.from($('.faq-container #faq-blocks-bg >div'));
   imgList.forEach((element, index) => {
     var duationTime = getRandomInt(10, 55);
-    console.log('duationTime: ', duationTime);
+    // console.log('duationTime: ', duationTime);
     gsap.to(element, {
       duration: duationTime,
       x: index % 2 === 0 ? 1218 : -1220,
@@ -88,7 +94,6 @@ function onGSAP() {
       ease: 'linear',
     });
   });
-  console.log(imgList);
 }
 
 function onAwake() {

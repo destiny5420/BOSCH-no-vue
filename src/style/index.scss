@@ -326,6 +326,7 @@ header {
 .faq-container {
   @include flex-layout(column, flex-start, center);
   position: relative;
+  margin-bottom: 150px;
 
   .faq-title {
     text-align: center;
@@ -335,11 +336,12 @@ header {
 
   .faq-sub-title {
     text-align: center;
+    margin-bottom: 40px;
   }
 
   .faq-blocks {
-    margin: 40px 0px;
     position: relative;
+    margin-bottom: 40px;
 
     #faq-blocks-content {
       @include size(1200px, auto);
@@ -407,9 +409,7 @@ header {
     @include size(100%, auto);
     @include independent(transparent);
     @include flex-layout(column, center, center);
-    overflow: hidden;
-    // top: 50%;
-    // transform: translateY(-50%);
+
     bottom: 0px;
     opacity: 0.125;
 

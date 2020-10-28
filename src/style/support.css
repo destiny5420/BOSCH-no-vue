@@ -244,6 +244,7 @@ nav #home {
   content: '';
   background-color: transparent;
   z-index: 1;
+  cursor: pointer;
   top: 35px;
   left: 300px;
 }
@@ -818,6 +819,8 @@ nav #menu.show::after {
 }
 
 .slogan .bg {
+  width: 100%;
+  height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

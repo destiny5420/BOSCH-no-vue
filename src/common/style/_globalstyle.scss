@@ -217,6 +217,7 @@ nav {
 
   #home {
     @include independent(transparent);
+    cursor: pointer;
     top: 35px;
     left: 300px;
   }
