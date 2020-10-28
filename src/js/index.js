@@ -52,6 +52,10 @@ function onEventBinding() {
     console.log('be clicked!!');
     window.location.href = './about.html';
   });
+
+  $('.faq-container #btn-question').on('click', () => {
+    window.location.href = './support.html';
+  });
 }
 
 function onGSAP() {
