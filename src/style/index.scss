@@ -45,16 +45,65 @@
 header {
   @include size(100%, 100vh);
   @include flex-layout(row, center, center);
+  position: relative;
   margin-bottom: 200px;
 
-  #slogan {
-    font-size: 34px;
-    transform: translateX(100px);
-    opacity: 0;
+  #content {
+    @include size(50%, 500px);
+    @include flex-layout(row, space-between, center);
 
-    @include phone-width() {
-      @include size(85%, 300px);
+    .left {
+      position: relative;
+      z-index: 2;
+
+      .title,
+      .sub-title {
+        line-height: 1;
+      }
+
+      .title {
+        height: 144px;
+        div {
+          transform-origin: bottom;
+          max-height: 144px;
+          font-size: 144px;
+          color: #e20015;
+        }
+      }
+
+      .sub-title {
+        font-size: 80px;
+      }
     }
+
+    .right {
+      @include size(200px, 100%);
+      position: relative;
+
+      .bg {
+        @include independent(transparent);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      img {
+        @include independent(transparent);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: relative;
+        z-index: 2;
+      }
+    }
+  }
+
+  #slogan {
+    @include independent(transparent);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 34px;
   }
 }
 
@@ -422,4 +471,10 @@ header {
       }
     }
   }
+}
+
+.text-char {
+  margin: 0;
+  display: inline-block;
+  line-height: 1;
 }

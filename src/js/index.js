@@ -7,14 +7,17 @@ import '../images/home_img_01.png';
 import '../images/home_img_02.png';
 import '../images/home_img_03.png';
 import '../images/home_img_04.png';
+import '../images/home_img_05.png';
 import '../images/home_txt_00.png';
 import '../images/home_txt_01.png';
 
 // import global.js
 import { globalCommand, $, gsap, ScrollTrigger } from '../js/global.js';
+import formula from '../js/formula';
 
 // ***** variable *****
 let isDebug = false;
+let headTimeline;
 
 let menu = (function () {
   var menuOpen = false;
@@ -60,22 +63,29 @@ function onGSAP() {
   // Regist Plugin
   gsap.registerPlugin(ScrollTrigger);
 
-  let headerContent = gsap.timeline({
-    scrollTrigger: {
-      start: '5vh top',
-      markers: false,
-    },
-  });
+  headTimeline = gsap
+    .timeline({ defaults: { ease: 'power1.out' }, paused: true })
+    .from($('header #content .sub-title'), {
+      y: -50,
+      opacity: 0,
+      duration: 1,
+    })
+    .from($('header .left .title >div'), { maxHeight: 0, duration: 1 }, '-=0.5')
+    .from($('header .right .bg'), { x: 100, opacity: 0, duration: 1.5 }, '-=1.25')
+    .from($('header .right img'), { y: 100, opacity: 0, duration: 1.5 }, '-=1');
 
-  headerContent.to('header p', {
-    x: 0,
-    opacity: 1,
-    duration: 1,
+  Array.from($('header #slogan .text-char')).forEach((e, index) => {
+    gsap
+      .timeline({
+        onComplete: () => (index === 7 ? headTimeline.play() : null),
+      })
+      .from(e, { y: 100, duration: 1, ease: 'linear', delay: index * 0.035 })
+      .to(e, { y: -100, duration: 0.75, ease: 'linear', delay: 1.25 });
   });
 
   var imgList = Array.from($('.faq-container #faq-blocks-bg >div'));
   imgList.forEach((element, index) => {
-    var duationTime = getRandomInt(10, 55);
+    var duationTime = formula.getRandomInt(10, 55);
     // console.log('duationTime: ', duationTime);
     gsap.to(element, {
       duration: duationTime,
@@ -97,9 +107,3 @@ function onAwake() {
 $(function () {
   onAwake();
 });
-
-function getRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值
-}

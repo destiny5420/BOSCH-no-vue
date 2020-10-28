@@ -67,6 +67,7 @@ ul {
   padding: 0px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  border: 1px solid black;
 }
 
 .main-container {
@@ -831,21 +832,94 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
   margin-bottom: 200px;
 }
 
-header #slogan {
-  font-size: 34px;
-  -webkit-transform: translateX(100px);
-          transform: translateX(100px);
-  opacity: 0;
+header #content {
+  width: 50%;
+  height: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-@media all and (max-width: 479px) {
-  header #slogan {
-    width: 85%;
-    height: 300px;
-  }
+header #content .left {
+  position: relative;
+  z-index: 2;
+}
+
+header #content .left .title,
+header #content .left .sub-title {
+  line-height: 1;
+}
+
+header #content .left .title {
+  height: 144px;
+}
+
+header #content .left .title div {
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  max-height: 144px;
+  font-size: 144px;
+  color: #e20015;
+}
+
+header #content .left .sub-title {
+  font-size: 80px;
+}
+
+header #content .right {
+  width: 200px;
+  height: 100%;
+  position: relative;
+}
+
+header #content .right .bg {
+  position: absolute;
+  content: '';
+  background-color: transparent;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+header #content .right img {
+  position: absolute;
+  content: '';
+  background-color: transparent;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  position: relative;
+  z-index: 2;
+}
+
+header #slogan {
+  position: absolute;
+  content: '';
+  background-color: transparent;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 34px;
 }
 
 .products {
@@ -1390,5 +1464,11 @@ header #slogan {
 
 .faq-container #faq-blocks-bg > div:last-child {
   margin-bottom: 0px;
+}
+
+.text-char {
+  margin: 0;
+  display: inline-block;
+  line-height: 1;
 }
 /*# sourceMappingURL=index.css.map */
