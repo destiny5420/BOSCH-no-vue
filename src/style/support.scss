@@ -229,38 +229,4 @@
       }
     }
   }
-
-  #scroll-point {
-    $width: 50px;
-    $height: 100px;
-    @include size($width, $height);
-    @include independent(transform);
-    @include flex-layout(column, flex-start, center);
-    bottom: calc(0px - (#{$height} / 2));
-    left: calc(50% - (#{$width} / 2));
-
-    #point {
-      @include size(1px, 75px);
-
-      opacity: 0.75;
-      background-color: black;
-      margin-bottom: 10px;
-
-      &::before {
-        $width: 1px;
-        @include size($width, 10px);
-        @include independent(black);
-        content: '';
-        top: 0px;
-        left: calc(50% - (#{$width} / 2));
-        transform-origin: top center;
-        transform: rotateZ(25deg);
-      }
-    }
-
-    P {
-      text-align: center;
-      line-height: 1;
-    }
-  }
 }

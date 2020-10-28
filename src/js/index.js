@@ -94,6 +94,12 @@ function onGSAP() {
       ease: 'linear',
     });
   });
+
+  // top pointer
+  gsap
+    .timeline({ repeat: -1 })
+    .from('#top-point', { delay: 0.5, y: 20, opacity: 0, duration: 0.75, ease: 'linear' })
+    .to('#top-point', { y: -12, opacity: 0, duration: 0.75, ease: 'power1.out' });
 }
 
 function onAwake() {

@@ -201,11 +201,11 @@ function onGSAP() {
 
   gsap.to($('.txt-question'), { x: -1219, duration: 15, repeat: -1, ease: 'linear' });
 
-  // scroll pointer
+  // top pointer
   gsap
     .timeline({ repeat: -1 })
-    .from('#scroll-point', { delay: 0.5, y: 20, opacity: 0, duration: 0.75, ease: 'linear' })
-    .to('#scroll-point', { y: -12, opacity: 0, duration: 0.75, ease: 'power1.out' });
+    .from('#top-point', { delay: 0.5, y: 20, opacity: 0, duration: 0.75, ease: 'linear' })
+    .to('#top-point', { y: -12, opacity: 0, duration: 0.75, ease: 'power1.out' });
 }
 
 function onAwake() {
