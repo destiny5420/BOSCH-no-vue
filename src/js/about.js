@@ -32,7 +32,6 @@ function onEventBinding() {
   $(document).on('keydown', function (e) {
     switch (e.keyCode) {
       case 65: // A
-        animsDescription.forEach((element) => element.play());
         break;
       default:
         break;
@@ -86,8 +85,14 @@ function onGSAP() {
 
   // description tip-box
   anim_description = gsap.timeline({
-    scrollTrigger: { trigger: '.tip-box', start: '-650px top', markers: isDebug, end: '+=0' },
+    scrollTrigger: {
+      trigger: '.tip-box',
+      start: '-650px top',
+      markers: isDebug,
+      end: '+=0',
+    },
   });
+
   anim_description
     .from('.tip-box #img-head', { duration: 1.5, opacity: 0, y: 200 })
     .from('.tip-box .right', { duration: 1, opacity: 0, y: -60 }, '-=0.95');
