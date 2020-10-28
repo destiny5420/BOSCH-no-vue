@@ -761,7 +761,7 @@ nav #menu.show::after {
 
 .slogan {
   width: 100%;
-  height: 700px;
+  height: 400px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -775,7 +775,7 @@ nav #menu.show::after {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 100px 0px;
+  margin-top: 150px;
   position: relative;
 }
 
@@ -799,8 +799,8 @@ nav #menu.show::after {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  top: calc(50% - (150px));
-  left: calc(50% - (75px));
+  left: calc(50% - (150px / 2) + 0px);
+  top: calc(50% - (300px / 2) + -75px);
 }
 
 .slogan .content > p {
@@ -821,13 +821,30 @@ nav #menu.show::after {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 0.45;
+}
+
+.slogan .bg .txt-question {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -851,8 +868,56 @@ nav #menu.show::after {
   white-space: nowrap;
 }
 
-.slogan .bg .txt-faq :nth-child(n) {
-  margin-right: 60px;
+.slogan div[name='pic-01'] {
+  width: 150px;
+  height: 300px;
+  position: absolute;
+  content: '';
+  background-color: transform;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  left: calc(50% - (150px / 2) + -350px);
+  top: calc(50% - (300px / 2) + 30px);
+  -webkit-transform: rotateZ(-20deg);
+          transform: rotateZ(-20deg);
+}
+
+.slogan div[name='pic-02'] {
+  width: 150px;
+  height: 300px;
+  position: absolute;
+  content: '';
+  background-color: transform;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  left: calc(50% - (150px / 2) + 375px);
+  top: calc(50% - (300px / 2) + 0px);
+  -webkit-transform: rotateZ(30deg);
+          transform: rotateZ(30deg);
 }
 
 .lists {

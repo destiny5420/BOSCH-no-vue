@@ -1247,6 +1247,7 @@ header #slogan {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
 }
 
 .faq-container .faq-title {
@@ -1260,6 +1261,11 @@ header #slogan {
 }
 
 .faq-container .faq-blocks {
+  margin: 40px 0px;
+  position: relative;
+}
+
+.faq-container .faq-blocks #faq-blocks-content {
   width: 1200px;
   height: auto;
   display: -webkit-box;
@@ -1277,37 +1283,38 @@ header #slogan {
           align-items: flex-start;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin: 40px 0px;
   color: #ffffff;
+  position: relative;
+  z-index: 2;
 }
 
-.faq-container .faq-blocks .block-layout {
+.faq-container .faq-blocks #faq-blocks-content .block-layout {
   margin-right: 40px;
   margin-bottom: 40px;
 }
 
-.faq-container .faq-blocks .block {
+.faq-container .faq-blocks #faq-blocks-content .block {
   width: 360px;
   height: 320px;
   display: inline-block;
   position: relative;
   padding: 20px 50px;
   background-color: #50237f;
-  -webkit-box-shadow: 15px 15px 30px 1px rgba(0, 0, 0, 0.12);
-          box-shadow: 15px 15px 30px 1px rgba(0, 0, 0, 0.12);
+  -webkit-box-shadow: 10px 10px 15px 0px rgba(0, 0, 0, 0.35);
+          box-shadow: 10px 10px 15px 0px rgba(0, 0, 0, 0.35);
 }
 
-.faq-container .faq-blocks .block .title {
+.faq-container .faq-blocks #faq-blocks-content .block .title {
   font-size: 24px;
   line-height: 2.75;
 }
 
-.faq-container .faq-blocks .block .content {
+.faq-container .faq-blocks #faq-blocks-content .block .content {
   font-size: 20px;
   line-height: 1.25;
 }
 
-.faq-container .faq-blocks .block .btn-more {
+.faq-container .faq-blocks #faq-blocks-content .block .btn-more {
   font-size: 30px;
   position: absolute;
   content: '';
@@ -1317,17 +1324,69 @@ header #slogan {
   right: 35px;
 }
 
-.faq-container .faq-blocks .block .btn-more svg {
+.faq-container .faq-blocks #faq-blocks-content .block .btn-more svg {
   fill: #fff;
 }
 
-.faq-container .faq-blocks .empty-block {
+.faq-container .faq-blocks #faq-blocks-content .empty-block {
   width: 360px;
   height: 320px;
   display: inline-block;
 }
 
-.faq-container .faq-blocks :nth-child(3n) {
+.faq-container .faq-blocks #faq-blocks-content :nth-child(3n) {
   margin-right: 0px;
+}
+
+.faq-container .faq-blocks #faq-blocks-content :nth-child(4),
+.faq-container .faq-blocks #faq-blocks-content :nth-child(5),
+.faq-container .faq-blocks #faq-blocks-content :nth-child(6) {
+  margin-bottom: 0px;
+}
+
+.faq-container #faq-blocks-bg {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  content: '';
+  background-color: transparent;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+  bottom: 0px;
+  opacity: 0.125;
+}
+
+.faq-container #faq-blocks-bg > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  white-space: nowrap;
+}
+
+.faq-container #faq-blocks-bg > div:last-child {
+  margin-bottom: 0px;
 }
 /*# sourceMappingURL=index.css.map */

@@ -110,6 +110,11 @@ $color_font_main: #868e9c;
   z-index: $zIndex;
 }
 
+@mixin translate-center($width, $height, $offsetX: 0px, $offsetY: 0px) {
+  left: calc(50% - (#{$width} / 2) + #{$offsetX});
+  top: calc(50% - (#{$height} / 2) + #{$offsetY});
+}
+
 // configure for project
 * {
   margin: 0px;

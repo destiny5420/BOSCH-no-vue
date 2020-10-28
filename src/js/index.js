@@ -7,6 +7,8 @@ import '../images/home_img_01.png';
 import '../images/home_img_02.png';
 import '../images/home_img_03.png';
 import '../images/home_img_04.png';
+import '../images/home_txt_00.png';
+import '../images/home_txt_01.png';
 
 // import vue
 // import Vue from 'vue/dist/vue';
@@ -70,6 +72,19 @@ function onGSAP() {
     opacity: 1,
     duration: 1,
   });
+
+  var imgList = Array.from($('.faq-container #faq-blocks-bg >div'));
+  imgList.forEach((element, index) => {
+    var duationTime = getRandomInt(10, 55);
+    console.log('duationTime: ', duationTime);
+    gsap.to(element, {
+      duration: duationTime,
+      x: index % 2 === 0 ? 1218 : -1220,
+      repeat: -1,
+      ease: 'linear',
+    });
+  });
+  console.log(imgList);
 }
 
 function onAwake() {
@@ -83,3 +98,9 @@ function onAwake() {
 $(function () {
   onAwake();
 });
+
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值
+}

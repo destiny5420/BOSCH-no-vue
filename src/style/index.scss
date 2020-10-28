@@ -325,6 +325,7 @@ header {
 
 .faq-container {
   @include flex-layout(column, flex-start, center);
+  position: relative;
 
   .faq-title {
     text-align: center;
@@ -337,56 +338,88 @@ header {
   }
 
   .faq-blocks {
-    @include size(1200px, auto);
-    @include flex-layout(row, center, flex-start);
-    flex-wrap: wrap;
     margin: 40px 0px;
-    color: #ffffff;
+    position: relative;
 
-    // padding: 20px;
-    .block-layout {
-      margin-right: 40px;
-      margin-bottom: 40px;
-    }
-
-    .block {
-      @include size(360px, 320px);
-      display: inline-block;
+    #faq-blocks-content {
+      @include size(1200px, auto);
+      @include flex-layout(row, center, flex-start);
+      flex-wrap: wrap;
+      color: #ffffff;
       position: relative;
-      padding: 20px 50px;
+      z-index: 2;
 
-      background-color: #50237f;
-      box-shadow: 15px 15px 30px 1px rgba(0, 0, 0, 0.12);
-
-      .title {
-        font-size: 24px;
-        line-height: 2.75;
+      // padding: 20px;
+      .block-layout {
+        margin-right: 40px;
+        margin-bottom: 40px;
       }
 
-      .content {
-        font-size: 20px;
-        line-height: 1.25;
-      }
+      .block {
+        @include size(360px, 320px);
+        display: inline-block;
+        position: relative;
+        padding: 20px 50px;
 
-      .btn-more {
-        font-size: 30px;
-        @include independent(transparent);
-        bottom: 20px;
-        right: 35px;
+        background-color: #50237f;
+        box-shadow: 10px 10px 15px 0px rgba(0, 0, 0, 0.35);
 
-        svg {
-          fill: #fff;
+        .title {
+          font-size: 24px;
+          line-height: 2.75;
+        }
+
+        .content {
+          font-size: 20px;
+          line-height: 1.25;
+        }
+
+        .btn-more {
+          font-size: 30px;
+          @include independent(transparent);
+          bottom: 20px;
+          right: 35px;
+
+          svg {
+            fill: #fff;
+          }
         }
       }
-    }
 
-    .empty-block {
-      @include size(360px, 320px);
-      display: inline-block;
-    }
+      .empty-block {
+        @include size(360px, 320px);
+        display: inline-block;
+      }
 
-    :nth-child(3n) {
-      margin-right: 0px;
+      :nth-child(3n) {
+        margin-right: 0px;
+      }
+
+      :nth-child(4),
+      :nth-child(5),
+      :nth-child(6) {
+        margin-bottom: 0px;
+      }
+    }
+  }
+
+  #faq-blocks-bg {
+    @include size(100%, auto);
+    @include independent(transparent);
+    @include flex-layout(column, center, center);
+    overflow: hidden;
+    // top: 50%;
+    // transform: translateY(-50%);
+    bottom: 0px;
+    opacity: 0.125;
+
+    > div {
+      @include flex-layout(row, center, flex-start);
+      white-space: nowrap;
+
+      &:last-child {
+        margin-bottom: 0px;
+      }
     }
   }
 }
