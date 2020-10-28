@@ -65,6 +65,11 @@ function onGSAP() {
 
   headTimeline = gsap
     .timeline({ defaults: { ease: 'power1.out' }, paused: true })
+    .to($('.slogan-wrap'), {
+      opacity: 0,
+      duration: 1,
+      onComplete: () => ($('.slogan-wrap')[0].style.pointerEvents = 'none'),
+    })
     .from($('header #content .sub-title'), {
       y: -50,
       opacity: 0,
@@ -72,14 +77,15 @@ function onGSAP() {
     })
     .from($('header .left .title >div'), { maxHeight: 0, duration: 1 }, '-=0.5')
     .from($('header .right .bg'), { x: 100, opacity: 0, duration: 1.5 }, '-=1.25')
-    .from($('header .right img'), { y: 100, opacity: 0, duration: 1.5 }, '-=1');
+    .from($('header .right img'), { y: 100, opacity: 0, duration: 1.5 }, '-=1')
+    .from($('header #scroll-point'), { y: -100, opacity: 0, duration: 1 }, '-=1');
 
-  Array.from($('header #slogan .text-char')).forEach((e, index) => {
+  Array.from($('.slogan-wrap #slogan .text-char')).forEach((e, index) => {
     gsap
       .timeline({
         onComplete: () => (index === 7 ? headTimeline.play() : null),
       })
-      .from(e, { y: 100, duration: 1, ease: 'linear', delay: index * 0.035 })
+      .from(e, { y: 100, duration: 1, ease: 'linear', delay: index * 0.015 })
       .to(e, { y: -100, duration: 0.75, ease: 'linear', delay: 1.25 });
   });
 

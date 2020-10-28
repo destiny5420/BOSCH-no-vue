@@ -126,6 +126,8 @@ $color_font_main: #868e9c;
 }
 
 .main-container {
+  position: relative;
+
   background: rgb(214, 216, 217);
   background: linear-gradient(
     90deg,
