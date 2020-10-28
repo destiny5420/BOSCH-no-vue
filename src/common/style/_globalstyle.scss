@@ -75,10 +75,12 @@ $color_black: #333;
 $color_blue_start: #19283d;
 $color_blue_end: #1d678f;
 $color_rain: #4dacff;
+$color_cyan_blue: #00a8b0;
+$color_lake_blue: #008ecf;
 $color_white_cloud: #f2f9fe;
 $color_grey_cloud: #ccc;
 $color_purple: #50237f;
-
+$color_red: #e20015;
 $color_font_main: #868e9c;
 
 // Mixin
@@ -120,7 +122,7 @@ $color_font_main: #868e9c;
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  @include border();
+  //@include border();
 }
 
 .main-container {
@@ -411,7 +413,6 @@ nav {
 .tch-r {
   font-family: 'Bosch Sans CHS Regular';
 }
-
 .tch-b {
   font-family: 'Bosch Sans CHS Bold';
 }
@@ -419,43 +420,33 @@ nav {
 .eng-bl {
   font-family: 'Bosch Sans Black';
 }
-
 .eng-bl-l {
   font-family: 'Bosch Sans BlackItalic';
 }
-
 .eng-b {
   font-family: 'Bosch Sans Bold';
 }
-
 .eng-b-l {
   font-family: 'Bosch Sans BoldItalic';
 }
-
 .eng-l {
   font-family: 'Bosch Sans Light';
 }
-
 .eng-l-l {
   font-family: 'Bosch Sans LightItalic';
 }
-
 .eng-m {
   font-family: 'Bosch Sans Medium';
 }
-
 .eng-m-l {
   font-family: 'Bosch Sans MediumItalic';
 }
-
 .eng-r {
   font-family: 'Bosch Sans Regular';
 }
-
 .eng-r-i {
   font-family: 'Bosch Sans RegularItalic';
 }
-
 .title {
   font-size: 64px;
 }
@@ -529,7 +520,107 @@ nav {
   }
 }
 
+$point-move-unit: -20px;
+@keyframes point_move_LT {
+  0% {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+
+  39% {
+    opacity: 0;
+    transform: translate(0px, 0px);
+  }
+
+  40% {
+    opacity: 0;
+    transform: translate(-20px, -20px);
+  }
+
+  41% {
+    opacity: 0;
+    transform: translate(-20px, -20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0px, 0px);
+  }
+}
+@keyframes point_move_RT {
+  0% {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+
+  39% {
+    opacity: 0;
+    transform: translate(0px, 0px);
+  }
+
+  40% {
+    opacity: 0;
+    transform: translate(20px, -20px);
+  }
+
+  41% {
+    opacity: 0;
+    transform: translate(20px, -20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0px, 0px);
+  }
+}
+
+.btn-more-point-move-LT {
+  &:hover {
+    > svg {
+      animation: point_move_LT 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+      transform: translateX(0px);
+      opacity: 1;
+    }
+  }
+}
+.btn-more-point-move-RT {
+  &:hover {
+    > svg {
+      animation: point_move_RT 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+      transform: translateX(0px);
+      opacity: 1;
+    }
+  }
+}
+
 // Btn - color for background
+.btn-more-color-red {
+  .bg-circle {
+    svg {
+      circle {
+        fill: $color_red;
+      }
+    }
+  }
+}
+.btn-more-color-cyan-blue {
+  .bg-circle {
+    svg {
+      circle {
+        fill: $color_cyan_blue;
+      }
+    }
+  }
+}
+.btn-more-lake-blue {
+  .bg-circle {
+    svg {
+      circle {
+        fill: $color_lake_blue;
+      }
+    }
+  }
+}
 .btn-more-color-orange {
   .bg-circle {
     svg {
@@ -558,7 +649,7 @@ nav {
   }
 }
 
-// Btn - direction for move
+// Btn - direction for move - R
 .btn-more-hover-right-5 {
   &:hover {
     > p {
@@ -587,45 +678,68 @@ nav {
     }
   }
 }
-
-// Btn - size fo radius
-$circle-radius-75: 75px;
-$circle-radius-85: 85px;
-$circle-radius-100: 100px;
-
-$circle-radius-offset-10: 10px;
-$circle-radius-offset-20: 20px;
-$circle-radius-offset-30: 30px;
-$circle-radius-offset-40: 40px;
-$circle-radius-offset-50: 50px;
-
-.btn-more-size-75 {
-  .bg-circle {
-    @include size($circle-radius-75, $circle-radius-75);
-    left: calc((#{$circle-radius-75} / 2 * (-1)) + #{$circle-radius-offset-10});
-
-    svg {
-      @include size($circle-radius-75, $circle-radius-75);
+.btn-more-hover-right-30 {
+  &:hover {
+    > p {
+      transform: translateX(30px);
     }
   }
 }
-.btn-more-size-85 {
-  .bg-circle {
-    @include size($circle-radius-85, $circle-radius-85);
-    left: calc((#{$circle-radius-85} / 2 * (-1)) + #{$circle-radius-offset-10});
-
-    svg {
-      @include size($circle-radius-85, $circle-radius-85);
+.btn-more-hover-right-40 {
+  &:hover {
+    > p {
+      transform: translateX(40px);
     }
   }
 }
-.btn-more-size-100 {
-  .bg-circle {
-    @include size($circle-radius-100, $circle-radius-100);
-    left: calc((#{$circle-radius-100} / 2 * (-1)) + #{$circle-radius-offset-10});
 
-    svg {
-      @include size($circle-radius-100, $circle-radius-100);
+// Btn - direction for move - L
+.btn-more-hover-left-5 {
+  &:hover {
+    > p {
+      transform: translateX(-5px);
     }
+  }
+}
+.btn-more-hover-left-10 {
+  &:hover {
+    > p {
+      transform: translateX(-10px);
+    }
+  }
+}
+.btn-more-hover-left-15 {
+  &:hover {
+    > p {
+      transform: translateX(-15px);
+    }
+  }
+}
+.btn-more-hover-left-20 {
+  &:hover {
+    > p {
+      transform: translateX(-20px);
+    }
+  }
+}
+.btn-more-hover-left-30 {
+  &:hover {
+    > p {
+      transform: translateX(-30px);
+    }
+  }
+}
+.btn-more-hover-left-40 {
+  &:hover {
+    > p {
+      transform: translateX(-40px);
+    }
+  }
+}
+
+// Btn - move style
+.btn-more-move-style-1 {
+  > p {
+    transition: transform 0.85s cubic-bezier(0.25, 1, 0.5, 1);
   }
 }

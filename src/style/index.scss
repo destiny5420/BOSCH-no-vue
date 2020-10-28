@@ -5,7 +5,7 @@
 #scroll-point {
   @include independent(transparent);
   right: 215px;
-  bottom: 120px;
+  bottom: 85px;
   transform: rotate(90deg);
 
   > P {
@@ -15,7 +15,7 @@
   }
 
   #point {
-    @include size(150px, 10px);
+    @include size(85px, 10px);
     display: inline-block;
     position: relative;
     margin-left: 10px;
@@ -31,7 +31,7 @@
 
     &::before {
       @include independent(transparent);
-      @include size(20px, 1px);
+      @include size(12px, 1px);
       content: '';
       background-color: black;
       right: 0px;
@@ -110,18 +110,20 @@ header {
 .products {
   @include size(100%, 750px);
   @include flex-layout(row, center, flex-start);
+  padding: 0px 15%;
   margin-bottom: 100px;
 
   .introduction {
-    @include size(1000px, 100%);
-    @include flex-layout(row, center, center);
+    // @include size(900px, 100%);
+    flex: 7;
+    height: 100%;
     position: relative;
 
     .intro {
       @include independent(transparent);
       top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      left: 0;
+      transform: translate(0px, -50%);
     }
 
     .intro-1 {
@@ -156,46 +158,84 @@ header {
   }
 
   .options {
-    @include size(400px, 100%);
+    $main-symbol-size: 50px;
+    $sub-symbol-size: 25px;
+    flex: 5;
+    height: 100%;
+    // @include size(400px, 100%);
 
     .option {
       @include flex-layout(row, flex-end, center);
       margin-bottom: 25px;
-    }
 
-    .option-offset {
-      margin-right: 65px;
-    }
+      .main-title,
+      .sub-title {
+        display: inline-block;
+      }
 
-    .main-option,
-    .sub-option {
-      display: inline-block;
-    }
+      .main-title {
+        font-size: 64px;
+        margin-right: 14px;
+      }
 
-    .main-option {
-      font-size: 64px;
-      margin-right: 14px;
-    }
-
-    .sub-option {
-      font-size: 36px;
-      margin-right: 14px;
-    }
-
-    .main-symbol,
-    .sub-symbol {
-      display: inline-block;
-    }
-
-    .main-symbol {
-      svg {
-        @include size(50px, 50px);
+      .sub-title {
+        font-size: 36px;
+        margin-right: 14px;
       }
     }
 
-    .sub-symbol {
-      svg {
-        @include size(25px, 25px);
+    .large-option {
+      $circle-radius: 150px;
+
+      .bg-circle {
+        @include size($circle-radius, $circle-radius);
+        left: auto;
+        right: calc((#{$circle-radius} / 2 * (-1)) + (#{$main-symbol-size} / 2));
+
+        svg {
+          @include size($circle-radius, $circle-radius);
+        }
+      }
+
+      > p {
+        transition: transform 0.85s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+
+      > svg {
+        @include size($main-symbol-size, $main-symbol-size);
+        @include flex-layout(row, center, center);
+        margin-right: 0px;
+        display: inline-block;
+        position: relative;
+        z-index: 2;
+      }
+    }
+
+    .small-option {
+      margin-right: 65px;
+      $circle-radius: 105px;
+
+      .bg-circle {
+        @include size($circle-radius, $circle-radius);
+        left: auto;
+        right: calc((#{$circle-radius} / 2 * (-1)) + (#{$sub-symbol-size} / 2));
+
+        svg {
+          @include size($circle-radius, $circle-radius);
+        }
+      }
+
+      > p {
+        transition: transform 0.85s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+
+      > svg {
+        @include size($sub-symbol-size, $sub-symbol-size);
+        @include flex-layout(row, center, center);
+        margin-right: 0px;
+        display: inline-block;
+        position: relative;
+        z-index: 2;
       }
     }
   }
@@ -354,10 +394,23 @@ header {
     }
 
     .btn-more {
+      $symbol-size: 20px;
       margin-top: 60px;
       font-size: 30px;
 
-      svg {
+      .bg-circle {
+        $circle-radius: 100px;
+        @include size($circle-radius, $circle-radius);
+
+        left: calc((#{$circle-radius} / 2 * (-1)) + (#{$symbol-size} / 2));
+
+        svg {
+          @include size($circle-radius, $circle-radius);
+        }
+      }
+
+      > svg {
+        @include size($symbol-size, $symbol-size);
         fill: #fff;
       }
     }
@@ -426,12 +479,26 @@ header {
         }
 
         .btn-more {
-          font-size: 30px;
-          @include independent(transparent);
-          bottom: 20px;
-          right: 35px;
+          $symbol-size: 20px;
 
-          svg {
+          @include independent(transparent);
+          font-size: 30px;
+          bottom: 20px;
+          right: 55px;
+
+          .bg-circle {
+            $circle-radius: 85px;
+            @include size($circle-radius, $circle-radius);
+
+            left: calc((#{$circle-radius} / 2 * (-1)) + (#{$symbol-size} / 2));
+
+            svg {
+              @include size($circle-radius, $circle-radius);
+            }
+          }
+
+          > svg {
+            @include size($symbol-size, $symbol-size);
             fill: #fff;
           }
         }

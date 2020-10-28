@@ -67,7 +67,6 @@ ul {
   padding: 0px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border: 1px solid black;
 }
 
 .main-container {
@@ -654,6 +653,146 @@ nav #menu.show::after {
           transform: scale(1);
 }
 
+@-webkit-keyframes point_move_LT {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+  39% {
+    opacity: 0;
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+  40% {
+    opacity: 0;
+    -webkit-transform: translate(-20px, -20px);
+            transform: translate(-20px, -20px);
+  }
+  41% {
+    opacity: 0;
+    -webkit-transform: translate(-20px, -20px);
+            transform: translate(-20px, -20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0px, 0px);
+            transform: translateX(0px, 0px);
+  }
+}
+
+@keyframes point_move_LT {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+  39% {
+    opacity: 0;
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+  40% {
+    opacity: 0;
+    -webkit-transform: translate(-20px, -20px);
+            transform: translate(-20px, -20px);
+  }
+  41% {
+    opacity: 0;
+    -webkit-transform: translate(-20px, -20px);
+            transform: translate(-20px, -20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0px, 0px);
+            transform: translateX(0px, 0px);
+  }
+}
+
+@-webkit-keyframes point_move_RT {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+  39% {
+    opacity: 0;
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+  40% {
+    opacity: 0;
+    -webkit-transform: translate(20px, -20px);
+            transform: translate(20px, -20px);
+  }
+  41% {
+    opacity: 0;
+    -webkit-transform: translate(20px, -20px);
+            transform: translate(20px, -20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0px, 0px);
+            transform: translateX(0px, 0px);
+  }
+}
+
+@keyframes point_move_RT {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+  39% {
+    opacity: 0;
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+  40% {
+    opacity: 0;
+    -webkit-transform: translate(20px, -20px);
+            transform: translate(20px, -20px);
+  }
+  41% {
+    opacity: 0;
+    -webkit-transform: translate(20px, -20px);
+            transform: translate(20px, -20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0px, 0px);
+            transform: translateX(0px, 0px);
+  }
+}
+
+.btn-more-point-move-LT:hover > svg {
+  -webkit-animation: point_move_LT 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+          animation: point_move_LT 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+  opacity: 1;
+}
+
+.btn-more-point-move-RT:hover > svg {
+  -webkit-animation: point_move_RT 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+          animation: point_move_RT 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+  opacity: 1;
+}
+
+.btn-more-color-red .bg-circle svg circle {
+  fill: #e20015;
+}
+
+.btn-more-color-cyan-blue .bg-circle svg circle {
+  fill: #00a8b0;
+}
+
+.btn-more-lake-blue .bg-circle svg circle {
+  fill: #008ecf;
+}
+
 .btn-more-color-orange .bg-circle svg circle {
   fill: #ffb34a;
 }
@@ -686,37 +825,51 @@ nav #menu.show::after {
           transform: translateX(20px);
 }
 
-.btn-more-size-75 .bg-circle {
-  width: 75px;
-  height: 75px;
-  left: calc((75px / 2 * (-1)) + 10px);
+.btn-more-hover-right-30:hover > p {
+  -webkit-transform: translateX(30px);
+          transform: translateX(30px);
 }
 
-.btn-more-size-75 .bg-circle svg {
-  width: 75px;
-  height: 75px;
+.btn-more-hover-right-40:hover > p {
+  -webkit-transform: translateX(40px);
+          transform: translateX(40px);
 }
 
-.btn-more-size-85 .bg-circle {
-  width: 85px;
-  height: 85px;
-  left: calc((85px / 2 * (-1)) + 10px);
+.btn-more-hover-left-5:hover > p {
+  -webkit-transform: translateX(-5px);
+          transform: translateX(-5px);
 }
 
-.btn-more-size-85 .bg-circle svg {
-  width: 85px;
-  height: 85px;
+.btn-more-hover-left-10:hover > p {
+  -webkit-transform: translateX(-10px);
+          transform: translateX(-10px);
 }
 
-.btn-more-size-100 .bg-circle {
-  width: 100px;
-  height: 100px;
-  left: calc((100px / 2 * (-1)) + 10px);
+.btn-more-hover-left-15:hover > p {
+  -webkit-transform: translateX(-15px);
+          transform: translateX(-15px);
 }
 
-.btn-more-size-100 .bg-circle svg {
-  width: 100px;
-  height: 100px;
+.btn-more-hover-left-20:hover > p {
+  -webkit-transform: translateX(-20px);
+          transform: translateX(-20px);
+}
+
+.btn-more-hover-left-30:hover > p {
+  -webkit-transform: translateX(-30px);
+          transform: translateX(-30px);
+}
+
+.btn-more-hover-left-40:hover > p {
+  -webkit-transform: translateX(-40px);
+          transform: translateX(-40px);
+}
+
+.btn-more-move-style-1 > p {
+  -webkit-transition: -webkit-transform 0.85s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: -webkit-transform 0.85s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: transform 0.85s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: transform 0.85s cubic-bezier(0.25, 1, 0.5, 1), -webkit-transform 0.85s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 @font-face {
@@ -821,7 +974,7 @@ nav #menu.show::after {
   background-color: transparent;
   z-index: 1;
   right: 215px;
-  bottom: 120px;
+  bottom: 85px;
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
 }
@@ -833,7 +986,7 @@ nav #menu.show::after {
 }
 
 #scroll-point #point {
-  width: 150px;
+  width: 85px;
   height: 10px;
   display: inline-block;
   position: relative;
@@ -858,7 +1011,7 @@ nav #menu.show::after {
   content: '';
   background-color: transparent;
   z-index: 1;
-  width: 20px;
+  width: 12px;
   height: 1px;
   content: '';
   background-color: black;
@@ -992,25 +1145,15 @@ header #slogan {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  padding: 0px 15%;
   margin-bottom: 100px;
 }
 
 .products .introduction {
-  width: 1000px;
+  -webkit-box-flex: 7;
+      -ms-flex: 7;
+          flex: 7;
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   position: relative;
 }
 
@@ -1020,9 +1163,9 @@ header #slogan {
   background-color: transparent;
   z-index: 1;
   top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  left: 0;
+  -webkit-transform: translate(0px, -50%);
+          transform: translate(0px, -50%);
 }
 
 .products .introduction .intro-1 {
@@ -1085,7 +1228,9 @@ header #slogan {
 }
 
 .products .options {
-  width: 400px;
+  -webkit-box-flex: 5;
+      -ms-flex: 5;
+          flex: 5;
   height: 100%;
 }
 
@@ -1106,38 +1251,105 @@ header #slogan {
   margin-bottom: 25px;
 }
 
-.products .options .option-offset {
-  margin-right: 65px;
-}
-
-.products .options .main-option,
-.products .options .sub-option {
+.products .options .option .main-title,
+.products .options .option .sub-title {
   display: inline-block;
 }
 
-.products .options .main-option {
+.products .options .option .main-title {
   font-size: 64px;
   margin-right: 14px;
 }
 
-.products .options .sub-option {
+.products .options .option .sub-title {
   font-size: 36px;
   margin-right: 14px;
 }
 
-.products .options .main-symbol,
-.products .options .sub-symbol {
-  display: inline-block;
+.products .options .large-option .bg-circle {
+  width: 150px;
+  height: 150px;
+  left: auto;
+  right: calc((150px / 2 * (-1)) + (50px / 2));
 }
 
-.products .options .main-symbol svg {
+.products .options .large-option .bg-circle svg {
+  width: 150px;
+  height: 150px;
+}
+
+.products .options .large-option > p {
+  -webkit-transition: -webkit-transform 0.85s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: -webkit-transform 0.85s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: transform 0.85s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: transform 0.85s cubic-bezier(0.25, 1, 0.5, 1), -webkit-transform 0.85s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.products .options .large-option > svg {
   width: 50px;
   height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 0px;
+  display: inline-block;
+  position: relative;
+  z-index: 2;
 }
 
-.products .options .sub-symbol svg {
+.products .options .small-option {
+  margin-right: 65px;
+}
+
+.products .options .small-option .bg-circle {
+  width: 105px;
+  height: 105px;
+  left: auto;
+  right: calc((105px / 2 * (-1)) + (25px / 2));
+}
+
+.products .options .small-option .bg-circle svg {
+  width: 105px;
+  height: 105px;
+}
+
+.products .options .small-option > p {
+  -webkit-transition: -webkit-transform 0.85s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: -webkit-transform 0.85s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: transform 0.85s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: transform 0.85s cubic-bezier(0.25, 1, 0.5, 1), -webkit-transform 0.85s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.products .options .small-option > svg {
   width: 25px;
   height: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 0px;
+  display: inline-block;
+  position: relative;
+  z-index: 2;
 }
 
 .about-us {
@@ -1347,7 +1559,20 @@ header #slogan {
   font-size: 30px;
 }
 
-.install-container .content .btn-more svg {
+.install-container .content .btn-more .bg-circle {
+  width: 100px;
+  height: 100px;
+  left: calc((100px / 2 * (-1)) + (20px / 2));
+}
+
+.install-container .content .btn-more .bg-circle svg {
+  width: 100px;
+  height: 100px;
+}
+
+.install-container .content .btn-more > svg {
+  width: 20px;
+  height: 20px;
   fill: #fff;
 }
 
@@ -1446,16 +1671,29 @@ header #slogan {
 }
 
 .faq-container .faq-blocks #faq-blocks-content .block .btn-more {
-  font-size: 30px;
   position: absolute;
   content: '';
   background-color: transparent;
   z-index: 1;
+  font-size: 30px;
   bottom: 20px;
-  right: 35px;
+  right: 55px;
 }
 
-.faq-container .faq-blocks #faq-blocks-content .block .btn-more svg {
+.faq-container .faq-blocks #faq-blocks-content .block .btn-more .bg-circle {
+  width: 85px;
+  height: 85px;
+  left: calc((85px / 2 * (-1)) + (20px / 2));
+}
+
+.faq-container .faq-blocks #faq-blocks-content .block .btn-more .bg-circle svg {
+  width: 85px;
+  height: 85px;
+}
+
+.faq-container .faq-blocks #faq-blocks-content .block .btn-more > svg {
+  width: 20px;
+  height: 20px;
   fill: #fff;
 }
 
