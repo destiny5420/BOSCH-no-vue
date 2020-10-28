@@ -10,18 +10,8 @@ import '../images/home_img_04.png';
 import '../images/home_txt_00.png';
 import '../images/home_txt_01.png';
 
-// import vue
-// import Vue from 'vue/dist/vue';
-
-// import jquery
-import $ from 'jquery';
-
 // import global.js
-import globalCommand from '../js/global.js';
-
-// import gsap
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
+import { globalCommand, $, gsap, ScrollTrigger } from '../js/global.js';
 
 // ***** variable *****
 let isDebug = false;
@@ -57,7 +47,7 @@ function onEventBinding() {
   });
 
   // global binging
-  globalCommand.globalBinding();
+  globalCommand();
 
   $('.faq-container #btn-question').on('click', () => {
     window.location.href = './support.html';

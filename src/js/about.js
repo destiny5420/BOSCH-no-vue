@@ -1,14 +1,6 @@
 import '../style/about.css';
 
-// import jquery
-import $ from 'jquery';
-
-// import global.js
-import globalCommand from '../js/global.js';
-
-// import gsap
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
+import { globalCommand, $, gsap, ScrollTrigger } from '../js/global.js';
 
 // ***** variable *****
 let isDebug = false;
@@ -53,7 +45,7 @@ function onEventBinding() {
   });
 
   // global binging
-  globalCommand.globalBinding();
+  globalCommand();
 }
 
 function onGSAP() {

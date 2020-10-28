@@ -1,12 +1,20 @@
+// import vue
+// import Vue from 'vue/dist/vue';
+
+// import jQuery
 import $ from 'jquery';
 
-function globalBinding() {
-  console.log('--> binding [%s] button', 'home');
+// import gsap
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+
+function globalCommand() {
+  console.log('*** onGlobalCommand ***');
+
   $('#home').on('click', () => {
     window.location.href = './index.html';
   });
 }
 
-export default {
-  globalBinding,
-};
+export { globalCommand, $, gsap, ScrollTrigger };
+// export default $;

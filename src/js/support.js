@@ -5,15 +5,7 @@ import '../images/support_txt_01.png';
 import '../images/support_pic_00.png';
 import '../images/support_pic_01.png';
 
-// import jquery
-import $ from 'jquery';
-
-// import global.js
-import globalCommand from '../js/global.js';
-
-// import gsap
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
+import { globalCommand, $, gsap, ScrollTrigger } from '../js/global.js';
 
 // import json data
 import faq_collections from '../files/jsons/question.json';
@@ -123,7 +115,7 @@ function onEventBinding() {
   });
 
   // global binging
-  globalCommand.globalBinding();
+  globalCommand();
 }
 
 function onGSAP() {
