@@ -21,6 +21,16 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(js)$/,
+        exclude: /(node_mosules)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+          },
+        },
+      },
+      {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         use: [
           {

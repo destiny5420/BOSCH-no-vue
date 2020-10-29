@@ -8,12 +8,19 @@ import '@fortawesome/fontawesome-free/css/brands.min.css';
 // import jQuery
 import $ from 'jquery';
 
+// import polyfill
+import '@babel/polyfill';
+
 // import link json
 import link_collections from '../files/jsons/link.json';
+import { apiLinkReference } from './api.js';
 
 // import gsap
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+
+// *** Parameter ***
+var isDebug = false;
 
 function globalCommand() {
   console.log('*** onGlobalCommand ***');
@@ -22,27 +29,43 @@ function globalCommand() {
     window.location.href = './index.html';
   });
 
+  settingMediaLink();
+}
+
+async function settingMediaLink() {
+  var data = {};
+
+  if (isDebug) {
+    data = link_collections;
+  } else {
+    await apiLinkReference().then((res) => {
+      data = res.data;
+    });
+  }
+
+  console.log('data: ', data);
+
   Array.from($('.link-fb')).forEach((el) => {
     el.addEventListener('click', () => {
-      window.open(link_collections.fb, '_blank');
+      window.open(data.fb, '_blank');
     });
   });
 
   Array.from($('.link-yt')).forEach((el) => {
     el.addEventListener('click', () => {
-      window.open(link_collections.yt, '_blank');
+      window.open(data.yt, '_blank');
     });
   });
 
   Array.from($('.link-line')).forEach((el) => {
     el.addEventListener('click', () => {
-      window.open(link_collections.line, '_blank');
+      window.open(data.line, '_blank');
     });
   });
 
   Array.from($('.link-ig')).forEach((el) => {
     el.addEventListener('click', () => {
-      window.open(link_collections.ig, '_blank');
+      window.open(data.ig, '_blank');
     });
   });
 }

@@ -8,16 +8,6 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
-        test: /\.(js)$/,
-        exclude: /(node_mosules)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env'],
-          },
-        },
-      },
-      {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
