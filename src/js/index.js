@@ -94,7 +94,7 @@ function onGSAP() {
         },
       })
       .from(e, { y: 100, duration: 1, ease: 'power1.out', delay: index * 0.015 })
-      .to(e, { y: -100, duration: 1, ease: 'power1.in', delay: 1.25 });
+      .to(e, { y: -100, duration: 1, ease: 'power1.in', delay: 1 });
   });
 
   var imgList = Array.from($('.faq-container #faq-blocks-bg >div'));
