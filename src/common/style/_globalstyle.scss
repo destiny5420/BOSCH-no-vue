@@ -122,7 +122,7 @@ $color_font_main: #868e9c;
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  @include border();
+  // @include border();
 }
 
 .main-container {
@@ -207,10 +207,10 @@ $color_font_main: #868e9c;
   position: fixed;
   background-color: white;
   pointer-events: none;
-  opacity: 1;
+  opacity: 0;
   z-index: 1000;
 
-  padding: 200px 350px;
+  padding: 200px 450px;
 
   .top {
     @include flex-layout(row, center, center);
@@ -272,8 +272,35 @@ $color_font_main: #868e9c;
   }
 
   .bottom {
+    @include flex-layout(row, center, center);
     width: 100%;
     flex: 1;
+
+    .line-block {
+      height: 100%;
+      flex: 5;
+      margin-right: 50px;
+      position: relative;
+
+      &::before {
+        @include independent(black);
+        @include size(100%, 1px);
+        content: '';
+        top: 50%;
+      }
+    }
+
+    .social-media-block {
+      @include flex-layout(row, center, center);
+      height: 100%;
+      flex: 1;
+
+      .social-media-symbol {
+        @include flex-layout(row, center, center);
+        @include size(60px, 60px);
+        font-size: 30px;
+      }
+    }
   }
 }
 

@@ -91,7 +91,6 @@ function onGSAP() {
       .timeline({
         onComplete: () => {
           index === 7 ? headTimeline.play() : null;
-          console.log('last word of head has finished!');
         },
       })
       .from(e, { y: 100, duration: 1, ease: 'power1.out', delay: index * 0.015 })
@@ -117,21 +116,66 @@ function onGSAP() {
     .to('#top-point', { y: -12, opacity: 0, duration: 0.75, ease: 'power1.out' });
 
   // menu
-  anim_open_menu = gsap.timeline({ paused: true }).to($('#menu-window'), {
-    opacity: 1,
-    duration: 1,
-    onStart: () => {
-      $('#menu-window')[0].style.pointerEvents = 'auto';
-    },
-  });
+  anim_open_menu = gsap
+    .timeline({ paused: true })
+    .to($('#menu-window'), {
+      opacity: 1,
+      duration: 0.75,
+      ease: 'power1.out',
+      onStart: () => {
+        $('#menu-window')[0].style.pointerEvents = 'auto';
+      },
+    })
+    .from(
+      $('#menu-window .top'),
+      {
+        x: -75,
+        duration: 0.85,
+        ease: 'power1.out',
+      },
+      '-=1',
+    )
+    .from(
+      $('#menu-window .bottom'),
+      {
+        x: -75,
+        duration: 0.85,
+        opacity: 0,
+        ease: 'power1.out',
+        delay: 0.25,
+      },
+      '-=1',
+    );
 
-  anim_close_menu = gsap.timeline({ paused: true }).to($('#menu-window'), {
-    opacity: 0,
-    duration: 1,
-    onStart: () => {
-      $('#menu-window')[0].style.pointerEvents = 'none';
-    },
-  });
+  anim_close_menu = gsap
+    .timeline({ paused: true })
+    .to($('#menu-window'), {
+      opacity: 0,
+      duration: 0.75,
+      ease: 'power1.in',
+      onStart: () => {
+        $('#menu-window')[0].style.pointerEvents = 'none';
+      },
+    })
+    .to(
+      $('#menu-window .top'),
+      {
+        x: 100,
+        duration: 1,
+        ease: 'power1.in',
+      },
+      '-=1',
+    )
+    .to(
+      $('#menu-window .bottom'),
+      {
+        x: 100,
+        duration: 1,
+        ease: 'power1.in',
+        delay: 0.25,
+      },
+      '-=1',
+    );
 }
 
 function onAwake() {
