@@ -43,7 +43,7 @@ async function settingMediaLink() {
     });
   }
 
-  console.log('data: ', data);
+  // console.log('data: ', data);
 
   Array.from($('.link-fb')).forEach((el) => {
     el.addEventListener('click', () => {
@@ -70,5 +70,5 @@ async function settingMediaLink() {
   });
 }
 
-export { globalCommand, $, gsap, ScrollTrigger };
+export { globalCommand, $, gsap, ScrollTrigger, isDebug };
 // export default $;

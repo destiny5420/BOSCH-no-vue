@@ -5,10 +5,11 @@ import '../images/support_txt_01.png';
 import '../images/support_pic_00.png';
 import '../images/support_pic_01.png';
 
-import { globalCommand, $, gsap, ScrollTrigger } from '../js/global.js';
+import { globalCommand, $, gsap, ScrollTrigger, isDebug } from '../js/global.js';
 
 // import json data
 import faq_collections from '../files/jsons/question.json';
+import { apiFAQQuestion } from './api.js';
 
 // ***** variable *****
 let anim_open_menu;
@@ -39,36 +40,50 @@ let menu = (function () {
   };
 })();
 
-function onLoadingData() {
-  console.log('*** onLoadingData ***');
+async function settingFAQQuestion() {
+  var data = {};
+
+  if (isDebug) {
+    data = faq_collections;
+  } else {
+    await apiFAQQuestion().then((res) => {
+      data = res.data;
+    });
+  }
 
   // setting template append result to DOM
   var template_html =
     "<div class='move-block'><div class='list'><div name='list-block'><div class='question'><div><div class='tch-b list-symbol'>Q</div><div class='tch-b list-text'>{{question}}</div></div><div class='que-btn'></div></div><div class='answer'><div class='tch-b list-symbol'>A</div><div class='tch-r list-text'>{{answer}}</div></div></div></div></div>";
 
-  for (let i = 0; i < faq_collections.common.length; i++) {
+  for (let i = 0; i < data.common.length; i++) {
     var current_list = template_html
-      .replace('{{question}}', faq_collections.common[i].question)
-      .replace('{{answer}}', faq_collections.common[i].answer);
+      .replace('{{question}}', data.common[i].question)
+      .replace('{{answer}}', data.common[i].answer);
     $('#common .block').append(current_list);
   }
 
-  for (let i = 0; i < faq_collections.service.length; i++) {
+  for (let i = 0; i < data.service.length; i++) {
     var current_list = template_html
-      .replace('{{question}}', faq_collections.service[i].question)
-      .replace('{{answer}}', faq_collections.service[i].answer);
+      .replace('{{question}}', data.service[i].question)
+      .replace('{{answer}}', data.service[i].answer);
     $('#service .block').append(current_list);
   }
 
-  for (let i = 0; i < faq_collections.shopinfo.length; i++) {
+  for (let i = 0; i < data.shopinfo.length; i++) {
     var current_list = template_html
-      .replace('{{question}}', faq_collections.shopinfo[i].question)
-      .replace('{{answer}}', faq_collections.shopinfo[i].answer);
+      .replace('{{question}}', data.shopinfo[i].question)
+      .replace('{{answer}}', data.shopinfo[i].answer);
     $('#shopinfo .block').append(current_list);
   }
 
   // setting originHeight
   faqDatas['originHeight'] = $('.list')[0].clientHeight;
+}
+
+async function onLoadingData() {
+  console.log('*** onLoadingData ***');
+
+  await settingFAQQuestion();
 
   let faqHtmlTemplate = "<img src='./images/support_txt_00.png' alt=''>";
   for (let i = 0; i < 5; i++) {
@@ -209,27 +224,72 @@ function onGSAP() {
     .to('#top-point', { y: -12, opacity: 0, duration: 0.75, ease: 'power1.out' });
 
   // menu
-  anim_open_menu = gsap.timeline({ paused: true }).to($('#menu-window'), {
-    opacity: 1,
-    duration: 1,
-    onComplete: () => {
-      $('#menu-window')[0].style.pointerEvents = 'auto';
-    },
-  });
+  anim_open_menu = gsap
+    .timeline({ paused: true })
+    .to($('#menu-window'), {
+      opacity: 1,
+      duration: 0.75,
+      ease: 'power1.out',
+      onStart: () => {
+        $('#menu-window')[0].style.pointerEvents = 'auto';
+      },
+    })
+    .from(
+      $('#menu-window .top'),
+      {
+        x: -75,
+        duration: 0.85,
+        ease: 'power1.out',
+      },
+      '-=1',
+    )
+    .from(
+      $('#menu-window .bottom'),
+      {
+        x: -75,
+        duration: 0.85,
+        opacity: 0,
+        ease: 'power1.out',
+        delay: 0.25,
+      },
+      '-=1',
+    );
 
-  anim_close_menu = gsap.timeline({ paused: true }).to($('#menu-window'), {
-    opacity: 0,
-    duration: 1,
-    onStart: () => {
-      $('#menu-window')[0].style.pointerEvents = 'none';
-    },
-  });
+  anim_close_menu = gsap
+    .timeline({ paused: true })
+    .to($('#menu-window'), {
+      opacity: 0,
+      duration: 0.75,
+      ease: 'power1.in',
+      onStart: () => {
+        $('#menu-window')[0].style.pointerEvents = 'none';
+      },
+    })
+    .to(
+      $('#menu-window .top'),
+      {
+        x: 100,
+        duration: 1,
+        ease: 'power1.in',
+      },
+      '-=1',
+    )
+    .to(
+      $('#menu-window .bottom'),
+      {
+        x: 100,
+        duration: 1,
+        ease: 'power1.in',
+        delay: 0.25,
+      },
+      '-=1',
+    );
 }
 
-function onAwake() {
+async function onAwake() {
   console.log('*** onAwake ***');
 
-  onLoadingData();
+  await onLoadingData();
   onEventBinding();
   onGSAP();
   $('#loading-bar').fadeOut();

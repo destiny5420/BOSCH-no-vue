@@ -14,10 +14,8 @@ import '../images/home_txt_01.png';
 // import global.js
 import { globalCommand, $, gsap, ScrollTrigger } from '../js/global.js';
 import formula from '../js/formula';
-import Axios from 'axios';
 
 // ***** variable *****
-let isDebug = false;
 let headTimeline;
 let anim_open_menu;
 let anim_close_menu;
