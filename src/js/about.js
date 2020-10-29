@@ -4,6 +4,8 @@ import { globalCommand, $, gsap, ScrollTrigger } from '../js/global.js';
 
 // ***** variable *****
 let isDebug = false;
+let anim_open_menu;
+let anim_close_menu;
 let anim_sloganShow;
 let animsDescription = [];
 let anim_description;
@@ -16,12 +18,12 @@ let menu = (function () {
     toggleMenu: function () {
       if (menuOpen) {
         menuOpen = false;
-        $('#menu').removeClass('show');
-        $('#menu-window').fadeOut(100);
+        $('#menu-button').removeClass('show');
+        anim_close_menu.restart();
       } else {
         menuOpen = true;
-        $('#menu').addClass('show');
-        $('#menu-window').fadeIn(100);
+        $('#menu-button').addClass('show');
+        anim_open_menu.restart();
       }
     },
   };
@@ -39,7 +41,7 @@ function onEventBinding() {
   });
 
   // menu button
-  $('#menu').on('click', function (e) {
+  $('#menu-button').on('click', function (e) {
     menu.toggleMenu();
   });
 
@@ -104,6 +106,23 @@ function onGSAP() {
   anim_proxy
     .from('.proxy .info .title', { duration: 1.5, opacity: 0, y: 60 })
     .from('.proxy .info .content', { duration: 1, opacity: 0, y: 60 }, '-=1');
+
+  // menu
+  anim_open_menu = gsap.timeline({ paused: true }).to($('#menu-window'), {
+    opacity: 1,
+    duration: 1,
+    onComplete: () => {
+      $('#menu-window')[0].style.pointerEvents = 'auto';
+    },
+  });
+
+  anim_close_menu = gsap.timeline({ paused: true }).to($('#menu-window'), {
+    opacity: 0,
+    duration: 1,
+    onStart: () => {
+      $('#menu-window')[0].style.pointerEvents = 'none';
+    },
+  });
 }
 
 function onAwake() {

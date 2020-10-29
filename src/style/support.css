@@ -206,12 +206,11 @@ ul {
 #menu-window {
   width: 100%;
   height: 100vh;
-  position: absolute;
-  content: '';
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
   position: fixed;
-  display: none;
+  background-color: white;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 1000;
 }
 
 #menu-window #menu-window-close {
@@ -219,6 +218,115 @@ ul {
   margin-top: 20px;
   margin-right: 20px;
   padding: 20px;
+}
+
+#menu-button {
+  width: 35px;
+  height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  z-index: 1001;
+  cursor: pointer;
+  top: 35px;
+  right: 300px;
+}
+
+#menu-button span::before {
+  position: absolute;
+  content: '';
+  background-color: #000;
+  z-index: 1;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  top: 0;
+  -webkit-transition: width 0.35s 0.45s;
+  transition: width 0.35s 0.45s;
+}
+
+#menu-button span::after {
+  position: absolute;
+  content: '';
+  background-color: #000;
+  z-index: 1;
+  width: 100%;
+  height: 2px;
+  right: 0;
+  bottom: 0;
+  -webkit-transition: width 0.35s 0.45s;
+  transition: width 0.35s 0.45s;
+}
+
+#menu-button::before {
+  position: absolute;
+  content: '';
+  background-color: #000;
+  z-index: 1;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  top: calc((20px / 2) - (2px / 2));
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transition: 0.45s cubic-bezier(0.33, 1, 0.68, 1);
+  transition: 0.45s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+#menu-button::after {
+  position: absolute;
+  content: '';
+  background-color: #000;
+  z-index: 1;
+  width: 100%;
+  height: 2px;
+  right: 0;
+  bottom: calc((20px / 2) - (2px / 2));
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transition: 0.45s cubic-bezier(0.33, 1, 0.68, 1);
+  transition: 0.45s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+#menu-button.show span::before {
+  right: 0;
+  width: 0;
+  -webkit-transition: width 0.8s;
+  transition: width 0.8s;
+}
+
+#menu-button.show span::after {
+  width: 0;
+  -webkit-transition: width 0.8s;
+  transition: width 0.8s;
+}
+
+#menu-button.show::before {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-transition: -webkit-transform 0.5s 0.65s cubic-bezier(0.33, 1, 0.68, 1);
+  transition: -webkit-transform 0.5s 0.65s cubic-bezier(0.33, 1, 0.68, 1);
+  transition: transform 0.5s 0.65s cubic-bezier(0.33, 1, 0.68, 1);
+  transition: transform 0.5s 0.65s cubic-bezier(0.33, 1, 0.68, 1), -webkit-transform 0.5s 0.65s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+#menu-button.show::after {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transition: -webkit-transform 0.5s 0.65s cubic-bezier(0.33, 1, 0.68, 1);
+  transition: -webkit-transform 0.5s 0.65s cubic-bezier(0.33, 1, 0.68, 1);
+  transition: transform 0.5s 0.65s cubic-bezier(0.33, 1, 0.68, 1);
+  transition: transform 0.5s 0.65s cubic-bezier(0.33, 1, 0.68, 1), -webkit-transform 0.5s 0.65s cubic-bezier(0.33, 1, 0.68, 1);
 }
 
 nav {
@@ -248,117 +356,6 @@ nav #home {
   cursor: pointer;
   top: 35px;
   left: 300px;
-}
-
-nav #menu {
-  width: 35px;
-  height: 20px;
-  position: absolute;
-  content: '';
-  background-color: transparent;
-  z-index: 1001;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  cursor: pointer;
-  top: 35px;
-  right: 300px;
-}
-
-nav #menu span::before {
-  position: absolute;
-  content: '';
-  background-color: #000;
-  z-index: 1;
-  width: 100%;
-  height: 2px;
-  left: 0;
-  top: 0;
-  -webkit-transition: width 0.35s 0.45s;
-  transition: width 0.35s 0.45s;
-}
-
-nav #menu span::after {
-  position: absolute;
-  content: '';
-  background-color: #000;
-  z-index: 1;
-  width: 100%;
-  height: 2px;
-  right: 0;
-  bottom: 0;
-  -webkit-transition: width 0.35s 0.45s;
-  transition: width 0.35s 0.45s;
-}
-
-nav #menu::before {
-  position: absolute;
-  content: '';
-  background-color: #000;
-  z-index: 1;
-  width: 100%;
-  height: 2px;
-  left: 0;
-  top: calc((20px / 2) - (2px / 2));
-  -webkit-transform-origin: center center;
-          transform-origin: center center;
-  -webkit-transition: 0.45s cubic-bezier(0.33, 1, 0.68, 1);
-  transition: 0.45s cubic-bezier(0.33, 1, 0.68, 1);
-}
-
-nav #menu::after {
-  position: absolute;
-  content: '';
-  background-color: #000;
-  z-index: 1;
-  width: 100%;
-  height: 2px;
-  right: 0;
-  bottom: calc((20px / 2) - (2px / 2));
-  -webkit-transform-origin: center center;
-          transform-origin: center center;
-  -webkit-transition: 0.45s cubic-bezier(0.33, 1, 0.68, 1);
-  transition: 0.45s cubic-bezier(0.33, 1, 0.68, 1);
-}
-
-nav #menu.show span::before {
-  right: 0;
-  width: 0;
-  -webkit-transition: width 0.8s;
-  transition: width 0.8s;
-}
-
-nav #menu.show span::after {
-  width: 0;
-  -webkit-transition: width 0.8s;
-  transition: width 0.8s;
-}
-
-nav #menu.show::before {
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-  -webkit-transition: -webkit-transform 0.5s 0.65s cubic-bezier(0.33, 1, 0.68, 1);
-  transition: -webkit-transform 0.5s 0.65s cubic-bezier(0.33, 1, 0.68, 1);
-  transition: transform 0.5s 0.65s cubic-bezier(0.33, 1, 0.68, 1);
-  transition: transform 0.5s 0.65s cubic-bezier(0.33, 1, 0.68, 1), -webkit-transform 0.5s 0.65s cubic-bezier(0.33, 1, 0.68, 1);
-}
-
-nav #menu.show::after {
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-  -webkit-transition: -webkit-transform 0.5s 0.65s cubic-bezier(0.33, 1, 0.68, 1);
-  transition: -webkit-transform 0.5s 0.65s cubic-bezier(0.33, 1, 0.68, 1);
-  transition: transform 0.5s 0.65s cubic-bezier(0.33, 1, 0.68, 1);
-  transition: transform 0.5s 0.65s cubic-bezier(0.33, 1, 0.68, 1), -webkit-transform 0.5s 0.65s cubic-bezier(0.33, 1, 0.68, 1);
 }
 
 .footer {

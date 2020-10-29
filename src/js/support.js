@@ -11,7 +11,8 @@ import { globalCommand, $, gsap, ScrollTrigger } from '../js/global.js';
 import faq_collections from '../files/jsons/question.json';
 
 // ***** variable *****
-let marker = false;
+let anim_open_menu;
+let anim_close_menu;
 let tmpAnim = null;
 let faqDatas = {
   originHeight: 0,
@@ -27,12 +28,12 @@ let menu = (function () {
     toggleMenu: function () {
       if (menuOpen) {
         menuOpen = false;
-        $('#menu').removeClass('show');
-        $('#menu-window').fadeOut(100);
+        $('#menu-button').removeClass('show');
+        anim_close_menu.restart();
       } else {
         menuOpen = true;
-        $('#menu').addClass('show');
-        $('#menu-window').fadeIn(100);
+        $('#menu-button').addClass('show');
+        anim_open_menu.restart();
       }
     },
   };
@@ -110,7 +111,7 @@ function onEventBinding() {
   }
 
   // menu button
-  $('#menu').on('click', function (e) {
+  $('#menu-button').on('click', function (e) {
     menu.toggleMenu();
   });
 
@@ -206,6 +207,23 @@ function onGSAP() {
     .timeline({ repeat: -1 })
     .from('#top-point', { delay: 0.5, y: 20, opacity: 0, duration: 0.75, ease: 'linear' })
     .to('#top-point', { y: -12, opacity: 0, duration: 0.75, ease: 'power1.out' });
+
+  // menu
+  anim_open_menu = gsap.timeline({ paused: true }).to($('#menu-window'), {
+    opacity: 1,
+    duration: 1,
+    onComplete: () => {
+      $('#menu-window')[0].style.pointerEvents = 'auto';
+    },
+  });
+
+  anim_close_menu = gsap.timeline({ paused: true }).to($('#menu-window'), {
+    opacity: 0,
+    duration: 1,
+    onStart: () => {
+      $('#menu-window')[0].style.pointerEvents = 'none';
+    },
+  });
 }
 
 function onAwake() {
