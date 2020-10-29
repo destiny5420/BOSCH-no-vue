@@ -347,7 +347,7 @@ ul {
   top: 50%;
 }
 
-#menu-window .bottom .social-media-block {
+.social-media-block {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -367,7 +367,7 @@ ul {
           flex: 1;
 }
 
-#menu-window .bottom .social-media-block .social-media-symbol {
+.social-media-block .social-media-symbol {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -383,7 +383,11 @@ ul {
           align-items: center;
   width: 60px;
   height: 60px;
+  border: 1px solid black;
+  border-radius: 50%;
+  cursor: pointer;
   font-size: 30px;
+  margin-right: 8px;
 }
 
 #menu-button {
@@ -607,6 +611,12 @@ nav #home {
         flex-wrap: wrap;
     height: auto;
   }
+}
+
+.footer .top .social-media-block .social-media-symbol {
+  width: 32px;
+  height: 32px;
+  font-size: 18px;
 }
 
 .footer .bottom {

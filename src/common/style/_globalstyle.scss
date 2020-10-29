@@ -289,18 +289,24 @@ $color_font_main: #868e9c;
         top: 50%;
       }
     }
+  }
+}
 
-    .social-media-block {
-      @include flex-layout(row, center, center);
-      height: 100%;
-      flex: 1;
+.social-media-block {
+  @include flex-layout(row, center, center);
+  height: 100%;
+  flex: 1;
 
-      .social-media-symbol {
-        @include flex-layout(row, center, center);
-        @include size(60px, 60px);
-        font-size: 30px;
-      }
-    }
+  .social-media-symbol {
+    $symbol-border-size: 60px;
+    $symbol-font-size: 30px;
+    @include flex-layout(row, center, center);
+    @include size($symbol-border-size, $symbol-border-size);
+    border: 1px solid black;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: $symbol-font-size;
+    margin-right: 8px;
   }
 }
 
@@ -436,6 +442,15 @@ nav {
     @include phone-width() {
       flex-wrap: wrap;
       height: auto;
+    }
+
+    .social-media-block {
+      .social-media-symbol {
+        $symbol-border-size: 32px;
+        $symbol-font-size: 18px;
+        @include size($symbol-border-size, $symbol-border-size);
+        font-size: $symbol-font-size;
+      }
     }
   }
 

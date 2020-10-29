@@ -90,6 +90,7 @@ function onGSAP() {
     gsap
       .timeline({
         onComplete: () => {
+          window.scrollTo(0, 0);
           index === 7 ? headTimeline.play() : null;
         },
       })
