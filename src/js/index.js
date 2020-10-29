@@ -120,7 +120,7 @@ function onGSAP() {
   anim_open_menu = gsap.timeline({ paused: true }).to($('#menu-window'), {
     opacity: 1,
     duration: 1,
-    onComplete: () => {
+    onStart: () => {
       $('#menu-window')[0].style.pointerEvents = 'auto';
     },
   });
