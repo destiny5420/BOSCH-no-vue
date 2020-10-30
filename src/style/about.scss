@@ -48,14 +48,26 @@
     }
 
     .right {
-      @include size(630px, 100%);
+      @include flex-layout(column, center, flex-start);
+      @include size(auto, 100%);
 
       > :first-child {
         font-size: 36px;
       }
 
-      > :last-child {
-        font-size: 20px;
+      .sub-title {
+        @include size(100%, 100%);
+        @include flex-layout(row, center, center);
+        .line {
+          @include size(65%, 1px);
+          background-color: black;
+          margin-right: 10px;
+        }
+
+        .text-effect {
+          @include size(30%, auto);
+          font-size: 20px;
+        }
       }
     }
   }
