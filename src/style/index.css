@@ -1136,12 +1136,12 @@ nav #home {
   overflow: hidden;
 }
 
-.max-w-380 {
-  width: 380px;
+.max-w-390 {
+  width: 390px;
 }
 
-.max-w-380 :first-child {
-  max-width: 380px;
+.max-w-390 :first-child {
+  max-width: 390px;
   overflow: hidden;
 }
 
@@ -2029,7 +2029,7 @@ header #scroll-point #point::before {
 }
 
 .faq-container .faq-blocks #faq-blocks-content > :nth-child(n) > div {
-  height: 340px;
+  height: 350px;
 }
 
 .faq-container .faq-blocks #faq-blocks-content > :nth-child(3n) {
