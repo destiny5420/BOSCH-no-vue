@@ -288,13 +288,13 @@ function onGSAP() {
     );
   ScrollTrigger.getById(anim_install_ID).disable();
 
+  console.warn('** infoImgPseudo start **');
   var infoImgPseudo01 = CSSRulePlugin.getRule('#info-group-1 .info-image-block::after');
   anim_install_pic_1 = gsap
     .timeline({
       scrollTrigger: {
         trigger: $('.info-container #info-group-1'),
         start: 'top 65%',
-
         id: anim_install_pic_1_ID,
       },
     })
@@ -323,6 +323,7 @@ function onGSAP() {
     .from($('#info-group-2 #info-2'), { maxHeight: 0, duration: 1 }, '-=0.8')
     .from($('#info-group-2 #info-3'), { y: -50, opacity: 0, duration: 1 }, '-=0.8');
   ScrollTrigger.getById(anim_install_pic_2_ID).disable();
+  console.warn('** infoImgPseudo finish **');
 
   anim_faq = gsap
     .timeline({

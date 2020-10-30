@@ -486,7 +486,7 @@ header {
     margin-bottom: 40px;
 
     #faq-blocks-content {
-      @include size(1200px, auto);
+      @include size(1300px, auto);
       @include flex-layout(row, center, flex-start);
       flex-wrap: wrap;
       color: #ffffff;
@@ -547,6 +547,10 @@ header {
       > :nth-child(n) {
         margin-right: 40px;
         margin-bottom: 40px;
+
+        > div {
+          height: 340px;
+        }
       }
 
       > :nth-child(3n) {
