@@ -67,6 +67,7 @@ ul {
   padding: 0px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  border: 1px solid black;
 }
 
 .main-container {
@@ -1044,6 +1045,69 @@ nav #home {
   transition: -webkit-transform 0.85s cubic-bezier(0.25, 1, 0.5, 1);
   transition: transform 0.85s cubic-bezier(0.25, 1, 0.5, 1);
   transition: transform 0.85s cubic-bezier(0.25, 1, 0.5, 1), -webkit-transform 0.85s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.max-h-100 {
+  height: 100px;
+}
+
+.max-h-100 :first-child {
+  max-height: 100px;
+  overflow: hidden;
+}
+
+.max-h-95 {
+  height: 95px;
+}
+
+.max-h-95 :first-child {
+  max-height: 95px;
+  overflow: hidden;
+}
+
+.max-h-90 {
+  height: 90px;
+}
+
+.max-h-90 :first-child {
+  max-height: 90px;
+  overflow: hidden;
+}
+
+.max-h-85 {
+  height: 85px;
+}
+
+.max-h-85 :first-child {
+  max-height: 85px;
+  overflow: hidden;
+}
+
+.max-h-80 {
+  height: 80px;
+}
+
+.max-h-80 :first-child {
+  max-height: 80px;
+  overflow: hidden;
+}
+
+.max-h-75 {
+  height: 75px;
+}
+
+.max-h-75 :first-child {
+  max-height: 75px;
+  overflow: hidden;
+}
+
+.max-h-70 {
+  height: 70px;
+}
+
+.max-h-70 :first-child {
+  max-height: 70px;
+  overflow: hidden;
 }
 
 @font-face {

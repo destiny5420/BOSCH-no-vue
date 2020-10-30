@@ -122,7 +122,7 @@ $color_font_main: #868e9c;
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  //@include border();
+  @include border();
 }
 
 .main-container {
@@ -849,5 +849,68 @@ $point-move-unit: -20px;
 .btn-more-move-style-1 {
   > p {
     transition: transform 0.85s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+}
+
+.max-h-100 {
+  $value: 100px;
+  height: $value;
+  :first-child {
+    max-height: $value;
+    overflow: hidden;
+  }
+}
+
+.max-h-95 {
+  $value: 95px;
+  height: $value;
+  :first-child {
+    max-height: $value;
+    overflow: hidden;
+  }
+}
+
+.max-h-90 {
+  $value: 90px;
+  height: $value;
+  :first-child {
+    max-height: $value;
+    overflow: hidden;
+  }
+}
+
+.max-h-85 {
+  $value: 85px;
+  height: $value;
+  :first-child {
+    max-height: $value;
+    overflow: hidden;
+  }
+}
+
+.max-h-80 {
+  $value: 80px;
+  height: $value;
+  :first-child {
+    max-height: $value;
+    overflow: hidden;
+  }
+}
+
+.max-h-75 {
+  $value: 75px;
+  height: $value;
+  :first-child {
+    max-height: $value;
+    overflow: hidden;
+  }
+}
+
+.max-h-70 {
+  $value: 70px;
+  height: $value;
+  :first-child {
+    max-height: $value;
+    overflow: hidden;
   }
 }

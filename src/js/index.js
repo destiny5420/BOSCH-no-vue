@@ -19,6 +19,10 @@ import formula from '../js/formula';
 let headTimeline;
 let anim_open_menu;
 let anim_close_menu;
+let anim_about;
+let anim_about_ID = 'anim_about';
+let anim_install;
+let anim_install_ID = 'anim_install';
 
 let menu = (function () {
   var menuOpen = false;
@@ -89,8 +93,7 @@ function onGSAP() {
     gsap
       .timeline({
         onComplete: () => {
-          window.scrollTo(0, 0);
-          index === 7 ? headTimeline.play() : null;
+          onHeadAnimComplete(index);
         },
       })
       .from(e, { y: 100, duration: 1, ease: 'power1.out', delay: index * 0.015 })
@@ -176,6 +179,119 @@ function onGSAP() {
       },
       '-=1',
     );
+
+  // about animation
+  anim_about = gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: $('.about-us .bottom'),
+        start: 'top 65%',
+        markers: true,
+        id: anim_about_ID,
+      },
+    })
+    .from($('.about-us .bottom #head'), { x: -100, opacity: 0, duration: 1, ease: 'power1.out' })
+    .from(
+      $('.about-us .bottom #description'),
+      { x: 100, opacity: 0, duration: 1, ease: 'power1.out' },
+      '-=0.75',
+    )
+    .from(
+      $('.about-us .bottom #content .title'),
+      {
+        y: -100,
+
+        duration: 1,
+        ease: 'power1.out',
+      },
+      '-=0.85',
+    )
+    .from(
+      $('.about-us .bottom #content .sub-title'),
+      {
+        y: -100,
+        duration: 1,
+        ease: 'power1.out',
+      },
+      '-=0.9',
+    )
+    .from(
+      $('.about-us #txt-1'),
+      {
+        y: -100,
+        opacity: 0,
+        duration: 0.75,
+        ease: 'power1.out',
+      },
+      '-=0.65',
+    )
+    .from(
+      $('.about-us #txt-2'),
+      {
+        y: -100,
+        opacity: 0,
+        duration: 0.75,
+        ease: 'power1.out',
+      },
+      '-=0.72',
+    )
+    .from(
+      $('.about-us #txt-3'),
+      {
+        y: -100,
+        opacity: 0,
+        duration: 0.75,
+        ease: 'power1.out',
+      },
+      '-=0.72',
+    )
+    .from(
+      $('.about-us #more-about'),
+      {
+        y: -100,
+        opacity: 0,
+        duration: 0.75,
+        ease: 'power1.out',
+      },
+      '-=0.72',
+    );
+
+  ScrollTrigger.getById(anim_about_ID).disable();
+
+  anim_install = gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: $('.install-container'),
+        start: '+200px 75%',
+        markers: true,
+        id: anim_install_ID,
+      },
+    })
+    .from($('.install-container #install-title-1'), {
+      maxHeight: 0,
+      duration: 0.9,
+      ease: 'linear',
+    })
+    .from(
+      $('.install-container #install-title-2'),
+      { maxHeight: 0, duration: 0.9, ease: 'linear' },
+      '-=0.8',
+    )
+    .from(
+      $('.install-container #install-title-3'),
+      { maxHeight: 0, opacity: 0, duration: 0.75, ease: 'linear' },
+      '-=.85',
+    );
+
+  ScrollTrigger.getById(anim_install_ID).disable();
+}
+
+function onHeadAnimComplete(index) {
+  window.scrollTo(0, 0);
+  index === 7 ? headTimeline.play() : null;
+
+  ScrollTrigger.getById(anim_about_ID).enable();
+  ScrollTrigger.getById(anim_install_ID).enable();
 }
 
 function onAwake() {
