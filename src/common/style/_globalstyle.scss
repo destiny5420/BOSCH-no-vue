@@ -122,7 +122,7 @@ $color_font_main: #868e9c;
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  @include border();
+  // @include border();
 }
 
 .main-container {
@@ -908,6 +908,33 @@ $point-move-unit: -20px;
 
 .max-h-70 {
   $value: 70px;
+  height: $value;
+  :first-child {
+    max-height: $value;
+    overflow: hidden;
+  }
+}
+
+.max-h-65 {
+  $value: 65px;
+  height: $value;
+  :first-child {
+    max-height: $value;
+    overflow: hidden;
+  }
+}
+
+.max-h-55 {
+  $value: 55px;
+  height: $value;
+  :first-child {
+    max-height: $value;
+    overflow: hidden;
+  }
+}
+
+.max-h-35 {
+  $value: 35px;
   height: $value;
   :first-child {
     max-height: $value;

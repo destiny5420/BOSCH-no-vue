@@ -67,7 +67,6 @@ ul {
   padding: 0px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border: 1px solid black;
 }
 
 .main-container {
@@ -1107,6 +1106,33 @@ nav #home {
 
 .max-h-70 :first-child {
   max-height: 70px;
+  overflow: hidden;
+}
+
+.max-h-65 {
+  height: 65px;
+}
+
+.max-h-65 :first-child {
+  max-height: 65px;
+  overflow: hidden;
+}
+
+.max-h-55 {
+  height: 55px;
+}
+
+.max-h-55 :first-child {
+  max-height: 55px;
+  overflow: hidden;
+}
+
+.max-h-35 {
+  height: 35px;
+}
+
+.max-h-35 :first-child {
+  max-height: 35px;
   overflow: hidden;
 }
 

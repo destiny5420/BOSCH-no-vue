@@ -67,7 +67,6 @@ ul {
   padding: 0px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border: 1px solid black;
 }
 
 .main-container {
@@ -1110,6 +1109,33 @@ nav #home {
   overflow: hidden;
 }
 
+.max-h-65 {
+  height: 65px;
+}
+
+.max-h-65 :first-child {
+  max-height: 65px;
+  overflow: hidden;
+}
+
+.max-h-55 {
+  height: 55px;
+}
+
+.max-h-55 :first-child {
+  max-height: 55px;
+  overflow: hidden;
+}
+
+.max-h-35 {
+  height: 35px;
+}
+
+.max-h-35 :first-child {
+  max-height: 35px;
+  overflow: hidden;
+}
+
 @font-face {
   font-family: 'Bosch Sans CHS Regular';
   src: url("../files/fonts/BoschSansCHS-Regular.eot");
@@ -1777,8 +1803,17 @@ header #scroll-point #point::before {
   margin-top: 60px;
 }
 
-.install-container .content .info-container img {
+.install-container .content .info-container .info-image-block {
+  width: 400px;
+  height: 256px;
   margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.install-container .content .info-container .info-image-block img {
+  width: 100%;
+  height: 100%;
   -webkit-box-shadow: 10px 10px 18px -8px rgba(0, 0, 0, 0.32);
           box-shadow: 10px 10px 18px -8px rgba(0, 0, 0, 0.32);
 }
@@ -1797,7 +1832,7 @@ header #scroll-point #point::before {
 .install-container .content .info-container .right {
   position: absolute;
   right: 0px;
-  bottom: 0px;
+  bottom: 60px;
 }
 
 .install-container .content .info-title {
@@ -1839,6 +1874,32 @@ header #scroll-point #point::before {
   z-index: 1;
   bottom: calc(650px / 3 * 1 * -1);
   left: calc(650px / 3 * 1 * -1);
+}
+
+#info-group-1 .info-image-block::after {
+  position: absolute;
+  content: '';
+  background-color: black;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  -webkit-transform: translateX(400px);
+          transform: translateX(400px);
+}
+
+#info-group-2 .info-image-block::after {
+  position: absolute;
+  content: '';
+  background-color: black;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  -webkit-transform: translateX(400px);
+          transform: translateX(400px);
 }
 
 .faq-container {

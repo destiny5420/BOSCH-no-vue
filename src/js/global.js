@@ -18,6 +18,7 @@ import { apiLinkReference } from './api.js';
 // import gsap
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import CSSRulePlugin from 'gsap/CSSRulePlugin';
 
 // *** Parameter ***
 var isDebug = true;
@@ -70,5 +71,5 @@ async function settingMediaLink() {
   });
 }
 
-export { globalCommand, $, gsap, ScrollTrigger, isDebug };
+export { globalCommand, $, gsap, ScrollTrigger, CSSRulePlugin, isDebug };
 // export default $;

@@ -12,7 +12,7 @@ import '../images/home_txt_00.png';
 import '../images/home_txt_01.png';
 
 // import global.js
-import { globalCommand, $, gsap, ScrollTrigger } from '../js/global.js';
+import { globalCommand, $, gsap, ScrollTrigger, CSSRulePlugin } from '../js/global.js';
 import formula from '../js/formula';
 
 // ***** variable *****
@@ -23,6 +23,12 @@ let anim_about;
 let anim_about_ID = 'anim_about';
 let anim_install;
 let anim_install_ID = 'anim_install';
+let anim_install_pic_1;
+let anim_install_pic_1_ID = 'anim_install_pic_1';
+let anim_install_pic_2;
+let anim_install_pic_2_ID = 'anim_install_pic_2';
+let anim_faq;
+let anim_faq_ID = 'anim_faq';
 
 let menu = (function () {
   var menuOpen = false;
@@ -67,6 +73,7 @@ function onGSAP() {
 
   // Regist Plugin
   gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(CSSRulePlugin);
 
   headTimeline = gsap
     .timeline({ defaults: { ease: 'power1.out' }, paused: true })
@@ -186,7 +193,6 @@ function onGSAP() {
       scrollTrigger: {
         trigger: $('.about-us .bottom'),
         start: 'top 65%',
-        markers: true,
         id: anim_about_ID,
       },
     })
@@ -255,7 +261,6 @@ function onGSAP() {
       },
       '-=0.72',
     );
-
   ScrollTrigger.getById(anim_about_ID).disable();
 
   anim_install = gsap
@@ -263,7 +268,6 @@ function onGSAP() {
       scrollTrigger: {
         trigger: $('.install-container'),
         start: '+200px 75%',
-        markers: true,
         id: anim_install_ID,
       },
     })
@@ -282,8 +286,45 @@ function onGSAP() {
       { maxHeight: 0, opacity: 0, duration: 0.75, ease: 'linear' },
       '-=.85',
     );
-
   ScrollTrigger.getById(anim_install_ID).disable();
+
+  var infoImgPseudo01 = CSSRulePlugin.getRule('#info-group-1 .info-image-block::after');
+  anim_install_pic_1 = gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: $('.info-container #info-group-1'),
+        start: 'top 65%',
+
+        id: anim_install_pic_1_ID,
+      },
+    })
+    .from(infoImgPseudo01, { duration: 1, cssRule: { translateX: 0 }, ease: 'power1.out' })
+    .from($('#info-group-1 #info-1'), { maxHeight: 0, duration: 1 }, '-=0.8')
+    .from($('#info-group-1 #info-2'), { maxHeight: 0, duration: 1 }, '-=0.8')
+    .from($('#info-group-1 #info-3'), { maxHeight: 0, duration: 1 }, '-=0.8');
+  ScrollTrigger.getById(anim_install_pic_1_ID).disable();
+
+  var infoImgPseudo02 = CSSRulePlugin.getRule('#info-group-2 .info-image-block::after');
+  anim_install_pic_2 = gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: $('.info-container #info-group-2 .info-image-block'),
+        start: 'top 65%',
+        id: anim_install_pic_2_ID,
+      },
+    })
+    .from(infoImgPseudo02, {
+      delay: 0.15,
+      duration: 1,
+      cssRule: { translateX: 0 },
+      ease: 'power1.out',
+    })
+    .from($('#info-group-2 #info-1'), { maxHeight: 0, duration: 1 }, '-=0.8')
+    .from($('#info-group-2 #info-2'), { maxHeight: 0, duration: 1 }, '-=0.8')
+    .from($('#info-group-2 #info-3'), { maxHeight: 0, duration: 1 }, '-=0.8');
+  ScrollTrigger.getById(anim_install_pic_2_ID).disable();
+
+  anim_faq = gsap.timeline({ scrollTrigger: { trigger: $('.faq-container') } });
 }
 
 function onHeadAnimComplete(index) {
@@ -292,6 +333,8 @@ function onHeadAnimComplete(index) {
 
   ScrollTrigger.getById(anim_about_ID).enable();
   ScrollTrigger.getById(anim_install_ID).enable();
+  ScrollTrigger.getById(anim_install_pic_1_ID).enable();
+  ScrollTrigger.getById(anim_install_pic_2_ID).enable();
 }
 
 function onAwake() {
