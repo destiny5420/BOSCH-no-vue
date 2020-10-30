@@ -20,7 +20,7 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
 // *** Parameter ***
-var isDebug = false;
+var isDebug = true;
 
 function globalCommand() {
   console.log('*** onGlobalCommand ***');
