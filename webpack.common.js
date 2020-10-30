@@ -16,7 +16,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, './docs'),
-    filename: 'js/[name]201029-05.bundle.js',
+    filename: 'js/[name]201029-06.bundle.js',
   },
   module: {
     rules: [
