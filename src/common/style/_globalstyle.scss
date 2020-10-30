@@ -941,3 +941,12 @@ $point-move-unit: -20px;
     overflow: hidden;
   }
 }
+
+.max-w-360 {
+  $value: 360px;
+  width: $value;
+  :first-child {
+    max-width: $value;
+    overflow: hidden;
+  }
+}

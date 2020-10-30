@@ -1136,6 +1136,15 @@ nav #home {
   overflow: hidden;
 }
 
+.max-w-360 {
+  width: 360px;
+}
+
+.max-w-360 :first-child {
+  max-width: 360px;
+  overflow: hidden;
+}
+
 @font-face {
   font-family: 'Bosch Sans CHS Regular';
   src: url("../files/fonts/BoschSansCHS-Regular.eot");

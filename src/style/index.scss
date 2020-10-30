@@ -493,14 +493,9 @@ header {
       position: relative;
       z-index: 2;
 
-      // padding: 20px;
-      .block-layout {
-        margin-right: 40px;
-        margin-bottom: 40px;
-      }
-
       .block {
         @include size(360px, 320px);
+        min-width: 360px;
         display: inline-block;
         position: relative;
         padding: 20px 50px;
@@ -549,13 +544,18 @@ header {
         display: inline-block;
       }
 
-      :nth-child(3n) {
+      > :nth-child(n) {
+        margin-right: 40px;
+        margin-bottom: 40px;
+      }
+
+      > :nth-child(3n) {
         margin-right: 0px;
       }
 
-      :nth-child(4),
-      :nth-child(5),
-      :nth-child(6) {
+      > :nth-child(4),
+      > :nth-child(5),
+      > :nth-child(6) {
         margin-bottom: 0px;
       }
     }

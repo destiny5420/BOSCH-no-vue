@@ -301,7 +301,7 @@ function onGSAP() {
     .from(infoImgPseudo01, { duration: 1, cssRule: { translateX: 0 }, ease: 'power1.out' })
     .from($('#info-group-1 #info-1'), { maxHeight: 0, duration: 1 }, '-=0.8')
     .from($('#info-group-1 #info-2'), { maxHeight: 0, duration: 1 }, '-=0.8')
-    .from($('#info-group-1 #info-3'), { maxHeight: 0, duration: 1 }, '-=0.8');
+    .from($('#info-group-1 #info-3'), { y: -100, opacity: 0, duration: 1 }, '-=0.8');
   ScrollTrigger.getById(anim_install_pic_1_ID).disable();
 
   var infoImgPseudo02 = CSSRulePlugin.getRule('#info-group-2 .info-image-block::after');
@@ -321,10 +321,22 @@ function onGSAP() {
     })
     .from($('#info-group-2 #info-1'), { maxHeight: 0, duration: 1 }, '-=0.8')
     .from($('#info-group-2 #info-2'), { maxHeight: 0, duration: 1 }, '-=0.8')
-    .from($('#info-group-2 #info-3'), { maxHeight: 0, duration: 1 }, '-=0.8');
+    .from($('#info-group-2 #info-3'), { y: -50, opacity: 0, duration: 1 }, '-=0.8');
   ScrollTrigger.getById(anim_install_pic_2_ID).disable();
 
-  anim_faq = gsap.timeline({ scrollTrigger: { trigger: $('.faq-container') } });
+  anim_faq = gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: $('.faq-container'),
+        start: '+300px 85%',
+        id: anim_faq_ID,
+      },
+    })
+    .from($('#faq-1'), { maxWidth: 0, opacity: 0, duration: 1 }, '-=0.85')
+    .from($('#faq-2'), { maxWidth: 0, opacity: 0, duration: 1 }, '-=0.75')
+    .from($('#faq-3'), { maxWidth: 0, opacity: 0, duration: 1 }, '-=0.75')
+    .from($('#faq-4'), { maxWidth: 0, opacity: 0, duration: 1 }, '-=0.75');
+  ScrollTrigger.getById(anim_faq_ID).disable();
 }
 
 function onHeadAnimComplete(index) {
@@ -335,6 +347,7 @@ function onHeadAnimComplete(index) {
   ScrollTrigger.getById(anim_install_ID).enable();
   ScrollTrigger.getById(anim_install_pic_1_ID).enable();
   ScrollTrigger.getById(anim_install_pic_2_ID).enable();
+  ScrollTrigger.getById(anim_faq_ID).enable();
 }
 
 function onAwake() {

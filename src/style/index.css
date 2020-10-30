@@ -1136,6 +1136,15 @@ nav #home {
   overflow: hidden;
 }
 
+.max-w-360 {
+  width: 360px;
+}
+
+.max-w-360 :first-child {
+  max-width: 360px;
+  overflow: hidden;
+}
+
 @font-face {
   font-family: 'Bosch Sans CHS Regular';
   src: url("../files/fonts/BoschSansCHS-Regular.eot");
@@ -1959,14 +1968,10 @@ header #scroll-point #point::before {
   z-index: 2;
 }
 
-.faq-container .faq-blocks #faq-blocks-content .block-layout {
-  margin-right: 40px;
-  margin-bottom: 40px;
-}
-
 .faq-container .faq-blocks #faq-blocks-content .block {
   width: 360px;
   height: 320px;
+  min-width: 360px;
   display: inline-block;
   position: relative;
   padding: 20px 50px;
@@ -2018,13 +2023,18 @@ header #scroll-point #point::before {
   display: inline-block;
 }
 
-.faq-container .faq-blocks #faq-blocks-content :nth-child(3n) {
+.faq-container .faq-blocks #faq-blocks-content > :nth-child(n) {
+  margin-right: 40px;
+  margin-bottom: 40px;
+}
+
+.faq-container .faq-blocks #faq-blocks-content > :nth-child(3n) {
   margin-right: 0px;
 }
 
-.faq-container .faq-blocks #faq-blocks-content :nth-child(4),
-.faq-container .faq-blocks #faq-blocks-content :nth-child(5),
-.faq-container .faq-blocks #faq-blocks-content :nth-child(6) {
+.faq-container .faq-blocks #faq-blocks-content > :nth-child(4),
+.faq-container .faq-blocks #faq-blocks-content > :nth-child(5),
+.faq-container .faq-blocks #faq-blocks-content > :nth-child(6) {
   margin-bottom: 0px;
 }
 
