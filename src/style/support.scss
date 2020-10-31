@@ -3,13 +3,30 @@
 @import '../common/style/_font.scss';
 
 .slogan {
+  $slogan-configure: (
+    margin_top: (
+      pc: 150px,
+      phone: 115px,
+    ),
+  );
+
   @include size(100%, 400px);
   @include flex-layout(column, center, center);
-  margin-top: 150px;
-  // padding: 50px 0px;
+  margin-top: map-get(map-get($slogan-configure, margin_top), pc);
   position: relative;
 
   .content {
+    $content-configure: (
+      issue_margin_bottom: (
+        pc: 0px,
+        phone: 10px,
+      ),
+      eng_font_size: (
+        pc: 60px,
+        phone: 30px,
+      ),
+    );
+
     $width: 150px;
     $height: 300px;
     @include size($width, $height);
@@ -24,11 +41,22 @@
 
     p[name='issue'] {
       font-size: 20px;
+      margin-bottom: map-get(map-get($content-configure, issue_margin_bottom), pc);
     }
 
     p[name='eng'] {
-      font-size: 60px;
+      font-size: map-get(map-get($content-configure, eng_font_size), pc);
       margin-bottom: 30px;
+    }
+
+    @include phone-width() {
+      p[name='issue'] {
+        margin-bottom: map-get(map-get($content-configure, issue_margin_bottom), phone);
+      }
+
+      p[name='eng'] {
+        font-size: map-get(map-get($content-configure, eng_font_size), phone);
+      }
     }
   }
 
@@ -54,18 +82,37 @@
     @include size($width, $height);
     @include independent(transform);
     @include flex-layout(column, center, center);
-    @include translate-center($width, $height, -350px, 30px);
+    @include translate-center($width, $height, -350px, 0px);
     transform: rotateZ(-20deg);
+
+    @include phone-width() {
+      @include translate-center($width, $height, -60px, 50px);
+    }
   }
 
   div[name='pic-02'] {
+    $configure: (
+      offset: (
+        pc: 375px,
+        phone: 90px,
+      ),
+    );
+
     $width: 150px;
     $height: 300px;
     @include size($width, $height);
-    @include independent(transform);
+    @include independent(transparent);
     @include flex-layout(column, center, center);
     @include translate-center($width, $height, 375px, 0px);
     transform: rotateZ(30deg);
+
+    @include phone-width() {
+      @include translate-center($width, $height, 40px, 0px);
+    }
+  }
+
+  @include phone-width() {
+    margin-top: map-get(map-get($slogan-configure, margin_top), phone);
   }
 }
 
@@ -227,6 +274,10 @@
           }
         }
       }
+    }
+
+    @include phone-width() {
+      padding: 0px 10% 220px 10%;
     }
   }
 }

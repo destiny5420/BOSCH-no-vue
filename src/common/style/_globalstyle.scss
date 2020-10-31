@@ -311,15 +311,34 @@ $color_font_main: #868e9c;
 }
 
 #menu-button {
-  $menu-height: 20px;
+  $menu-configure: (
+    height: (
+      pc: 20px,
+      phone: 14px,
+    ),
+    right: (
+      pc: 15%,
+      phone: 5%,
+    ),
+  );
+  $menu-height: (
+    pc: 20px,
+    phone: 14px,
+  );
+
+  $menu-right: (
+    pc: 15%,
+    phone: 5%,
+  );
+
   $ham-width: 2px;
-  @include size(35px, $menu-height);
+  @include size(35px, map-get(map-get($menu-configure, height), pc));
   @include flex-layout(row, space-around, center);
   position: fixed;
   z-index: 1001;
   cursor: pointer;
   top: 35px;
-  right: 300px;
+  right: map-get($menu-right, pc);
 
   span {
     &::before {
@@ -343,7 +362,7 @@ $color_font_main: #868e9c;
     @include independent(#000);
     @include size(100%, $ham-width);
     left: 0;
-    top: calc((#{$menu-height} / 2) - (#{$ham-width} / 2));
+    top: calc((#{map-get(map-get($menu-configure, height), pc)} / 2) - (#{$ham-width} / 2));
     transform-origin: center center;
     transition: 0.45s cubic-bezier(0.33, 1, 0.68, 1);
   }
@@ -352,9 +371,22 @@ $color_font_main: #868e9c;
     @include independent(#000);
     @include size(100%, $ham-width);
     right: 0;
-    bottom: calc((#{$menu-height} / 2) - (#{$ham-width} / 2));
+    bottom: calc((#{map-get(map-get($menu-configure, height), pc)} / 2) - (#{$ham-width} / 2));
     transform-origin: center center;
     transition: 0.45s cubic-bezier(0.33, 1, 0.68, 1);
+  }
+
+  @include phone-width() {
+    @include size(25px, map-get(map-get($menu-configure, height), phone));
+    right: map-get($menu-right, phone);
+
+    &::before {
+      top: calc((#{map-get(map-get($menu-configure, height), phone)} / 2) - (#{$ham-width} / 2));
+    }
+
+    &::after {
+      bottom: calc((#{map-get(map-get($menu-configure, height), phone)} / 2) - (#{$ham-width} / 2));
+    }
   }
 }
 
@@ -390,9 +422,19 @@ nav {
 
   #home {
     @include independent(transparent);
+    @include size(160px, 54px);
     cursor: pointer;
     top: 35px;
-    left: 300px;
+    left: 18%;
+
+    img {
+      @include size(100%, 100%);
+    }
+
+    @include phone-width() {
+      @include size(98px, 32px);
+      left: 6%;
+    }
   }
 }
 
