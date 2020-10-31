@@ -25,8 +25,7 @@ var isDebug = true;
 var deviceMode;
 
 function globalInit() {
-  console.log('*** onGlobalInit ***');
-  console.log('window.innerWidth: ', window.innerWidth);
+  console.log('*** onGlobalInit *** / innerWidth: %d', window.innerWidth);
 
   // phone
   if (window.innerWidth <= 375) {

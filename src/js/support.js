@@ -96,7 +96,6 @@ async function onLoadingData() {
 
   // Modify size
   var allList = $('.list');
-  console.log(allList);
   for (let i = 0; i < allList.length; i++) {
     var modifyValue;
     var questionContentHeight = allList[i].querySelector('.question .list-text').clientHeight;
@@ -107,7 +106,6 @@ async function onLoadingData() {
       window.getComputedStyle(allList[i].querySelector('.question')).paddingBottom,
     );
     modifyValue = questionContentHeight + questionContentPaddingTop + questionContentPaddingBottom;
-    console.log('modifyValue: ', modifyValue);
 
     allList[i].style.maxHeight = modifyValue + 'px';
     allList[i].querySelector('.question').style.height = modifyValue + 'px';

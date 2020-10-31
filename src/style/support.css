@@ -1605,7 +1605,7 @@ nav #home img {
       -ms-flex-align: start;
           align-items: flex-start;
   position: relative;
-  padding: 22px 70px 0px 35px;
+  padding: 22px 70px 22px 35px;
   cursor: pointer;
 }
 
