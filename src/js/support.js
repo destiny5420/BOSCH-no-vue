@@ -16,10 +16,12 @@ let anim_open_menu;
 let anim_close_menu;
 let tmpAnim = null;
 let faqDatas = {
-  originHeight: 0,
   toggle: [],
+  originHeight: [],
   showMaxHeight: [],
   clickAnim: [],
+  listMaxHeight: [],
+  questionHeight: [],
 };
 
 let menu = (function () {
@@ -75,9 +77,6 @@ async function settingFAQQuestion() {
       .replace('{{answer}}', data.shopinfo[i].answer);
     $('#shopinfo .block').append(current_list);
   }
-
-  // setting originHeight
-  faqDatas['originHeight'] = $('.list')[0].clientHeight;
 }
 
 async function onLoadingData() {
@@ -94,6 +93,34 @@ async function onLoadingData() {
   for (let i = 0; i < 10; i++) {
     $('.slogan .txt-faq').append(questionHtmlTemplate);
   }
+
+  // Modify size
+  var allList = $('.list');
+  console.log(allList);
+  for (let i = 0; i < allList.length; i++) {
+    var modifyValue;
+    var questionContentHeight = allList[i].querySelector('.question .list-text').clientHeight;
+    var questionContentPaddingTop = parseInt(
+      window.getComputedStyle(allList[i].querySelector('.question')).paddingTop,
+    );
+    var questionContentPaddingBottom = parseInt(
+      window.getComputedStyle(allList[i].querySelector('.question')).paddingBottom,
+    );
+    modifyValue = questionContentHeight + questionContentPaddingTop + questionContentPaddingBottom;
+    console.log('modifyValue: ', modifyValue);
+
+    allList[i].style.maxHeight = modifyValue + 'px';
+    allList[i].querySelector('.question').style.height = modifyValue + 'px';
+
+    // setting height for hide
+    faqDatas.originHeight.push(modifyValue);
+
+    // setting max-height for show
+    faqDatas.showMaxHeight.push(allList[i].querySelector('div[name="list-block"]').clientHeight);
+
+    // setting toggle flag
+    faqDatas.toggle.push(false);
+  }
 }
 
 function onEventBinding() {
@@ -101,12 +128,6 @@ function onEventBinding() {
 
   let allList = $('.list');
   for (let i = 0; i < allList.length; i++) {
-    // setting toggle flag
-    faqDatas.toggle.push(false);
-
-    // setting max-height for show
-    faqDatas.showMaxHeight.push(allList[i].children[0].clientHeight);
-
     allList[i].addEventListener('click', (e) => {
       // console.log(e);
 
@@ -116,7 +137,7 @@ function onEventBinding() {
         e.target.children[0].children[0].classList.add('show');
         faqDatas.clickAnim[i].play();
       } else {
-        e.target.style.maxHeight = faqDatas['originHeight'] + 'px';
+        e.target.style.maxHeight = faqDatas.originHeight[i] + 'px';
         e.target.children[0].children[0].classList.remove('show');
         faqDatas.clickAnim[i].reverse();
       }

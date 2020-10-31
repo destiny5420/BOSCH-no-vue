@@ -1611,7 +1611,7 @@ nav #home img {
 
 @media all and (max-width: 479px) {
   .lists .lists-container .block .list .question {
-    padding: 22px 17px 22px 17px;
+    padding: 22px 55px 22px 17px;
   }
 }
 
