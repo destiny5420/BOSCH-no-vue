@@ -117,12 +117,33 @@
 }
 
 .lists {
+  $configure: (
+    list-container: (
+      padding: (
+        pc: 0px 20% 220px 20%,
+        phone: 0px 5% 220px 5%,
+      ),
+      title: (
+        font-size: (
+          pc: 36px,
+          phone: 24px,
+        ),
+      ),
+    ),
+    question: (
+      padding: (
+        pc: 22px 70px 0px 35px,
+        phone: 22px 17px 22px 17px,
+      ),
+    ),
+  );
+
   @include size(100%, auto);
   position: relative;
 
   .lists-container {
     @include size(100%, auto);
-    padding: 0px 20% 220px 20%;
+    padding: map-get(map-get(map-get($configure, list-container), padding), pc);
 
     > :nth-child(n) {
       margin-bottom: 75px;
@@ -185,8 +206,18 @@
     }
 
     .title {
-      font-size: 36px;
+      font-size: map-get(
+        map-get(map-get(map-get($configure, list-container), title), font-size),
+        pc
+      );
       line-height: 3;
+
+      @include phone-width() {
+        font-size: map-get(
+          map-get(map-get(map-get($configure, list-container), title), font-size),
+          phone
+        );
+      }
     }
 
     .block {
@@ -208,15 +239,20 @@
           background-color: $color_purple;
           opacity: 0.5;
           pointer-events: none;
+          position: relative;
         }
 
         .question {
           @include size(100%, $view-height);
-          @include flex-layout(row, space-between, center);
+          @include flex-layout(row, flex-start, flex-start);
           position: relative;
-          padding: 0px 35px;
-          // pointer-events: none;
+          padding: map-get(map-get(map-get($configure, question), padding), pc);
+
           cursor: pointer;
+
+          @include phone-width() {
+            padding: map-get(map-get(map-get($configure, question), padding), phone);
+          }
         }
 
         .question.show {
@@ -250,9 +286,11 @@
         .que-btn {
           $vh-unit: 20px;
           $line-width: 4px;
+          @include independent(transparent);
           @include size($vh-unit, $vh-unit);
+          top: 30px;
+          right: 20px;
           pointer-events: none;
-          position: relative;
           float: right;
 
           &::before {
@@ -277,7 +315,7 @@
     }
 
     @include phone-width() {
-      padding: 0px 10% 220px 10%;
+      padding: map-get(map-get(map-get($configure, list-container), padding), phone);
     }
   }
 }

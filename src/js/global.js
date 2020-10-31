@@ -22,6 +22,17 @@ import CSSRulePlugin from 'gsap/CSSRulePlugin';
 
 // *** Parameter ***
 var isDebug = true;
+var deviceMode;
+
+function globalInit() {
+  console.log('*** onGlobalInit ***');
+  console.log('window.innerWidth: ', window.innerWidth);
+
+  // phone
+  if (window.innerWidth <= 375) {
+    deviceMode = 'phone';
+  }
+}
 
 function globalCommand() {
   console.log('*** onGlobalCommand ***');
@@ -71,5 +82,5 @@ async function settingMediaLink() {
   });
 }
 
-export { globalCommand, $, gsap, ScrollTrigger, CSSRulePlugin, isDebug };
+export { globalInit, globalCommand, $, gsap, ScrollTrigger, CSSRulePlugin, isDebug, deviceMode };
 // export default $;

@@ -5,7 +5,7 @@ import '../images/support_txt_01.png';
 import '../images/support_pic_00.png';
 import '../images/support_pic_01.png';
 
-import { globalCommand, $, gsap, ScrollTrigger, isDebug } from '../js/global.js';
+import { globalInit, globalCommand, $, gsap, ScrollTrigger, isDebug } from '../js/global.js';
 
 // import json data
 import faq_collections from '../files/jsons/question.json';
@@ -53,7 +53,7 @@ async function settingFAQQuestion() {
 
   // setting template append result to DOM
   var template_html =
-    "<div class='move-block'><div class='list'><div name='list-block'><div class='question'><div><div class='tch-b list-symbol'>Q</div><div class='tch-b list-text'>{{question}}</div></div><div class='que-btn'></div></div><div class='answer'><div class='tch-b list-symbol'>A</div><div class='tch-r list-text'>{{answer}}</div></div></div></div></div>";
+    "<div class='move-block'><div class='list'><div name='list-block'><div class='question'><div class='tch-b list-symbol'>Q</div><div class='tch-b list-text'>{{question}}</div></div><div class='answer'><div class='tch-b list-symbol'>A</div><div class='tch-r list-text'>{{answer}}</div></div><div class='que-btn'></div></div></div></div>";
 
   for (let i = 0; i < data.common.length; i++) {
     var current_list = template_html
@@ -289,6 +289,7 @@ function onGSAP() {
 async function onAwake() {
   console.log('*** onAwake ***');
 
+  globalInit();
   await onLoadingData();
   onEventBinding();
   onGSAP();

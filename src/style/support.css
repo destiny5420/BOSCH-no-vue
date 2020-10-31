@@ -1558,6 +1558,12 @@ nav #home img {
   line-height: 3;
 }
 
+@media all and (max-width: 479px) {
+  .lists .lists-container .title {
+    font-size: 24px;
+  }
+}
+
 .lists .lists-container .block .list {
   color: #fff;
   max-height: 80px;
@@ -1579,6 +1585,7 @@ nav #home img {
   background-color: #50237f;
   opacity: 0.5;
   pointer-events: none;
+  position: relative;
 }
 
 .lists .lists-container .block .list .question {
@@ -1591,15 +1598,21 @@ nav #home img {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   position: relative;
-  padding: 0px 35px;
+  padding: 22px 70px 0px 35px;
   cursor: pointer;
+}
+
+@media all and (max-width: 479px) {
+  .lists .lists-container .block .list .question {
+    padding: 22px 17px 22px 17px;
+  }
 }
 
 .lists .lists-container .block .list .question.show .que-btn::before, .lists .lists-container .block .list .question.show .que-btn::after {
@@ -1640,10 +1653,15 @@ nav #home img {
 }
 
 .lists .lists-container .block .list .que-btn {
+  position: absolute;
+  content: '';
+  background-color: transparent;
+  z-index: 1;
   width: 20px;
   height: 20px;
+  top: 30px;
+  right: 20px;
   pointer-events: none;
-  position: relative;
   float: right;
 }
 
@@ -1683,7 +1701,7 @@ nav #home img {
 
 @media all and (max-width: 479px) {
   .lists .lists-container {
-    padding: 0px 10% 220px 10%;
+    padding: 0px 5% 220px 5%;
   }
 }
 /*# sourceMappingURL=support.css.map */
