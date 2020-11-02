@@ -24,9 +24,9 @@ import CSSRulePlugin from 'gsap/CSSRulePlugin';
 var isDebug = true;
 var deviceMode;
 
-function globalInit() {
-  console.log(
-    '*** onGlobalInit *** / innerWidth: %d / window screen width: %d',
+function onGlobalInit() {
+  console.warn(
+    '---> onGlobalInit / innerWidth: %d / window screen width: %d',
     window.innerWidth,
     window.screen.width,
   );
@@ -39,14 +39,35 @@ function globalInit() {
   }
 }
 
-function globalCommand() {
-  console.log('*** onGlobalCommand ***');
+function onGlobalBinding() {
+  console.warn('---> onGlobalBinding');
 
   $('#home').on('click', () => {
     window.location.href = './index.html';
   });
 
   settingMediaLink();
+}
+
+function onGlobalLoadingData() {
+  console.warn('---> onGlobalLoadingData ***');
+
+  // Modify bottom svg size
+  var colorElement = $('.bottom svg')[0];
+  switch (deviceMode) {
+    case 'phone':
+      colorElement.setAttribute('viewBox', '0 0 1920 70');
+      colorElement.setAttribute('height', '82');
+      break;
+    case '>=1920':
+      colorElement.setAttribute('viewBox', '0 0 1920 15');
+      colorElement.setAttribute('height', '17');
+      break;
+    default:
+      // colorElement.setAttribute('viewBox', '0 0 1920 15');
+      // colorElement.setAttribute('height', '17');
+      break;
+  }
 }
 
 async function settingMediaLink() {
@@ -87,5 +108,15 @@ async function settingMediaLink() {
   });
 }
 
-export { globalInit, globalCommand, $, gsap, ScrollTrigger, CSSRulePlugin, isDebug, deviceMode };
+export {
+  onGlobalInit,
+  onGlobalBinding,
+  onGlobalLoadingData,
+  $,
+  gsap,
+  ScrollTrigger,
+  CSSRulePlugin,
+  isDebug,
+  deviceMode,
+};
 // export default $;

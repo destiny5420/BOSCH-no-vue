@@ -1,6 +1,14 @@
 import '../style/about.css';
 
-import { globalCommand, $, gsap, ScrollTrigger } from '../js/global.js';
+import {
+  onGlobalInit,
+  onGlobalBinding,
+  onGlobalLoadingData,
+  $,
+  gsap,
+  ScrollTrigger,
+  deviceMode,
+} from '../js/global.js';
 
 // ***** variable *****
 let isDebug = false;
@@ -29,6 +37,18 @@ let menu = (function () {
   };
 })();
 
+function onInit() {
+  onGlobalInit();
+
+  console.log('*** onLoadingData ***');
+}
+
+async function onLoadingData() {
+  onGlobalLoadingData();
+
+  console.log('*** onLoadingData ***');
+}
+
 function onEventBinding() {
   // keydown
   $(document).on('keydown', function (e) {
@@ -46,7 +66,7 @@ function onEventBinding() {
   });
 
   // global binging
-  globalCommand();
+  onGlobalBinding();
 }
 
 function onGSAP() {
@@ -170,9 +190,11 @@ function onGSAP() {
     );
 }
 
-function onAwake() {
+async function onAwake() {
   console.log('*** onAwake ***');
 
+  onInit();
+  await onLoadingData();
   onEventBinding();
   onGSAP();
   $('#loading-bar').fadeOut();

@@ -6,8 +6,9 @@ import '../images/support_pic_00.png';
 import '../images/support_pic_01.png';
 
 import {
-  globalInit,
-  globalCommand,
+  onGlobalInit,
+  onGlobalBinding,
+  onGlobalLoadingData,
   $,
   gsap,
   ScrollTrigger,
@@ -50,44 +51,15 @@ let menu = (function () {
   };
 })();
 
-async function settingFAQQuestion() {
-  var data = {};
+function onInit() {
+  onGlobalInit();
 
-  if (isDebug) {
-    data = faq_collections;
-  } else {
-    await apiFAQQuestion().then((res) => {
-      data = res.data;
-    });
-  }
-
-  // setting template append result to DOM
-  var template_html =
-    "<div class='move-block'><div class='list'><div name='list-block'><div class='question'><div class='tch-b list-symbol'>Q</div><div class='tch-b list-text'>{{question}}</div></div><div class='answer'><div class='tch-b list-symbol'>A</div><div class='tch-r list-text'>{{answer}}</div></div><div class='que-btn'></div></div></div></div>";
-
-  for (let i = 0; i < data.common.length; i++) {
-    var current_list = template_html
-      .replace('{{question}}', data.common[i].question)
-      .replace('{{answer}}', data.common[i].answer);
-    $('#common .block').append(current_list);
-  }
-
-  for (let i = 0; i < data.service.length; i++) {
-    var current_list = template_html
-      .replace('{{question}}', data.service[i].question)
-      .replace('{{answer}}', data.service[i].answer);
-    $('#service .block').append(current_list);
-  }
-
-  for (let i = 0; i < data.shopinfo.length; i++) {
-    var current_list = template_html
-      .replace('{{question}}', data.shopinfo[i].question)
-      .replace('{{answer}}', data.shopinfo[i].answer);
-    $('#shopinfo .block').append(current_list);
-  }
+  console.log('*** onLoadingData ***');
 }
 
 async function onLoadingData() {
+  onGlobalLoadingData();
+
   console.log('*** onLoadingData ***');
 
   await settingFAQQuestion();
@@ -127,29 +99,51 @@ async function onLoadingData() {
     // setting toggle flag
     faqDatas.toggle.push(false);
   }
+}
 
-  // Modify bottom svg size
-  var colorElement = $('.bottom svg')[0];
-  console.log('deviceMode: ', deviceMode);
-  switch (deviceMode) {
-    case 'phone':
-      colorElement.setAttribute('viewBox', '0 0 1920 70');
-      colorElement.setAttribute('height', '82');
-      break;
-    case '>=1920':
-      colorElement.setAttribute('viewBox', '0 0 1920 15');
-      colorElement.setAttribute('height', '17');
-      break;
-    default:
-      // colorElement.setAttribute('viewBox', '0 0 1920 15');
-      // colorElement.setAttribute('height', '17');
-      break;
+async function settingFAQQuestion() {
+  var data = {};
+
+  if (isDebug) {
+    data = faq_collections;
+  } else {
+    await apiFAQQuestion().then((res) => {
+      data = res.data;
+    });
+  }
+
+  // setting template append result to DOM
+  var template_html =
+    "<div class='move-block'><div class='list'><div name='list-block'><div class='question'><div class='tch-b list-symbol'>Q</div><div class='tch-b list-text'>{{question}}</div></div><div class='answer'><div class='tch-b list-symbol'>A</div><div class='tch-r list-text'>{{answer}}</div></div><div class='que-btn'></div></div></div></div>";
+
+  for (let i = 0; i < data.common.length; i++) {
+    var current_list = template_html
+      .replace('{{question}}', data.common[i].question)
+      .replace('{{answer}}', data.common[i].answer);
+    $('#common .block').append(current_list);
+  }
+
+  for (let i = 0; i < data.service.length; i++) {
+    var current_list = template_html
+      .replace('{{question}}', data.service[i].question)
+      .replace('{{answer}}', data.service[i].answer);
+    $('#service .block').append(current_list);
+  }
+
+  for (let i = 0; i < data.shopinfo.length; i++) {
+    var current_list = template_html
+      .replace('{{question}}', data.shopinfo[i].question)
+      .replace('{{answer}}', data.shopinfo[i].answer);
+    $('#shopinfo .block').append(current_list);
   }
 }
 
 function onEventBinding() {
+  onGlobalBinding();
+
   console.log('*** onEventBinding ***');
 
+  // binding lists click event
   let allList = $('.list');
   for (let i = 0; i < allList.length; i++) {
     allList[i].addEventListener('click', (e) => {
@@ -174,9 +168,6 @@ function onEventBinding() {
   $('#menu-button').on('click', function (e) {
     menu.toggleMenu();
   });
-
-  // global binging
-  globalCommand();
 }
 
 function onGSAP() {
@@ -334,7 +325,7 @@ function onGSAP() {
 async function onAwake() {
   console.log('*** onAwake ***');
 
-  globalInit();
+  onInit();
   await onLoadingData();
   onEventBinding();
   onGSAP();

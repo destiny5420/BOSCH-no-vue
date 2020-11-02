@@ -12,7 +12,16 @@ import '../images/home_txt_00.png';
 import '../images/home_txt_01.png';
 
 // import global.js
-import { globalCommand, $, gsap, ScrollTrigger, CSSRulePlugin } from '../js/global.js';
+import {
+  onGlobalInit,
+  onGlobalBinding,
+  onGlobalLoadingData,
+  $,
+  gsap,
+  ScrollTrigger,
+  CSSRulePlugin,
+  deviceMode,
+} from '../js/global.js';
 import formula from '../js/formula';
 
 // ***** variable *****
@@ -48,6 +57,19 @@ let menu = (function () {
   };
 })();
 
+// ***************** Struct Methods *****************
+function onInit() {
+  onGlobalInit();
+
+  console.log('*** onLoadingData ***');
+}
+
+async function onLoadingData() {
+  onGlobalLoadingData();
+
+  console.log('*** onLoadingData ***');
+}
+
 function onEventBinding() {
   // menu button
   $('#menu-button').on('click', function (e) {
@@ -61,7 +83,7 @@ function onEventBinding() {
   });
 
   // global binging
-  globalCommand();
+  onGlobalBinding();
 
   $('.faq-container #btn-question').on('click', () => {
     window.location.href = './support.html';
@@ -340,6 +362,21 @@ function onGSAP() {
   ScrollTrigger.getById(anim_faq_ID).disable();
 }
 
+async function onAwake() {
+  console.log('*** onAwake ***');
+
+  onInit();
+  await onLoadingData();
+  onEventBinding();
+  onGSAP();
+  $('#loading-bar').fadeOut();
+}
+
+$(function () {
+  onAwake();
+});
+
+// ***************** Local Methods *****************
 function onHeadAnimComplete(index) {
   window.scrollTo(0, 0);
   index === 7 ? headTimeline.play() : null;
@@ -350,15 +387,3 @@ function onHeadAnimComplete(index) {
   ScrollTrigger.getById(anim_install_pic_2_ID).enable();
   ScrollTrigger.getById(anim_faq_ID).enable();
 }
-
-function onAwake() {
-  console.log('*** onAwake ***');
-
-  onEventBinding();
-  onGSAP();
-  $('#loading-bar').fadeOut();
-}
-
-$(function () {
-  onAwake();
-});
