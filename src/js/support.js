@@ -5,7 +5,15 @@ import '../images/support_txt_01.png';
 import '../images/support_pic_00.png';
 import '../images/support_pic_01.png';
 
-import { globalInit, globalCommand, $, gsap, ScrollTrigger, isDebug } from '../js/global.js';
+import {
+  globalInit,
+  globalCommand,
+  $,
+  gsap,
+  ScrollTrigger,
+  isDebug,
+  deviceMode,
+} from '../js/global.js';
 
 // import json data
 import faq_collections from '../files/jsons/question.json';
@@ -94,7 +102,7 @@ async function onLoadingData() {
     $('.slogan .txt-faq').append(questionHtmlTemplate);
   }
 
-  // Modify size
+  // Modify list size
   var allList = $('.list');
   for (let i = 0; i < allList.length; i++) {
     var modifyValue;
@@ -118,6 +126,24 @@ async function onLoadingData() {
 
     // setting toggle flag
     faqDatas.toggle.push(false);
+  }
+
+  // Modify bottom svg size
+  var colorElement = $('.bottom svg')[0];
+  console.log('deviceMode: ', deviceMode);
+  switch (deviceMode) {
+    case 'phone':
+      colorElement.setAttribute('viewBox', '0 0 1920 70');
+      colorElement.setAttribute('height', '82');
+      break;
+    case '>=1920':
+      colorElement.setAttribute('viewBox', '0 0 1920 15');
+      colorElement.setAttribute('height', '17');
+      break;
+    default:
+      // colorElement.setAttribute('viewBox', '0 0 1920 15');
+      // colorElement.setAttribute('height', '17');
+      break;
   }
 }
 

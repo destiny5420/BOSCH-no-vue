@@ -474,6 +474,13 @@ nav {
       text-align: center;
       line-height: 1;
     }
+
+    @include phone-width() {
+      $width: 50px;
+      left: auto;
+      top: calc(50% - (#{$height} / 2));
+      right: calc(#{$width} / 2);
+    }
   }
 
   .top {
@@ -481,18 +488,31 @@ nav {
     @include flex-layout(row, center, flex-start);
     padding: 90px 0px 25px 0px;
 
-    @include phone-width() {
-      flex-wrap: wrap;
-      height: auto;
+    #special-layout {
+      @include flex-layout(column, flex-start, flex-start);
     }
 
     .social-media-block {
+      @include flex-layout(row, flex-start, flex-start);
+
       .social-media-symbol {
         $symbol-border-size: 32px;
         $symbol-font-size: 18px;
         @include size($symbol-border-size, $symbol-border-size);
         font-size: $symbol-font-size;
       }
+
+      @include phone-width() {
+        order: -1;
+        margin-bottom: 5px;
+      }
+    }
+
+    @include phone-width() {
+      @include flex-layout(column, center, flex-start);
+      padding: 20px;
+      flex-wrap: wrap;
+      height: auto;
     }
   }
 
@@ -553,6 +573,12 @@ nav {
   display: inline-block;
   margin: 10px 0px 0px 30px;
   padding: 5px;
+
+  @include phone-width() {
+    margin: 0px;
+    padding: 0px 0px 0px 30px;
+    font-size: 12px;
+  }
 }
 
 .frame {

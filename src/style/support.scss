@@ -77,16 +77,50 @@
   }
 
   div[name='pic-01'] {
-    $width: 150px;
-    $height: 300px;
-    @include size($width, $height);
+    $configure: (
+      offset: (
+        pc: -300px,
+        phone: -60px,
+      ),
+      width: (
+        pc: 128px,
+        phone: 105px,
+      ),
+      height: (
+        pc: 285px,
+        phone: 235px,
+      ),
+    );
+
+    @include size(
+      map-get(map-get($configure, width), pc),
+      map-get(map-get($configure, height), pc)
+    );
     @include independent(transform);
     @include flex-layout(column, center, center);
-    @include translate-center($width, $height, -350px, 0px);
+    @include translate-center(
+      map-get(map-get($configure, width), pc),
+      map-get(map-get($configure, height), pc),
+      map-get(map-get($configure, offset), pc),
+      50px
+    );
+
     transform: rotateZ(-20deg);
+    img {
+      @include size(100%, 100%);
+    }
 
     @include phone-width() {
-      @include translate-center($width, $height, -60px, 50px);
+      @include size(
+        map-get(map-get($configure, width), phone),
+        map-get(map-get($configure, height), phone)
+      );
+      @include translate-center(
+        map-get(map-get($configure, width), phone),
+        map-get(map-get($configure, height), phone),
+        map-get(map-get($configure, offset), phone),
+        45px
+      );
     }
   }
 
@@ -94,20 +128,47 @@
     $configure: (
       offset: (
         pc: 375px,
-        phone: 90px,
+        phone: 95px,
+      ),
+      width: (
+        pc: 81px,
+        phone: 57px,
+      ),
+      height: (
+        pc: 329px,
+        phone: 235px,
       ),
     );
 
-    $width: 150px;
-    $height: 300px;
-    @include size($width, $height);
+    @include size(
+      map-get(map-get($configure, width), pc),
+      map-get(map-get($configure, height), pc)
+    );
     @include independent(transparent);
     @include flex-layout(column, center, center);
-    @include translate-center($width, $height, 375px, 0px);
+    @include translate-center(
+      map-get(map-get($configure, width), pc),
+      map-get(map-get($configure, height), pc),
+      map-get(map-get($configure, offset), pc),
+      0px
+    );
     transform: rotateZ(30deg);
 
+    img {
+      @include size(100%, 100%);
+    }
+
     @include phone-width() {
-      @include translate-center($width, $height, 40px, 0px);
+      @include size(
+        map-get(map-get($configure, width), phone),
+        map-get(map-get($configure, height), phone)
+      );
+      @include translate-center(
+        map-get(map-get($configure, width), phone),
+        map-get(map-get($configure, height), phone),
+        map-get(map-get($configure, offset), phone),
+        0px
+      );
     }
   }
 

@@ -25,11 +25,17 @@ var isDebug = true;
 var deviceMode;
 
 function globalInit() {
-  console.log('*** onGlobalInit *** / innerWidth: %d', window.innerWidth);
+  console.log(
+    '*** onGlobalInit *** / innerWidth: %d / window screen width: %d',
+    window.innerWidth,
+    window.screen.width,
+  );
 
   // phone
-  if (window.innerWidth <= 375) {
+  if (window.screen.width <= 375) {
     deviceMode = 'phone';
+  } else if (window.screen.width >= 1920) {
+    deviceMode = '>=1920';
   }
 }
 

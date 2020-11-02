@@ -615,6 +615,14 @@ nav #home img {
   line-height: 1;
 }
 
+@media all and (max-width: 479px) {
+  .footer #top-point {
+    left: auto;
+    top: calc(50% - (100px / 2));
+    right: calc(50px / 2);
+  }
+}
+
 .footer .top {
   width: 100%;
   height: auto;
@@ -634,18 +642,73 @@ nav #home img {
   padding: 90px 0px 25px 0px;
 }
 
-@media all and (max-width: 479px) {
-  .footer .top {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    height: auto;
-  }
+.footer .top #special-layout {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.footer .top .social-media-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .footer .top .social-media-block .social-media-symbol {
   width: 32px;
   height: 32px;
   font-size: 18px;
+}
+
+@media all and (max-width: 479px) {
+  .footer .top .social-media-block {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+    margin-bottom: 5px;
+  }
+}
+
+@media all and (max-width: 479px) {
+  .footer .top {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    padding: 20px;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    height: auto;
+  }
 }
 
 .footer .bottom {
@@ -708,6 +771,14 @@ nav #home img {
   display: inline-block;
   margin: 10px 0px 0px 30px;
   padding: 5px;
+}
+
+@media all and (max-width: 479px) {
+  #copy-right {
+    margin: 0px;
+    padding: 0px 0px 0px 30px;
+    font-size: 12px;
+  }
 }
 
 .frame {
