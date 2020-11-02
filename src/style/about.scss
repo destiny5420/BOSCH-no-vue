@@ -33,10 +33,12 @@
   padding: 206px 0px 161px 0px;
 
   .content-wrap {
-    @include flex-layout(column, center, center);
-    @include size(800px, 300px);
+    // @include flex-layout(column, center, center);
+    @include size(730px, auto);
     margin-bottom: 164px;
     font-size: 20px;
+    text-justify: distribute;
+    text-align: center;
   }
 
   .tip-box {

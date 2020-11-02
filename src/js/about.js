@@ -86,24 +86,33 @@ function onGSAP() {
     );
   });
 
-  // description content
-  let tmpAry = Array.from(document.querySelectorAll('.description .content-wrap .text-effect'));
-  for (let i = 0; i < tmpAry.length; i++) {
-    animsDescription.push(
-      gsap.timeline({ scrollTrigger: { start: '100vh top', markers: isDebug, end: '+=0' } }),
-    );
-  }
+  // // description content
+  // let tmpAry = Array.from(document.querySelectorAll('.description .content-wrap .text-effect'));
+  // for (let i = 0; i < tmpAry.length; i++) {
+  //   animsDescription.push(
+  //     gsap.timeline({ scrollTrigger: { start: '100vh top', markers: isDebug, end: '+=0' } }),
+  //   );
+  // }
 
-  tmpAry.forEach((element, index) => {
-    let list = Array.from(element.children);
-    list.forEach((element) => {
-      animsDescription[index].from(
-        element,
-        { duration: 0.75, opacity: 0.5, y: 65, ease: 'power1.out' },
-        '-=0.735',
-      );
+  // tmpAry.forEach((element, index) => {
+  //   let list = Array.from(element.children);
+  //   list.forEach((element) => {
+  //     animsDescription[index].from(
+  //       element,
+  //       { duration: 0.75, opacity: 0.5, y: 65, ease: 'power1.out' },
+  //       '-=0.735',
+  //     );
+  //   });
+  // });
+
+  gsap
+    .timeline({ scrollTrigger: { trigger: '.description', start: 'top 35%', markers: true } })
+    .from($('.description .content-wrap'), {
+      duration: 1.25,
+      opacity: 0,
+      y: 85,
+      ease: 'power1.out',
     });
-  });
 
   // description tip-box
   anim_description = gsap.timeline({
