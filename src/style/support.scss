@@ -136,6 +136,12 @@
         phone: 22px 55px 22px 17px,
       ),
     ),
+    answer: (
+      padding: (
+        pc: 0px 35px 22px 35px,
+        phone: 0px 35px 22px 17px,
+      ),
+    ),
   );
 
   @include size(100%, auto);
@@ -270,8 +276,12 @@
 
         .answer {
           @include flex-layout(row, flex-start, flex-start);
-          padding: 0px 35px 22px 35px;
+          padding: map-get(map-get(map-get($configure, answer), padding), pc);
           line-height: 1.75;
+
+          @include phone-width() {
+            padding: map-get(map-get(map-get($configure, answer), padding), phone);
+          }
         }
 
         .list-symbol {
@@ -309,6 +319,12 @@
             left: calc(50% - (#{$line-width} / 2));
             transform: rotateZ(0deg);
             transition: transform 0.25s linear;
+          }
+        }
+
+        @include phone-width() {
+          &:hover {
+            transform: translateX(0px);
           }
         }
       }

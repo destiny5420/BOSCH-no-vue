@@ -1643,6 +1643,12 @@ nav #home img {
   line-height: 1.75;
 }
 
+@media all and (max-width: 479px) {
+  .lists .lists-container .block .list .answer {
+    padding: 0px 35px 22px 17px;
+  }
+}
+
 .lists .lists-container .block .list .list-symbol {
   display: inline-block;
   margin-right: 20px;
@@ -1697,6 +1703,13 @@ nav #home img {
   transition: -webkit-transform 0.25s linear;
   transition: transform 0.25s linear;
   transition: transform 0.25s linear, -webkit-transform 0.25s linear;
+}
+
+@media all and (max-width: 479px) {
+  .lists .lists-container .block .list:hover {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
 }
 
 @media all and (max-width: 479px) {
