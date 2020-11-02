@@ -1553,7 +1553,7 @@ nav #home img {
 }
 
 .description .tip-box .right .sub-title .line {
-  width: 65%;
+  width: 60%;
   height: 1px;
   background-color: black;
   margin-right: 10px;
@@ -1566,8 +1566,6 @@ nav #home img {
 }
 
 .description .tip-box .right .sub-title .text-effect {
-  width: 30%;
-  height: auto;
   font-size: 20px;
 }
 

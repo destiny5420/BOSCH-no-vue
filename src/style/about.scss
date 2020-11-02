@@ -101,7 +101,7 @@
         @include flex-layout(row, center, center);
 
         .line {
-          @include size(65%, 1px);
+          @include size(60%, 1px);
           background-color: black;
           margin-right: 10px;
 
@@ -111,7 +111,6 @@
         }
 
         .text-effect {
-          @include size(30%, auto);
           font-size: 20px;
 
           @include phone-width() {
