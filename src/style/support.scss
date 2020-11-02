@@ -121,12 +121,24 @@
     list-container: (
       padding: (
         pc: 0px 20% 220px 20%,
-        phone: 0px 5% 220px 5%,
+        phone: 0px 5% 110px 5%,
       ),
       title: (
         font-size: (
           pc: 36px,
           phone: 24px,
+        ),
+        margin-left: (
+          pc: 0px,
+          phone: 16px,
+        ),
+      ),
+    ),
+    info: (
+      title: (
+        margin: (
+          pc: 0px,
+          phone: 10px 0px 10px 16px,
         ),
       ),
     ),
@@ -175,6 +187,14 @@
           bottom: 0px;
           left: 0px;
         }
+
+        @include phone-width() {
+          font-size: 48px;
+
+          &::before {
+            @include size(28%, 9px);
+          }
+        }
       }
 
       .info {
@@ -186,6 +206,10 @@
           height: 100%;
           font-size: 36px;
           display: inline-block;
+
+          @include phone-width() {
+            margin: map-get(map-get(map-get(map-get($configure, info), title), margin), phone);
+          }
         }
 
         #content {
@@ -208,6 +232,10 @@
             display: inline-block;
           }
         }
+
+        @include phone-width() {
+          @include flex-layout(column, center, flex-start);
+        }
       }
     }
 
@@ -216,11 +244,21 @@
         map-get(map-get(map-get($configure, list-container), title), font-size),
         pc
       );
+      margin-left: map-get(
+        map-get(map-get(map-get($configure, list-container), title), margin-left),
+        pc
+      );
+
       line-height: 3;
 
       @include phone-width() {
         font-size: map-get(
           map-get(map-get(map-get($configure, list-container), title), font-size),
+          phone
+        );
+
+        margin-left: map-get(
+          map-get(map-get(map-get($configure, list-container), title), margin-left),
           phone
         );
       }

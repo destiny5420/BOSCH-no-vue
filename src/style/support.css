@@ -1505,6 +1505,16 @@ nav #home img {
   left: 0px;
 }
 
+@media all and (max-width: 479px) {
+  .lists .lists-container #company .title {
+    font-size: 48px;
+  }
+  .lists .lists-container #company .title::before {
+    width: 28%;
+    height: 9px;
+  }
+}
+
 .lists .lists-container #company .info {
   width: 100%;
   height: auto;
@@ -1532,6 +1542,12 @@ nav #home img {
   display: inline-block;
 }
 
+@media all and (max-width: 479px) {
+  .lists .lists-container #company .info #title {
+    margin: 10px 0px 10px 16px;
+  }
+}
+
 .lists .lists-container #company .info #content {
   -webkit-box-flex: 4;
       -ms-flex: 4;
@@ -1553,14 +1569,34 @@ nav #home img {
   display: inline-block;
 }
 
+@media all and (max-width: 479px) {
+  .lists .lists-container #company .info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+
 .lists .lists-container .title {
   font-size: 36px;
+  margin-left: 0px;
   line-height: 3;
 }
 
 @media all and (max-width: 479px) {
   .lists .lists-container .title {
     font-size: 24px;
+    margin-left: 16px;
   }
 }
 
@@ -1714,7 +1750,7 @@ nav #home img {
 
 @media all and (max-width: 479px) {
   .lists .lists-container {
-    padding: 0px 5% 220px 5%;
+    padding: 0px 5% 110px 5%;
   }
 }
 /*# sourceMappingURL=support.css.map */
