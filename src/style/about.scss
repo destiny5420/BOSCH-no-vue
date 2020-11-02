@@ -23,7 +23,15 @@
     > :last-child {
       font-size: 60px;
       line-height: 1;
+      @include phone-width() {
+        font-size: 30px;
+      }
     }
+  }
+
+  @include phone-width() {
+    @include size(100%, 200px);
+    margin-top: 90px;
   }
 }
 
@@ -39,6 +47,12 @@
     font-size: 20px;
     text-justify: distribute;
     text-align: center;
+
+    @include phone-width() {
+      @include size(300px, auto);
+      font-size: 18px;
+      margin-bottom: 82px;
+    }
   }
 
   .tip-box {
@@ -47,31 +61,73 @@
     .left {
       @include flex-layout(row, center, center);
       margin-right: 50px;
+
+      > :first-child {
+        @include size(391px, 498px);
+
+        img {
+          @include size(100%, 100%);
+        }
+
+        @include phone-width() {
+          @include size(186px, 235px);
+        }
+      }
+      @include phone-width() {
+        margin-right: 0px;
+        margin-bottom: 40px;
+      }
     }
 
     .right {
       @include flex-layout(column, center, flex-start);
       @include size(auto, 100%);
 
-      > :first-child {
+      .title {
         font-size: 36px;
+
+        @include phone-width() {
+          margin: 0px auto 45px auto;
+          width: 75%;
+          font-size: 24px;
+          overflow: unset;
+          white-space: normal;
+          text-align: center;
+        }
       }
 
       .sub-title {
         @include size(100%, 100%);
         @include flex-layout(row, center, center);
+
         .line {
           @include size(65%, 1px);
           background-color: black;
           margin-right: 10px;
+
+          @include phone-width() {
+            display: none;
+          }
         }
 
         .text-effect {
           @include size(30%, auto);
           font-size: 20px;
+
+          @include phone-width() {
+            width: auto;
+          }
         }
       }
     }
+
+    @include phone-width() {
+      @include flex-layout(column);
+    }
+  }
+
+  @include phone-width() {
+    padding: 100px 0px 105px 0px;
   }
 }
 
@@ -98,12 +154,25 @@
       .title {
         line-height: 1.25;
         margin-bottom: 40px;
+
+        @include phone-width() {
+          font-size: 30px;
+          margin-bottom: 35px;
+        }
       }
 
       .content {
         font-size: 20px;
         text-align: justify;
-        text-justify: inter-ideograph;
+
+        @include phone-width() {
+          font-size: 18px;
+        }
+      }
+
+      @include phone-width() {
+        @include size(auto, auto);
+        padding: 38px;
       }
     }
   }
@@ -111,6 +180,10 @@
   .document {
     height: 100%;
     //@include size(300px, auto);
+  }
+
+  @include phone-width() {
+    @include flex-layout(column, flex-start, center);
   }
 }
 

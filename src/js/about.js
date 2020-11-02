@@ -105,8 +105,10 @@ function onGSAP() {
   //   });
   // });
 
+  var startVar = deviceMode === 'phone' ? 'top 25%' : 'top 35%';
+
   gsap
-    .timeline({ scrollTrigger: { trigger: '.description', start: 'top 35%', markers: true } })
+    .timeline({ scrollTrigger: { trigger: '.description', start: startVar, markers: true } })
     .from($('.description .content-wrap'), {
       duration: 1.25,
       opacity: 0,

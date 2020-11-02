@@ -1393,6 +1393,20 @@ nav #home img {
   line-height: 1;
 }
 
+@media all and (max-width: 479px) {
+  .slogan .slogan-wrap > :last-child {
+    font-size: 30px;
+  }
+}
+
+@media all and (max-width: 479px) {
+  .slogan {
+    width: 100%;
+    height: 200px;
+    margin-top: 90px;
+  }
+}
+
 .description {
   width: 100%;
   height: auto;
@@ -1419,6 +1433,15 @@ nav #home img {
   font-size: 20px;
   text-justify: distribute;
   text-align: center;
+}
+
+@media all and (max-width: 479px) {
+  .description .content-wrap {
+    width: 300px;
+    height: auto;
+    font-size: 18px;
+    margin-bottom: 82px;
+  }
 }
 
 .description .tip-box {
@@ -1454,6 +1477,30 @@ nav #home img {
   margin-right: 50px;
 }
 
+.description .tip-box .left > :first-child {
+  width: 391px;
+  height: 498px;
+}
+
+.description .tip-box .left > :first-child img {
+  width: 100%;
+  height: 100%;
+}
+
+@media all and (max-width: 479px) {
+  .description .tip-box .left > :first-child {
+    width: 186px;
+    height: 235px;
+  }
+}
+
+@media all and (max-width: 479px) {
+  .description .tip-box .left {
+    margin-right: 0px;
+    margin-bottom: 40px;
+  }
+}
+
 .description .tip-box .right {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1472,8 +1519,19 @@ nav #home img {
   height: 100%;
 }
 
-.description .tip-box .right > :first-child {
+.description .tip-box .right .title {
   font-size: 36px;
+}
+
+@media all and (max-width: 479px) {
+  .description .tip-box .right .title {
+    margin: 0px auto 45px auto;
+    width: 75%;
+    font-size: 24px;
+    overflow: unset;
+    white-space: normal;
+    text-align: center;
+  }
 }
 
 .description .tip-box .right .sub-title {
@@ -1501,10 +1559,46 @@ nav #home img {
   margin-right: 10px;
 }
 
+@media all and (max-width: 479px) {
+  .description .tip-box .right .sub-title .line {
+    display: none;
+  }
+}
+
 .description .tip-box .right .sub-title .text-effect {
   width: 30%;
   height: auto;
   font-size: 20px;
+}
+
+@media all and (max-width: 479px) {
+  .description .tip-box .right .sub-title .text-effect {
+    width: auto;
+  }
+}
+
+@media all and (max-width: 479px) {
+  .description .tip-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media all and (max-width: 479px) {
+  .description {
+    padding: 100px 0px 105px 0px;
+  }
 }
 
 .proxy {
@@ -1563,14 +1657,52 @@ nav #home img {
   margin-bottom: 40px;
 }
 
+@media all and (max-width: 479px) {
+  .proxy .left .info .title {
+    font-size: 30px;
+    margin-bottom: 35px;
+  }
+}
+
 .proxy .left .info .content {
   font-size: 20px;
   text-align: justify;
-  text-justify: inter-ideograph;
+}
+
+@media all and (max-width: 479px) {
+  .proxy .left .info .content {
+    font-size: 18px;
+  }
+}
+
+@media all and (max-width: 479px) {
+  .proxy .left .info {
+    width: auto;
+    height: auto;
+    padding: 38px;
+  }
 }
 
 .proxy .document {
   height: 100%;
+}
+
+@media all and (max-width: 479px) {
+  .proxy {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 .text-effect {
