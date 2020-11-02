@@ -1651,11 +1651,6 @@ nav #home img {
   }
 }
 
-.lists .lists-container .block .list .question.show .que-btn::before, .lists .lists-container .block .list .question.show .que-btn::after {
-  -webkit-transform: rotateZ(45deg);
-          transform: rotateZ(45deg);
-}
-
 .lists .lists-container .block .list:hover {
   -webkit-transform: translateX(-25px);
           transform: translateX(-25px);
@@ -1739,6 +1734,11 @@ nav #home img {
   transition: -webkit-transform 0.25s linear;
   transition: transform 0.25s linear;
   transition: transform 0.25s linear, -webkit-transform 0.25s linear;
+}
+
+.lists .lists-container .block .list .que-btn.show::before, .lists .lists-container .block .list .que-btn.show::after {
+  -webkit-transform: rotateZ(45deg);
+          transform: rotateZ(45deg);
 }
 
 @media all and (max-width: 479px) {

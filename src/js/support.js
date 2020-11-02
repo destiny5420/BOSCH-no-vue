@@ -132,11 +132,11 @@ function onEventBinding() {
       if (faqDatas.toggle[i] === false) {
         e.target.style.transitionDuration = faqDatas.showMaxHeight[i] >= 200 ? '' : '0.35s';
         e.target.style.maxHeight = faqDatas.showMaxHeight[i] + 'px';
-        e.target.children[0].children[0].classList.add('show');
+        e.target.children[0].children[2].classList.add('show');
         faqDatas.clickAnim[i].play();
       } else {
         e.target.style.maxHeight = faqDatas.originHeight[i] + 'px';
-        e.target.children[0].children[0].classList.remove('show');
+        e.target.children[0].children[2].classList.remove('show');
         faqDatas.clickAnim[i].reverse();
       }
 

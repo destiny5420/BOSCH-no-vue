@@ -299,15 +299,6 @@
           }
         }
 
-        .question.show {
-          .que-btn {
-            &::before,
-            &::after {
-              transform: rotateZ(45deg);
-            }
-          }
-        }
-
         &:hover {
           transform: translateX(-25px);
         }
@@ -357,6 +348,13 @@
             left: calc(50% - (#{$line-width} / 2));
             transform: rotateZ(0deg);
             transition: transform 0.25s linear;
+          }
+        }
+
+        .que-btn.show {
+          &::before,
+          &::after {
+            transform: rotateZ(45deg);
           }
         }
 
