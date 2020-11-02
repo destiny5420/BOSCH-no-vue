@@ -53,7 +53,7 @@ function onGlobalLoadingData() {
   console.warn('---> onGlobalLoadingData ***');
 
   // Modify bottom svg size
-  var colorElement = $('.bottom svg')[0];
+  var colorElement = $('.footer .bottom svg')[0];
   switch (deviceMode) {
     case 'phone':
       colorElement.setAttribute('viewBox', '0 0 1920 70');
