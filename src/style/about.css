@@ -1039,16 +1039,48 @@ nav #home img {
   }
 }
 
+@-webkit-keyframes anim_arrow_path_B_2_W {
+  0% {
+    fill: black;
+  }
+  39% {
+    fill: black;
+  }
+  40% {
+    fill: white;
+  }
+  41% {
+    fill: white;
+  }
+  100% {
+    fill: white;
+  }
+}
+
+@keyframes anim_arrow_path_B_2_W {
+  0% {
+    fill: black;
+  }
+  39% {
+    fill: black;
+  }
+  40% {
+    fill: white;
+  }
+  41% {
+    fill: white;
+  }
+  100% {
+    fill: white;
+  }
+}
+
 .btn-more-point-move-LT:hover > svg {
   -webkit-animation: point_move_LT 0.5s cubic-bezier(0.25, 1, 0.5, 1);
           animation: point_move_LT 0.5s cubic-bezier(0.25, 1, 0.5, 1);
   -webkit-transform: translateX(0px);
           transform: translateX(0px);
   opacity: 1;
-}
-
-.btn-more-point-move-LT:hover > svg .arrow_path {
-  fill: white;
 }
 
 .btn-more-point-move-RT:hover > svg {
@@ -1059,7 +1091,9 @@ nav #home img {
   opacity: 1;
 }
 
-.btn-more-point-move-RT:hover > svg .arrow_path {
+.btn-more-arrow-path-B-2-W:hover .arrow_path {
+  -webkit-animation: anim_arrow_path_B_2_W 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+          animation: anim_arrow_path_B_2_W 0.5s cubic-bezier(0.25, 1, 0.5, 1);
   fill: white;
 }
 
@@ -1085,6 +1119,14 @@ nav #home img {
 
 .btn-more-color-apple-green .bg-circle svg circle {
   fill: #78be20;
+}
+
+.btn-more-color-fuchsia .bg-circle svg circle {
+  fill: #b90376;
+}
+
+.btn-more-color-turquoise .bg-circle svg circle {
+  fill: #00a8b0;
 }
 
 .btn-more-hover-right-5:hover > p {
@@ -1115,6 +1157,11 @@ nav #home img {
 .btn-more-hover-right-40:hover > p {
   -webkit-transform: translateX(40px);
           transform: translateX(40px);
+}
+
+.btn-more-hover-right-50:hover > p {
+  -webkit-transform: translateX(50px);
+          transform: translateX(50px);
 }
 
 .btn-more-hover-left-5:hover > p {

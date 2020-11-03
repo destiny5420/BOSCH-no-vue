@@ -758,16 +758,34 @@ $point-move-unit: -20px;
   }
 }
 
+@keyframes anim_arrow_path_B_2_W {
+  0% {
+    fill: black;
+  }
+
+  39% {
+    fill: black;
+  }
+
+  40% {
+    fill: white;
+  }
+
+  41% {
+    fill: white;
+  }
+
+  100% {
+    fill: white;
+  }
+}
+
 .btn-more-point-move-LT {
   &:hover {
     > svg {
       animation: point_move_LT 0.5s cubic-bezier(0.25, 1, 0.5, 1);
       transform: translateX(0px);
       opacity: 1;
-
-      .arrow_path {
-        fill: white;
-      }
     }
   }
 }
@@ -777,10 +795,15 @@ $point-move-unit: -20px;
       animation: point_move_RT 0.5s cubic-bezier(0.25, 1, 0.5, 1);
       transform: translateX(0px);
       opacity: 1;
+    }
+  }
+}
 
-      .arrow_path {
-        fill: white;
-      }
+.btn-more-arrow-path-B-2-W {
+  &:hover {
+    .arrow_path {
+      animation: anim_arrow_path_B_2_W 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+      fill: white;
     }
   }
 }
@@ -840,6 +863,24 @@ $point-move-unit: -20px;
     }
   }
 }
+.btn-more-color-fuchsia {
+  .bg-circle {
+    svg {
+      circle {
+        fill: #b90376;
+      }
+    }
+  }
+}
+.btn-more-color-turquoise {
+  .bg-circle {
+    svg {
+      circle {
+        fill: #00a8b0;
+      }
+    }
+  }
+}
 
 // Btn - direction for move - R
 .btn-more-hover-right-5 {
@@ -881,6 +922,13 @@ $point-move-unit: -20px;
   &:hover {
     > p {
       transform: translateX(40px);
+    }
+  }
+}
+.btn-more-hover-right-50 {
+  &:hover {
+    > p {
+      transform: translateX(50px);
     }
   }
 }
