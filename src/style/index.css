@@ -72,8 +72,8 @@ ul {
 .main-container {
   position: relative;
   background: #d6d8d9;
-  background: -webkit-gradient(linear, left top, right top, color-stop(3%, #d6d8d9), color-stop(41%, #fdfbfb), color-stop(75%, #dbddde), to(#d6d8d9));
-  background: linear-gradient(90deg, #d6d8d9 3%, #fdfbfb 41%, #dbddde 75%, #d6d8d9 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#d6d8d9), color-stop(50%, rgba(253, 251, 251, 0)), to(#d6d8d9));
+  background: linear-gradient(90deg, #d6d8d9 0%, rgba(253, 251, 251, 0) 50%, #d6d8d9 100%);
 }
 
 #loading-bar {
@@ -1047,12 +1047,20 @@ nav #home img {
   opacity: 1;
 }
 
+.btn-more-point-move-LT:hover > svg .arrow_path {
+  fill: white;
+}
+
 .btn-more-point-move-RT:hover > svg {
   -webkit-animation: point_move_RT 0.5s cubic-bezier(0.25, 1, 0.5, 1);
           animation: point_move_RT 0.5s cubic-bezier(0.25, 1, 0.5, 1);
   -webkit-transform: translateX(0px);
           transform: translateX(0px);
   opacity: 1;
+}
+
+.btn-more-point-move-RT:hover > svg .arrow_path {
+  fill: white;
 }
 
 .btn-more-color-red .bg-circle svg circle {
@@ -1137,6 +1145,11 @@ nav #home img {
 .btn-more-hover-left-40:hover > p {
   -webkit-transform: translateX(-40px);
           transform: translateX(-40px);
+}
+
+.btn-more-hover-left-50:hover > p {
+  -webkit-transform: translateX(-50px);
+          transform: translateX(-50px);
 }
 
 .btn-more-move-style-1 > p {
