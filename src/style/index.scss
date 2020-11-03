@@ -218,13 +218,15 @@ header {
         transition: transform 0.85s cubic-bezier(0.25, 1, 0.5, 1);
       }
 
-      > svg {
-        @include size($main-symbol-size, $main-symbol-size);
-        @include flex-layout(row, center, center);
-        margin-right: 0px;
-        display: inline-block;
-        position: relative;
-        z-index: 2;
+      .arrow_wrap {
+        > svg {
+          @include size($main-symbol-size, $main-symbol-size);
+          @include flex-layout(row, center, center);
+          margin-right: 0px;
+          display: inline-block;
+          position: relative;
+          z-index: 2;
+        }
       }
     }
 
@@ -246,13 +248,15 @@ header {
         transition: transform 0.85s cubic-bezier(0.25, 1, 0.5, 1);
       }
 
-      > svg {
-        @include size($sub-symbol-size, $sub-symbol-size);
-        @include flex-layout(row, center, center);
-        margin-right: 0px;
-        display: inline-block;
-        position: relative;
-        z-index: 2;
+      .arrow_wrap {
+        > svg {
+          @include size($sub-symbol-size, $sub-symbol-size);
+          @include flex-layout(row, center, center);
+          margin-right: 0px;
+          display: inline-block;
+          position: relative;
+          z-index: 2;
+        }
       }
     }
   }
@@ -351,7 +355,7 @@ header {
   position: relative;
 
   .background {
-    @include size(1552px, 1153px);
+    @include size(80%, 1153px);
     background: rgb(0, 142, 207);
     background: linear-gradient(90deg, rgba(0, 142, 207, 1) 0%, rgba(0, 168, 176, 1) 100%);
   }
@@ -426,16 +430,18 @@ header {
         $circle-radius: 100px;
         @include size($circle-radius, $circle-radius);
 
-        left: calc((#{$circle-radius} / 2 * (-1)) + (#{$symbol-size} / 2));
+        left: calc((#{$circle-radius} / 2 * (-1)) + (#{$symbol-size} / 2) + 3px);
 
         svg {
           @include size($circle-radius, $circle-radius);
         }
       }
 
-      > svg {
-        @include size($symbol-size, $symbol-size);
-        fill: #fff;
+      .arrow_wrap {
+        > svg {
+          @include size($symbol-size, $symbol-size);
+          fill: #fff;
+        }
       }
     }
   }
@@ -525,16 +531,18 @@ header {
             $circle-radius: 85px;
             @include size($circle-radius, $circle-radius);
 
-            left: calc((#{$circle-radius} / 2 * (-1)) + (#{$symbol-size} / 2));
+            left: calc((#{$circle-radius} / 2 * (-1)) + (#{$symbol-size} / 2) + 3px);
 
             svg {
               @include size($circle-radius, $circle-radius);
             }
           }
 
-          > svg {
-            @include size($symbol-size, $symbol-size);
-            fill: #fff;
+          .arrow_wrap {
+            > svg {
+              @include size($symbol-size, $symbol-size);
+              fill: #fff;
+            }
           }
         }
       }

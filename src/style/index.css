@@ -909,7 +909,7 @@ nav #home img {
   fill: #8f8f8f;
 }
 
-.btn-more > svg {
+.btn-more .arrow_wrap > svg {
   z-index: 2;
   margin-right: 20px;
 }
@@ -940,13 +940,13 @@ nav #home img {
   }
   40% {
     opacity: 0;
-    -webkit-transform: translate(-20px, -20px);
-            transform: translate(-20px, -20px);
+    -webkit-transform: translate(-30px, -30px);
+            transform: translate(-30px, -30px);
   }
   41% {
     opacity: 0;
-    -webkit-transform: translate(-20px, -20px);
-            transform: translate(-20px, -20px);
+    -webkit-transform: translate(-30px, -30px);
+            transform: translate(-30px, -30px);
   }
   100% {
     opacity: 1;
@@ -968,13 +968,13 @@ nav #home img {
   }
   40% {
     opacity: 0;
-    -webkit-transform: translate(-20px, -20px);
-            transform: translate(-20px, -20px);
+    -webkit-transform: translate(-30px, -30px);
+            transform: translate(-30px, -30px);
   }
   41% {
     opacity: 0;
-    -webkit-transform: translate(-20px, -20px);
-            transform: translate(-20px, -20px);
+    -webkit-transform: translate(-30px, -30px);
+            transform: translate(-30px, -30px);
   }
   100% {
     opacity: 1;
@@ -996,13 +996,13 @@ nav #home img {
   }
   40% {
     opacity: 0;
-    -webkit-transform: translate(20px, -20px);
-            transform: translate(20px, -20px);
+    -webkit-transform: translate(40px, -40px);
+            transform: translate(40px, -40px);
   }
   41% {
     opacity: 0;
-    -webkit-transform: translate(20px, -20px);
-            transform: translate(20px, -20px);
+    -webkit-transform: translate(40px, -40px);
+            transform: translate(40px, -40px);
   }
   100% {
     opacity: 1;
@@ -1024,13 +1024,13 @@ nav #home img {
   }
   40% {
     opacity: 0;
-    -webkit-transform: translate(20px, -20px);
-            transform: translate(20px, -20px);
+    -webkit-transform: translate(40px, -40px);
+            transform: translate(40px, -40px);
   }
   41% {
     opacity: 0;
-    -webkit-transform: translate(20px, -20px);
-            transform: translate(20px, -20px);
+    -webkit-transform: translate(40px, -40px);
+            transform: translate(40px, -40px);
   }
   100% {
     opacity: 1;
@@ -1039,18 +1039,77 @@ nav #home img {
   }
 }
 
+.btn-more-point-move-LT:hover .arrow_wrap > svg {
+  -webkit-animation: point_move_LT 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+          animation: point_move_LT 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+  opacity: 1;
+}
+
+.btn-more-point-move-RT:hover .arrow_wrap > svg {
+  -webkit-animation: point_move_RT 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+          animation: point_move_RT 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+  opacity: 1;
+}
+
+.btn-more-point-scale .arrow_wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  z-index: 10;
+}
+
+.btn-more-point-scale:hover .arrow_wrap {
+  -webkit-animation: anim-point-scale 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+          animation: anim-point-scale 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  -webkit-transform: scale(0.75);
+          transform: scale(0.75);
+}
+
+@-webkit-keyframes anim-point-scale {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0.75);
+            transform: scale(0.75);
+  }
+}
+
+@keyframes anim-point-scale {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0.75);
+            transform: scale(0.75);
+  }
+}
+
+.btn-more-arrow-path-B-2-W:hover .arrow_path {
+  -webkit-animation: anim_arrow_path_B_2_W 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+          animation: anim_arrow_path_B_2_W 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  fill: white;
+}
+
 @-webkit-keyframes anim_arrow_path_B_2_W {
   0% {
     fill: black;
-  }
-  39% {
-    fill: black;
-  }
-  40% {
-    fill: white;
-  }
-  41% {
-    fill: white;
   }
   100% {
     fill: white;
@@ -1061,40 +1120,9 @@ nav #home img {
   0% {
     fill: black;
   }
-  39% {
-    fill: black;
-  }
-  40% {
-    fill: white;
-  }
-  41% {
-    fill: white;
-  }
   100% {
     fill: white;
   }
-}
-
-.btn-more-point-move-LT:hover > svg {
-  -webkit-animation: point_move_LT 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-          animation: point_move_LT 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-  -webkit-transform: translateX(0px);
-          transform: translateX(0px);
-  opacity: 1;
-}
-
-.btn-more-point-move-RT:hover > svg {
-  -webkit-animation: point_move_RT 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-          animation: point_move_RT 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-  -webkit-transform: translateX(0px);
-          transform: translateX(0px);
-  opacity: 1;
-}
-
-.btn-more-arrow-path-B-2-W:hover .arrow_path {
-  -webkit-animation: anim_arrow_path_B_2_W 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-          animation: anim_arrow_path_B_2_W 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-  fill: white;
 }
 
 .btn-more-color-red .bg-circle svg circle {
@@ -1734,7 +1762,7 @@ header #scroll-point #point::before {
   transition: transform 0.85s cubic-bezier(0.25, 1, 0.5, 1), -webkit-transform 0.85s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.products .options .large-option > svg {
+.products .options .large-option .arrow_wrap > svg {
   width: 50px;
   height: 50px;
   display: -webkit-box;
@@ -1779,7 +1807,7 @@ header #scroll-point #point::before {
   transition: transform 0.85s cubic-bezier(0.25, 1, 0.5, 1), -webkit-transform 0.85s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.products .options .small-option > svg {
+.products .options .small-option .arrow_wrap > svg {
   width: 25px;
   height: 25px;
   display: -webkit-box;
@@ -1924,7 +1952,7 @@ header #scroll-point #point::before {
 }
 
 .install-container .background {
-  width: 1552px;
+  width: 80%;
   height: 1153px;
   background: #008ecf;
   background: -webkit-gradient(linear, left top, right top, from(#008ecf), to(#00a8b0));
@@ -2020,7 +2048,7 @@ header #scroll-point #point::before {
 .install-container .content .btn-more .bg-circle {
   width: 100px;
   height: 100px;
-  left: calc((100px / 2 * (-1)) + (20px / 2));
+  left: calc((100px / 2 * (-1)) + (20px / 2) + 3px);
 }
 
 .install-container .content .btn-more .bg-circle svg {
@@ -2028,7 +2056,7 @@ header #scroll-point #point::before {
   height: 100px;
 }
 
-.install-container .content .btn-more > svg {
+.install-container .content .btn-more .arrow_wrap > svg {
   width: 20px;
   height: 20px;
   fill: #fff;
@@ -2163,7 +2191,7 @@ header #scroll-point #point::before {
 .faq-container .faq-blocks #faq-blocks-content .block .btn-more .bg-circle {
   width: 85px;
   height: 85px;
-  left: calc((85px / 2 * (-1)) + (20px / 2));
+  left: calc((85px / 2 * (-1)) + (20px / 2) + 3px);
 }
 
 .faq-container .faq-blocks #faq-blocks-content .block .btn-more .bg-circle svg {
@@ -2171,7 +2199,7 @@ header #scroll-point #point::before {
   height: 85px;
 }
 
-.faq-container .faq-blocks #faq-blocks-content .block .btn-more > svg {
+.faq-container .faq-blocks #faq-blocks-content .block .btn-more .arrow_wrap > svg {
   width: 20px;
   height: 20px;
   fill: #fff;

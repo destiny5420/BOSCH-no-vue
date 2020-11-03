@@ -128,15 +128,6 @@ $color_font_main: #868e9c;
 .main-container {
   position: relative;
 
-  // background: rgb(214, 216, 217);
-  // background: linear-gradient(
-  //   90deg,
-  //   rgba(214, 216, 217, 1) 3%,
-  //   rgba(253, 251, 251, 1) 41%,
-  //   rgba(219, 221, 222, 1) 75%,
-  //   rgba(214, 216, 217, 1) 100%
-  // );
-
   background: rgb(214, 216, 217);
   background: linear-gradient(
     90deg,
@@ -685,9 +676,11 @@ nav {
     }
   }
 
-  > svg {
-    z-index: 2;
-    margin-right: 20px;
+  .arrow_wrap {
+    > svg {
+      z-index: 2;
+      margin-right: 20px;
+    }
   }
 
   > p {
@@ -704,7 +697,7 @@ nav {
   }
 }
 
-$point-move-unit: -20px;
+$point-move-unit: -30px;
 @keyframes point_move_LT {
   0% {
     opacity: 1;
@@ -718,12 +711,12 @@ $point-move-unit: -20px;
 
   40% {
     opacity: 0;
-    transform: translate(-20px, -20px);
+    transform: translate($point-move-unit, $point-move-unit);
   }
 
   41% {
     opacity: 0;
-    transform: translate(-20px, -20px);
+    transform: translate($point-move-unit, $point-move-unit);
   }
 
   100% {
@@ -744,12 +737,12 @@ $point-move-unit: -20px;
 
   40% {
     opacity: 0;
-    transform: translate(20px, -20px);
+    transform: translate(40px, -40px);
   }
 
   41% {
     opacity: 0;
-    transform: translate(20px, -20px);
+    transform: translate(40px, -40px);
   }
 
   100% {
@@ -758,44 +751,49 @@ $point-move-unit: -20px;
   }
 }
 
-@keyframes anim_arrow_path_B_2_W {
-  0% {
-    fill: black;
-  }
-
-  39% {
-    fill: black;
-  }
-
-  40% {
-    fill: white;
-  }
-
-  41% {
-    fill: white;
-  }
-
-  100% {
-    fill: white;
-  }
-}
-
 .btn-more-point-move-LT {
   &:hover {
-    > svg {
-      animation: point_move_LT 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-      transform: translateX(0px);
-      opacity: 1;
+    .arrow_wrap {
+      > svg {
+        animation: point_move_LT 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        transform: translateX(0px);
+        opacity: 1;
+      }
     }
   }
 }
 .btn-more-point-move-RT {
   &:hover {
-    > svg {
-      animation: point_move_RT 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-      transform: translateX(0px);
-      opacity: 1;
+    .arrow_wrap {
+      > svg {
+        animation: point_move_RT 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        transform: translateX(0px);
+        opacity: 1;
+      }
     }
+  }
+}
+
+.btn-more-point-scale {
+  .arrow_wrap {
+    @include flex-layout(column, center, flex-start);
+    z-index: 10;
+  }
+
+  &:hover {
+    .arrow_wrap {
+      animation: anim-point-scale 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+      transform: scale(0.75);
+    }
+  }
+}
+@keyframes anim-point-scale {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0.75);
   }
 }
 
@@ -805,6 +803,15 @@ $point-move-unit: -20px;
       animation: anim_arrow_path_B_2_W 0.5s cubic-bezier(0.25, 1, 0.5, 1);
       fill: white;
     }
+  }
+}
+@keyframes anim_arrow_path_B_2_W {
+  0% {
+    fill: black;
+  }
+
+  100% {
+    fill: white;
   }
 }
 
