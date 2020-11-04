@@ -2402,6 +2402,7 @@ header #scroll-point #point::before {
 @media all and (max-width: 479px) {
   .faq-container .faq-sub-title {
     font-size: 24px;
+    margin-bottom: 100px;
   }
 }
 

@@ -623,6 +623,7 @@ header {
 
     @include phone-width() {
       font-size: 24px;
+      margin-bottom: 100px;
     }
   }
 
