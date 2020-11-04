@@ -685,6 +685,12 @@ header {
             }
           }
         }
+
+        @include phone-width() {
+          width: 320px;
+          min-width: 320px;
+          padding: 20px 40px;
+        }
       }
 
       .empty-block {
@@ -701,13 +707,21 @@ header {
         margin-right: 40px;
         margin-bottom: 40px;
 
-        > div {
+        > :first-child {
+          max-width: 390px;
           height: 350px;
+          overflow: hidden;
+
+          @include phone-width() {
+            max-width: 100%;
+            @include flex-layout(row, center, center);
+          }
         }
 
         @include phone-width() {
           width: 375px;
           margin-right: 0px;
+          margin-bottom: 0px;
         }
       }
 
@@ -719,6 +733,12 @@ header {
       > :nth-child(5),
       > :nth-child(6) {
         margin-bottom: 0px;
+      }
+
+      .empty-content {
+        @include phone-width() {
+          display: none;
+        }
       }
 
       @include phone-width() {

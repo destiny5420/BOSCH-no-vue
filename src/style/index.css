@@ -2483,6 +2483,14 @@ header #scroll-point #point::before {
   fill: #fff;
 }
 
+@media all and (max-width: 479px) {
+  .faq-container .faq-blocks #faq-blocks-content .block {
+    width: 320px;
+    min-width: 320px;
+    padding: 20px 40px;
+  }
+}
+
 .faq-container .faq-blocks #faq-blocks-content .empty-block {
   width: 360px;
   height: 320px;
@@ -2501,14 +2509,36 @@ header #scroll-point #point::before {
   margin-bottom: 40px;
 }
 
-.faq-container .faq-blocks #faq-blocks-content > :nth-child(n) > div {
+.faq-container .faq-blocks #faq-blocks-content > :nth-child(n) > :first-child {
+  max-width: 390px;
   height: 350px;
+  overflow: hidden;
+}
+
+@media all and (max-width: 479px) {
+  .faq-container .faq-blocks #faq-blocks-content > :nth-child(n) > :first-child {
+    max-width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 @media all and (max-width: 479px) {
   .faq-container .faq-blocks #faq-blocks-content > :nth-child(n) {
     width: 375px;
     margin-right: 0px;
+    margin-bottom: 0px;
   }
 }
 
@@ -2520,6 +2550,12 @@ header #scroll-point #point::before {
 .faq-container .faq-blocks #faq-blocks-content > :nth-child(5),
 .faq-container .faq-blocks #faq-blocks-content > :nth-child(6) {
   margin-bottom: 0px;
+}
+
+@media all and (max-width: 479px) {
+  .faq-container .faq-blocks #faq-blocks-content .empty-content {
+    display: none;
+  }
 }
 
 @media all and (max-width: 479px) {
