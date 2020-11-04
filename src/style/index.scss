@@ -232,8 +232,10 @@ header {
   }
 
   .options {
-    $main-symbol-size: 50px;
-    $sub-symbol-size: 25px;
+    $main-symbol-size-pc: 50px;
+    $main-symbol-size-phone: 25px;
+    $sub-symbol-size-pc: 25px;
+    $sub-symbol-size-phone: 14px;
     flex: 5;
     height: 100%;
     // @include size(400px, 100%);
@@ -250,24 +252,61 @@ header {
       .main-title {
         font-size: 64px;
         margin-right: 14px;
+
+        @include phone-width() {
+          font-size: 30px;
+        }
       }
 
       .sub-title {
         font-size: 36px;
         margin-right: 14px;
+
+        @include phone-width() {
+          font-size: 18px;
+        }
+      }
+
+      @include phone-width() {
+        margin-bottom: 14px;
+      }
+    }
+
+    .category-option {
+      margin-right: 65px;
+
+      div[name='category-title'] {
+        font-size: 24px;
+        @include phone-width() {
+          font-size: 24px;
+        }
+      }
+
+      @include phone-width() {
+        margin-right: 35px;
       }
     }
 
     .large-option {
-      $circle-radius: 150px;
+      $circle-radius-pc-pc: 150px;
+      $circle-radius-pc-phone: 80px;
 
       .bg-circle {
-        @include size($circle-radius, $circle-radius);
+        @include size($circle-radius-pc-pc, $circle-radius-pc-pc);
         left: auto;
-        right: calc((#{$circle-radius} / 2 * (-1)) + (#{$main-symbol-size} / 2));
+        right: calc((#{$circle-radius-pc-pc} / 2 * (-1)) + (#{$main-symbol-size-pc} / 2));
 
         svg {
-          @include size($circle-radius, $circle-radius);
+          @include size($circle-radius-pc-pc, $circle-radius-pc-pc);
+        }
+
+        @include phone-width() {
+          @include size($circle-radius-pc-phone, $circle-radius-pc-phone);
+          right: calc((#{$circle-radius-pc-phone} / 2 * (-1)) + (#{$main-symbol-size-phone} / 2));
+
+          svg {
+            @include size($circle-radius-pc-phone, $circle-radius-pc-phone);
+          }
         }
       }
 
@@ -277,27 +316,42 @@ header {
 
       .arrow_wrap {
         > svg {
-          @include size($main-symbol-size, $main-symbol-size);
+          @include size($main-symbol-size-pc, $main-symbol-size-pc);
           @include flex-layout(row, center, center);
           margin-right: 0px;
           display: inline-block;
           position: relative;
           z-index: 2;
+
+          @include phone-width() {
+            @include size($main-symbol-size-phone, $main-symbol-size-phone);
+          }
         }
       }
     }
 
     .small-option {
+      $circle-radius-pc: 105px;
+      $circle-radius-phone: 65px;
+
       margin-right: 65px;
-      $circle-radius: 105px;
 
       .bg-circle {
-        @include size($circle-radius, $circle-radius);
+        @include size($circle-radius-pc, $circle-radius-pc);
         left: auto;
-        right: calc((#{$circle-radius} / 2 * (-1)) + (#{$sub-symbol-size} / 2));
+        right: calc((#{$circle-radius-pc} / 2 * (-1)) + (#{$sub-symbol-size-pc} / 2));
 
         svg {
-          @include size($circle-radius, $circle-radius);
+          @include size($circle-radius-pc, $circle-radius-pc);
+        }
+
+        @include phone-width() {
+          @include size($circle-radius-phone, $circle-radius-phone);
+          right: calc((#{$circle-radius-phone} / 2 * (-1)) + (#{$sub-symbol-size-phone} / 2));
+
+          svg {
+            @include size($circle-radius-phone, $circle-radius-phone);
+          }
         }
       }
 
@@ -307,13 +361,21 @@ header {
 
       .arrow_wrap {
         > svg {
-          @include size($sub-symbol-size, $sub-symbol-size);
+          @include size($sub-symbol-size-pc, $sub-symbol-size-pc);
           @include flex-layout(row, center, center);
           margin-right: 0px;
           display: inline-block;
           position: relative;
           z-index: 2;
+
+          @include phone-width() {
+            @include size($sub-symbol-size-phone, $sub-symbol-size-phone);
+          }
         }
+      }
+
+      @include phone-width() {
+        margin-right: 25px;
       }
     }
   }
@@ -496,13 +558,13 @@ header {
       font-size: 30px;
 
       .bg-circle {
-        $circle-radius: 100px;
-        @include size($circle-radius, $circle-radius);
+        $circle-radius-pc: 100px;
+        @include size($circle-radius-pc, $circle-radius-pc);
 
-        left: calc((#{$circle-radius} / 2 * (-1)) + (#{$symbol-size} / 2) + 3px);
+        left: calc((#{$circle-radius-pc} / 2 * (-1)) + (#{$symbol-size} / 2) + 3px);
 
         svg {
-          @include size($circle-radius, $circle-radius);
+          @include size($circle-radius-pc, $circle-radius-pc);
         }
       }
 
@@ -605,13 +667,13 @@ header {
           right: 55px;
 
           .bg-circle {
-            $circle-radius: 85px;
-            @include size($circle-radius, $circle-radius);
+            $circle-radius-pc: 85px;
+            @include size($circle-radius-pc, $circle-radius-pc);
 
-            left: calc((#{$circle-radius} / 2 * (-1)) + (#{$symbol-size} / 2) + 3px);
+            left: calc((#{$circle-radius-pc} / 2 * (-1)) + (#{$symbol-size} / 2) + 3px);
 
             svg {
-              @include size($circle-radius, $circle-radius);
+              @include size($circle-radius-pc, $circle-radius-pc);
             }
           }
 

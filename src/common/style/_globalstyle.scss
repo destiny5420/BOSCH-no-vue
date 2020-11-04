@@ -980,6 +980,10 @@ $point-move-unit: -30px;
   &:hover {
     > p {
       transform: translateX(-40px);
+
+      @include phone-width() {
+        transform: translateX(-20px);
+      }
     }
   }
 }
@@ -987,6 +991,10 @@ $point-move-unit: -30px;
   &:hover {
     > p {
       transform: translateX(-50px);
+
+      @include phone-width() {
+        transform: translateX(-25px);
+      }
     }
   }
 }

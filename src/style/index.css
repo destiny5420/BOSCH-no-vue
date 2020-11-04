@@ -1222,9 +1222,23 @@ nav #home img {
           transform: translateX(-40px);
 }
 
+@media all and (max-width: 479px) {
+  .btn-more-hover-left-40:hover > p {
+    -webkit-transform: translateX(-20px);
+            transform: translateX(-20px);
+  }
+}
+
 .btn-more-hover-left-50:hover > p {
   -webkit-transform: translateX(-50px);
           transform: translateX(-50px);
+}
+
+@media all and (max-width: 479px) {
+  .btn-more-hover-left-50:hover > p {
+    -webkit-transform: translateX(-25px);
+            transform: translateX(-25px);
+  }
 }
 
 .btn-more-move-style-1 > p {
@@ -1876,9 +1890,47 @@ header #scroll-point #point::before {
   margin-right: 14px;
 }
 
+@media all and (max-width: 479px) {
+  .products .options .option .main-title {
+    font-size: 30px;
+  }
+}
+
 .products .options .option .sub-title {
   font-size: 36px;
   margin-right: 14px;
+}
+
+@media all and (max-width: 479px) {
+  .products .options .option .sub-title {
+    font-size: 18px;
+  }
+}
+
+@media all and (max-width: 479px) {
+  .products .options .option {
+    margin-bottom: 14px;
+  }
+}
+
+.products .options .category-option {
+  margin-right: 65px;
+}
+
+.products .options .category-option div[name='category-title'] {
+  font-size: 24px;
+}
+
+@media all and (max-width: 479px) {
+  .products .options .category-option div[name='category-title'] {
+    font-size: 24px;
+  }
+}
+
+@media all and (max-width: 479px) {
+  .products .options .category-option {
+    margin-right: 35px;
+  }
 }
 
 .products .options .large-option .bg-circle {
@@ -1891,6 +1943,18 @@ header #scroll-point #point::before {
 .products .options .large-option .bg-circle svg {
   width: 150px;
   height: 150px;
+}
+
+@media all and (max-width: 479px) {
+  .products .options .large-option .bg-circle {
+    width: 80px;
+    height: 80px;
+    right: calc((80px / 2 * (-1)) + (25px / 2));
+  }
+  .products .options .large-option .bg-circle svg {
+    width: 80px;
+    height: 80px;
+  }
 }
 
 .products .options .large-option > p {
@@ -1922,6 +1986,13 @@ header #scroll-point #point::before {
   z-index: 2;
 }
 
+@media all and (max-width: 479px) {
+  .products .options .large-option .arrow_wrap > svg {
+    width: 25px;
+    height: 25px;
+  }
+}
+
 .products .options .small-option {
   margin-right: 65px;
 }
@@ -1936,6 +2007,18 @@ header #scroll-point #point::before {
 .products .options .small-option .bg-circle svg {
   width: 105px;
   height: 105px;
+}
+
+@media all and (max-width: 479px) {
+  .products .options .small-option .bg-circle {
+    width: 65px;
+    height: 65px;
+    right: calc((65px / 2 * (-1)) + (14px / 2));
+  }
+  .products .options .small-option .bg-circle svg {
+    width: 65px;
+    height: 65px;
+  }
 }
 
 .products .options .small-option > p {
@@ -1965,6 +2048,19 @@ header #scroll-point #point::before {
   display: inline-block;
   position: relative;
   z-index: 2;
+}
+
+@media all and (max-width: 479px) {
+  .products .options .small-option .arrow_wrap > svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media all and (max-width: 479px) {
+  .products .options .small-option {
+    margin-right: 25px;
+  }
 }
 
 @media all and (max-width: 479px) {
