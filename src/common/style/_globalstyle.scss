@@ -1091,8 +1091,12 @@ $point-move-unit: -30px;
 .max-w-390 {
   $value: 390px;
   width: $value;
-  :first-child {
+  > :first-child {
     max-width: $value;
     overflow: hidden;
+
+    @include phone-width() {
+      @include flex-layout(row, center, center);
+    }
   }
 }

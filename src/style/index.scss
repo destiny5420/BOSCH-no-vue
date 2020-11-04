@@ -24,6 +24,17 @@
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 34px;
+
+    .text-char {
+      @include phone-width() {
+        font-size: 20px;
+      }
+    }
+
+    @include phone-width() {
+      @include flex-layout(row, space-around, center);
+      width: 70%;
+    }
   }
 }
 
@@ -53,11 +64,27 @@ header {
           max-height: 144px;
           font-size: 144px;
           color: #e20015;
+          @include phone-width() {
+            max-height: 72px;
+            font-size: 72px;
+          }
+        }
+
+        @include phone-width() {
+          height: 72px;
         }
       }
 
       .sub-title {
         font-size: 80px;
+
+        @include phone-width() {
+          font-size: 36px;
+        }
+      }
+
+      @include phone-width() {
+        transform: translate(-20px, 115px);
       }
     }
 
@@ -72,14 +99,35 @@ header {
         transform: translate(-50%, -50%);
       }
 
-      img {
-        @include independent(transparent);
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+      .pic-frame {
+        @include size(316px, 724px);
         position: relative;
-        z-index: 2;
+
+        img {
+          @include size(100%, 100%);
+          @include independent(transparent);
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          position: relative;
+          z-index: 2;
+        }
+
+        @include phone-width() {
+          @include size(195px, 416px);
+          transform: translateX(20px);
+        }
       }
+
+      @include phone-width() {
+        @include flex-layout(row, center, center);
+        @include size(290px, 350px);
+      }
+    }
+
+    @include phone-width() {
+      @include size(100%, 100%);
+      @include flex-layout(column-reverse, center, center);
     }
   }
 
@@ -121,6 +169,15 @@ header {
         transform: rotate(25deg);
       }
     }
+
+    @include phone-width() {
+      right: -30px;
+      bottom: 100px;
+    }
+  }
+
+  @include phone-width() {
+    margin-bottom: 120px;
   }
 }
 
@@ -260,6 +317,10 @@ header {
       }
     }
   }
+
+  @include phone-width() {
+    @include flex-layout(column-reverse, center, center);
+  }
 }
 
 .about-us {
@@ -358,6 +419,10 @@ header {
     @include size(80%, 1153px);
     background: rgb(0, 142, 207);
     background: linear-gradient(90deg, rgba(0, 142, 207, 1) 0%, rgba(0, 168, 176, 1) 100%);
+
+    @include phone-width() {
+      @include size(90%, 1153px);
+    }
   }
 
   .content {
@@ -371,6 +436,10 @@ header {
     .install-title {
       // @include size(650px, auto);
       line-height: 1.25;
+
+      @include phone-width() {
+        font-size: 36px;
+      }
     }
 
     .install-sub-title {
@@ -480,11 +549,19 @@ header {
     text-align: center;
     color: #525f6b;
     margin: 0px auto;
+
+    @include phone-width() {
+      font-size: 36px;
+    }
   }
 
   .faq-sub-title {
     text-align: center;
     margin-bottom: 40px;
+
+    @include phone-width() {
+      font-size: 24px;
+    }
   }
 
   .faq-blocks {
@@ -550,14 +627,24 @@ header {
       .empty-block {
         @include size(360px, 320px);
         display: inline-block;
+
+        @include phone-width() {
+          display: none;
+        }
       }
 
       > :nth-child(n) {
+        width: 390px;
         margin-right: 40px;
         margin-bottom: 40px;
 
         > div {
           height: 350px;
+        }
+
+        @include phone-width() {
+          width: 375px;
+          margin-right: 0px;
         }
       }
 
@@ -569,6 +656,11 @@ header {
       > :nth-child(5),
       > :nth-child(6) {
         margin-bottom: 0px;
+      }
+
+      @include phone-width() {
+        @include size(100%, auto);
+        @include flex-layout(column, center, center);
       }
     }
   }
