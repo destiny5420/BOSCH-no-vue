@@ -1338,33 +1338,6 @@ nav #home img {
   overflow: hidden;
 }
 
-.max-w-390 {
-  width: 390px;
-}
-
-.max-w-390 > :first-child {
-  max-width: 390px;
-  overflow: hidden;
-}
-
-@media all and (max-width: 479px) {
-  .max-w-390 > :first-child {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-}
-
 @font-face {
   font-family: 'Bosch Sans CHS Regular';
   src: url("../files/fonts/BoschSansCHS-Regular.eot");
