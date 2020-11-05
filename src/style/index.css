@@ -1442,8 +1442,8 @@ nav #home img {
   width: 100%;
   height: 100vh;
   background: #d6d8d9;
-  background: -webkit-gradient(linear, left top, right top, color-stop(3%, #d6d8d9), color-stop(41%, #fdfbfb), color-stop(75%, #dbddde), to(#d6d8d9));
-  background: linear-gradient(90deg, #d6d8d9 3%, #fdfbfb 41%, #dbddde 75%, #d6d8d9 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#d6d8d9), color-stop(50%, #fdfbfb), to(#d6d8d9));
+  background: linear-gradient(90deg, #d6d8d9 0%, #fdfbfb 50%, #d6d8d9 100%);
   position: fixed;
   z-index: 1002;
   opacity: 1;
