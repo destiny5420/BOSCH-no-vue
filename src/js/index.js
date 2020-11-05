@@ -220,8 +220,9 @@ function onGSAP() {
     .timeline({
       scrollTrigger: {
         trigger: $('.about-us .bottom'),
-        start: 'top 65%',
+        start: deviceMode === 'phone' ? '-=150 65%' : 'top 65%',
         id: anim_about_ID,
+        // markers: true
       },
     })
     .from($('.about-us .bottom #head'), { x: -100, opacity: 0, duration: 1, ease: 'power1.out' })
@@ -234,11 +235,10 @@ function onGSAP() {
       $('.about-us .bottom #content .title'),
       {
         y: -100,
-
         duration: 1,
         ease: 'power1.out',
       },
-      '-=0.85',
+      deviceMode === 'phone' ? '-=1' : '-=0.85',
     )
     .from(
       $('.about-us .bottom #content .sub-title'),
@@ -282,12 +282,12 @@ function onGSAP() {
     .from(
       $('.about-us #more-about'),
       {
-        y: -100,
+        y: -30,
         opacity: 0,
         duration: 0.75,
         ease: 'power1.out',
       },
-      '-=0.72',
+      '-=0.1',
     );
   ScrollTrigger.getById(anim_about_ID).disable();
 
@@ -326,7 +326,8 @@ function onGSAP() {
         id: anim_install_pic_1_ID,
       },
     })
-    .from(infoImgPseudo01, { duration: 1, cssRule: { translateX: 0 }, ease: 'power1.out' })
+    // .from(infoImgPseudo01, { duration: 1, cssRule: { translateX: 0 }, ease: 'power1.out' })
+    .from($('#info-group-1 .info-image-block'), { x: -100, duration: 1, opacity: 0, ease: 'power1.out'})
     .from($('#info-group-1 #info-1'), { maxHeight: 0, duration: 1 }, '-=0.8')
     .from($('#info-group-1 #info-2'), { maxHeight: 0, duration: 1 }, '-=0.8')
     .from($('#info-group-1 #info-3'), { y: -100, opacity: 0, duration: 1 }, '-=0.8');
@@ -341,12 +342,13 @@ function onGSAP() {
         id: anim_install_pic_2_ID,
       },
     })
-    .from(infoImgPseudo02, {
-      delay: 0.15,
-      duration: 1,
-      cssRule: { translateX: 0 },
-      ease: 'power1.out',
-    })
+    // .from(infoImgPseudo02, {
+    //   delay: 0.15,
+    //   duration: 1,
+    //   cssRule: { translateX: 0 },
+    //   ease: 'power1.out',
+    // })
+    .from($('#info-group-2 .info-image-block'), { x: -100, duration: 1, opacity: 0, ease: 'power1.out'})
     .from($('#info-group-2 #info-1'), { maxHeight: 0, duration: 1 }, '-=0.8')
     .from($('#info-group-2 #info-2'), { maxHeight: 0, duration: 1 }, '-=0.8')
     .from($('#info-group-2 #info-3'), { y: -50, opacity: 0, duration: 1 }, '-=0.8');

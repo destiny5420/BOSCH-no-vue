@@ -656,10 +656,10 @@ header {
         margin-bottom: 20px;
         position: relative;
         overflow: hidden;
+        box-shadow: 10px 10px 18px -8px rgba(0, 0, 0, 0.32);
 
         img {
           @include size(100%, 100%);
-          box-shadow: 10px 10px 18px -8px rgba(0, 0, 0, 0.32);
         }
 
         @include size(335px, 214px);
@@ -746,6 +746,7 @@ header {
 
       @include phone-width() {
         margin-top: 35px;
+        margin-left: 10px;
       }
     }
 
@@ -769,21 +770,21 @@ header {
   }
 }
 
-#info-group-1 .info-image-block::after {
-  @include independent(black);
-  @include size(100%, 100%);
-  top: 0px;
-  left: 0px;
-  transform: translateX(400px);
-}
+// #info-group-1 .info-image-block::after {
+//   @include independent(black);
+//   @include size(100%, 100%);
+//   top: 0px;
+//   left: 0px;
+//   transform: translateX(400px);
+// }
 
-#info-group-2 .info-image-block::after {
-  @include independent(black);
-  @include size(100%, 100%);
-  top: 0px;
-  left: 0px;
-  transform: translateX(400px);
-}
+// #info-group-2 .info-image-block::after {
+//   @include independent(black);
+//   @include size(100%, 100%);
+//   top: 0px;
+//   left: 0px;
+//   transform: translateX(400px);
+// }
 
 .faq-container {
   @include flex-layout(column, flex-start, center);
