@@ -1222,9 +1222,23 @@ nav #home img {
           transform: translateX(-40px);
 }
 
+@media all and (max-width: 479px) {
+  .btn-more-hover-left-40:hover > p {
+    -webkit-transform: translateX(-20px);
+            transform: translateX(-20px);
+  }
+}
+
 .btn-more-hover-left-50:hover > p {
   -webkit-transform: translateX(-50px);
           transform: translateX(-50px);
+}
+
+@media all and (max-width: 479px) {
+  .btn-more-hover-left-50:hover > p {
+    -webkit-transform: translateX(-25px);
+            transform: translateX(-25px);
+  }
 }
 
 .btn-more-move-style-1 > p {
@@ -1321,15 +1335,6 @@ nav #home img {
 
 .max-h-35 :first-child {
   max-height: 35px;
-  overflow: hidden;
-}
-
-.max-w-390 {
-  width: 390px;
-}
-
-.max-w-390 :first-child {
-  max-width: 390px;
   overflow: hidden;
 }
 

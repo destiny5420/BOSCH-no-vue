@@ -24,6 +24,17 @@
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 34px;
+
+    .text-char {
+      @include phone-width() {
+        font-size: 20px;
+      }
+    }
+
+    @include phone-width() {
+      @include flex-layout(row, space-around, center);
+      width: 70%;
+    }
   }
 }
 
@@ -53,11 +64,27 @@ header {
           max-height: 144px;
           font-size: 144px;
           color: #e20015;
+          @include phone-width() {
+            max-height: 72px;
+            font-size: 72px;
+          }
+        }
+
+        @include phone-width() {
+          height: 72px;
         }
       }
 
       .sub-title {
         font-size: 80px;
+
+        @include phone-width() {
+          font-size: 36px;
+        }
+      }
+
+      @include phone-width() {
+        transform: translate(-20px, 115px);
       }
     }
 
@@ -72,14 +99,35 @@ header {
         transform: translate(-50%, -50%);
       }
 
-      img {
-        @include independent(transparent);
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+      .pic-frame {
+        @include size(316px, 724px);
         position: relative;
-        z-index: 2;
+
+        img {
+          @include size(100%, 100%);
+          @include independent(transparent);
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          position: relative;
+          z-index: 2;
+        }
+
+        @include phone-width() {
+          @include size(195px, 416px);
+          transform: translateX(20px);
+        }
       }
+
+      @include phone-width() {
+        @include flex-layout(row, center, center);
+        @include size(290px, 350px);
+      }
+    }
+
+    @include phone-width() {
+      @include size(100%, 100%);
+      @include flex-layout(column-reverse, center, center);
     }
   }
 
@@ -121,6 +169,15 @@ header {
         transform: rotate(25deg);
       }
     }
+
+    @include phone-width() {
+      right: -30px;
+      bottom: 100px;
+    }
+  }
+
+  @include phone-width() {
+    margin-bottom: 120px;
   }
 }
 
@@ -175,8 +232,10 @@ header {
   }
 
   .options {
-    $main-symbol-size: 50px;
-    $sub-symbol-size: 25px;
+    $main-symbol-size-pc: 50px;
+    $main-symbol-size-phone: 25px;
+    $sub-symbol-size-pc: 25px;
+    $sub-symbol-size-phone: 14px;
     flex: 5;
     height: 100%;
     // @include size(400px, 100%);
@@ -193,24 +252,61 @@ header {
       .main-title {
         font-size: 64px;
         margin-right: 14px;
+
+        @include phone-width() {
+          font-size: 30px;
+        }
       }
 
       .sub-title {
         font-size: 36px;
         margin-right: 14px;
+
+        @include phone-width() {
+          font-size: 18px;
+        }
+      }
+
+      @include phone-width() {
+        margin-bottom: 14px;
+      }
+    }
+
+    .category-option {
+      margin-right: 65px;
+
+      div[name='category-title'] {
+        font-size: 24px;
+        @include phone-width() {
+          font-size: 24px;
+        }
+      }
+
+      @include phone-width() {
+        margin-right: 35px;
       }
     }
 
     .large-option {
-      $circle-radius: 150px;
+      $circle-radius-pc-pc: 150px;
+      $circle-radius-pc-phone: 80px;
 
       .bg-circle {
-        @include size($circle-radius, $circle-radius);
+        @include size($circle-radius-pc-pc, $circle-radius-pc-pc);
         left: auto;
-        right: calc((#{$circle-radius} / 2 * (-1)) + (#{$main-symbol-size} / 2));
+        right: calc((#{$circle-radius-pc-pc} / 2 * (-1)) + (#{$main-symbol-size-pc} / 2));
 
         svg {
-          @include size($circle-radius, $circle-radius);
+          @include size($circle-radius-pc-pc, $circle-radius-pc-pc);
+        }
+
+        @include phone-width() {
+          @include size($circle-radius-pc-phone, $circle-radius-pc-phone);
+          right: calc((#{$circle-radius-pc-phone} / 2 * (-1)) + (#{$main-symbol-size-phone} / 2));
+
+          svg {
+            @include size($circle-radius-pc-phone, $circle-radius-pc-phone);
+          }
         }
       }
 
@@ -220,27 +316,42 @@ header {
 
       .arrow_wrap {
         > svg {
-          @include size($main-symbol-size, $main-symbol-size);
+          @include size($main-symbol-size-pc, $main-symbol-size-pc);
           @include flex-layout(row, center, center);
           margin-right: 0px;
           display: inline-block;
           position: relative;
           z-index: 2;
+
+          @include phone-width() {
+            @include size($main-symbol-size-phone, $main-symbol-size-phone);
+          }
         }
       }
     }
 
     .small-option {
+      $circle-radius-pc: 105px;
+      $circle-radius-phone: 65px;
+
       margin-right: 65px;
-      $circle-radius: 105px;
 
       .bg-circle {
-        @include size($circle-radius, $circle-radius);
+        @include size($circle-radius-pc, $circle-radius-pc);
         left: auto;
-        right: calc((#{$circle-radius} / 2 * (-1)) + (#{$sub-symbol-size} / 2));
+        right: calc((#{$circle-radius-pc} / 2 * (-1)) + (#{$sub-symbol-size-pc} / 2));
 
         svg {
-          @include size($circle-radius, $circle-radius);
+          @include size($circle-radius-pc, $circle-radius-pc);
+        }
+
+        @include phone-width() {
+          @include size($circle-radius-phone, $circle-radius-phone);
+          right: calc((#{$circle-radius-phone} / 2 * (-1)) + (#{$sub-symbol-size-phone} / 2));
+
+          svg {
+            @include size($circle-radius-phone, $circle-radius-phone);
+          }
         }
       }
 
@@ -250,15 +361,27 @@ header {
 
       .arrow_wrap {
         > svg {
-          @include size($sub-symbol-size, $sub-symbol-size);
+          @include size($sub-symbol-size-pc, $sub-symbol-size-pc);
           @include flex-layout(row, center, center);
           margin-right: 0px;
           display: inline-block;
           position: relative;
           z-index: 2;
+
+          @include phone-width() {
+            @include size($sub-symbol-size-phone, $sub-symbol-size-phone);
+          }
         }
       }
+
+      @include phone-width() {
+        margin-right: 25px;
+      }
     }
+  }
+
+  @include phone-width() {
+    @include flex-layout(column-reverse, center, center);
   }
 }
 
@@ -358,6 +481,10 @@ header {
     @include size(80%, 1153px);
     background: rgb(0, 142, 207);
     background: linear-gradient(90deg, rgba(0, 142, 207, 1) 0%, rgba(0, 168, 176, 1) 100%);
+
+    @include phone-width() {
+      @include size(90%, 1153px);
+    }
   }
 
   .content {
@@ -371,6 +498,10 @@ header {
     .install-title {
       // @include size(650px, auto);
       line-height: 1.25;
+
+      @include phone-width() {
+        font-size: 36px;
+      }
     }
 
     .install-sub-title {
@@ -427,13 +558,13 @@ header {
       font-size: 30px;
 
       .bg-circle {
-        $circle-radius: 100px;
-        @include size($circle-radius, $circle-radius);
+        $circle-radius-pc: 100px;
+        @include size($circle-radius-pc, $circle-radius-pc);
 
-        left: calc((#{$circle-radius} / 2 * (-1)) + (#{$symbol-size} / 2) + 3px);
+        left: calc((#{$circle-radius-pc} / 2 * (-1)) + (#{$symbol-size} / 2) + 3px);
 
         svg {
-          @include size($circle-radius, $circle-radius);
+          @include size($circle-radius-pc, $circle-radius-pc);
         }
       }
 
@@ -480,11 +611,20 @@ header {
     text-align: center;
     color: #525f6b;
     margin: 0px auto;
+
+    @include phone-width() {
+      font-size: 36px;
+    }
   }
 
   .faq-sub-title {
     text-align: center;
     margin-bottom: 40px;
+
+    @include phone-width() {
+      font-size: 24px;
+      margin-bottom: 100px;
+    }
   }
 
   .faq-blocks {
@@ -528,13 +668,13 @@ header {
           right: 55px;
 
           .bg-circle {
-            $circle-radius: 85px;
-            @include size($circle-radius, $circle-radius);
+            $circle-radius-pc: 85px;
+            @include size($circle-radius-pc, $circle-radius-pc);
 
-            left: calc((#{$circle-radius} / 2 * (-1)) + (#{$symbol-size} / 2) + 3px);
+            left: calc((#{$circle-radius-pc} / 2 * (-1)) + (#{$symbol-size} / 2) + 3px);
 
             svg {
-              @include size($circle-radius, $circle-radius);
+              @include size($circle-radius-pc, $circle-radius-pc);
             }
           }
 
@@ -545,19 +685,43 @@ header {
             }
           }
         }
+
+        @include phone-width() {
+          width: 320px;
+          min-width: 320px;
+          padding: 20px 40px;
+        }
       }
 
       .empty-block {
         @include size(360px, 320px);
         display: inline-block;
+
+        @include phone-width() {
+          display: none;
+        }
       }
 
       > :nth-child(n) {
+        width: 390px;
         margin-right: 40px;
         margin-bottom: 40px;
 
-        > div {
+        > :first-child {
+          max-width: 390px;
           height: 350px;
+          overflow: hidden;
+
+          @include phone-width() {
+            max-width: 100%;
+            @include flex-layout(row, center, center);
+          }
+        }
+
+        @include phone-width() {
+          width: 375px;
+          margin-right: 0px;
+          margin-bottom: 0px;
         }
       }
 
@@ -569,6 +733,17 @@ header {
       > :nth-child(5),
       > :nth-child(6) {
         margin-bottom: 0px;
+      }
+
+      .empty-content {
+        @include phone-width() {
+          display: none;
+        }
+      }
+
+      @include phone-width() {
+        @include size(100%, auto);
+        @include flex-layout(column, center, center);
       }
     }
   }

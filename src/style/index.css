@@ -1222,9 +1222,23 @@ nav #home img {
           transform: translateX(-40px);
 }
 
+@media all and (max-width: 479px) {
+  .btn-more-hover-left-40:hover > p {
+    -webkit-transform: translateX(-20px);
+            transform: translateX(-20px);
+  }
+}
+
 .btn-more-hover-left-50:hover > p {
   -webkit-transform: translateX(-50px);
           transform: translateX(-50px);
+}
+
+@media all and (max-width: 479px) {
+  .btn-more-hover-left-50:hover > p {
+    -webkit-transform: translateX(-25px);
+            transform: translateX(-25px);
+  }
 }
 
 .btn-more-move-style-1 > p {
@@ -1321,15 +1335,6 @@ nav #home img {
 
 .max-h-35 :first-child {
   max-height: 35px;
-  overflow: hidden;
-}
-
-.max-w-390 {
-  width: 390px;
-}
-
-.max-w-390 :first-child {
-  max-width: 390px;
   overflow: hidden;
 }
 
@@ -1457,6 +1462,30 @@ nav #home img {
   font-size: 34px;
 }
 
+@media all and (max-width: 479px) {
+  .slogan-wrap #slogan .text-char {
+    font-size: 20px;
+  }
+}
+
+@media all and (max-width: 479px) {
+  .slogan-wrap #slogan {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 70%;
+  }
+}
+
 header {
   width: 100%;
   height: 100vh;
@@ -1517,8 +1546,34 @@ header #content .left .title div {
   color: #e20015;
 }
 
+@media all and (max-width: 479px) {
+  header #content .left .title div {
+    max-height: 72px;
+    font-size: 72px;
+  }
+}
+
+@media all and (max-width: 479px) {
+  header #content .left .title {
+    height: 72px;
+  }
+}
+
 header #content .left .sub-title {
   font-size: 80px;
+}
+
+@media all and (max-width: 479px) {
+  header #content .left .sub-title {
+    font-size: 36px;
+  }
+}
+
+@media all and (max-width: 479px) {
+  header #content .left {
+    -webkit-transform: translate(-20px, 115px);
+            transform: translate(-20px, 115px);
+  }
 }
 
 header #content .right {
@@ -1538,7 +1593,15 @@ header #content .right .bg {
           transform: translate(-50%, -50%);
 }
 
-header #content .right img {
+header #content .right .pic-frame {
+  width: 316px;
+  height: 724px;
+  position: relative;
+}
+
+header #content .right .pic-frame img {
+  width: 100%;
+  height: 100%;
   position: absolute;
   content: '';
   background-color: transparent;
@@ -1549,6 +1612,55 @@ header #content .right img {
           transform: translate(-50%, -50%);
   position: relative;
   z-index: 2;
+}
+
+@media all and (max-width: 479px) {
+  header #content .right .pic-frame {
+    width: 195px;
+    height: 416px;
+    -webkit-transform: translateX(20px);
+            transform: translateX(20px);
+  }
+}
+
+@media all and (max-width: 479px) {
+  header #content .right {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 290px;
+    height: 350px;
+  }
+}
+
+@media all and (max-width: 479px) {
+  header #content {
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 header #scroll-point {
@@ -1604,6 +1716,19 @@ header #scroll-point #point::before {
           transform-origin: right center;
   -webkit-transform: rotate(25deg);
           transform: rotate(25deg);
+}
+
+@media all and (max-width: 479px) {
+  header #scroll-point {
+    right: -30px;
+    bottom: 100px;
+  }
+}
+
+@media all and (max-width: 479px) {
+  header {
+    margin-bottom: 120px;
+  }
 }
 
 .products {
@@ -1738,9 +1863,47 @@ header #scroll-point #point::before {
   margin-right: 14px;
 }
 
+@media all and (max-width: 479px) {
+  .products .options .option .main-title {
+    font-size: 30px;
+  }
+}
+
 .products .options .option .sub-title {
   font-size: 36px;
   margin-right: 14px;
+}
+
+@media all and (max-width: 479px) {
+  .products .options .option .sub-title {
+    font-size: 18px;
+  }
+}
+
+@media all and (max-width: 479px) {
+  .products .options .option {
+    margin-bottom: 14px;
+  }
+}
+
+.products .options .category-option {
+  margin-right: 65px;
+}
+
+.products .options .category-option div[name='category-title'] {
+  font-size: 24px;
+}
+
+@media all and (max-width: 479px) {
+  .products .options .category-option div[name='category-title'] {
+    font-size: 24px;
+  }
+}
+
+@media all and (max-width: 479px) {
+  .products .options .category-option {
+    margin-right: 35px;
+  }
 }
 
 .products .options .large-option .bg-circle {
@@ -1753,6 +1916,18 @@ header #scroll-point #point::before {
 .products .options .large-option .bg-circle svg {
   width: 150px;
   height: 150px;
+}
+
+@media all and (max-width: 479px) {
+  .products .options .large-option .bg-circle {
+    width: 80px;
+    height: 80px;
+    right: calc((80px / 2 * (-1)) + (25px / 2));
+  }
+  .products .options .large-option .bg-circle svg {
+    width: 80px;
+    height: 80px;
+  }
 }
 
 .products .options .large-option > p {
@@ -1784,6 +1959,13 @@ header #scroll-point #point::before {
   z-index: 2;
 }
 
+@media all and (max-width: 479px) {
+  .products .options .large-option .arrow_wrap > svg {
+    width: 25px;
+    height: 25px;
+  }
+}
+
 .products .options .small-option {
   margin-right: 65px;
 }
@@ -1798,6 +1980,18 @@ header #scroll-point #point::before {
 .products .options .small-option .bg-circle svg {
   width: 105px;
   height: 105px;
+}
+
+@media all and (max-width: 479px) {
+  .products .options .small-option .bg-circle {
+    width: 65px;
+    height: 65px;
+    right: calc((65px / 2 * (-1)) + (14px / 2));
+  }
+  .products .options .small-option .bg-circle svg {
+    width: 65px;
+    height: 65px;
+  }
 }
 
 .products .options .small-option > p {
@@ -1827,6 +2021,37 @@ header #scroll-point #point::before {
   display: inline-block;
   position: relative;
   z-index: 2;
+}
+
+@media all and (max-width: 479px) {
+  .products .options .small-option .arrow_wrap > svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media all and (max-width: 479px) {
+  .products .options .small-option {
+    margin-right: 25px;
+  }
+}
+
+@media all and (max-width: 479px) {
+  .products {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 .about-us {
@@ -1959,6 +2184,13 @@ header #scroll-point #point::before {
   background: linear-gradient(90deg, #008ecf 0%, #00a8b0 100%);
 }
 
+@media all and (max-width: 479px) {
+  .install-container .background {
+    width: 90%;
+    height: 1153px;
+  }
+}
+
 .install-container .content {
   width: auto;
   height: auto;
@@ -1975,6 +2207,12 @@ header #scroll-point #point::before {
 
 .install-container .content .install-title {
   line-height: 1.25;
+}
+
+@media all and (max-width: 479px) {
+  .install-container .content .install-title {
+    font-size: 36px;
+  }
 }
 
 .install-container .content .install-sub-title::after {
@@ -2123,9 +2361,22 @@ header #scroll-point #point::before {
   margin: 0px auto;
 }
 
+@media all and (max-width: 479px) {
+  .faq-container .faq-title {
+    font-size: 36px;
+  }
+}
+
 .faq-container .faq-sub-title {
   text-align: center;
   margin-bottom: 40px;
+}
+
+@media all and (max-width: 479px) {
+  .faq-container .faq-sub-title {
+    font-size: 24px;
+    margin-bottom: 100px;
+  }
 }
 
 .faq-container .faq-blocks {
@@ -2205,19 +2456,63 @@ header #scroll-point #point::before {
   fill: #fff;
 }
 
+@media all and (max-width: 479px) {
+  .faq-container .faq-blocks #faq-blocks-content .block {
+    width: 320px;
+    min-width: 320px;
+    padding: 20px 40px;
+  }
+}
+
 .faq-container .faq-blocks #faq-blocks-content .empty-block {
   width: 360px;
   height: 320px;
   display: inline-block;
 }
 
+@media all and (max-width: 479px) {
+  .faq-container .faq-blocks #faq-blocks-content .empty-block {
+    display: none;
+  }
+}
+
 .faq-container .faq-blocks #faq-blocks-content > :nth-child(n) {
+  width: 390px;
   margin-right: 40px;
   margin-bottom: 40px;
 }
 
-.faq-container .faq-blocks #faq-blocks-content > :nth-child(n) > div {
+.faq-container .faq-blocks #faq-blocks-content > :nth-child(n) > :first-child {
+  max-width: 390px;
   height: 350px;
+  overflow: hidden;
+}
+
+@media all and (max-width: 479px) {
+  .faq-container .faq-blocks #faq-blocks-content > :nth-child(n) > :first-child {
+    max-width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media all and (max-width: 479px) {
+  .faq-container .faq-blocks #faq-blocks-content > :nth-child(n) {
+    width: 375px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+  }
 }
 
 .faq-container .faq-blocks #faq-blocks-content > :nth-child(3n) {
@@ -2228,6 +2523,32 @@ header #scroll-point #point::before {
 .faq-container .faq-blocks #faq-blocks-content > :nth-child(5),
 .faq-container .faq-blocks #faq-blocks-content > :nth-child(6) {
   margin-bottom: 0px;
+}
+
+@media all and (max-width: 479px) {
+  .faq-container .faq-blocks #faq-blocks-content .empty-content {
+    display: none;
+  }
+}
+
+@media all and (max-width: 479px) {
+  .faq-container .faq-blocks #faq-blocks-content {
+    width: 100%;
+    height: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 .faq-container #faq-blocks-bg {
