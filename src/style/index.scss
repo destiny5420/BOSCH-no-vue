@@ -177,7 +177,7 @@ header {
   }
 
   @include phone-width() {
-    margin-bottom: 120px;
+    margin-bottom: 45px;
   }
 }
 
@@ -412,62 +412,106 @@ header {
   }
 
   .bottom {
-    @include size(100%, 550px);
+    @include size(auto, 550px);
     @include flex-layout(row, center, flex-start);
 
     #head {
-      position: relative;
+      @include size(450px, 100%);
+      @include independent(transparent);
+      left: -500px;
+      top: 0px;
+      text-align: center;
 
       img {
         @include independent(transparent);
-        bottom: 0;
-        left: 0;
+        bottom: 0px;
+        left: 0px;
       }
 
-      svg {
+      #head-pointer-1 {
         @include independent(transparent);
-        bottom: 0;
-        left: 0;
+        top: 70px;
+        right: 120px;
+        z-index: 2;
+      }
+
+      #head-pointer-2 {
+        @include independent(transparent);
+        bottom: 0px;
+        left: 0px;
       }
     }
 
     #content {
+      @include size(450px, 100%);
+      text-align: center;
       font-size: 30px;
       position: relative;
+      overflow: unset;
 
       .title {
         color: #525f6b;
+
+        @include phone-width() {
+          font-size: 36px;
+        }
       }
 
       .sub-title {
         position: relative;
         display: inline-block;
         line-height: 2.5;
-        margin-bottom: 35px;
+        margin-bottom: 55px;
+
+        @include phone-width() {
+          margin-bottom: 50px;
+          font-size: 24px;
+        }
       }
 
-      .btn-more {
-        @include independent(transparent);
+      .content {
         font-size: 30px;
-        left: 50%;
-        bottom: 0px;
-        transform: translateX(-50%);
+        line-height: 1.25;
+
+        @include phone-width() {
+          font-size: 18px;
+        }
+      }
+
+      .btn-block {
+        @include size(100%, 200px);
+        @include flex-layout(column, center, center);
+        position: relative;
+
+        .btn-more {
+          @include size(133px, 52px);
+          @include independent(transparent);
+          font-size: 30px;
+          left: calc(50% - (133px / 2));
+          bottom: calc(50% - (52px / 2));
+        }
+
+        @include phone-width() {
+        }
+      }
+
+      @include phone-width() {
+        overflow: hidden;
       }
     }
 
     #description {
-      position: relative;
+      @include size(450px, 100%);
+      @include independent(transparent);
+      left: 500px;
+      top: 0px;
+      text-align: center;
 
       img {
         @include independent(transparent);
         bottom: 0;
         right: 0;
       }
-    }
-
-    > :nth-child(n) {
-      @include size(450px, 100%);
-      text-align: center;
     }
   }
 }

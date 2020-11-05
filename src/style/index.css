@@ -1727,7 +1727,7 @@ header #scroll-point #point::before {
 
 @media all and (max-width: 479px) {
   header {
-    margin-bottom: 120px;
+    margin-bottom: 45px;
   }
 }
 
@@ -2083,7 +2083,7 @@ header #scroll-point #point::before {
 }
 
 .about-us .bottom {
-  width: 100%;
+  width: auto;
   height: 550px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2101,7 +2101,15 @@ header #scroll-point #point::before {
 }
 
 .about-us .bottom #head {
-  position: relative;
+  width: 450px;
+  height: 100%;
+  position: absolute;
+  content: '';
+  background-color: transparent;
+  z-index: 1;
+  left: -500px;
+  top: 0px;
+  text-align: center;
 }
 
 .about-us .bottom #head img {
@@ -2109,49 +2117,120 @@ header #scroll-point #point::before {
   content: '';
   background-color: transparent;
   z-index: 1;
-  bottom: 0;
-  left: 0;
+  bottom: 0px;
+  left: 0px;
 }
 
-.about-us .bottom #head svg {
+.about-us .bottom #head #head-pointer-1 {
   position: absolute;
   content: '';
   background-color: transparent;
   z-index: 1;
-  bottom: 0;
-  left: 0;
+  top: 70px;
+  right: 120px;
+  z-index: 2;
+}
+
+.about-us .bottom #head #head-pointer-2 {
+  position: absolute;
+  content: '';
+  background-color: transparent;
+  z-index: 1;
+  bottom: 0px;
+  left: 0px;
 }
 
 .about-us .bottom #content {
+  width: 450px;
+  height: 100%;
+  text-align: center;
   font-size: 30px;
   position: relative;
+  overflow: unset;
 }
 
 .about-us .bottom #content .title {
   color: #525f6b;
 }
 
+@media all and (max-width: 479px) {
+  .about-us .bottom #content .title {
+    font-size: 36px;
+  }
+}
+
 .about-us .bottom #content .sub-title {
   position: relative;
   display: inline-block;
   line-height: 2.5;
-  margin-bottom: 35px;
+  margin-bottom: 55px;
 }
 
-.about-us .bottom #content .btn-more {
+@media all and (max-width: 479px) {
+  .about-us .bottom #content .sub-title {
+    margin-bottom: 50px;
+    font-size: 24px;
+  }
+}
+
+.about-us .bottom #content .content {
+  font-size: 30px;
+  line-height: 1.25;
+}
+
+@media all and (max-width: 479px) {
+  .about-us .bottom #content .content {
+    font-size: 18px;
+  }
+}
+
+.about-us .bottom #content .btn-block {
+  width: 100%;
+  height: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.about-us .bottom #content .btn-block .btn-more {
+  width: 133px;
+  height: 52px;
   position: absolute;
   content: '';
   background-color: transparent;
   z-index: 1;
   font-size: 30px;
-  left: 50%;
-  bottom: 0px;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  left: calc(50% - (133px / 2));
+  bottom: calc(50% - (52px / 2));
+}
+
+@media all and (max-width: 479px) {
+  .about-us .bottom #content {
+    overflow: hidden;
+  }
 }
 
 .about-us .bottom #description {
-  position: relative;
+  width: 450px;
+  height: 100%;
+  position: absolute;
+  content: '';
+  background-color: transparent;
+  z-index: 1;
+  left: 500px;
+  top: 0px;
+  text-align: center;
 }
 
 .about-us .bottom #description img {
@@ -2161,12 +2240,6 @@ header #scroll-point #point::before {
   z-index: 1;
   bottom: 0;
   right: 0;
-}
-
-.about-us .bottom > :nth-child(n) {
-  width: 450px;
-  height: 100%;
-  text-align: center;
 }
 
 .install-container {
