@@ -489,9 +489,36 @@ header {
           font-size: 30px;
           left: calc(50% - (133px / 2));
           bottom: calc(50% - (52px / 2));
+
+          .bg-circle {
+            @include phone-width() {
+              @include size(80px, 80px);
+              left: calc((80px / 2) - 25px);
+              svg {
+                @include size(80px, 80px);
+              }
+            }
+          }
+
+          .arrow_wrap {
+            > svg {
+              @include size(20px, 20px);
+
+              @include phone-width() {
+                @include size(14px, 14px);
+              }
+            }
+          }
+        }
+
+        .eng-b {
+          @include phone-width() {
+            font-size: 24px;
+          }
         }
 
         @include phone-width() {
+          height: 130px;
         }
       }
 
@@ -513,21 +540,28 @@ header {
         right: 0;
       }
     }
+
+    @include phone-width() {
+      height: auto;
+    }
   }
 }
 
 .install-container {
+  $background-heigh-pc: 1153px;
+  $background-heigh-phone: 1183px;
+
   @include size(100%, auto);
   margin-bottom: 100px;
   position: relative;
 
   .background {
-    @include size(80%, 1153px);
+    @include size(80%, $background-heigh-pc);
     background: rgb(0, 142, 207);
     background: linear-gradient(90deg, rgba(0, 142, 207, 1) 0%, rgba(0, 168, 176, 1) 100%);
 
     @include phone-width() {
-      @include size(90%, 1153px);
+      @include size(90%, 1183px);
     }
   }
 
@@ -538,6 +572,40 @@ header {
     left: 50%;
     transform: translate(-50%, -50%);
     color: #ffffff;
+
+    .effect-title {
+      height: 85px;
+
+      :first-child {
+        max-height: 85px;
+        overflow: hidden;
+
+        @include phone-width() {
+          max-height: 45px;
+        }
+      }
+
+      @include phone-width() {
+        height: 45px;
+      }
+    }
+
+    .effect-sub-title {
+      height: 75px;
+
+      :first-child {
+        max-height: 75px;
+        overflow: hidden;
+
+        @include phone-width() {
+          max-height: 66px;
+        }
+      }
+
+      @include phone-width() {
+        height: 66px;
+      }
+    }
 
     .install-title {
       // @include size(650px, auto);
@@ -569,22 +637,50 @@ header {
           @include size(100%, 100%);
           box-shadow: 10px 10px 18px -8px rgba(0, 0, 0, 0.32);
         }
+
+        @include size(335px, 214px);
       }
 
       > :nth-child(n) {
         @include size(450px, 100%);
         position: relative;
         display: inline-block;
+
+        @include phone-width() {
+          width: 100%;
+          height: auto;
+        }
       }
 
       > :first-child {
         margin-right: 75px;
+
+        @include phone-width() {
+          margin-right: 0px;
+          margin-bottom: 70px;
+        }
       }
 
       .right {
         position: absolute;
         right: 0px;
         bottom: 60px;
+
+        @include phone-width() {
+          position: relative;
+
+          right: 0px;
+          bottom: 0px;
+        }
+      }
+
+      .eng-b {
+        font-size: 24px;
+      }
+
+      @include phone-width() {
+        height: auto;
+        @include flex-layout(column, flex-start, center);
       }
     }
 
@@ -594,6 +690,10 @@ header {
 
     .info-content {
       font-size: 20px;
+
+      @include phone-width() {
+        font-size: 18px;
+      }
     }
 
     .btn-more {
@@ -618,6 +718,15 @@ header {
           fill: #fff;
         }
       }
+
+      @include phone-width() {
+        margin-top: 45px;
+      }
+    }
+
+    @include phone-width() {
+      height: $background-heigh-phone;
+      @include flex-layout(column, center, flex-start);
     }
   }
 
@@ -627,6 +736,12 @@ header {
     @include independent(transparent);
     bottom: calc(#{$rect-size} / 3 * 1 * -1);
     left: calc(#{$rect-size} / 3 * 1 * -1);
+
+    @include phone-width() {
+      @include size(300px, 300px);
+      bottom: calc(300px / 3 * 1 * -1);
+      left: calc(300px / 3 * 1 * -1);
+    }
   }
 }
 
