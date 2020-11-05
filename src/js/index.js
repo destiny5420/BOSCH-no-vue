@@ -144,8 +144,14 @@ function onGSAP() {
   // top pointer
   gsap
     .timeline({ repeat: -1 })
-    .from('#top-point', { delay: 0.5, y: 20, opacity: 0, duration: 0.75, ease: 'linear' })
-    .to('#top-point', { y: -12, opacity: 0, duration: 0.75, ease: 'power1.out' });
+    .fromTo('#scroll-point', { y: 0 }, {y: -40, duration: 1.5, ease: 'power2.out'})
+    .fromTo('#scroll-point', { y: -40 }, {y: 0, duration: 1.5, ease: 'power2.out'});
+
+  // top pointer
+  gsap
+    .timeline({ repeat: -1 })
+    .fromTo('#top-point', { y: 20 }, {y: -20, duration: 1.5, ease: 'power2.out'})
+    .fromTo('#top-point', { y: -20 }, {y: 20, duration: 1.5, ease: 'power2.out'});
 
   // menu
   anim_open_menu = gsap

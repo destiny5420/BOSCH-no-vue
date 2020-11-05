@@ -108,7 +108,7 @@ function onGSAP() {
   var startVar = deviceMode === 'phone' ? 'top 25%' : 'top 35%';
 
   gsap
-    .timeline({ scrollTrigger: { trigger: '.description', start: startVar, markers: true } })
+    .timeline({ scrollTrigger: { trigger: '.description', start: startVar } })
     .from($('.description .content-wrap'), {
       duration: 1.25,
       opacity: 0,
@@ -121,7 +121,6 @@ function onGSAP() {
     scrollTrigger: {
       trigger: '.tip-box',
       start: '-650px top',
-      markers: isDebug,
       end: '+=0',
     },
   });
@@ -132,11 +131,17 @@ function onGSAP() {
 
   // proxy left
   anim_proxy = gsap.timeline({
-    scrollTrigger: { trigger: '.proxy', start: '-400px top', markers: isDebug, end: '+=0' },
+    scrollTrigger: { trigger: '.proxy', start: '-400px top', end: '+=0' },
   });
   anim_proxy
     .from('.proxy .info .title', { duration: 1.5, opacity: 0, y: 60 })
     .from('.proxy .info .content', { duration: 1, opacity: 0, y: 60 }, '-=1');
+
+  // top pointer
+  gsap
+    .timeline({ repeat: -1 })
+    .fromTo('#top-point', { y: 20 }, {y: -20, duration: 1.5, ease: 'power2.out'})
+    .fromTo('#top-point', { y: -20 }, {y: 20, duration: 1.5, ease: 'power2.out'});
 
   // menu
   anim_open_menu = gsap
