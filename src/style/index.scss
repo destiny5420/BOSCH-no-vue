@@ -188,7 +188,6 @@ header {
   margin-bottom: 100px;
 
   .introduction {
-    // @include size(900px, 100%);
     flex: 7;
     height: 100%;
     position: relative;
@@ -196,8 +195,8 @@ header {
     .intro {
       @include independent(transparent);
       top: 50%;
-      left: 0;
-      transform: translate(0px, -50%);
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
 
     .intro-1 {
@@ -211,6 +210,10 @@ header {
         top: 0;
         left: 0;
         z-index: 2;
+
+        @include phone-width() {
+          @include size(300px, 300px);
+        }
       }
 
       .info {
@@ -221,12 +224,26 @@ header {
 
         .title {
           font-size: 48px;
+
+          @include phone-width() {
+            font-size: 24px;
+          }
         }
 
         .content {
           @include size(420px, auto);
           font-size: 30px;
+          text-align: center;
+
+          @include phone-width() {
+            @include size(230px, auto);
+            font-size: 16px;
+          }
         }
+      }
+
+      @include phone-width() {
+        @include size(300px, 300px);
       }
     }
   }
@@ -236,8 +253,10 @@ header {
     $main-symbol-size-phone: 25px;
     $sub-symbol-size-pc: 25px;
     $sub-symbol-size-phone: 14px;
+    @include flex-layout(column, center, flex-end);
     flex: 5;
     height: 100%;
+
     // @include size(400px, 100%);
 
     .option {
@@ -382,6 +401,7 @@ header {
 
   @include phone-width() {
     @include flex-layout(column-reverse, center, center);
+    margin-bottom: 0px;
   }
 }
 
@@ -545,6 +565,10 @@ header {
       height: auto;
     }
   }
+
+  @include phone-width() {
+    margin-bottom: 75px;
+  }
 }
 
 .install-container {
@@ -679,6 +703,7 @@ header {
       }
 
       @include phone-width() {
+        margin-top: 55px;
         height: auto;
         @include flex-layout(column, flex-start, center);
       }
@@ -720,7 +745,7 @@ header {
       }
 
       @include phone-width() {
-        margin-top: 45px;
+        margin-top: 35px;
       }
     }
 
@@ -739,8 +764,7 @@ header {
 
     @include phone-width() {
       @include size(300px, 300px);
-      bottom: calc(300px / 3 * 1 * -1);
-      left: calc(300px / 3 * 1 * -1);
+      left: calc(1500px / 3 * 1 * -1);
     }
   }
 }
@@ -782,7 +806,7 @@ header {
 
     @include phone-width() {
       font-size: 24px;
-      margin-bottom: 100px;
+      margin-bottom: 90px;
     }
   }
 
@@ -873,6 +897,7 @@ header {
 
           @include phone-width() {
             max-width: 100%;
+            height: 365px;
             @include flex-layout(row, center, center);
           }
         }

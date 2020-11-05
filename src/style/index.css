@@ -1765,9 +1765,9 @@ header #scroll-point #point::before {
   background-color: transparent;
   z-index: 1;
   top: 50%;
-  left: 0;
-  -webkit-transform: translate(0px, -50%);
-          transform: translate(0px, -50%);
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .products .introduction .intro-1 {
@@ -1800,6 +1800,13 @@ header #scroll-point #point::before {
   z-index: 2;
 }
 
+@media all and (max-width: 479px) {
+  .products .introduction .intro-1 svg {
+    width: 300px;
+    height: 300px;
+  }
+}
+
 .products .introduction .intro-1 .info {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1823,13 +1830,48 @@ header #scroll-point #point::before {
   font-size: 48px;
 }
 
+@media all and (max-width: 479px) {
+  .products .introduction .intro-1 .info .title {
+    font-size: 24px;
+  }
+}
+
 .products .introduction .intro-1 .info .content {
   width: 420px;
   height: auto;
   font-size: 30px;
+  text-align: center;
+}
+
+@media all and (max-width: 479px) {
+  .products .introduction .intro-1 .info .content {
+    width: 230px;
+    height: auto;
+    font-size: 16px;
+  }
+}
+
+@media all and (max-width: 479px) {
+  .products .introduction .intro-1 {
+    width: 300px;
+    height: 300px;
+  }
 }
 
 .products .options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   -webkit-box-flex: 5;
       -ms-flex: 5;
           flex: 5;
@@ -2051,6 +2093,7 @@ header #scroll-point #point::before {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    margin-bottom: 0px;
   }
 }
 
@@ -2284,6 +2327,12 @@ header #scroll-point #point::before {
   }
 }
 
+@media all and (max-width: 479px) {
+  .about-us {
+    margin-bottom: 75px;
+  }
+}
+
 .install-container {
   width: 100%;
   height: auto;
@@ -2457,6 +2506,7 @@ header #scroll-point #point::before {
 
 @media all and (max-width: 479px) {
   .install-container .content .info-container {
+    margin-top: 55px;
     height: auto;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2512,7 +2562,7 @@ header #scroll-point #point::before {
 
 @media all and (max-width: 479px) {
   .install-container .content .btn-more {
-    margin-top: 45px;
+    margin-top: 35px;
   }
 }
 
@@ -2550,8 +2600,7 @@ header #scroll-point #point::before {
   .install-container #install-asset-01 {
     width: 300px;
     height: 300px;
-    bottom: calc(300px / 3 * 1 * -1);
-    left: calc(300px / 3 * 1 * -1);
+    left: calc(1500px / 3 * 1 * -1);
   }
 }
 
@@ -2619,7 +2668,7 @@ header #scroll-point #point::before {
 @media all and (max-width: 479px) {
   .faq-container .faq-sub-title {
     font-size: 24px;
-    margin-bottom: 100px;
+    margin-bottom: 90px;
   }
 }
 
@@ -2735,6 +2784,7 @@ header #scroll-point #point::before {
 @media all and (max-width: 479px) {
   .faq-container .faq-blocks #faq-blocks-content > :nth-child(n) > :first-child {
     max-width: 100%;
+    height: 365px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
