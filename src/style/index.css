@@ -2732,6 +2732,10 @@ header #scroll-point #point::before {
   }
 }
 
+.faq-container .faq-blocks #faq-blocks-content .block-layout {
+  text-align: justify;
+}
+
 .faq-container .faq-blocks #faq-blocks-content .empty-block {
   width: 360px;
   height: 320px;

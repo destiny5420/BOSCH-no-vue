@@ -876,6 +876,10 @@ header {
         }
       }
 
+      .block-layout {
+        text-align: justify;
+      }
+
       .empty-block {
         @include size(360px, 320px);
         display: inline-block;
