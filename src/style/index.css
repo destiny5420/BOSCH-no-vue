@@ -67,6 +67,7 @@ ul {
   padding: 0px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  border: 1px solid black;
 }
 
 .main-container {
@@ -909,9 +910,12 @@ nav #home img {
   fill: #8f8f8f;
 }
 
+.btn-more .arrow_wrap {
+  margin-right: 20px;
+}
+
 .btn-more .arrow_wrap > svg {
   z-index: 2;
-  margin-right: 20px;
 }
 
 .btn-more > p {
@@ -1952,7 +1956,7 @@ header #scroll-point #point::before {
   width: 150px;
   height: 150px;
   left: auto;
-  right: calc((150px / 2 * (-1)) + (50px / 2));
+  right: calc( (150px / 2 * (-1)) + (50px * 0.75 / 2) + ((50px - (50px * 0.75)) / 2));
 }
 
 .products .options .large-option .bg-circle svg {
@@ -1964,7 +1968,7 @@ header #scroll-point #point::before {
   .products .options .large-option .bg-circle {
     width: 80px;
     height: 80px;
-    right: calc((80px / 2 * (-1)) + (25px / 2));
+    right: calc( (80px / 2 * (-1)) + (25px * 0.75 / 2) + ((25px - (25px * 0.75)) / 2));
   }
   .products .options .large-option .bg-circle svg {
     width: 80px;
@@ -1977,6 +1981,10 @@ header #scroll-point #point::before {
   transition: -webkit-transform 0.85s cubic-bezier(0.25, 1, 0.5, 1);
   transition: transform 0.85s cubic-bezier(0.25, 1, 0.5, 1);
   transition: transform 0.85s cubic-bezier(0.25, 1, 0.5, 1), -webkit-transform 0.85s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.products .options .large-option .arrow_wrap {
+  margin-right: 0px;
 }
 
 .products .options .large-option .arrow_wrap > svg {
@@ -2016,7 +2024,7 @@ header #scroll-point #point::before {
   width: 105px;
   height: 105px;
   left: auto;
-  right: calc((105px / 2 * (-1)) + (25px / 2));
+  right: calc( (105px / 2 * (-1)) + (25px * 0.75 / 2) + ((25px - (25px * 0.75)) / 2));
 }
 
 .products .options .small-option .bg-circle svg {
@@ -2028,7 +2036,7 @@ header #scroll-point #point::before {
   .products .options .small-option .bg-circle {
     width: 65px;
     height: 65px;
-    right: calc((65px / 2 * (-1)) + (14px / 2));
+    right: calc( (65px / 2 * (-1)) + (14px * 0.75 / 2) + ((14px - (14px * 0.75)) / 2));
   }
   .products .options .small-option .bg-circle svg {
     width: 65px;
@@ -2041,6 +2049,10 @@ header #scroll-point #point::before {
   transition: -webkit-transform 0.85s cubic-bezier(0.25, 1, 0.5, 1);
   transition: transform 0.85s cubic-bezier(0.25, 1, 0.5, 1);
   transition: transform 0.85s cubic-bezier(0.25, 1, 0.5, 1), -webkit-transform 0.85s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.products .options .small-option .arrow_wrap {
+  margin-right: 0px;
 }
 
 .products .options .small-option .arrow_wrap > svg {
@@ -2247,22 +2259,29 @@ header #scroll-point #point::before {
 }
 
 .about-us .bottom #content .btn-block .btn-more {
-  width: 133px;
-  height: 52px;
   position: absolute;
   content: '';
   background-color: transparent;
   z-index: 1;
   font-size: 30px;
-  left: calc(50% - (133px / 2));
-  bottom: calc(50% - (52px / 2));
+}
+
+.about-us .bottom #content .btn-block .btn-more .bg-circle {
+  width: 150px;
+  height: 150px;
+  left: calc((150px / 2 * (-1)) + (20px * 0.75 / 2));
+}
+
+.about-us .bottom #content .btn-block .btn-more .bg-circle svg {
+  width: 150px;
+  height: 150px;
 }
 
 @media all and (max-width: 479px) {
   .about-us .bottom #content .btn-block .btn-more .bg-circle {
     width: 80px;
     height: 80px;
-    left: calc((80px / 2) - 25px);
+    left: calc((80px / 2 * (-1)) + (14px * 0.75 / 2));
   }
   .about-us .bottom #content .btn-block .btn-more .bg-circle svg {
     width: 80px;
@@ -2282,8 +2301,12 @@ header #scroll-point #point::before {
   }
 }
 
+.about-us .bottom #content .btn-block .btn-more > p {
+  font-size: 30px;
+}
+
 @media all and (max-width: 479px) {
-  .about-us .bottom #content .btn-block .eng-b {
+  .about-us .bottom #content .btn-block .btn-more > p {
     font-size: 24px;
   }
 }
@@ -2500,10 +2523,6 @@ header #scroll-point #point::before {
   }
 }
 
-.install-container .content .info-container .eng-b {
-  font-size: 24px;
-}
-
 @media all and (max-width: 479px) {
   .install-container .content .info-container {
     margin-top: 55px;
@@ -2546,7 +2565,7 @@ header #scroll-point #point::before {
 .install-container .content .btn-more .bg-circle {
   width: 100px;
   height: 100px;
-  left: calc((100px / 2 * (-1)) + (20px / 2) + 3px);
+  left: calc( (100px / 2 * (-1)) + (20px * 0.75 / 2) + ((20px - (20px * 0.75)) / 2));
 }
 
 .install-container .content .btn-more .bg-circle svg {
@@ -2554,10 +2573,39 @@ header #scroll-point #point::before {
   height: 100px;
 }
 
+@media all and (max-width: 479px) {
+  .install-container .content .btn-more .bg-circle {
+    width: 70px;
+    height: 70px;
+    left: calc( (70px / 2 * (-1)) + (14px * 0.75 / 2) + ((14px - (14px * 0.75)) / 2));
+  }
+  .install-container .content .btn-more .bg-circle svg {
+    width: 70px;
+    height: 70px;
+  }
+}
+
 .install-container .content .btn-more .arrow_wrap > svg {
   width: 20px;
   height: 20px;
   fill: #fff;
+}
+
+@media all and (max-width: 479px) {
+  .install-container .content .btn-more .arrow_wrap > svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+.install-container .content .btn-more > p {
+  font-size: 30px;
+}
+
+@media all and (max-width: 479px) {
+  .install-container .content .btn-more > p {
+    font-size: 24px;
+  }
 }
 
 @media all and (max-width: 479px) {
@@ -2710,7 +2758,7 @@ header #scroll-point #point::before {
 .faq-container .faq-blocks #faq-blocks-content .block .btn-more .bg-circle {
   width: 85px;
   height: 85px;
-  left: calc((85px / 2 * (-1)) + (20px / 2) + 3px);
+  left: calc( (85px / 2 * (-1)) + (20px * 0.75 / 2) + ((20px - (20px * 0.75)) / 2));
 }
 
 .faq-container .faq-blocks #faq-blocks-content .block .btn-more .bg-circle svg {
@@ -2718,10 +2766,39 @@ header #scroll-point #point::before {
   height: 85px;
 }
 
+@media all and (max-width: 479px) {
+  .faq-container .faq-blocks #faq-blocks-content .block .btn-more .bg-circle {
+    width: 70px;
+    height: 70px;
+    left: calc( (70px / 2 * (-1)) + (14px * 0.75 / 2) + ((14px - (14px * 0.75)) / 2));
+  }
+  .faq-container .faq-blocks #faq-blocks-content .block .btn-more .bg-circle svg {
+    width: 70px;
+    height: 70px;
+  }
+}
+
 .faq-container .faq-blocks #faq-blocks-content .block .btn-more .arrow_wrap > svg {
   width: 20px;
   height: 20px;
   fill: #fff;
+}
+
+@media all and (max-width: 479px) {
+  .faq-container .faq-blocks #faq-blocks-content .block .btn-more .arrow_wrap > svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+.faq-container .faq-blocks #faq-blocks-content .block .btn-more > p {
+  font-size: 30px;
+}
+
+@media all and (max-width: 479px) {
+  .faq-container .faq-blocks #faq-blocks-content .block .btn-more > p {
+    font-size: 24px;
+  }
 }
 
 @media all and (max-width: 479px) {

@@ -67,6 +67,7 @@ ul {
   padding: 0px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  border: 1px solid black;
 }
 
 .main-container {
@@ -909,9 +910,12 @@ nav #home img {
   fill: #8f8f8f;
 }
 
+.btn-more .arrow_wrap {
+  margin-right: 20px;
+}
+
 .btn-more .arrow_wrap > svg {
   z-index: 2;
-  margin-right: 20px;
 }
 
 .btn-more > p {
