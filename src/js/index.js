@@ -115,7 +115,7 @@ function onGSAP() {
     )
     .from($('header .left .title >div'), { maxHeight: 0, duration: 1 }, '-=0.5')
     .from($('header .right .bg'), { x: 100, opacity: 0, duration: 1.5 }, '-=1.25')
-    .from($('header .right img'), { y: 100, opacity: 0, duration: 1.5 }, '-=1')
+    .from($('header .right .pic-frame'), { y: 100, opacity: 0, duration: 1.5 }, '-=1')
     .from($('header #scroll-point'), { y: -100, opacity: 0, duration: 1 }, '-=1');
 
   Array.from($('.slogan-wrap #slogan .text-char')).forEach((e, index) => {
@@ -144,14 +144,14 @@ function onGSAP() {
   // top pointer
   gsap
     .timeline({ repeat: -1 })
-    .fromTo('#scroll-point', { y: 0 }, {y: -40, duration: 1.5, ease: 'power2.out'})
-    .fromTo('#scroll-point', { y: -40 }, {y: 0, duration: 1.5, ease: 'power2.out'});
+    .fromTo('#scroll-point', { y: 0 }, { y: -40, duration: 1.5, ease: 'power2.out' })
+    .fromTo('#scroll-point', { y: -40 }, { y: 0, duration: 1.5, ease: 'power2.out' });
 
   // top pointer
   gsap
     .timeline({ repeat: -1 })
-    .fromTo('#top-point', { y: 20 }, {y: -20, duration: 1.5, ease: 'power2.out'})
-    .fromTo('#top-point', { y: -20 }, {y: 20, duration: 1.5, ease: 'power2.out'});
+    .fromTo('#top-point', { y: 20 }, { y: -20, duration: 1.5, ease: 'power2.out' })
+    .fromTo('#top-point', { y: -20 }, { y: 20, duration: 1.5, ease: 'power2.out' });
 
   // menu
   anim_open_menu = gsap
@@ -260,26 +260,6 @@ function onGSAP() {
       '-=0.65',
     )
     .from(
-      $('.about-us #txt-2'),
-      {
-        y: -100,
-        opacity: 0,
-        duration: 0.75,
-        ease: 'power1.out',
-      },
-      '-=0.72',
-    )
-    .from(
-      $('.about-us #txt-3'),
-      {
-        y: -100,
-        opacity: 0,
-        duration: 0.75,
-        ease: 'power1.out',
-      },
-      '-=0.72',
-    )
-    .from(
       $('.about-us #more-about'),
       {
         y: -30,
@@ -327,7 +307,12 @@ function onGSAP() {
       },
     })
     // .from(infoImgPseudo01, { duration: 1, cssRule: { translateX: 0 }, ease: 'power1.out' })
-    .from($('#info-group-1 .info-image-block'), { x: -100, duration: 1, opacity: 0, ease: 'power1.out'})
+    .from($('#info-group-1 .info-image-block'), {
+      x: -100,
+      duration: 1,
+      opacity: 0,
+      ease: 'power1.out',
+    })
     .from($('#info-group-1 #info-1'), { maxHeight: 0, duration: 1 }, '-=0.8')
     .from($('#info-group-1 #info-2'), { maxHeight: 0, duration: 1 }, '-=0.8')
     .from($('#info-group-1 #info-3'), { y: -100, opacity: 0, duration: 1 }, '-=0.8');
@@ -348,7 +333,12 @@ function onGSAP() {
     //   cssRule: { translateX: 0 },
     //   ease: 'power1.out',
     // })
-    .from($('#info-group-2 .info-image-block'), { x: -100, duration: 1, opacity: 0, ease: 'power1.out'})
+    .from($('#info-group-2 .info-image-block'), {
+      x: -100,
+      duration: 1,
+      opacity: 0,
+      ease: 'power1.out',
+    })
     .from($('#info-group-2 #info-1'), { maxHeight: 0, duration: 1 }, '-=0.8')
     .from($('#info-group-2 #info-2'), { maxHeight: 0, duration: 1 }, '-=0.8')
     .from($('#info-group-2 #info-3'), { y: -50, opacity: 0, duration: 1 }, '-=0.8');
