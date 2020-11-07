@@ -67,7 +67,6 @@ ul {
   padding: 0px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border: 1px solid black;
 }
 
 .main-container {
@@ -1454,6 +1453,7 @@ nav #home img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
   margin-top: 155px;
   background: #e20015;
   background: -webkit-gradient(linear, left top, right top, from(#e20015), to(#b90276));
@@ -1493,6 +1493,30 @@ nav #home img {
 @media all and (max-width: 479px) {
   .slogan .slogan-wrap > :last-child {
     font-size: 30px;
+  }
+}
+
+.slogan .vector {
+  position: absolute;
+  content: '';
+  background-color: transparent;
+  z-index: 1;
+  bottom: -40%;
+  left: 50%;
+}
+
+.slogan .vector > svg {
+  width: 14px;
+  height: 207px;
+}
+
+@media all and (max-width: 479px) {
+  .slogan .vector {
+    bottom: -30%;
+  }
+  .slogan .vector > svg {
+    width: 14px;
+    height: 100px;
   }
 }
 

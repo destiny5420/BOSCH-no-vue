@@ -77,11 +77,23 @@ function onGSAP() {
 
   anim_sloganShow = gsap.timeline({ delay: 1 });
 
+  let vectorTimeline = gsap.from($('.vector'), { opacity: 0, duration: 0.5, paused: true });
+
   let sloganWordList = document.querySelectorAll('.slogan .text-char');
-  sloganWordList.forEach((element) => {
+  sloganWordList.forEach((element, index) => {
     anim_sloganShow.from(
       element,
-      { duration: 0.75, opacity: 0, y: 65, ease: 'power1.out' },
+      {
+        duration: 0.75,
+        opacity: 0,
+        y: 65,
+        ease: 'power1.out',
+        onComplete: () => {
+          if (index === sloganWordList.length - 1) {
+            vectorTimeline.play();
+          }
+        },
+      },
       '-=0.7',
     );
   });
@@ -140,8 +152,8 @@ function onGSAP() {
   // top pointer
   gsap
     .timeline({ repeat: -1 })
-    .fromTo('#top-point', { y: 20 }, {y: -20, duration: 1.5, ease: 'power2.out'})
-    .fromTo('#top-point', { y: -20 }, {y: 20, duration: 1.5, ease: 'power2.out'});
+    .fromTo('#top-point', { y: 20 }, { y: -20, duration: 1.5, ease: 'power2.out' })
+    .fromTo('#top-point', { y: -20 }, { y: 20, duration: 1.5, ease: 'power2.out' });
 
   // menu
   anim_open_menu = gsap

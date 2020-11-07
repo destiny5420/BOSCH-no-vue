@@ -5,6 +5,7 @@
 .slogan {
   @include size(100%, 330px);
   @include flex-layout(row, center, center);
+  position: relative;
   margin-top: 155px;
   background: rgb(226, 0, 21);
   background: linear-gradient(90deg, rgba(226, 0, 21, 1) 0%, rgba(185, 2, 118, 1) 100%);
@@ -25,6 +26,24 @@
       line-height: 1;
       @include phone-width() {
         font-size: 30px;
+      }
+    }
+  }
+
+  .vector {
+    @include independent(transparent);
+    bottom: -40%;
+    left: 50%;
+
+    > svg {
+      @include size(14px, 207px);
+    }
+
+    @include phone-width() {
+      bottom: -30%;
+
+      > svg {
+        @include size(14px, 100px);
       }
     }
   }
