@@ -823,6 +823,10 @@ header {
       left: calc(1500px / 3 * 1 * -1);
     }
   }
+
+  @include phone-width() {
+    margin-bottom: 30px;
+  }
 }
 
 // #info-group-1 .info-image-block::after {
@@ -845,6 +849,7 @@ header {
   @include flex-layout(column, flex-start, center);
   position: relative;
   margin-bottom: 150px;
+  overflow: hidden;
 
   .faq-title {
     text-align: center;
@@ -1037,6 +1042,15 @@ header {
         margin-bottom: 0px;
       }
     }
+
+    @include phone-width() {
+      transform: scale(1.8);
+      bottom: 25%;
+    }
+  }
+
+  @include phone-width() {
+    margin-bottom: 0px;
   }
 }
 

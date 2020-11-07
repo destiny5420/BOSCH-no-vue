@@ -2653,6 +2653,12 @@ header #scroll-point #point::before {
   }
 }
 
+@media all and (max-width: 479px) {
+  .install-container {
+    margin-bottom: 30px;
+  }
+}
+
 .faq-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2669,6 +2675,7 @@ header #scroll-point #point::before {
           align-items: center;
   position: relative;
   margin-bottom: 150px;
+  overflow: hidden;
 }
 
 .faq-container .faq-title {
@@ -2944,6 +2951,20 @@ header #scroll-point #point::before {
 
 .faq-container #faq-blocks-bg > div:last-child {
   margin-bottom: 0px;
+}
+
+@media all and (max-width: 479px) {
+  .faq-container #faq-blocks-bg {
+    -webkit-transform: scale(1.8);
+            transform: scale(1.8);
+    bottom: 25%;
+  }
+}
+
+@media all and (max-width: 479px) {
+  .faq-container {
+    margin-bottom: 0px;
+  }
 }
 
 .text-char {
