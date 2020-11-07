@@ -1598,7 +1598,9 @@ header #content .right {
   position: relative;
 }
 
-header #content .right .bg {
+header #content .right #svg-gray-circle-block {
+  width: 600px;
+  height: 600px;
   position: absolute;
   content: '';
   background-color: transparent;
@@ -1607,6 +1609,13 @@ header #content .right .bg {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+@media all and (max-width: 479px) {
+  header #content .right #svg-gray-circle-block {
+    width: 350px;
+    height: 350px;
+  }
 }
 
 header #content .right .pic-frame {

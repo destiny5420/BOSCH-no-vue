@@ -92,11 +92,16 @@ header {
       @include size(200px, 100%);
       position: relative;
 
-      .bg {
+      #svg-gray-circle-block {
+        @include size(600px, 600px);
         @include independent(transparent);
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+
+        @include phone-width() {
+          @include size(350px, 350px);
+        }
       }
 
       .pic-frame {

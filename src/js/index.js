@@ -11,6 +11,8 @@ import '../images/home_img_05.png';
 import '../images/home_txt_00.png';
 import '../images/home_txt_01.png';
 
+import bodymovin from 'lottie-web';
+
 // import global.js
 import {
   onGlobalInit,
@@ -114,7 +116,11 @@ function onGSAP() {
       '-=0.5',
     )
     .from($('header .left .title >div'), { maxHeight: 0, duration: 1 }, '-=0.5')
-    .from($('header .right .bg'), { x: 100, opacity: 0, duration: 1.5 }, '-=1.25')
+    .from(
+      $('header .right #svg-gray-circle-block'),
+      { x: 100, opacity: 0, duration: 1.5 },
+      '-=1.25',
+    )
     .from($('header .right .pic-frame'), { y: 100, opacity: 0, duration: 1.5 }, '-=1')
     .from($('header #scroll-point'), { y: -100, opacity: 0, duration: 1 }, '-=1');
 
@@ -360,6 +366,16 @@ function onGSAP() {
   ScrollTrigger.getById(anim_faq_ID).disable();
 }
 
+function onSVGAnimation() {
+  bodymovin.loadAnimation({
+    container: $('#svg-gray-circle-block')[0],
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: '../js/jsons/gray_circle.json',
+  });
+}
+
 async function onAwake() {
   console.log('*** onAwake ***');
 
@@ -367,6 +383,7 @@ async function onAwake() {
   await onLoadingData();
   onEventBinding();
   onGSAP();
+  onSVGAnimation();
   $('#loading-bar').fadeOut();
 }
 
