@@ -37,6 +37,30 @@
   }
 }
 
+#test-area {
+  @include size(100%, 100vh);
+  @include border();
+
+  background: rgb(131, 58, 180);
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+
+  > svg {
+    @include independent(transparent);
+    @include size(345px, 90px);
+    left: 42%;
+    top: 7%;
+
+    rect {
+      transform: translate(0px, 0px);
+    }
+  }
+}
+
 header {
   @include size(100%, 100vh);
   @include flex-layout(row, center, center);
@@ -57,15 +81,85 @@ header {
       }
 
       .title {
-        height: 144px;
+        // height: 144px;
+
         div {
           transform-origin: bottom;
-          max-height: 144px;
+          // max-height: 144px;
           font-size: 144px;
           color: #e20015;
           @include phone-width() {
             max-height: 72px;
             font-size: 72px;
+          }
+        }
+
+        > svg {
+          @include size(100%, 100%);
+
+          #mask {
+            text {
+              font-size: 144px;
+              // font-family: 'Bosch Sans Black';
+              font-family: '微軟正黑體';
+              font-weight: bold;
+              // font-weight: 700;
+              line-height: 1;
+              fill: #fff;
+              transform: translateY(125px);
+            }
+          }
+
+          #move-black {
+            @include size(100%, 100%);
+            fill: #e20015;
+            transform: translateY(130px);
+            animation: animate-move-block 1s 6.5s ease-in forwards;
+          }
+
+          @keyframes animate-move-block {
+            to {
+              transform: translateY(0px);
+            }
+          }
+
+          #stroke-line {
+            $animate-time: 3s;
+            $delay-time: 4s;
+
+            @include size(100%, 100%);
+            transform: translate(12px, 13px);
+
+            path {
+              fill: none;
+              stroke: #e20015;
+              stroke-width: 3;
+            }
+
+            :nth-child(1) {
+              stroke-dasharray: 360;
+              stroke-dashoffset: 360;
+            }
+
+            :nth-child(2) {
+              stroke-dasharray: 348;
+              stroke-dashoffset: 348;
+            }
+
+            :nth-child(3) {
+              stroke-dasharray: 477;
+              stroke-dashoffset: 477;
+            }
+
+            :nth-child(4) {
+              stroke-dasharray: 449;
+              stroke-dashoffset: 449;
+            }
+
+            :nth-child(5) {
+              stroke-dasharray: 578;
+              stroke-dashoffset: 578;
+            }
           }
         }
 

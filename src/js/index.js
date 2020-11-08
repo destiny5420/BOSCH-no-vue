@@ -28,6 +28,7 @@ import formula from '../js/formula';
 
 // ***** variable *****
 let headTimeline;
+let headTextBoschTimeline = [];
 let anim_open_menu;
 let anim_close_menu;
 let anim_about;
@@ -115,7 +116,7 @@ function onGSAP() {
       },
       '-=0.5',
     )
-    .from($('header .left .title >div'), { maxHeight: 0, duration: 1 }, '-=0.5')
+    // .from($('header .left .title >div'), { maxHeight: 0, duration: 1 }, '-=0.5')
     .from(
       $('header .right #svg-gray-circle-block'),
       { x: 100, opacity: 0, duration: 1.5 },
@@ -124,6 +125,13 @@ function onGSAP() {
     .from($('header .right .pic-frame'), { y: 100, opacity: 0, duration: 1.5 }, '-=1')
     .from($('header #scroll-point'), { y: -100, opacity: 0, duration: 1 }, '-=1');
 
+  var strokeLines = Array.from($('#stroke-line path'));
+  strokeLines.forEach((el) => {
+    headTextBoschTimeline.push(
+      gsap.to(el, { duration: 3, strokeDashoffset: 0, ease: 'power1.out', paused: true }),
+    );
+  });
+
   Array.from($('.slogan-wrap #slogan .text-char')).forEach((e, index) => {
     gsap
       .timeline({
@@ -131,8 +139,8 @@ function onGSAP() {
           onHeadAnimComplete(index);
         },
       })
-      .from(e, { y: 100, duration: 1, ease: 'power1.out', delay: index * 0.015 })
-      .to(e, { y: -100, duration: 1, ease: 'power1.in', delay: 1 });
+      .from(e, { y: 100, duration: 1, ease: 'power3.out', delay: index * 0.03 })
+      .to(e, { y: -100, duration: 0.75, ease: 'power3.in', delay: 1.5 });
   });
 
   var imgList = Array.from($('.faq-container #faq-blocks-bg >div'));
@@ -410,7 +418,13 @@ $(function () {
 // ***************** Local Methods *****************
 function onHeadAnimComplete(index) {
   window.scrollTo(0, 0);
-  index === 7 ? headTimeline.play() : null;
+
+  if (index === 7) {
+    headTimeline.play();
+    headTextBoschTimeline.forEach((el) => {
+      el.play();
+    });
+  }
 
   ScrollTrigger.getById(anim_about_ID).enable();
   ScrollTrigger.getById(anim_install_ID).enable();
