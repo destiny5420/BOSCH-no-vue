@@ -476,14 +476,19 @@ header {
         left: 0px;
       }
 
-      #head-pointer-1 {
+      #about-head-svg-anim-01 {
         @include independent(transparent);
-        top: 70px;
-        right: 120px;
+        @include size(150px, 150px);
+        bottom: -10px;
+        left: 0px;
         z-index: 2;
+
+        > svg {
+          @include size(100%, 100%);
+        }
       }
 
-      #head-pointer-2 {
+      #about-head-svg-anim-02 {
         @include independent(transparent);
         bottom: 0px;
         left: 0px;

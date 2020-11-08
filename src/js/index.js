@@ -374,6 +374,14 @@ function onSVGAnimation() {
     autoplay: true,
     path: '../js/jsons/gray_circle.json',
   });
+
+  bodymovin.loadAnimation({
+    container: $('#about-head-svg-anim-01')[0],
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: '../js/jsons/about_head_anim_01.json',
+  });
 }
 
 async function onAwake() {
