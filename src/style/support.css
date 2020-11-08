@@ -786,11 +786,11 @@ nav #home img {
 }
 
 .tch-r {
-  font-family: 'Bosch Sans CHS Regular';
+  font-weight: 300;
 }
 
 .tch-b {
-  font-family: 'Bosch Sans CHS Bold';
+  font-weight: 500;
 }
 
 .eng-bl {
