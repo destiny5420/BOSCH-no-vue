@@ -376,11 +376,19 @@ function onSVGAnimation() {
   });
 
   bodymovin.loadAnimation({
-    container: $('#about-head-svg-anim-01')[0],
+    container: $('#about-head-anim-01')[0],
     renderer: 'svg',
     loop: true,
     autoplay: true,
     path: '../js/jsons/about_head_anim_01.json',
+  });
+
+  bodymovin.loadAnimation({
+    container: $('#about-head-anim-02')[0],
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: '../js/jsons/about_head_anim_02.json',
   });
 }
 

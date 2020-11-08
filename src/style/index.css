@@ -2202,14 +2202,14 @@ header #scroll-point #point::before {
 }
 
 .about-us .bottom #head {
-  width: 450px;
-  height: 100%;
+  width: 391px;
+  height: 498px;
   position: absolute;
   content: '';
   background-color: transparent;
   z-index: 1;
   left: -500px;
-  top: 0px;
+  top: 120px;
   text-align: center;
 }
 
@@ -2218,11 +2218,13 @@ header #scroll-point #point::before {
   content: '';
   background-color: transparent;
   z-index: 1;
+  width: 100%;
+  height: 100%;
   bottom: 0px;
   left: 0px;
 }
 
-.about-us .bottom #head #about-head-svg-anim-01 {
+.about-us .bottom #head #about-head-anim-01 {
   position: absolute;
   content: '';
   background-color: transparent;
@@ -2234,18 +2236,25 @@ header #scroll-point #point::before {
   z-index: 2;
 }
 
-.about-us .bottom #head #about-head-svg-anim-01 > svg {
+.about-us .bottom #head #about-head-anim-01 > svg {
   width: 100%;
   height: 100%;
 }
 
-.about-us .bottom #head #about-head-svg-anim-02 {
+.about-us .bottom #head #about-head-anim-02 {
   position: absolute;
   content: '';
   background-color: transparent;
   z-index: 1;
-  bottom: 0px;
-  left: 0px;
+  width: 40px;
+  height: 40px;
+  top: 25px;
+  right: 50px;
+}
+
+.about-us .bottom #head #about-head-anim-02 > svg {
+  width: 100%;
+  height: 100%;
 }
 
 .about-us .bottom #content {
