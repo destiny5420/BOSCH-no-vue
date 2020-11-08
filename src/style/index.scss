@@ -76,14 +76,16 @@ header {
 
       .sub-title {
         font-size: 80px;
-
-        @include phone-width() {
-          font-size: 36px;
-        }
       }
 
       @include phone-width() {
-        transform: translate(-20px, 115px);
+        @include independent(transparent);
+        left: 30px;
+        bottom: 60px;
+
+        .sub-title {
+          font-size: 36px;
+        }
       }
     }
 
@@ -133,7 +135,8 @@ header {
 
       @include phone-width() {
         @include flex-layout(row, center, center);
-        @include size(290px, 350px);
+        @include size(100vw, 450px);
+        overflow: hidden;
       }
     }
 
@@ -469,6 +472,7 @@ header {
       left: -500px;
       top: 120px;
       text-align: center;
+      z-index: 0;
 
       img {
         @include independent(transparent);
@@ -487,6 +491,11 @@ header {
         > svg {
           @include size(100%, 100%);
         }
+
+        @include phone-width() {
+          bottom: -10px;
+          left: -50px;
+        }
       }
 
       #about-head-anim-02 {
@@ -498,6 +507,18 @@ header {
         > svg {
           @include size(100%, 100%);
         }
+
+        @include phone-width() {
+          @include size(20px, 20px);
+          top: 40px;
+          right: 20px;
+        }
+      }
+
+      @include phone-width() {
+        @include size(205px, 261px);
+        left: -115px;
+        top: 90px;
       }
     }
 
