@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;500;700&display=swap");
 * {
   margin: 0;
@@ -68,7 +67,6 @@ ul {
   padding: 0px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border: 1px solid black;
 }
 
 .main-container {
@@ -1564,33 +1562,21 @@ header #content .left .sub-title {
   line-height: 1;
 }
 
-header #content .left .title div {
-  -webkit-transform-origin: bottom;
-          transform-origin: bottom;
-  font-size: 144px;
-  color: #e20015;
-}
-
-@media all and (max-width: 479px) {
-  header #content .left .title div {
-    max-height: 72px;
-    font-size: 72px;
-  }
-}
-
 header #content .left .title > svg {
   width: 100%;
   height: 100%;
 }
 
-header #content .left .title > svg #mask text {
-  font-size: 144px;
-  font-family: '微軟正黑體';
-  font-weight: bold;
-  line-height: 1;
-  fill: #fff;
-  -webkit-transform: translateY(125px);
-          transform: translateY(125px);
+header #content .left .title > svg #mask image {
+  width: 508px;
+  height: 113px;
+}
+
+@media all and (max-width: 479px) {
+  header #content .left .title > svg #mask image {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
 }
 
 header #content .left .title > svg #move-black {
@@ -1599,8 +1585,15 @@ header #content .left .title > svg #move-black {
   fill: #e20015;
   -webkit-transform: translateY(130px);
           transform: translateY(130px);
-  -webkit-animation: animate-move-block 1s 6.5s ease-in forwards;
-          animation: animate-move-block 1s 6.5s ease-in forwards;
+  -webkit-animation: animate-move-block 1s 6.5s cubic-bezier(0.49, 0.255, 0.9, 0.515) forwards;
+          animation: animate-move-block 1s 6.5s cubic-bezier(0.49, 0.255, 0.9, 0.515) forwards;
+}
+
+@media all and (max-width: 479px) {
+  header #content .left .title > svg #move-black {
+    -webkit-transform: translateY(60px);
+            transform: translateY(60px);
+  }
 }
 
 @-webkit-keyframes animate-move-block {
@@ -1620,8 +1613,15 @@ header #content .left .title > svg #move-black {
 header #content .left .title > svg #stroke-line {
   width: 100%;
   height: 100%;
-  -webkit-transform: translate(12px, 13px);
-          transform: translate(12px, 13px);
+  -webkit-transform: translate(4px, 3px);
+          transform: translate(4px, 3px);
+}
+
+@media all and (max-width: 479px) {
+  header #content .left .title > svg #stroke-line {
+    -webkit-transform: scale(0.5) translate(4px, 3px);
+            transform: scale(0.5) translate(4px, 3px);
+  }
 }
 
 header #content .left .title > svg #stroke-line path {
@@ -1641,24 +1641,18 @@ header #content .left .title > svg #stroke-line :nth-child(2) {
 }
 
 header #content .left .title > svg #stroke-line :nth-child(3) {
-  stroke-dasharray: 477;
-  stroke-dashoffset: 477;
+  stroke-dasharray: 513;
+  stroke-dashoffset: 513;
 }
 
 header #content .left .title > svg #stroke-line :nth-child(4) {
-  stroke-dasharray: 449;
-  stroke-dashoffset: 449;
+  stroke-dasharray: 478;
+  stroke-dashoffset: 478;
 }
 
 header #content .left .title > svg #stroke-line :nth-child(5) {
   stroke-dasharray: 578;
   stroke-dashoffset: 578;
-}
-
-@media all and (max-width: 479px) {
-  header #content .left .title {
-    height: 72px;
-  }
 }
 
 header #content .left .sub-title {
@@ -1674,7 +1668,12 @@ header #content .left .sub-title {
     left: 30px;
     bottom: 60px;
   }
+  header #content .left .title {
+    width: 272px;
+    height: 60px;
+  }
   header #content .left .sub-title {
+    margin-top: 8px;
     font-size: 36px;
   }
 }
@@ -1709,13 +1708,6 @@ header #content .right #svg-gray-circle-block {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-}
-
-@media all and (max-width: 479px) {
-  header #content .right #svg-gray-circle-block {
-    width: 350px;
-    height: 350px;
-  }
 }
 
 header #content .right .pic-frame {
@@ -1790,7 +1782,13 @@ header #content .right .pic-frame img {
             align-items: center;
     width: 100vw;
     height: 450px;
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
     overflow: hidden;
+  }
+  header #content .right #svg-gray-circle-block {
+    width: 350px;
+    height: 350px;
   }
 }
 
@@ -1878,6 +1876,8 @@ header #scroll-point #point::before {
 
 @media all and (max-width: 479px) {
   header {
+    width: 100%;
+    height: 95vh;
     margin-bottom: 45px;
   }
 }

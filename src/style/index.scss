@@ -81,32 +81,16 @@ header {
       }
 
       .title {
-        // height: 144px;
-
-        div {
-          transform-origin: bottom;
-          // max-height: 144px;
-          font-size: 144px;
-          color: #e20015;
-          @include phone-width() {
-            max-height: 72px;
-            font-size: 72px;
-          }
-        }
-
         > svg {
           @include size(100%, 100%);
 
           #mask {
-            text {
-              font-size: 144px;
-              // font-family: 'Bosch Sans Black';
-              font-family: '微軟正黑體';
-              font-weight: bold;
-              // font-weight: 700;
-              line-height: 1;
-              fill: #fff;
-              transform: translateY(125px);
+            image {
+              @include size(508px, 113px);
+
+              @include phone-width() {
+                transform: scale(0.5);
+              }
             }
           }
 
@@ -114,7 +98,11 @@ header {
             @include size(100%, 100%);
             fill: #e20015;
             transform: translateY(130px);
-            animation: animate-move-block 1s 6.5s ease-in forwards;
+            animation: animate-move-block 1s 6.5s cubic-bezier(0.49, 0.255, 0.9, 0.515) forwards;
+
+            @include phone-width() {
+              transform: translateY(60px);
+            }
           }
 
           @keyframes animate-move-block {
@@ -128,7 +116,11 @@ header {
             $delay-time: 4s;
 
             @include size(100%, 100%);
-            transform: translate(12px, 13px);
+            transform: translate(4px, 3px);
+
+            @include phone-width() {
+              transform: scale(0.5) translate(4px, 3px);
+            }
 
             path {
               fill: none;
@@ -147,13 +139,13 @@ header {
             }
 
             :nth-child(3) {
-              stroke-dasharray: 477;
-              stroke-dashoffset: 477;
+              stroke-dasharray: 513;
+              stroke-dashoffset: 513;
             }
 
             :nth-child(4) {
-              stroke-dasharray: 449;
-              stroke-dashoffset: 449;
+              stroke-dasharray: 478;
+              stroke-dashoffset: 478;
             }
 
             :nth-child(5) {
@@ -161,10 +153,6 @@ header {
               stroke-dashoffset: 578;
             }
           }
-        }
-
-        @include phone-width() {
-          height: 72px;
         }
       }
 
@@ -177,7 +165,12 @@ header {
         left: 30px;
         bottom: 60px;
 
+        .title {
+          @include size(272px, 60px);
+        }
+
         .sub-title {
+          margin-top: 8px;
           font-size: 36px;
         }
       }
@@ -194,10 +187,6 @@ header {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-
-        @include phone-width() {
-          @include size(350px, 350px);
-        }
       }
 
       .pic-frame {
@@ -230,7 +219,12 @@ header {
       @include phone-width() {
         @include flex-layout(row, center, center);
         @include size(100vw, 450px);
+        transform: translateY(-50px);
         overflow: hidden;
+
+        #svg-gray-circle-block {
+          @include size(350px, 350px);
+        }
       }
     }
 
@@ -286,6 +280,7 @@ header {
   }
 
   @include phone-width() {
+    @include size(100%, 95vh);
     margin-bottom: 45px;
   }
 }

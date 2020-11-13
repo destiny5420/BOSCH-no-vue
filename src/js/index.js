@@ -10,6 +10,7 @@ import '../images/home_img_04.png';
 import '../images/home_img_05.png';
 import '../images/home_txt_00.png';
 import '../images/home_txt_01.png';
+import '../images/bosch-mask.png';
 
 import bodymovin from 'lottie-web';
 
