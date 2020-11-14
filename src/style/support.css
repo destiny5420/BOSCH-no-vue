@@ -438,8 +438,8 @@ ul {
 
 @media all and (max-width: 479px) {
   #menu-button :nth-child(n) {
-    -webkit-transform-origin: 14px center;
-            transform-origin: 14px center;
+    -webkit-transform-origin: 12px center;
+            transform-origin: 12px center;
   }
 }
 

@@ -347,7 +347,7 @@ $menu-width-phone: 20px;
     }
 
     @include phone-width() {
-      transform-origin: 14px center;
+      transform-origin: 12px center;
     }
   }
 
