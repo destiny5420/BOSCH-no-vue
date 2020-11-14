@@ -925,6 +925,13 @@ nav {
     transition: all 0.15s linear;
   }
 
+  &.productHover {
+    .bg-circle {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
   &:hover {
     .bg-circle {
       opacity: 1;
@@ -1213,6 +1220,16 @@ $point-move-unit: -30px;
   }
 }
 .btn-more-hover-left-40 {
+  &.productHover {
+    > p {
+      transform: translateX(-40px);
+
+      @include phone-width() {
+        transform: translateX(-20px);
+      }
+    }
+  }
+
   &:hover {
     > p {
       transform: translateX(-40px);
@@ -1224,6 +1241,16 @@ $point-move-unit: -30px;
   }
 }
 .btn-more-hover-left-50 {
+  &.productHover {
+    > p {
+      transform: translateX(-50px);
+
+      @include phone-width() {
+        transform: translateX(-25px);
+      }
+    }
+  }
+
   &:hover {
     > p {
       transform: translateX(-50px);
