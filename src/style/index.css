@@ -2390,6 +2390,54 @@ header #scroll-point #point::before {
           transform: translate(-50%, -50%);
 }
 
+.products .introduction .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  position: relative;
+  z-index: 3;
+}
+
+.products .introduction .info .title {
+  font-size: 48px;
+}
+
+@media all and (max-width: 479px) {
+  .products .introduction .info .title {
+    font-size: 24px;
+  }
+}
+
+.products .introduction .info .content {
+  width: 420px;
+  height: auto;
+  font-size: 30px;
+  text-align: center;
+}
+
+@media all and (max-width: 479px) {
+  .products .introduction .info .content {
+    width: 230px;
+    height: auto;
+    font-size: 16px;
+  }
+}
+
+.products .introduction .unfocus {
+  visibility: hidden;
+}
+
 .products .introduction .intro-1 {
   width: 650px;
   height: 650px;
@@ -2427,7 +2475,16 @@ header #scroll-point #point::before {
   }
 }
 
-.products .introduction .intro-1 .info {
+@media all and (max-width: 479px) {
+  .products .introduction .intro-1 {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+.products .introduction .intro-2 {
+  width: 650px;
+  height: 650px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2441,38 +2498,161 @@ header #scroll-point #point::before {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: #fff;
-  position: relative;
-  z-index: 3;
 }
 
-.products .introduction .intro-1 .info .title {
-  font-size: 48px;
-}
-
-@media all and (max-width: 479px) {
-  .products .introduction .intro-1 .info .title {
-    font-size: 24px;
-  }
-}
-
-.products .introduction .intro-1 .info .content {
-  width: 420px;
-  height: auto;
-  font-size: 30px;
-  text-align: center;
+.products .introduction .intro-2 svg {
+  width: 667px;
+  height: 659px;
+  position: absolute;
+  content: '';
+  background-color: transparent;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  z-index: 2;
 }
 
 @media all and (max-width: 479px) {
-  .products .introduction .intro-1 .info .content {
-    width: 230px;
-    height: auto;
-    font-size: 16px;
+  .products .introduction .intro-2 svg {
+    width: 300px;
+    height: 300px;
   }
 }
 
 @media all and (max-width: 479px) {
-  .products .introduction .intro-1 {
+  .products .introduction .intro-2 {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+.products .introduction .intro-3 {
+  width: 650px;
+  height: 650px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.products .introduction .intro-3 svg {
+  width: 650px;
+  height: 650px;
+  position: absolute;
+  content: '';
+  background-color: transparent;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+@media all and (max-width: 479px) {
+  .products .introduction .intro-3 svg {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media all and (max-width: 479px) {
+  .products .introduction .intro-3 {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+.products .introduction .intro-4 {
+  width: 650px;
+  height: 650px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.products .introduction .intro-4 svg {
+  width: 650px;
+  height: 650px;
+  position: absolute;
+  content: '';
+  background-color: transparent;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+@media all and (max-width: 479px) {
+  .products .introduction .intro-4 svg {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media all and (max-width: 479px) {
+  .products .introduction .intro-4 {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+.products .introduction .intro-5 {
+  width: 650px;
+  height: 650px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.products .introduction .intro-5 svg {
+  width: 650px;
+  height: 650px;
+  position: absolute;
+  content: '';
+  background-color: transparent;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+@media all and (max-width: 479px) {
+  .products .introduction .intro-5 svg {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media all and (max-width: 479px) {
+  .products .introduction .intro-5 {
     width: 300px;
     height: 300px;
   }

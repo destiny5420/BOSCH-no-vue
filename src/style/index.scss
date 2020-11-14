@@ -304,6 +304,36 @@ header {
       transform: translate(-50%, -50%);
     }
 
+    .info {
+      @include flex-layout(column, center, center);
+      color: #fff;
+      position: relative;
+      z-index: 3;
+
+      .title {
+        font-size: 48px;
+
+        @include phone-width() {
+          font-size: 24px;
+        }
+      }
+
+      .content {
+        @include size(420px, auto);
+        font-size: 30px;
+        text-align: center;
+
+        @include phone-width() {
+          @include size(230px, auto);
+          font-size: 16px;
+        }
+      }
+    }
+
+    .unfocus {
+      visibility: hidden;
+    }
+
     .intro-1 {
       $rect-size: 650px;
       @include size($rect-size, $rect-size);
@@ -321,29 +351,91 @@ header {
         }
       }
 
-      .info {
-        @include flex-layout(column, center, center);
-        color: #fff;
-        position: relative;
-        z-index: 3;
+      @include phone-width() {
+        @include size(300px, 300px);
+      }
+    }
 
-        .title {
-          font-size: 48px;
+    .intro-2 {
+      $rect-size: 650px;
+      @include size($rect-size, $rect-size);
+      @include flex-layout(column, center, center);
 
-          @include phone-width() {
-            font-size: 24px;
-          }
+      svg {
+        @include size(667px, 659px);
+        @include independent(transparent);
+        top: 0;
+        left: 0;
+        z-index: 2;
+
+        @include phone-width() {
+          @include size(300px, 300px);
         }
+      }
 
-        .content {
-          @include size(420px, auto);
-          font-size: 30px;
-          text-align: center;
+      @include phone-width() {
+        @include size(300px, 300px);
+      }
+    }
 
-          @include phone-width() {
-            @include size(230px, auto);
-            font-size: 16px;
-          }
+    .intro-3 {
+      $rect-size: 650px;
+      @include size($rect-size, $rect-size);
+      @include flex-layout(column, center, center);
+
+      svg {
+        @include size($rect-size, $rect-size);
+        @include independent(transparent);
+        top: 0;
+        left: 0;
+        z-index: 2;
+
+        @include phone-width() {
+          @include size(300px, 300px);
+        }
+      }
+
+      @include phone-width() {
+        @include size(300px, 300px);
+      }
+    }
+
+    .intro-4 {
+      $rect-size: 650px;
+      @include size($rect-size, $rect-size);
+      @include flex-layout(column, center, center);
+
+      svg {
+        @include size($rect-size, $rect-size);
+        @include independent(transparent);
+        top: 0;
+        left: 0;
+        z-index: 2;
+
+        @include phone-width() {
+          @include size(300px, 300px);
+        }
+      }
+
+      @include phone-width() {
+        @include size(300px, 300px);
+      }
+    }
+
+    .intro-5 {
+      $rect-size: 650px;
+      @include size($rect-size, $rect-size);
+      @include flex-layout(column, center, center);
+
+      svg {
+        @include size($rect-size, $rect-size);
+        @include independent(transparent);
+        top: 0;
+        left: 0;
+        z-index: 2;
+
+        @include phone-width() {
+          @include size(300px, 300px);
         }
       }
 

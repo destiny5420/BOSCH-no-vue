@@ -42,7 +42,10 @@ let anim_install_pic_2;
 let anim_install_pic_2_ID = 'anim_install_pic_2';
 let anim_faq;
 let anim_faq_ID = 'anim_faq';
+let curProductIndex = -1;
 let curProductTarget = null;
+let introList = [];
+let anim_intro_show_list = [];
 
 let menu = (function () {
   var menuOpen = false;
@@ -95,14 +98,22 @@ function onEventBinding() {
   });
 
   var btnList = Array.from($('.products .btn-more'));
-  btnList.forEach((element) => {
+  introList = Array.from($('.products .intro'));
+  console.log('introList: ', introList);
+  btnList.forEach((element, index) => {
     element.addEventListener('mouseenter', function (mouse) {
       if (curProductTarget !== null) {
         curProductTarget.classList.remove('productHover');
+        introList[curProductIndex].classList.add('unfocus');
       }
 
       curProductTarget = element;
+      curProductIndex = index;
+
+      introList[curProductIndex].classList.remove('unfocus');
       curProductTarget.classList.add('productHover');
+
+      anim_intro_show_list[index].restart();
     });
   });
 }
@@ -386,6 +397,19 @@ function onGSAP() {
     .from($('#faq-3'), { maxWidth: 0, opacity: 0, duration: 1 }, '-=0.75')
     .from($('#faq-4'), { maxWidth: 0, opacity: 0, duration: 1 }, '-=0.75');
   ScrollTrigger.getById(anim_faq_ID).disable();
+
+  var intros = Array.from($('.products .intro'));
+  intros.forEach((element) => {
+    anim_intro_show_list.push(
+      gsap.from(element, {
+        opacity: 0,
+        x: -100,
+        duration: 0.5,
+        ease: 'power1.out',
+        paused: true,
+      }),
+    );
+  });
 }
 
 function onSVGAnimation() {
