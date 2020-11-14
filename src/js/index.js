@@ -290,7 +290,7 @@ function onGSAP() {
     .from(
       $('.about-us #more-about'),
       {
-        y: -30,
+        y: -25,
         opacity: 0,
         duration: 0.75,
         ease: 'power1.out',
@@ -343,7 +343,7 @@ function onGSAP() {
     })
     .from($('#info-group-1 #info-1'), { maxHeight: 0, duration: 1 }, '-=0.8')
     .from($('#info-group-1 #info-2'), { maxHeight: 0, duration: 1 }, '-=0.8')
-    .from($('#info-group-1 #info-3'), { y: -100, opacity: 0, duration: 1 }, '-=0.8');
+    .from($('#info-group-1 #info-3'), { y: -25, opacity: 0, duration: 1 }, '-=0.8');
   ScrollTrigger.getById(anim_install_pic_1_ID).disable();
 
   var infoImgPseudo02 = CSSRulePlugin.getRule('#info-group-2 .info-image-block::after');
@@ -369,7 +369,7 @@ function onGSAP() {
     })
     .from($('#info-group-2 #info-1'), { maxHeight: 0, duration: 1 }, '-=0.8')
     .from($('#info-group-2 #info-2'), { maxHeight: 0, duration: 1 }, '-=0.8')
-    .from($('#info-group-2 #info-3'), { y: -50, opacity: 0, duration: 1 }, '-=0.8');
+    .from($('#info-group-2 #info-3'), { y: -25, opacity: 0, duration: 1 }, '-=0.8');
   ScrollTrigger.getById(anim_install_pic_2_ID).disable();
   console.warn('** infoImgPseudo finish **');
 
