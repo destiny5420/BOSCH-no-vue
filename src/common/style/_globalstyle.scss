@@ -331,86 +331,327 @@ $color_font_main: #868e9c;
   );
 
   $ham-width: 2px;
+  $line-1-delay: 1s;
+  $line-2-delay: 1.15s;
+  $line-3-delay: 1.3s;
+
   @include size(35px, map-get(map-get($menu-configure, height), pc));
-  @include flex-layout(row, space-around, center);
+  @include flex-layout(column, space-between, flex-end);
   position: fixed;
   z-index: 1001;
   cursor: pointer;
   top: 35px;
   right: map-get($menu-right, pc);
 
-  span {
+  :nth-child(n) {
+    @include size(100%, $ham-width);
+    position: relative;
+    right: 0px;
+    transform-origin: 19px center;
+    transition: width 0.15s linear;
+
     &::before {
-      @include independent(#000);
       @include size(100%, $ham-width);
-      left: 0;
-      top: 0;
-      transition: width 0.35s 0.45s;
+      @include independent(black);
+      content: '';
     }
 
-    &::after {
-      @include independent(#000);
-      @include size(100%, $ham-width);
-      right: 0;
-      bottom: 0;
-      transition: width 0.35s 0.45s;
+    @include phone-width() {
+      transform-origin: 14px center;
     }
   }
 
-  &::before {
-    @include independent(#000);
-    @include size(100%, $ham-width);
-    left: 0;
-    top: calc((#{map-get(map-get($menu-configure, height), pc)} / 2) - (#{$ham-width} / 2));
-    transform-origin: center center;
-    transition: 0.45s cubic-bezier(0.33, 1, 0.68, 1);
+  :nth-child(1) {
+    animation: open-line-1-pc 0.75s linear forwards;
+    &::before {
+      animation: menu-line-anim 2s $line-1-delay linear infinite;
+    }
+
+    @include phone-width() {
+      animation: open-line-1-phone 0.75s linear forwards;
+    }
   }
 
-  &::after {
-    @include independent(#000);
-    @include size(100%, $ham-width);
-    right: 0;
-    bottom: calc((#{map-get(map-get($menu-configure, height), pc)} / 2) - (#{$ham-width} / 2));
-    transform-origin: center center;
-    transition: 0.45s cubic-bezier(0.33, 1, 0.68, 1);
+  :nth-child(2) {
+    animation: open-line-2-pc 0.75s linear forwards;
+    &::before {
+      animation: menu-line-anim 2s $line-2-delay linear infinite;
+    }
+
+    @include phone-width() {
+      animation: open-line-2-phone 0.75s linear forwards;
+    }
+  }
+
+  :nth-child(3) {
+    animation: open-line-3-pc 0.75s linear forwards;
+    &::before {
+      animation: menu-line-anim 2s $line-3-delay linear infinite;
+    }
+
+    @include phone-width() {
+      animation: open-line-3-phone 0.75s linear forwards;
+    }
+  }
+
+  &:hover {
+    :nth-child(2) {
+      @include size(80%, 2px);
+    }
   }
 
   @include phone-width() {
     @include size(25px, map-get(map-get($menu-configure, height), phone));
     right: map-get($menu-right, phone);
+  }
 
-    &::before {
-      top: calc((#{map-get(map-get($menu-configure, height), phone)} / 2) - (#{$ham-width} / 2));
+  @keyframes open-line-1-pc {
+    0% {
+      transform: translateY(10px) rotateZ(45deg);
     }
 
-    &::after {
-      bottom: calc((#{map-get(map-get($menu-configure, height), phone)} / 2) - (#{$ham-width} / 2));
+    70% {
+      transform: translateY(10px) rotateZ(0deg);
+    }
+
+    100% {
+      transform: translateY(0px) rotateZ(0deg);
+    }
+  }
+
+  @keyframes open-line-2-pc {
+    0% {
+      opacity: 0;
+    }
+
+    69% {
+      opacity: 0;
+    }
+
+    70% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes open-line-3-pc {
+    0% {
+      transform: translateY(-10px) rotateZ(-45deg);
+    }
+
+    70% {
+      transform: translateY(-10px) rotateZ(0deg);
+    }
+
+    100% {
+      transform: translateY(0px) rotateZ(0deg);
+    }
+  }
+
+  @keyframes open-line-1-phone {
+    0% {
+      transform: translateY(7px) rotateZ(45deg);
+    }
+
+    70% {
+      transform: translateY(7px) rotateZ(0deg);
+    }
+
+    100% {
+      transform: translateY(0px) rotateZ(0deg);
+    }
+  }
+
+  @keyframes open-line-2-phone {
+    0% {
+      opacity: 0;
+    }
+
+    69% {
+      opacity: 0;
+    }
+
+    70% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes open-line-3-phone {
+    0% {
+      transform: translateY(-7px) rotateZ(-45deg);
+    }
+
+    70% {
+      transform: translateY(-7px) rotateZ(0deg);
+    }
+
+    100% {
+      transform: translateY(0px) rotateZ(0deg);
+    }
+  }
+
+  @keyframes menu-line-anim {
+    0% {
+      opacity: 1;
+      left: auto;
+      right: 0;
+      width: 100%;
+    }
+
+    25% {
+      opacity: 0;
+      left: auto;
+      right: 0;
+      width: 0%;
+    }
+
+    26% {
+      opacity: 0;
+      left: 0;
+      right: auto;
+      width: 0%;
+    }
+
+    50%,
+    100% {
+      opacity: 1;
+      left: 0;
+      right: auto;
+      width: 100%;
     }
   }
 }
 
 #menu-button.show {
-  span {
+  :nth-child(n) {
     &::before {
-      right: 0;
-      width: 0;
-      transition: width 0.8s;
-    }
-
-    &::after {
-      width: 0;
-      transition: width 0.8s;
+      animation: none;
     }
   }
 
-  &::before {
-    transform: rotate(-45deg);
-    transition: transform 0.5s 0.65s cubic-bezier(0.33, 1, 0.68, 1);
+  :nth-child(1) {
+    animation: line-1-pc 0.75s linear forwards;
   }
 
-  &::after {
-    transform: rotate(45deg);
-    transition: transform 0.5s 0.65s cubic-bezier(0.33, 1, 0.68, 1);
+  :nth-child(2) {
+    animation: line-2-pc 0.75s linear forwards;
+  }
+
+  :nth-child(3) {
+    animation: line-3-pc 0.75s linear forwards;
+  }
+
+  @keyframes line-1-pc {
+    0% {
+      transform: translateY(0px) rotateZ(0deg);
+    }
+
+    30% {
+      transform: translateY(10px) rotateZ(0deg);
+    }
+
+    100% {
+      transform: translateY(10px) rotateZ(45deg);
+    }
+  }
+
+  @keyframes line-2-pc {
+    0% {
+      opacity: 1;
+    }
+
+    30% {
+      opacity: 1;
+    }
+
+    31% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes line-3-pc {
+    0% {
+      transform: translateY(0px) rotateZ(0deg);
+    }
+
+    30% {
+      transform: translateY(-10px) rotateZ(0deg);
+    }
+
+    100% {
+      transform: translateY(-10px) rotateZ(-45deg);
+    }
+  }
+
+  @include phone-width() {
+    :nth-child(1) {
+      animation: line-1-phone 0.75s linear forwards;
+    }
+
+    :nth-child(2) {
+      animation: line-2-phone 0.75s linear forwards;
+    }
+
+    :nth-child(3) {
+      animation: line-3-phone 0.75s linear forwards;
+    }
+
+    @keyframes line-1-phone {
+      0% {
+        transform: translateY(0px) rotateZ(0deg);
+      }
+
+      30% {
+        transform: translateY(7px) rotateZ(0deg);
+      }
+
+      100% {
+        transform: translateY(7px) rotateZ(45deg);
+      }
+    }
+
+    @keyframes line-2-phone {
+      0% {
+        opacity: 1;
+      }
+
+      30% {
+        opacity: 1;
+      }
+
+      31% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes line-3-phone {
+      0% {
+        transform: translateY(0px) rotateZ(0deg);
+      }
+
+      30% {
+        transform: translateY(-7px) rotateZ(0deg);
+      }
+
+      100% {
+        transform: translateY(-7px) rotateZ(-45deg);
+      }
+    }
   }
 }
 

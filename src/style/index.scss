@@ -17,6 +17,7 @@
   opacity: 1;
 
   #slogan {
+    // @include size(325px, 60px);
     @include independent(transparent);
     z-index: 100;
     top: 50%;
