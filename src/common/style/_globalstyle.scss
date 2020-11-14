@@ -405,98 +405,7 @@ $color_font_main: #868e9c;
     right: map-get($menu-right, phone);
   }
 
-  @keyframes open-line-1-pc {
-    0% {
-      transform: translateY(10px) rotateZ(45deg);
-    }
-
-    70% {
-      transform: translateY(10px) rotateZ(0deg);
-    }
-
-    100% {
-      transform: translateY(0px) rotateZ(0deg);
-    }
-  }
-
-  @keyframes open-line-2-pc {
-    0% {
-      opacity: 0;
-    }
-
-    69% {
-      opacity: 0;
-    }
-
-    70% {
-      opacity: 1;
-    }
-
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @keyframes open-line-3-pc {
-    0% {
-      transform: translateY(-10px) rotateZ(-45deg);
-    }
-
-    70% {
-      transform: translateY(-10px) rotateZ(0deg);
-    }
-
-    100% {
-      transform: translateY(0px) rotateZ(0deg);
-    }
-  }
-
-  @keyframes open-line-1-phone {
-    0% {
-      transform: translateY(7px) rotateZ(45deg);
-    }
-
-    70% {
-      transform: translateY(7px) rotateZ(0deg);
-    }
-
-    100% {
-      transform: translateY(0px) rotateZ(0deg);
-    }
-  }
-
-  @keyframes open-line-2-phone {
-    0% {
-      opacity: 0;
-    }
-
-    69% {
-      opacity: 0;
-    }
-
-    70% {
-      opacity: 1;
-    }
-
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @keyframes open-line-3-phone {
-    0% {
-      transform: translateY(-7px) rotateZ(-45deg);
-    }
-
-    70% {
-      transform: translateY(-7px) rotateZ(0deg);
-    }
-
-    100% {
-      transform: translateY(0px) rotateZ(0deg);
-    }
-  }
-
+  /* animation keyframes --------> */
   @keyframes menu-line-anim {
     0% {
       opacity: 1;
@@ -527,6 +436,107 @@ $color_font_main: #868e9c;
       width: 100%;
     }
   }
+
+  @keyframes open-line-1-pc {
+    0% {
+      transform: translateY(calc(#{map-get(map-get($menu-configure, height), pc)} / 2 * 1))
+        rotateZ(45deg);
+    }
+
+    70% {
+      transform: translateY(calc(#{map-get(map-get($menu-configure, height), pc)} / 2 * 1))
+        rotateZ(0deg);
+    }
+
+    100% {
+      transform: translateY(0px) rotateZ(0deg);
+    }
+  }
+
+  @keyframes open-line-2-pc {
+    0% {
+      opacity: 0;
+    }
+
+    69% {
+      opacity: 0;
+    }
+
+    70% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes open-line-3-pc {
+    0% {
+      transform: translateY(calc(#{map-get(map-get($menu-configure, height), pc)} / 2 * -1))
+        rotateZ(-45deg);
+    }
+
+    70% {
+      transform: translateY(calc(#{map-get(map-get($menu-configure, height), pc)} / 2 * -1))
+        rotateZ(0deg);
+    }
+
+    100% {
+      transform: translateY(0px) rotateZ(0deg);
+    }
+  }
+
+  @keyframes open-line-1-phone {
+    0% {
+      transform: translateY(calc(#{map-get(map-get($menu-configure, height), phone)} / 2 * 1))
+        rotateZ(45deg);
+    }
+
+    70% {
+      transform: translateY(calc(#{map-get(map-get($menu-configure, height), phone)} / 2 * 1))
+        rotateZ(0deg);
+    }
+
+    100% {
+      transform: translateY(0px) rotateZ(0deg);
+    }
+  }
+
+  @keyframes open-line-2-phone {
+    0% {
+      opacity: 0;
+    }
+
+    69% {
+      opacity: 0;
+    }
+
+    70% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes open-line-3-phone {
+    0% {
+      transform: translateY(calc(#{map-get(map-get($menu-configure, height), phone)} / 2 * (-1)))
+        rotateZ(-45deg);
+    }
+
+    70% {
+      transform: translateY(calc(#{map-get(map-get($menu-configure, height), phone)} / 2 * (-1)))
+        rotateZ(0deg);
+    }
+
+    100% {
+      transform: translateY(0px) rotateZ(0deg);
+    }
+  }
+  /* <-------- animation keyframes */
 }
 
 #menu-button.show {
@@ -554,11 +564,13 @@ $color_font_main: #868e9c;
     }
 
     30% {
-      transform: translateY(10px) rotateZ(0deg);
+      transform: translateY(calc(#{map-get(map-get($menu-configure, height), pc)} / 2 * 1))
+        rotateZ(0deg);
     }
 
     100% {
-      transform: translateY(10px) rotateZ(45deg);
+      transform: translateY(calc(#{map-get(map-get($menu-configure, height), pc)} / 2 * 1))
+        rotateZ(45deg);
     }
   }
 
@@ -586,11 +598,13 @@ $color_font_main: #868e9c;
     }
 
     30% {
-      transform: translateY(-10px) rotateZ(0deg);
+      transform: translateY(calc(#{map-get(map-get($menu-configure, height), pc)} / 2 * -1))
+        rotateZ(0deg);
     }
 
     100% {
-      transform: translateY(-10px) rotateZ(-45deg);
+      transform: translateY(calc(#{map-get(map-get($menu-configure, height), pc)} / 2 * -1))
+        rotateZ(-45deg);
     }
   }
 
@@ -613,11 +627,13 @@ $color_font_main: #868e9c;
       }
 
       30% {
-        transform: translateY(7px) rotateZ(0deg);
+        transform: translateY(calc(#{map-get(map-get($menu-configure, height), phone)} / 2 * 1))
+          rotateZ(0deg);
       }
 
       100% {
-        transform: translateY(7px) rotateZ(45deg);
+        transform: translateY(calc(#{map-get(map-get($menu-configure, height), phone)} / 2 * 1))
+          rotateZ(45deg);
       }
     }
 
@@ -645,11 +661,13 @@ $color_font_main: #868e9c;
       }
 
       30% {
-        transform: translateY(-7px) rotateZ(0deg);
+        transform: translateY(calc(#{map-get(map-get($menu-configure, height), phone)} / 2 * -1))
+          rotateZ(0deg);
       }
 
       100% {
-        transform: translateY(-7px) rotateZ(-45deg);
+        transform: translateY(calc(#{map-get(map-get($menu-configure, height), phone)} / 2 * -1))
+          rotateZ(-45deg);
       }
     }
   }
