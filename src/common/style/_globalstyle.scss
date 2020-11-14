@@ -309,22 +309,12 @@ $color_font_main: #868e9c;
   }
 }
 
-#menu-button {
-  $menu-configure: (
-    height: (
-      pc: 20px,
-      phone: 14px,
-    ),
-    right: (
-      pc: 15%,
-      phone: 5%,
-    ),
-  );
-  $menu-height: (
-    pc: 20px,
-    phone: 14px,
-  );
+$menu-height-pc: 20px;
+$menu-height-phone: 14px;
+$menu-width-pc: 35px;
+$menu-width-phone: 20px;
 
+#menu-button {
   $menu-right: (
     pc: 15%,
     phone: 5%,
@@ -335,7 +325,7 @@ $color_font_main: #868e9c;
   $line-2-delay: 1.15s;
   $line-3-delay: 1.3s;
 
-  @include size(35px, map-get(map-get($menu-configure, height), pc));
+  @include size($menu-width-pc, $menu-height-pc);
   @include flex-layout(column, space-between, flex-end);
   position: fixed;
   z-index: 1001;
@@ -401,7 +391,7 @@ $color_font_main: #868e9c;
   }
 
   @include phone-width() {
-    @include size(25px, map-get(map-get($menu-configure, height), phone));
+    @include size($menu-width-phone, $menu-height-phone);
     right: map-get($menu-right, phone);
   }
 
@@ -439,13 +429,11 @@ $color_font_main: #868e9c;
 
   @keyframes open-line-1-pc {
     0% {
-      transform: translateY(calc(#{map-get(map-get($menu-configure, height), pc)} / 2 * 1))
-        rotateZ(45deg);
+      transform: translateY(calc(#{$menu-height-pc} / 2 * 1)) rotateZ(45deg);
     }
 
     70% {
-      transform: translateY(calc(#{map-get(map-get($menu-configure, height), pc)} / 2 * 1))
-        rotateZ(0deg);
+      transform: translateY(calc(#{$menu-height-pc} / 2 * 1)) rotateZ(0deg);
     }
 
     100% {
@@ -473,13 +461,11 @@ $color_font_main: #868e9c;
 
   @keyframes open-line-3-pc {
     0% {
-      transform: translateY(calc(#{map-get(map-get($menu-configure, height), pc)} / 2 * -1))
-        rotateZ(-45deg);
+      transform: translateY(calc(#{$menu-height-pc} / 2 * -1)) rotateZ(-45deg);
     }
 
     70% {
-      transform: translateY(calc(#{map-get(map-get($menu-configure, height), pc)} / 2 * -1))
-        rotateZ(0deg);
+      transform: translateY(calc(#{$menu-height-pc} / 2 * -1)) rotateZ(0deg);
     }
 
     100% {
@@ -489,13 +475,11 @@ $color_font_main: #868e9c;
 
   @keyframes open-line-1-phone {
     0% {
-      transform: translateY(calc(#{map-get(map-get($menu-configure, height), phone)} / 2 * 1))
-        rotateZ(45deg);
+      transform: translateY(calc(#{$menu-height-phone} / 2 * 1)) rotateZ(45deg);
     }
 
     70% {
-      transform: translateY(calc(#{map-get(map-get($menu-configure, height), phone)} / 2 * 1))
-        rotateZ(0deg);
+      transform: translateY(calc(#{$menu-height-phone} / 2 * 1)) rotateZ(0deg);
     }
 
     100% {
@@ -523,13 +507,11 @@ $color_font_main: #868e9c;
 
   @keyframes open-line-3-phone {
     0% {
-      transform: translateY(calc(#{map-get(map-get($menu-configure, height), phone)} / 2 * (-1)))
-        rotateZ(-45deg);
+      transform: translateY(calc(#{$menu-height-phone} / 2 * (-1))) rotateZ(-45deg);
     }
 
     70% {
-      transform: translateY(calc(#{map-get(map-get($menu-configure, height), phone)} / 2 * (-1)))
-        rotateZ(0deg);
+      transform: translateY(calc(#{$menu-height-phone} / 2 * (-1))) rotateZ(0deg);
     }
 
     100% {
@@ -564,13 +546,11 @@ $color_font_main: #868e9c;
     }
 
     30% {
-      transform: translateY(calc(#{map-get(map-get($menu-configure, height), pc)} / 2 * 1))
-        rotateZ(0deg);
+      transform: translateY(calc(#{$menu-height-pc} / 2 * 1)) rotateZ(0deg);
     }
 
     100% {
-      transform: translateY(calc(#{map-get(map-get($menu-configure, height), pc)} / 2 * 1))
-        rotateZ(45deg);
+      transform: translateY(calc(#{$menu-height-pc} / 2 * 1)) rotateZ(45deg);
     }
   }
 
@@ -598,13 +578,11 @@ $color_font_main: #868e9c;
     }
 
     30% {
-      transform: translateY(calc(#{map-get(map-get($menu-configure, height), pc)} / 2 * -1))
-        rotateZ(0deg);
+      transform: translateY(calc(#{$menu-height-pc} / 2 * -1)) rotateZ(0deg);
     }
 
     100% {
-      transform: translateY(calc(#{map-get(map-get($menu-configure, height), pc)} / 2 * -1))
-        rotateZ(-45deg);
+      transform: translateY(calc(#{$menu-height-pc} / 2 * -1)) rotateZ(-45deg);
     }
   }
 
@@ -627,13 +605,11 @@ $color_font_main: #868e9c;
       }
 
       30% {
-        transform: translateY(calc(#{map-get(map-get($menu-configure, height), phone)} / 2 * 1))
-          rotateZ(0deg);
+        transform: translateY(calc(#{$menu-height-phone} / 2 * 1)) rotateZ(0deg);
       }
 
       100% {
-        transform: translateY(calc(#{map-get(map-get($menu-configure, height), phone)} / 2 * 1))
-          rotateZ(45deg);
+        transform: translateY(calc(#{$menu-height-phone} / 2 * 1)) rotateZ(45deg);
       }
     }
 
@@ -661,13 +637,11 @@ $color_font_main: #868e9c;
       }
 
       30% {
-        transform: translateY(calc(#{map-get(map-get($menu-configure, height), phone)} / 2 * -1))
-          rotateZ(0deg);
+        transform: translateY(calc(#{$menu-height-phone} / 2 * -1)) rotateZ(0deg);
       }
 
       100% {
-        transform: translateY(calc(#{map-get(map-get($menu-configure, height), phone)} / 2 * -1))
-          rotateZ(-45deg);
+        transform: translateY(calc(#{$menu-height-phone} / 2 * -1)) rotateZ(-45deg);
       }
     }
   }
