@@ -42,6 +42,7 @@ let anim_install_pic_2;
 let anim_install_pic_2_ID = 'anim_install_pic_2';
 let anim_faq;
 let anim_faq_ID = 'anim_faq';
+let curProductTarget = null;
 
 let menu = (function () {
   var menuOpen = false;
@@ -91,6 +92,18 @@ function onEventBinding() {
 
   $('.faq-container #btn-question').on('click', () => {
     window.location.href = './support.html';
+  });
+
+  var btnList = Array.from($('.products .btn-more'));
+  btnList.forEach((element) => {
+    element.addEventListener('mouseenter', function (mouse) {
+      if (curProductTarget !== null) {
+        curProductTarget.classList.remove('productHover');
+      }
+
+      curProductTarget = element;
+      curProductTarget.classList.add('productHover');
+    });
   });
 }
 

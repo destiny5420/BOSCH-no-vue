@@ -1363,6 +1363,12 @@ nav #home img {
   transition: all 0.15s linear;
 }
 
+.btn-more.productHover .bg-circle {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
 .btn-more:hover .bg-circle {
   opacity: 1;
   -webkit-transform: scale(1);
@@ -1659,6 +1665,18 @@ nav #home img {
           transform: translateX(-30px);
 }
 
+.btn-more-hover-left-40.productHover > p {
+  -webkit-transform: translateX(-40px);
+          transform: translateX(-40px);
+}
+
+@media all and (max-width: 479px) {
+  .btn-more-hover-left-40.productHover > p {
+    -webkit-transform: translateX(-20px);
+            transform: translateX(-20px);
+  }
+}
+
 .btn-more-hover-left-40:hover > p {
   -webkit-transform: translateX(-40px);
           transform: translateX(-40px);
@@ -1668,6 +1686,18 @@ nav #home img {
   .btn-more-hover-left-40:hover > p {
     -webkit-transform: translateX(-20px);
             transform: translateX(-20px);
+  }
+}
+
+.btn-more-hover-left-50.productHover > p {
+  -webkit-transform: translateX(-50px);
+          transform: translateX(-50px);
+}
+
+@media all and (max-width: 479px) {
+  .btn-more-hover-left-50.productHover > p {
+    -webkit-transform: translateX(-25px);
+            transform: translateX(-25px);
   }
 }
 
