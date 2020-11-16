@@ -295,10 +295,6 @@ header {
   padding: 0px 15%;
   margin-bottom: 100px;
 
-  @include phone-width() {
-    overflow: hidden;
-  }
-
   .introduction {
     flex: 7;
     height: 100%;
@@ -841,8 +837,10 @@ header {
   }
 
   @include phone-width() {
+    @include size(100%, 800px);
     @include flex-layout(column-reverse, center, center);
     margin-bottom: 0px;
+    overflow: hidden;
   }
 }
 
@@ -1052,6 +1050,10 @@ header {
   }
 
   @include phone-width() {
+    .top {
+      margin-bottom: 65px;
+    }
+
     margin-bottom: 75px;
   }
 }

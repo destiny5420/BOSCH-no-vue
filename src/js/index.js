@@ -74,6 +74,10 @@ let menu = (function () {
 function onInit() {
   onGlobalInit();
 
+  if (deviceMode === 'phone') {
+    $('.about-us .top svg circle').attr('r', 5);
+  }
+
   console.log('*** onLoadingData ***');
 }
 
@@ -104,7 +108,6 @@ function onEventBinding() {
 
   var btnList = Array.from($('.products .btn-more'));
   introList = Array.from($('.products .intro'));
-  console.log('introList: ', introList);
   btnList.forEach((element, index) => {
     element.addEventListener('mouseenter', function (mouse) {
       if (curProductTarget !== null) {

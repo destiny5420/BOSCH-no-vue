@@ -2377,12 +2377,6 @@ header #scroll-point #point::before {
   margin-bottom: 100px;
 }
 
-@media all and (max-width: 479px) {
-  .products {
-    overflow: hidden;
-  }
-}
-
 .products .introduction {
   -webkit-box-flex: 7;
       -ms-flex: 7;
@@ -3119,6 +3113,8 @@ header #scroll-point #point::before {
 
 @media all and (max-width: 479px) {
   .products {
+    width: 100%;
+    height: 800px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -3133,6 +3129,7 @@ header #scroll-point #point::before {
         -ms-flex-align: center;
             align-items: center;
     margin-bottom: 0px;
+    overflow: hidden;
   }
 }
 
@@ -3422,6 +3419,9 @@ header #scroll-point #point::before {
 @media all and (max-width: 479px) {
   .about-us {
     margin-bottom: 75px;
+  }
+  .about-us .top {
+    margin-bottom: 65px;
   }
 }
 
