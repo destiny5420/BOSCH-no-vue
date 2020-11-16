@@ -362,24 +362,24 @@ header {
     }
 
     .intro-1 {
-      $rect-size: 840px;
-      @include size(840px, 830px);
-      @include flex-layout(column, center, center);
+      > :nth-child(1) {
+        $rect-size: 840px;
+        @include size(840px, 830px);
+        @include flex-layout(column, center, center);
 
-      svg {
-        @include size($rect-size, $rect-size);
-        @include independent(transparent);
-        top: 0;
-        left: 0;
-        z-index: 2;
-
-        @include phone-width() {
-          @include size(300px, 300px);
+        svg {
+          @include size(100%, 100%);
+          @include independent(transparent);
+          top: 0;
+          left: 0;
+          z-index: 2;
         }
       }
 
       @include phone-width() {
-        @include size(300px, 300px);
+        > :nth-child(1) {
+          @include size(300px, 300px);
+        }
       }
     }
 
@@ -486,24 +486,21 @@ header {
     }
 
     .intro-4 {
-      $rect-size: 840px;
       @include size(840px, 830px);
       @include flex-layout(column, center, center);
 
       svg {
-        @include size($rect-size, $rect-size);
+        @include size(100%, 100%);
         @include independent(transparent);
         top: 0;
         left: 0;
         z-index: 2;
-
-        @include phone-width() {
-          @include size(300px, 300px);
-        }
       }
 
       @include phone-width() {
-        @include size(300px, 300px);
+        > :nth-child(1) {
+          @include size(300px, 300px);
+        }
       }
     }
 
