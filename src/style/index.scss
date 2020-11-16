@@ -82,6 +82,9 @@ header {
       }
 
       .title {
+        @include size(auto, 120px);
+        margin-bottom: 35px;
+
         > svg {
           @include size(100%, 100%);
 
@@ -168,10 +171,10 @@ header {
 
         .title {
           @include size(272px, 60px);
+          margin-bottom: 8px;
         }
 
         .sub-title {
-          margin-top: 8px;
           font-size: 36px;
         }
       }
@@ -330,6 +333,30 @@ header {
       }
     }
 
+    .product-name {
+      @include independent(transparent);
+      top: 0px;
+      left: 0px;
+      display: inline-block;
+      z-index: 3;
+      color: #fff;
+      p {
+        font-size: 24px;
+      }
+    }
+
+    .product-item {
+      @include independent(transparent);
+      top: 0px;
+      left: 0px;
+      display: inline-block;
+      z-index: 3;
+
+      img {
+        @include size(100%, 100%);
+      }
+    }
+
     .unfocus {
       visibility: hidden;
     }
@@ -361,8 +388,51 @@ header {
       @include size($rect-size, $rect-size);
       @include flex-layout(column, center, center);
 
+      > :nth-child(n) {
+        @include independent(transparent);
+      }
+
+      > :nth-child(1) {
+        @include size(363px, 359px);
+        bottom: -40px;
+        left: 0px;
+
+        .product-name {
+          top: 163px;
+          left: 57px;
+        }
+
+        .product-item {
+          @include size(93px, 217px);
+          top: 68px;
+          left: 145px;
+        }
+      }
+
+      > :nth-child(2) {
+        @include size(666px, 658px);
+        top: -56px;
+        right: -250px;
+
+        .product-name {
+          top: 46%;
+          left: 16%;
+
+          p {
+            font-size: 48px;
+            line-height: 1;
+          }
+        }
+
+        .product-item {
+          @include size(193px, 416px);
+          top: 16%;
+          left: 41%;
+        }
+      }
+
       svg {
-        @include size(667px, 659px);
+        @include size(100%, 100%);
         @include independent(transparent);
         top: 0;
         left: 0;
