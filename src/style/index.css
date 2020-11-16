@@ -67,7 +67,6 @@ ul {
   padding: 0px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border: 1px solid black;
 }
 
 .main-container {
@@ -2378,6 +2377,12 @@ header #scroll-point #point::before {
   margin-bottom: 100px;
 }
 
+@media all and (max-width: 479px) {
+  .products {
+    overflow: hidden;
+  }
+}
+
 .products .introduction {
   -webkit-box-flex: 7;
       -ms-flex: 7;
@@ -2423,6 +2428,7 @@ header #scroll-point #point::before {
 @media all and (max-width: 479px) {
   .products .introduction .info .title {
     font-size: 24px;
+    margin-bottom: 10px;
   }
 }
 
@@ -2509,8 +2515,8 @@ header #scroll-point #point::before {
 
 @media all and (max-width: 479px) {
   .products .introduction .intro-1 > :nth-child(1) {
-    width: 300px;
-    height: 300px;
+    width: 380px;
+    height: 380px;
   }
 }
 
@@ -2549,6 +2555,10 @@ header #scroll-point #point::before {
 .products .introduction .intro-2 > :nth-child(1) .product-name {
   top: 163px;
   left: 57px;
+}
+
+.products .introduction .intro-2 > :nth-child(1) .product-name p {
+  line-height: 1;
 }
 
 .products .introduction .intro-2 > :nth-child(1) .product-item {
@@ -2599,6 +2609,45 @@ header #scroll-point #point::before {
     width: 300px;
     height: 300px;
   }
+  .products .introduction .intro-2 > :nth-child(1) {
+    width: 187px;
+    height: 190px;
+    bottom: -65px;
+    left: -7px;
+  }
+  .products .introduction .intro-2 > :nth-child(1) .product-name {
+    top: 80px;
+    left: 23px;
+  }
+  .products .introduction .intro-2 > :nth-child(1) .product-name p {
+    font-size: 18px;
+  }
+  .products .introduction .intro-2 > :nth-child(1) .product-item {
+    width: 51px;
+    height: 120px;
+    top: 31px;
+    left: 85px;
+  }
+  .products .introduction .intro-2 > :nth-child(2) {
+    width: 300px;
+    height: 296px;
+    top: -57px;
+    right: -44px;
+  }
+  .products .introduction .intro-2 > :nth-child(2) .product-name {
+    top: 46%;
+    left: 16%;
+  }
+  .products .introduction .intro-2 > :nth-child(2) .product-name p {
+    font-size: 30px;
+    line-height: 1;
+  }
+  .products .introduction .intro-2 > :nth-child(2) .product-item {
+    width: 93px;
+    height: 203px;
+    top: 14%;
+    left: 44%;
+  }
 }
 
 .products .introduction .intro-3 {
@@ -2634,6 +2683,7 @@ header #scroll-point #point::before {
 .products .introduction .intro-3 > :nth-child(1) .product-name {
   top: 43%;
   left: 16%;
+  line-height: 1;
 }
 
 .products .introduction .intro-3 > :nth-child(1) .product-name p {
@@ -2664,9 +2714,19 @@ header #scroll-point #point::before {
     width: 300px;
     height: 300px;
   }
+  .products .introduction .intro-3 > :nth-child(1) {
+    width: 375px;
+    height: 370px;
+  }
+  .products .introduction .intro-3 > :nth-child(1) .product-item {
+    width: 83px;
+    height: 278px;
+    top: 10%;
+    left: 48%;
+  }
 }
 
-.products .introduction .intro-4 {
+.products .introduction .intro-4 > :nth-child(1) {
   width: 840px;
   height: 830px;
   display: -webkit-box;
@@ -2684,7 +2744,7 @@ header #scroll-point #point::before {
           align-items: center;
 }
 
-.products .introduction .intro-4 svg {
+.products .introduction .intro-4 > :nth-child(1) svg {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -2698,8 +2758,8 @@ header #scroll-point #point::before {
 
 @media all and (max-width: 479px) {
   .products .introduction .intro-4 > :nth-child(1) {
-    width: 300px;
-    height: 300px;
+    width: 375px;
+    height: 375px;
   }
 }
 
@@ -2787,6 +2847,45 @@ header #scroll-point #point::before {
   .products .introduction .intro-5 {
     width: 300px;
     height: 300px;
+  }
+  .products .introduction .intro-5 > :nth-child(1) {
+    width: 187px;
+    height: 190px;
+    bottom: -65px;
+    left: -7px;
+  }
+  .products .introduction .intro-5 > :nth-child(1) .product-name {
+    top: 80px;
+    left: 23px;
+  }
+  .products .introduction .intro-5 > :nth-child(1) .product-name p {
+    font-size: 18px;
+  }
+  .products .introduction .intro-5 > :nth-child(1) .product-item {
+    width: 53px;
+    height: 137px;
+    top: 23px;
+    left: 75px;
+  }
+  .products .introduction .intro-5 > :nth-child(2) {
+    width: 300px;
+    height: 296px;
+    top: -57px;
+    right: -44px;
+  }
+  .products .introduction .intro-5 > :nth-child(2) .product-name {
+    top: 46%;
+    left: 16%;
+  }
+  .products .introduction .intro-5 > :nth-child(2) .product-name p {
+    font-size: 30px;
+    line-height: 1;
+  }
+  .products .introduction .intro-5 > :nth-child(2) .product-item {
+    width: 53px;
+    height: 220px;
+    top: 10%;
+    left: 49%;
   }
 }
 

@@ -295,6 +295,10 @@ header {
   padding: 0px 15%;
   margin-bottom: 100px;
 
+  @include phone-width() {
+    overflow: hidden;
+  }
+
   .introduction {
     flex: 7;
     height: 100%;
@@ -318,6 +322,7 @@ header {
 
         @include phone-width() {
           font-size: 24px;
+          margin-bottom: 10px;
         }
       }
 
@@ -363,7 +368,6 @@ header {
 
     .intro-1 {
       > :nth-child(1) {
-        $rect-size: 840px;
         @include size(840px, 830px);
         @include flex-layout(column, center, center);
 
@@ -378,7 +382,7 @@ header {
 
       @include phone-width() {
         > :nth-child(1) {
-          @include size(300px, 300px);
+          @include size(380px, 380px);
         }
       }
     }
@@ -400,6 +404,10 @@ header {
         .product-name {
           top: 163px;
           left: 57px;
+
+          p {
+            line-height: 1;
+          }
         }
 
         .product-item {
@@ -441,6 +449,49 @@ header {
 
       @include phone-width() {
         @include size(300px, 300px);
+
+        > :nth-child(1) {
+          @include size(187px, 190px);
+          bottom: -65px;
+          left: -7px;
+
+          .product-name {
+            top: 80px;
+            left: 23px;
+
+            p {
+              font-size: 18px;
+            }
+          }
+
+          .product-item {
+            @include size(51px, 120px);
+            top: 31px;
+            left: 85px;
+          }
+        }
+
+        > :nth-child(2) {
+          @include size(300px, 296px);
+          top: -57px;
+          right: -44px;
+
+          .product-name {
+            top: 46%;
+            left: 16%;
+
+            p {
+              font-size: 30px;
+              line-height: 1;
+            }
+          }
+
+          .product-item {
+            @include size(93px, 203px);
+            top: 14%;
+            left: 44%;
+          }
+        }
       }
     }
 
@@ -459,6 +510,7 @@ header {
         .product-name {
           top: 43%;
           left: 16%;
+          line-height: 1;
 
           p {
             font-size: 48px;
@@ -482,24 +534,36 @@ header {
 
       @include phone-width() {
         @include size(300px, 300px);
+
+        > :nth-child(1) {
+          @include size(375px, 370px);
+
+          .product-item {
+            @include size(83px, 278px);
+            top: 10%;
+            left: 48%;
+          }
+        }
       }
     }
 
     .intro-4 {
-      @include size(840px, 830px);
-      @include flex-layout(column, center, center);
+      > :nth-child(1) {
+        @include size(840px, 830px);
+        @include flex-layout(column, center, center);
 
-      svg {
-        @include size(100%, 100%);
-        @include independent(transparent);
-        top: 0;
-        left: 0;
-        z-index: 2;
+        svg {
+          @include size(100%, 100%);
+          @include independent(transparent);
+          top: 0;
+          left: 0;
+          z-index: 2;
+        }
       }
 
       @include phone-width() {
         > :nth-child(1) {
-          @include size(300px, 300px);
+          @include size(375px, 375px);
         }
       }
     }
@@ -562,6 +626,49 @@ header {
 
       @include phone-width() {
         @include size(300px, 300px);
+
+        > :nth-child(1) {
+          @include size(187px, 190px);
+          bottom: -65px;
+          left: -7px;
+
+          .product-name {
+            top: 80px;
+            left: 23px;
+
+            p {
+              font-size: 18px;
+            }
+          }
+
+          .product-item {
+            @include size(53px, 137px);
+            top: 23px;
+            left: 75px;
+          }
+        }
+
+        > :nth-child(2) {
+          @include size(300px, 296px);
+          top: -57px;
+          right: -44px;
+
+          .product-name {
+            top: 46%;
+            left: 16%;
+
+            p {
+              font-size: 30px;
+              line-height: 1;
+            }
+          }
+
+          .product-item {
+            @include size(53px, 220px);
+            top: 10%;
+            left: 49%;
+          }
+        }
       }
     }
   }
