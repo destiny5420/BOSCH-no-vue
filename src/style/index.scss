@@ -509,16 +509,55 @@ header {
       @include size($rect-size, $rect-size);
       @include flex-layout(column, center, center);
 
+      > :nth-child(n) {
+        @include independent(transparent);
+      }
+
+      > :nth-child(1) {
+        @include size(363px, 359px);
+        bottom: -40px;
+        left: 0px;
+
+        .product-name {
+          top: 163px;
+          left: 57px;
+        }
+
+        .product-item {
+          @include size(117px, 300px);
+          top: 7%;
+          left: 38%;
+        }
+      }
+
+      > :nth-child(2) {
+        @include size(666px, 658px);
+        top: -56px;
+        right: -250px;
+
+        .product-name {
+          top: 46%;
+          left: 16%;
+
+          p {
+            font-size: 48px;
+            line-height: 1;
+          }
+        }
+
+        .product-item {
+          @include size(119px, 490px);
+          top: 10%;
+          left: 45%;
+        }
+      }
+
       svg {
-        @include size($rect-size, $rect-size);
+        @include size(100%, 100%);
         @include independent(transparent);
         top: 0;
         left: 0;
         z-index: 2;
-
-        @include phone-width() {
-          @include size(300px, 300px);
-        }
       }
 
       @include phone-width() {

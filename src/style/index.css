@@ -2721,9 +2721,59 @@ header #scroll-point #point::before {
           align-items: center;
 }
 
+.products .introduction .intro-5 > :nth-child(n) {
+  position: absolute;
+  content: '';
+  background-color: transparent;
+  z-index: 1;
+}
+
+.products .introduction .intro-5 > :nth-child(1) {
+  width: 363px;
+  height: 359px;
+  bottom: -40px;
+  left: 0px;
+}
+
+.products .introduction .intro-5 > :nth-child(1) .product-name {
+  top: 163px;
+  left: 57px;
+}
+
+.products .introduction .intro-5 > :nth-child(1) .product-item {
+  width: 117px;
+  height: 300px;
+  top: 7%;
+  left: 38%;
+}
+
+.products .introduction .intro-5 > :nth-child(2) {
+  width: 666px;
+  height: 658px;
+  top: -56px;
+  right: -250px;
+}
+
+.products .introduction .intro-5 > :nth-child(2) .product-name {
+  top: 46%;
+  left: 16%;
+}
+
+.products .introduction .intro-5 > :nth-child(2) .product-name p {
+  font-size: 48px;
+  line-height: 1;
+}
+
+.products .introduction .intro-5 > :nth-child(2) .product-item {
+  width: 119px;
+  height: 490px;
+  top: 10%;
+  left: 45%;
+}
+
 .products .introduction .intro-5 svg {
-  width: 650px;
-  height: 650px;
+  width: 100%;
+  height: 100%;
   position: absolute;
   content: '';
   background-color: transparent;
@@ -2731,13 +2781,6 @@ header #scroll-point #point::before {
   top: 0;
   left: 0;
   z-index: 2;
-}
-
-@media all and (max-width: 479px) {
-  .products .introduction .intro-5 svg {
-    width: 300px;
-    height: 300px;
-  }
 }
 
 @media all and (max-width: 479px) {
