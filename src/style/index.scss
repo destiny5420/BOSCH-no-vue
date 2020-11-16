@@ -322,7 +322,7 @@ header {
       }
 
       .content {
-        @include size(420px, auto);
+        @include size(auto, auto);
         font-size: 30px;
         text-align: center;
 
@@ -362,8 +362,8 @@ header {
     }
 
     .intro-1 {
-      $rect-size: 650px;
-      @include size($rect-size, $rect-size);
+      $rect-size: 840px;
+      @include size(840px, 830px);
       @include flex-layout(column, center, center);
 
       svg {
@@ -437,10 +437,6 @@ header {
         top: 0;
         left: 0;
         z-index: 2;
-
-        @include phone-width() {
-          @include size(300px, 300px);
-        }
       }
 
       @include phone-width() {
@@ -453,16 +449,35 @@ header {
       @include size($rect-size, $rect-size);
       @include flex-layout(column, center, center);
 
+      > :nth-child(n) {
+        @include independent(transparent);
+      }
+
+      > :nth-child(1) {
+        @include size(840px, 830px);
+
+        .product-name {
+          top: 43%;
+          left: 16%;
+
+          p {
+            font-size: 48px;
+          }
+        }
+
+        .product-item {
+          @include size(163px, 541px);
+          top: 16%;
+          left: 42%;
+        }
+      }
+
       svg {
-        @include size($rect-size, $rect-size);
+        @include size(100%, 100%);
         @include independent(transparent);
         top: 0;
         left: 0;
         z-index: 2;
-
-        @include phone-width() {
-          @include size(300px, 300px);
-        }
       }
 
       @include phone-width() {
@@ -471,8 +486,8 @@ header {
     }
 
     .intro-4 {
-      $rect-size: 650px;
-      @include size($rect-size, $rect-size);
+      $rect-size: 840px;
+      @include size(840px, 830px);
       @include flex-layout(column, center, center);
 
       svg {
