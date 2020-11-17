@@ -424,7 +424,7 @@ ul {
 }
 
 #menu-window .top .menu-block .option:hover .bg-circle {
-  opacity: 1;
+  opacity: 0;
   -webkit-transform: scale(1);
           transform: scale(1);
 }
