@@ -255,6 +255,19 @@ ul {
 
 @media all and (max-width: 479px) {
   #menu-window .menu-window-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin-top: 100px;
     overflow-y: scroll;
   }
@@ -287,13 +300,17 @@ ul {
   height: 100%;
 }
 
+#menu-window .top .menu-block .menu-main-wrap {
+  overflow: hidden;
+}
+
 #menu-window .top .menu-block .main-title {
   position: relative;
   font-size: 24px;
   color: #525f6b;
 }
 
-#menu-window .top .menu-block .main-title .symbol {
+#menu-window .top .menu-block .main-title .btn-symbol {
   position: absolute;
   content: '';
   background-color: transparent;
@@ -303,9 +320,10 @@ ul {
   top: calc(50% - (20px / 2));
   right: 0px;
   display: none;
+  cursor: pointer;
 }
 
-#menu-window .top .menu-block .main-title .symbol::before {
+#menu-window .top .menu-block .main-title .btn-symbol::before {
   position: absolute;
   content: '';
   background-color: #525f6b;
@@ -316,7 +334,7 @@ ul {
   top: calc(50% - (4px / 2));
 }
 
-#menu-window .top .menu-block .main-title .symbol::after {
+#menu-window .top .menu-block .main-title .btn-symbol::after {
   position: absolute;
   content: '';
   background-color: #525f6b;
@@ -325,12 +343,18 @@ ul {
   height: 100%;
   content: '';
   left: calc(50% - (4px / 2));
+  -webkit-transition: all 0.25s linear;
+  transition: all 0.25s linear;
 }
 
 @media all and (max-width: 479px) {
-  #menu-window .top .menu-block .main-title .symbol {
+  #menu-window .top .menu-block .main-title .btn-symbol {
     display: inline-block;
   }
+}
+
+#menu-window .top .menu-block .main-title .btn-symbol.show::after {
+  background-color: transparent;
 }
 
 #menu-window .top .menu-block .sub-title {
@@ -392,7 +416,7 @@ ul {
     -webkit-box-flex: 0;
         -ms-flex: none;
             flex: none;
-    margin: 0px auto;
+    margin: 0px 66px;
     margin-bottom: 30px;
     height: auto;
     width: 65%;
@@ -479,6 +503,10 @@ ul {
           flex: 1;
 }
 
+.social-media-block > :nth-child(n) {
+  margin-right: 8px;
+}
+
 .social-media-block .social-media-symbol {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -499,7 +527,6 @@ ul {
   border-radius: 50%;
   cursor: pointer;
   font-size: 30px;
-  margin-right: 8px;
   -webkit-transition: all 0.15s ease-out;
   transition: all 0.15s ease-out;
 }
@@ -507,6 +534,41 @@ ul {
 .social-media-block .social-media-symbol:hover {
   color: #116198;
   border-color: #116198;
+}
+
+@media all and (max-width: 479px) {
+  .social-media-block .social-media-symbol {
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
+  }
+}
+
+@media all and (max-width: 479px) {
+  .social-media-block {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: auto;
+    margin: 0 auto;
+    -webkit-box-flex: unset;
+        -ms-flex: unset;
+            flex: unset;
+    width: 65%;
+    margin-bottom: 66px;
+  }
+  .social-media-block > :last-child {
+    margin-right: 0px;
+  }
 }
 
 #menu-button {

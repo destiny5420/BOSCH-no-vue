@@ -221,6 +221,7 @@ $color_font_main: #868e9c;
     @include flex-layout(column, center, center);
 
     @include phone-width() {
+      @include flex-layout(column, flex-start, center);
       margin-top: 100px;
       overflow-y: scroll;
     }
@@ -239,12 +240,16 @@ $color_font_main: #868e9c;
     .menu-block {
       $symbol-size: 20px;
 
+      .menu-main-wrap {
+        overflow: hidden;
+      }
+
       .main-title {
         position: relative;
         font-size: 24px;
         color: #525f6b;
 
-        .symbol {
+        .btn-symbol {
           $symbol-frame-value: 20px;
           $height: 20px;
           @include independent(transparent);
@@ -252,6 +257,7 @@ $color_font_main: #868e9c;
           top: calc(50% - (#{$symbol-frame-value} / 2));
           right: 0px;
           display: none;
+          cursor: pointer;
 
           &::before {
             @include independent(#525f6b);
@@ -267,10 +273,17 @@ $color_font_main: #868e9c;
             height: 100%;
             content: '';
             left: calc(50% - (4px / 2));
+            transition: all 0.25s linear;
           }
 
           @include phone-width() {
             display: inline-block;
+          }
+        }
+
+        .btn-symbol.show {
+          &::after {
+            background-color: transparent;
           }
         }
       }
@@ -326,7 +339,7 @@ $color_font_main: #868e9c;
 
       > :nth-child(n) {
         flex: none;
-        margin: 0px auto;
+        margin: 0px 66px;
         margin-bottom: 30px;
         height: auto;
         width: 65%;
@@ -372,20 +385,42 @@ $color_font_main: #868e9c;
   height: 100%;
   flex: 1;
 
+  > :nth-child(n) {
+    margin-right: 8px;
+  }
+
   .social-media-symbol {
-    $symbol-border-size: 60px;
-    $symbol-font-size: 30px;
+    $symbol-border-size-pc: 60px;
+    $symbol-border-size-phone: 50px;
+    $symbol-font-size-pc: 30px;
+    $symbol-font-size-phone: 22px;
     @include flex-layout(row, center, center);
-    @include size($symbol-border-size, $symbol-border-size);
+    @include size($symbol-border-size-pc, $symbol-border-size-pc);
     border: 1px solid black;
     border-radius: 50%;
     cursor: pointer;
-    font-size: $symbol-font-size;
-    margin-right: 8px;
+    font-size: $symbol-font-size-pc;
     transition: all 0.15s ease-out;
     &:hover {
       color: #116198;
       border-color: #116198;
+    }
+
+    @include phone-width() {
+      @include size($symbol-border-size-phone, $symbol-border-size-phone);
+      font-size: $symbol-font-size-phone;
+    }
+  }
+
+  @include phone-width() {
+    @include flex-layout(row, space-around, center);
+    height: auto;
+    margin: 0 auto;
+    flex: unset;
+    width: 65%;
+    margin-bottom: 66px;
+    > :last-child {
+      margin-right: 0px;
     }
   }
 }

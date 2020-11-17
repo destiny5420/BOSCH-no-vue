@@ -47,6 +47,18 @@ function onGlobalBinding() {
   });
 
   settingMediaLink();
+
+  $('#menu-window .btn-symbol').on('click', (event) => {
+    event.target.classList.contains('show')
+      ? event.target.classList.remove('show')
+      : event.target.classList.add('show');
+  });
+
+  console.log();
+  var tmpList = Array.from(document.querySelectorAll('.menu-main-wrap'));
+  tmpList.forEach((e) => {
+    console.log(e.clientHeight);
+  });
 }
 
 function onGlobalLoadingData() {
