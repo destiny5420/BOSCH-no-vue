@@ -239,12 +239,15 @@ $color_font_main: #868e9c;
 
     .menu-block {
       $symbol-size: 20px;
+      max-height: 42px;
+      overflow: hidden;
 
       .menu-main-wrap {
         overflow: hidden;
       }
 
       .main-title {
+        pointer-events: none;
         position: relative;
         font-size: 24px;
         color: #525f6b;

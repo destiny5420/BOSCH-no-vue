@@ -53,12 +53,6 @@ function onGlobalBinding() {
       ? event.target.classList.remove('show')
       : event.target.classList.add('show');
   });
-
-  console.log();
-  var tmpList = Array.from(document.querySelectorAll('.menu-main-wrap'));
-  tmpList.forEach((e) => {
-    console.log(e.clientHeight);
-  });
 }
 
 function onGlobalLoadingData() {

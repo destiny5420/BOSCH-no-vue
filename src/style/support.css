@@ -300,11 +300,17 @@ ul {
   height: 100%;
 }
 
+#menu-window .top .menu-block {
+  max-height: 42px;
+  overflow: hidden;
+}
+
 #menu-window .top .menu-block .menu-main-wrap {
   overflow: hidden;
 }
 
 #menu-window .top .menu-block .main-title {
+  pointer-events: none;
   position: relative;
   font-size: 24px;
   color: #525f6b;
