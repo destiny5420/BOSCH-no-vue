@@ -76,6 +76,14 @@ ul {
   background: linear-gradient(90deg, #d6d8d9 0%, rgba(253, 251, 251, 0) 50%, #d6d8d9 100%);
 }
 
+@media all and (max-width: 479px) {
+  .main-container {
+    background: #d6d8d9;
+    background: -webkit-gradient(linear, left top, right top, color-stop(10%, #d6d8d9), color-stop(60%, #fdfbfb));
+    background: linear-gradient(90deg, #d6d8d9 10%, #fdfbfb 60%);
+  }
+}
+
 #loading-bar {
   position: absolute;
   content: '';
@@ -255,8 +263,49 @@ ul {
 }
 
 #menu-window .top .menu-block .main-title {
+  position: relative;
   font-size: 24px;
   color: #525f6b;
+}
+
+#menu-window .top .menu-block .main-title .symbol {
+  position: absolute;
+  content: '';
+  background-color: transparent;
+  z-index: 1;
+  width: 20px;
+  height: 20px;
+  top: calc(50% - (20px / 2));
+  right: 0px;
+  display: none;
+}
+
+#menu-window .top .menu-block .main-title .symbol::before {
+  position: absolute;
+  content: '';
+  background-color: #525f6b;
+  z-index: 1;
+  width: 100%;
+  height: 4px;
+  content: '';
+  top: calc(50% - (4px / 2));
+}
+
+#menu-window .top .menu-block .main-title .symbol::after {
+  position: absolute;
+  content: '';
+  background-color: #525f6b;
+  z-index: 1;
+  width: 4px;
+  height: 100%;
+  content: '';
+  left: calc(50% - (4px / 2));
+}
+
+@media all and (max-width: 479px) {
+  #menu-window .top .menu-block .main-title .symbol {
+    display: inline-block;
+  }
 }
 
 #menu-window .top .menu-block .sub-title {
@@ -307,6 +356,22 @@ ul {
           transform: scale(1);
 }
 
+@media all and (max-width: 479px) {
+  #menu-window .top {
+    display: block;
+    margin-top: 100px;
+  }
+  #menu-window .top > :nth-child(n) {
+    -webkit-box-flex: 0;
+        -ms-flex: none;
+            flex: none;
+    margin: 0px auto;
+    margin-bottom: 30px;
+    height: auto;
+    width: 65%;
+  }
+}
+
 #menu-window .bottom {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -345,6 +410,18 @@ ul {
   height: 1px;
   content: '';
   top: 50%;
+}
+
+@media all and (max-width: 479px) {
+  #menu-window .bottom .line-block {
+    display: none;
+  }
+}
+
+@media all and (max-width: 479px) {
+  #menu-window {
+    padding: 0px 0px;
+  }
 }
 
 .social-media-block {
@@ -388,6 +465,13 @@ ul {
   cursor: pointer;
   font-size: 30px;
   margin-right: 8px;
+  -webkit-transition: all 0.15s ease-out;
+  transition: all 0.15s ease-out;
+}
+
+.social-media-block .social-media-symbol:hover {
+  color: #116198;
+  border-color: #116198;
 }
 
 #menu-button {
