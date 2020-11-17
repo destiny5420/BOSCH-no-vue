@@ -216,6 +216,16 @@ $color_font_main: #868e9c;
 
   padding: 200px 450px;
 
+  .menu-window-wrap {
+    @include size(100%, 100%);
+    @include flex-layout(column, center, center);
+
+    @include phone-width() {
+      margin-top: 100px;
+      overflow-y: scroll;
+    }
+  }
+
   .top {
     @include flex-layout(row, center, center);
     width: 100%;
@@ -308,10 +318,11 @@ $color_font_main: #868e9c;
     @include phone-width() {
       // @include flex-layout(column, flex-start, center);
       // flex-wrap: wrap;
+      flex: unset;
       display: block;
 
       // overflow-y: scroll;
-      margin-top: 100px;
+      // margin-top: 100px;
 
       > :nth-child(n) {
         flex: none;
@@ -344,6 +355,10 @@ $color_font_main: #868e9c;
       @include phone-width() {
         display: none;
       }
+    }
+
+    @include phone-width() {
+      flex: unset;
     }
   }
 
