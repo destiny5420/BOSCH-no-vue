@@ -256,8 +256,8 @@ function onGSAP() {
   // top pointer
   gsap
     .timeline({ repeat: -1 })
-    .fromTo('#top-point', { y: 20 }, {y: -20, duration: 1.5, ease: 'power2.out'})
-    .fromTo('#top-point', { y: -20 }, {y: 20, duration: 1.5, ease: 'power2.out'});
+    .fromTo('#top-point', { y: 20 }, { y: -20, duration: 1.5, ease: 'power2.out' })
+    .fromTo('#top-point', { y: -20 }, { y: 20, duration: 1.5, ease: 'power2.out' });
 
   // menu
   anim_open_menu = gsap
