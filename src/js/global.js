@@ -28,6 +28,8 @@ var deviceMode;
 var menuBlockConfigure = {
   mainBlockOriginHeightList: [],
   mainBlockOpenHeightList: [],
+  subBlockOriginHeightList: [],
+  subBlockOpenHeightList: [],
 };
 
 var globalFunction = {
@@ -143,6 +145,34 @@ function onGlobalBinding() {
         element.getElementsByClassName('btn-symbol')[0].classList.add('show');
       }
     });
+  });
+
+  Array.from($('.menu-block .option-layout')).forEach((element) => {
+    var childrenArray = Array.from(element.children);
+    childrenArray.shift();
+
+    var originHeight = element.getElementsByClassName('option')[0].clientHeight;
+
+    var childrenArray = Array.from(element.children);
+    childrenArray.shift();
+    var openHeight = childrenArray.reduce((before, current) => {
+      return before + current.clientHeight;
+    }, 0);
+
+    menuBlockConfigure.subBlockOpenHeightList.push(openHeight);
+    menuBlockConfigure.subBlockOriginHeightList.push(originHeight);
+
+    element.style.maxHeight = originHeight + 'px';
+
+    var trigger = element.getElementsByClassName('trigger')[0];
+
+    trigger.addEventListener('mouseenter', () => {
+      element.style.maxHeight = openHeight + 'px';
+    });
+
+    // trigger.addEventListener('mouseleave', () => {
+    //   element.style.maxHeight = originHeight + 'px';
+    // });
   });
 }
 

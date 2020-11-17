@@ -308,39 +308,63 @@ $color_font_main: #868e9c;
         font-size: 20px;
       }
 
+      .option-layout {
+        @include flex-layout(column, flex-start, flex-start);
+        position: relative;
+        margin-left: 20px;
+        overflow: hidden;
+        max-height: 35px;
+        transition: max-height 0.35s linear;
+
+        .btn-more {
+          cursor: auto;
+        }
+
+        .trigger {
+          cursor: pointer;
+          @include size(100%, 100%);
+          @include independent(transparent);
+          z-index: 3;
+          display: unset;
+
+          &:hover {
+            + .option {
+              p {
+                color: #116198;
+              }
+
+              svg {
+                fill: #116198;
+              }
+            }
+          }
+        }
+      }
+
       .option {
+        $transition-time: 0.15s;
+
         display: inline-flex;
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
-        margin-left: 20px;
-
-        .bg-circle {
-          $circle-radius: 40px;
-          @include size($circle-radius, $circle-radius);
-
-          left: 100px;
-
-          svg {
-            @include size($circle-radius, $circle-radius);
-          }
-        }
 
         > p {
+          color: black;
+          transition: color $transition-time linear;
           font-size: 20px;
           margin-right: 10px;
         }
 
         > svg {
           @include size($symbol-size, $symbol-size);
+          transition: fill $transition-time linear;
+          fill: black;
         }
+      }
 
-        &:hover {
-          .bg-circle {
-            opacity: 0;
-            transform: scale(1);
-          }
-        }
+      .option-content {
+        cursor: pointer;
       }
 
       @include phone-width() {

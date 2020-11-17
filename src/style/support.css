@@ -385,6 +385,52 @@ ul {
   font-size: 20px;
 }
 
+#menu-window .top .menu-block .option-layout {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  position: relative;
+  margin-left: 20px;
+  overflow: hidden;
+  max-height: 35px;
+  -webkit-transition: max-height 0.35s linear;
+  transition: max-height 0.35s linear;
+}
+
+#menu-window .top .menu-block .option-layout .btn-more {
+  cursor: auto;
+}
+
+#menu-window .top .menu-block .option-layout .trigger {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  content: '';
+  background-color: transparent;
+  z-index: 1;
+  z-index: 3;
+  display: unset;
+}
+
+#menu-window .top .menu-block .option-layout .trigger:hover + .option p {
+  color: #116198;
+}
+
+#menu-window .top .menu-block .option-layout .trigger:hover + .option svg {
+  fill: #116198;
+}
+
 #menu-window .top .menu-block .option {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -399,21 +445,12 @@ ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-left: 20px;
-}
-
-#menu-window .top .menu-block .option .bg-circle {
-  width: 40px;
-  height: 40px;
-  left: 100px;
-}
-
-#menu-window .top .menu-block .option .bg-circle svg {
-  width: 40px;
-  height: 40px;
 }
 
 #menu-window .top .menu-block .option > p {
+  color: black;
+  -webkit-transition: color 0.15s linear;
+  transition: color 0.15s linear;
   font-size: 20px;
   margin-right: 10px;
 }
@@ -421,12 +458,13 @@ ul {
 #menu-window .top .menu-block .option > svg {
   width: 20px;
   height: 20px;
+  -webkit-transition: fill 0.15s linear;
+  transition: fill 0.15s linear;
+  fill: black;
 }
 
-#menu-window .top .menu-block .option:hover .bg-circle {
-  opacity: 0;
-  -webkit-transform: scale(1);
-          transform: scale(1);
+#menu-window .top .menu-block .option-content {
+  cursor: pointer;
 }
 
 @media all and (max-width: 479px) {
