@@ -2,8 +2,9 @@ import '../style/about.css';
 
 import {
   onGlobalInit,
-  onGlobalBinding,
   onGlobalLoadingData,
+  onGlobalBinding,
+  onGlobalGSAP,
   $,
   gsap,
   ScrollTrigger,
@@ -11,31 +12,10 @@ import {
 } from '../js/global.js';
 
 // ***** variable *****
-let isDebug = false;
-let anim_open_menu;
-let anim_close_menu;
 let anim_sloganShow;
 let animsDescription = [];
 let anim_description;
 let anim_proxy;
-
-let menu = (function () {
-  var menuOpen = false;
-
-  return {
-    toggleMenu: function () {
-      if (menuOpen) {
-        menuOpen = false;
-        $('#menu-button').removeClass('show');
-        anim_close_menu.restart();
-      } else {
-        menuOpen = true;
-        $('#menu-button').addClass('show');
-        anim_open_menu.restart();
-      }
-    },
-  };
-})();
 
 function onInit() {
   onGlobalInit();
@@ -60,16 +40,12 @@ function onEventBinding() {
     }
   });
 
-  // menu button
-  $('#menu-button').on('click', function (e) {
-    menu.toggleMenu();
-  });
-
   // global binging
   onGlobalBinding();
 }
 
 function onGSAP() {
+  onGlobalGSAP();
   console.log('*** onGSAP ***');
 
   // Regist Plugin
@@ -97,25 +73,6 @@ function onGSAP() {
       '-=0.7',
     );
   });
-
-  // // description content
-  // let tmpAry = Array.from(document.querySelectorAll('.description .content-wrap .text-effect'));
-  // for (let i = 0; i < tmpAry.length; i++) {
-  //   animsDescription.push(
-  //     gsap.timeline({ scrollTrigger: { start: '100vh top', markers: isDebug, end: '+=0' } }),
-  //   );
-  // }
-
-  // tmpAry.forEach((element, index) => {
-  //   let list = Array.from(element.children);
-  //   list.forEach((element) => {
-  //     animsDescription[index].from(
-  //       element,
-  //       { duration: 0.75, opacity: 0.5, y: 65, ease: 'power1.out' },
-  //       '-=0.735',
-  //     );
-  //   });
-  // });
 
   var startVar = deviceMode === 'phone' ? 'top 25%' : 'top 35%';
 
@@ -154,68 +111,6 @@ function onGSAP() {
     .timeline({ repeat: -1 })
     .fromTo('#top-point', { y: 20 }, { y: -20, duration: 1.5, ease: 'power2.out' })
     .fromTo('#top-point', { y: -20 }, { y: 20, duration: 1.5, ease: 'power2.out' });
-
-  // menu
-  anim_open_menu = gsap
-    .timeline({ paused: true })
-    .to($('#menu-window'), {
-      opacity: 1,
-      duration: 0.75,
-      ease: 'power1.out',
-      onStart: () => {
-        $('#menu-window')[0].style.pointerEvents = 'auto';
-      },
-    })
-    .from(
-      $('#menu-window .top'),
-      {
-        x: -75,
-        duration: 0.85,
-        ease: 'power1.out',
-      },
-      '-=1',
-    )
-    .from(
-      $('#menu-window .bottom'),
-      {
-        x: -75,
-        duration: 0.85,
-        opacity: 0,
-        ease: 'power1.out',
-        delay: 0.25,
-      },
-      '-=1',
-    );
-
-  anim_close_menu = gsap
-    .timeline({ paused: true })
-    .to($('#menu-window'), {
-      opacity: 0,
-      duration: 0.75,
-      ease: 'power1.in',
-      onStart: () => {
-        $('#menu-window')[0].style.pointerEvents = 'none';
-      },
-    })
-    .to(
-      $('#menu-window .top'),
-      {
-        x: 100,
-        duration: 1,
-        ease: 'power1.in',
-      },
-      '-=1',
-    )
-    .to(
-      $('#menu-window .bottom'),
-      {
-        x: 100,
-        duration: 1,
-        ease: 'power1.in',
-        delay: 0.25,
-      },
-      '-=1',
-    );
 }
 
 async function onAwake() {

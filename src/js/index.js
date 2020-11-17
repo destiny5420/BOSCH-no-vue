@@ -22,8 +22,9 @@ import bodymovin from 'lottie-web';
 // import global.js
 import {
   onGlobalInit,
-  onGlobalBinding,
   onGlobalLoadingData,
+  onGlobalBinding,
+  onGlobalGSAP,
   $,
   gsap,
   ScrollTrigger,
@@ -35,8 +36,6 @@ import formula from '../js/formula';
 // ***** variable *****
 let headTimeline;
 let headTextBoschTimeline = [];
-let anim_open_menu;
-let anim_close_menu;
 let anim_about;
 let anim_about_ID = 'anim_about';
 let anim_install;
@@ -51,24 +50,6 @@ let curProductIndex = -1;
 let curProductTarget = null;
 let introList = [];
 let anim_intro_show_list = [];
-
-let menu = (function () {
-  var menuOpen = false;
-
-  return {
-    toggleMenu: function () {
-      if (menuOpen) {
-        menuOpen = false;
-        $('#menu-button').removeClass('show');
-        anim_close_menu.restart();
-      } else {
-        menuOpen = true;
-        $('#menu-button').addClass('show');
-        anim_open_menu.restart();
-      }
-    },
-  };
-})();
 
 // ***************** Struct Methods *****************
 function onInit() {
@@ -88,11 +69,6 @@ async function onLoadingData() {
 }
 
 function onEventBinding() {
-  // menu button
-  $('#menu-button').on('click', function (e) {
-    menu.toggleMenu();
-  });
-
   // about more
   $('#more-about').on('click', function (e) {
     console.log('be clicked!!');
@@ -127,6 +103,7 @@ function onEventBinding() {
 }
 
 function onGSAP() {
+  onGlobalGSAP();
   console.log('*** onGSAP ***');
 
   // Regist Plugin
@@ -199,68 +176,6 @@ function onGSAP() {
     .timeline({ repeat: -1 })
     .fromTo('#top-point', { y: 20 }, { y: -20, duration: 1.5, ease: 'power2.out' })
     .fromTo('#top-point', { y: -20 }, { y: 20, duration: 1.5, ease: 'power2.out' });
-
-  // menu
-  anim_open_menu = gsap
-    .timeline({ paused: true })
-    .to($('#menu-window'), {
-      opacity: 1,
-      duration: 0.75,
-      ease: 'power1.out',
-      onStart: () => {
-        $('#menu-window')[0].style.pointerEvents = 'auto';
-      },
-    })
-    .from(
-      $('#menu-window .top'),
-      {
-        x: -75,
-        duration: 0.85,
-        ease: 'power1.out',
-      },
-      '-=1',
-    )
-    .from(
-      $('#menu-window .bottom'),
-      {
-        x: -75,
-        duration: 0.85,
-        opacity: 0,
-        ease: 'power1.out',
-        delay: 0.25,
-      },
-      '-=1',
-    );
-
-  anim_close_menu = gsap
-    .timeline({ paused: true })
-    .to($('#menu-window'), {
-      opacity: 0,
-      duration: 0.75,
-      ease: 'power1.in',
-      onStart: () => {
-        $('#menu-window')[0].style.pointerEvents = 'none';
-      },
-    })
-    .to(
-      $('#menu-window .top'),
-      {
-        x: 100,
-        duration: 1,
-        ease: 'power1.in',
-      },
-      '-=1',
-    )
-    .to(
-      $('#menu-window .bottom'),
-      {
-        x: 100,
-        duration: 1,
-        ease: 'power1.in',
-        delay: 0.25,
-      },
-      '-=1',
-    );
 
   // about animation
   anim_about = gsap
