@@ -64,7 +64,10 @@ var menu = (function () {
             const reduceFun = (accumulator, currentValue) => {
               return accumulator + currentValue.clientHeight;
             };
-            let resultValue = Array.from(e.children).reduce(reduceFun, 0);
+            var childrenList = Array.from(e.children);
+            childrenList.shift();
+
+            let resultValue = childrenList.reduce(reduceFun, 0);
 
             menuBlockConfigure.mainBlockOpenHeightList.push(resultValue);
           });
