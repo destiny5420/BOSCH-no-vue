@@ -7,10 +7,10 @@ import '../images/support_pic_01.png';
 
 import {
   onGlobalInit,
-  onGlobalBinding,
   onGlobalLoadingData,
+  onGlobalBinding,
+  onGlobalGSAP,
   globalFunction,
-  menuBlockConfigure,
   $,
   gsap,
   ScrollTrigger,
@@ -23,8 +23,6 @@ import faq_collections from '../files/jsons/question.json';
 import { apiFAQQuestion } from './api.js';
 
 // ***** variable *****
-let anim_open_menu;
-let anim_close_menu;
 let tmpAnim = null;
 let faqDatas = {
   toggle: [],
@@ -34,38 +32,6 @@ let faqDatas = {
   listMaxHeight: [],
   questionHeight: [],
 };
-
-let menu = (function () {
-  var menuOpen = false;
-
-  return {
-    toggleMenu: function () {
-      if (menuOpen) {
-        menuOpen = false;
-
-        globalFunction.enableScrolling();
-        $('#menu-button').removeClass('show');
-        anim_close_menu.restart();
-      } else {
-        menuOpen = true;
-
-        if (menuBlockConfigure.mainBlockOpenHeightList.length === 0) {
-          Array.from($('#menu-window .menu-block')).forEach((e) => {
-            const reduceFun = (accumulator, currentValue) => {
-              return accumulator + currentValue.clientHeight;
-            };
-            let resultValue = Array.from(e.children).reduce(reduceFun, 0);
-
-            menuBlockConfigure.mainBlockOpenHeightList.push(resultValue);
-          });
-        }
-        globalFunction.disableWindowScrolling();
-        $('#menu-button').addClass('show');
-        anim_open_menu.restart();
-      }
-    },
-  };
-})();
 
 function onInit() {
   onGlobalInit();
@@ -179,14 +145,10 @@ function onEventBinding() {
       faqDatas.toggle[i] = !faqDatas.toggle[i];
     });
   }
-
-  // menu button
-  $('#menu-button').on('click', function (e) {
-    menu.toggleMenu();
-  });
 }
 
 function onGSAP() {
+  onGlobalGSAP();
   console.log('*** onGSAP ***');
 
   // Regist Plugin
@@ -274,68 +236,6 @@ function onGSAP() {
     .timeline({ repeat: -1 })
     .fromTo('#top-point', { y: 20 }, { y: -20, duration: 1.5, ease: 'power2.out' })
     .fromTo('#top-point', { y: -20 }, { y: 20, duration: 1.5, ease: 'power2.out' });
-
-  // menu
-  anim_open_menu = gsap
-    .timeline({ paused: true })
-    .to($('#menu-window'), {
-      opacity: 1,
-      duration: 0.75,
-      ease: 'power1.out',
-      onStart: () => {
-        $('#menu-window')[0].style.pointerEvents = 'auto';
-      },
-    })
-    .from(
-      $('#menu-window .top'),
-      {
-        x: -75,
-        duration: 0.85,
-        ease: 'power1.out',
-      },
-      '-=1',
-    )
-    .from(
-      $('#menu-window .bottom'),
-      {
-        x: -75,
-        duration: 0.85,
-        opacity: 0,
-        ease: 'power1.out',
-        delay: 0.25,
-      },
-      '-=1',
-    );
-
-  anim_close_menu = gsap
-    .timeline({ paused: true })
-    .to($('#menu-window'), {
-      opacity: 0,
-      duration: 0.75,
-      ease: 'power1.in',
-      onStart: () => {
-        $('#menu-window')[0].style.pointerEvents = 'none';
-      },
-    })
-    .to(
-      $('#menu-window .top'),
-      {
-        x: 100,
-        duration: 1,
-        ease: 'power1.in',
-      },
-      '-=1',
-    )
-    .to(
-      $('#menu-window .bottom'),
-      {
-        x: 100,
-        duration: 1,
-        ease: 'power1.in',
-        delay: 0.25,
-      },
-      '-=1',
-    );
 }
 
 async function onAwake() {
