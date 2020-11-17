@@ -238,9 +238,17 @@ $color_font_main: #868e9c;
     }
 
     .menu-block {
+      position: relative;
       $symbol-size: 20px;
       max-height: 42px;
       overflow: hidden;
+      transition-timing-function: linear;
+      // pointer-events: none;
+
+      .trigger {
+        @include independent(transparent);
+        @include size(100%, 42px);
+      }
 
       .menu-main-wrap {
         overflow: hidden;
@@ -332,13 +340,8 @@ $color_font_main: #868e9c;
     }
 
     @include phone-width() {
-      // @include flex-layout(column, flex-start, center);
-      // flex-wrap: wrap;
       flex: unset;
       display: block;
-
-      // overflow-y: scroll;
-      // margin-top: 100px;
 
       > :nth-child(n) {
         flex: none;
@@ -418,10 +421,9 @@ $color_font_main: #868e9c;
   @include phone-width() {
     @include flex-layout(row, space-around, center);
     height: auto;
-    margin: 0 auto;
+    margin: 10px auto 66px auto;
     flex: unset;
     width: 65%;
-    margin-bottom: 66px;
     > :last-child {
       margin-right: 0px;
     }

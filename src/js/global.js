@@ -23,6 +23,23 @@ import CSSRulePlugin from 'gsap/CSSRulePlugin';
 // *** Parameter ***
 var isDebug = true;
 var deviceMode;
+var menuBlockConfigure = {
+  mainBlockOriginHeightList: [],
+  mainBlockOpenHeightList: [],
+};
+
+var globalFunction = {
+  disableWindowScrolling: function () {
+    var x = window.scrollX;
+    var y = window.scrollY;
+    window.onscroll = function () {
+      window.scrollTo(x, y);
+    };
+  },
+  enableScrolling: function () {
+    window.onscroll = function () {};
+  },
+};
 
 function onGlobalInit() {
   console.warn(
@@ -52,6 +69,26 @@ function onGlobalBinding() {
     event.target.classList.contains('show')
       ? event.target.classList.remove('show')
       : event.target.classList.add('show');
+  });
+
+  // menu main title mouse event
+  Array.from($('#menu-window .menu-block')).forEach((element) => {
+    menuBlockConfigure.mainBlockOriginHeightList.push(element.clientHeight);
+  });
+
+  let mainBlockList = Array.from($('#menu-window .menu-block'));
+  mainBlockList.forEach((element, index) => {
+    element.getElementsByClassName('trigger')[0].addEventListener('click', () => {
+      element.style.transitionDuration = '0.5s';
+
+      if (element.style.maxHeight === menuBlockConfigure.mainBlockOpenHeightList[index] + 'px') {
+        element.style.maxHeight = menuBlockConfigure.mainBlockOriginHeightList[index] + 'px';
+        element.getElementsByClassName('btn-symbol')[0].classList.remove('show');
+      } else {
+        element.style.maxHeight = menuBlockConfigure.mainBlockOpenHeightList[index] + 'px';
+        element.getElementsByClassName('btn-symbol')[0].classList.add('show');
+      }
+    });
   });
 }
 
@@ -118,6 +155,8 @@ export {
   onGlobalInit,
   onGlobalBinding,
   onGlobalLoadingData,
+  globalFunction,
+  menuBlockConfigure,
   $,
   gsap,
   ScrollTrigger,

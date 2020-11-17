@@ -301,8 +301,20 @@ ul {
 }
 
 #menu-window .top .menu-block {
+  position: relative;
   max-height: 42px;
   overflow: hidden;
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
+}
+
+#menu-window .top .menu-block .trigger {
+  position: absolute;
+  content: '';
+  background-color: transparent;
+  z-index: 1;
+  width: 100%;
+  height: 42px;
 }
 
 #menu-window .top .menu-block .menu-main-wrap {
@@ -565,12 +577,11 @@ ul {
         -ms-flex-align: center;
             align-items: center;
     height: auto;
-    margin: 0 auto;
+    margin: 10px auto 66px auto;
     -webkit-box-flex: unset;
         -ms-flex: unset;
             flex: unset;
     width: 65%;
-    margin-bottom: 66px;
   }
   .social-media-block > :last-child {
     margin-right: 0px;

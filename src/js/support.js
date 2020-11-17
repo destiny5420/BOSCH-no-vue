@@ -9,6 +9,8 @@ import {
   onGlobalInit,
   onGlobalBinding,
   onGlobalLoadingData,
+  globalFunction,
+  menuBlockConfigure,
   $,
   gsap,
   ScrollTrigger,
@@ -33,12 +35,6 @@ let faqDatas = {
   questionHeight: [],
 };
 
-let menuBlockConfigure = {
-  mainBlockOriginHeightList: [],
-  mainBlockOpenHeightList: [],
-};
-let menu_blocks_height_list = [];
-
 let menu = (function () {
   var menuOpen = false;
 
@@ -46,6 +42,8 @@ let menu = (function () {
     toggleMenu: function () {
       if (menuOpen) {
         menuOpen = false;
+
+        globalFunction.enableScrolling();
         $('#menu-button').removeClass('show');
         anim_close_menu.restart();
       } else {
@@ -61,7 +59,7 @@ let menu = (function () {
             menuBlockConfigure.mainBlockOpenHeightList.push(resultValue);
           });
         }
-
+        globalFunction.disableWindowScrolling();
         $('#menu-button').addClass('show');
         anim_open_menu.restart();
       }
@@ -158,31 +156,6 @@ async function settingFAQQuestion() {
 
 function onEventBinding() {
   onGlobalBinding();
-
-  Array.from($('#menu-window .menu-block')).forEach((element) => {
-    menuBlockConfigure.mainBlockOriginHeightList.push(element.clientHeight);
-  });
-
-  let mainBlockList = Array.from($('#menu-window .menu-block'));
-  mainBlockList.forEach((e, index) => {
-    e.addEventListener('click', (event) => {
-      console.log($(event.target).find('.btn-symbol'));
-      event.target.style.transitionDuration = '0.35s';
-
-      // Close
-      if (
-        event.target.style.maxHeight ===
-        menuBlockConfigure.mainBlockOpenHeightList[index] + 'px'
-      ) {
-        event.target.style.maxHeight = menuBlockConfigure.mainBlockOriginHeightList[index] + 'px';
-        $(event.target).find('.btn-symbol')[0].classList.remove('show');
-      } else {
-        // Open
-        $(event.target).find('.btn-symbol')[0].classList.add('show');
-        event.target.style.maxHeight = menuBlockConfigure.mainBlockOpenHeightList[index] + 'px';
-      }
-    });
-  });
 
   console.log('*** onEventBinding ***');
 
