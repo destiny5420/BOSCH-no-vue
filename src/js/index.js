@@ -429,18 +429,19 @@ $(function () {
 
 // ***************** Local Methods *****************
 function onHeadAnimComplete(index) {
-  window.scrollTo(0, 0);
-
   if (index === 7) {
+    $(window).scrollTop(0);
+    $('html').css('scroll-behavior', 'smooth');
+
     headTimeline.play();
     headTextBoschTimeline.forEach((el) => {
       el.play();
     });
-  }
 
-  ScrollTrigger.getById(anim_about_ID).enable();
-  ScrollTrigger.getById(anim_install_ID).enable();
-  ScrollTrigger.getById(anim_install_pic_1_ID).enable();
-  ScrollTrigger.getById(anim_install_pic_2_ID).enable();
-  ScrollTrigger.getById(anim_faq_ID).enable();
+    ScrollTrigger.getById(anim_about_ID).enable();
+    ScrollTrigger.getById(anim_install_ID).enable();
+    ScrollTrigger.getById(anim_install_pic_1_ID).enable();
+    ScrollTrigger.getById(anim_install_pic_2_ID).enable();
+    ScrollTrigger.getById(anim_faq_ID).enable();
+  }
 }

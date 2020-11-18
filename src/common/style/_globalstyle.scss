@@ -125,6 +125,10 @@ $color_font_main: #868e9c;
   // @include border();
 }
 
+html {
+  // scroll-behavior: smooth;
+}
+
 .main-container {
   position: relative;
 
@@ -847,6 +851,7 @@ nav {
     @include flex-layout(column, flex-start, center);
     top: calc(0px - (#{$height} / 2));
     left: calc(50% - (#{$width} / 2));
+    cursor: pointer;
 
     #point {
       @include size(1px, 75px);

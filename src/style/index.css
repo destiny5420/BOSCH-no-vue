@@ -1299,6 +1299,7 @@ nav #home img {
           align-items: center;
   top: calc(0px - (100px / 2));
   left: calc(50% - (50px / 2));
+  cursor: pointer;
 }
 
 .footer #top-point #point {
@@ -2281,7 +2282,7 @@ header {
 }
 
 header #content {
-  width: 50%;
+  width: 58%;
   height: 500px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2447,6 +2448,7 @@ header #content .right {
   width: 200px;
   height: 100%;
   position: relative;
+  margin-right: 90px;
 }
 
 header #content .right #svg-gray-circle-block {
@@ -2534,6 +2536,7 @@ header #content .right .pic-frame img {
             align-items: center;
     width: 100vw;
     height: 450px;
+    margin-right: 0px;
     -webkit-transform: translateY(-50px);
             transform: translateY(-50px);
     overflow: hidden;
@@ -4024,6 +4027,15 @@ header #scroll-point #point::before {
   z-index: 1;
   bottom: -200px;
   left: -240px;
+}
+
+@media all and (max-width: 479px) {
+  .install-container #svg-anim-install-01 {
+    width: 300px;
+    height: 300px;
+    display: none;
+    left: -350px;
+  }
 }
 
 @media all and (max-width: 479px) {

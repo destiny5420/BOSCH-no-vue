@@ -131,6 +131,7 @@ function onGlobalBinding() {
     menu.toggleMenu();
   });
 
+  // menu options
   mainBlocks = Array.from($('#menu-window .menu-block'));
   mainBlocks.forEach((element, mainIndex) => {
     menuBlockConfigure.mainBlockOriginHeightList.push(element.clientHeight);
@@ -192,6 +193,12 @@ function onGlobalBinding() {
         // }
       });
     });
+  });
+
+  // top-point
+  $('#top-point').on('click', (element) => {
+    console.log('hit top-point!');
+    window.scrollTo(0, 0);
   });
 }
 

@@ -1299,6 +1299,7 @@ nav #home img {
           align-items: center;
   top: calc(0px - (100px / 2));
   left: calc(50% - (50px / 2));
+  cursor: pointer;
 }
 
 .footer #top-point #point {
