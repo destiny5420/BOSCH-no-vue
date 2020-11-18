@@ -125,6 +125,8 @@ function onEventBinding() {
 
   console.log('*** onEventBinding ***');
 
+  $('html').css('scroll-behavior', 'smooth');
+
   // binding lists click event
   let allList = $('.list');
   for (let i = 0; i < allList.length; i++) {

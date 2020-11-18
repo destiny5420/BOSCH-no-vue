@@ -42,6 +42,8 @@ function onEventBinding() {
 
   // global binging
   onGlobalBinding();
+
+  $('html').css('scroll-behavior', 'smooth');
 }
 
 function onGSAP() {
