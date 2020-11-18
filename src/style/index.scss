@@ -770,8 +770,8 @@ header {
     }
 
     .large-option {
-      $circle-radius-large-pc: 150px;
-      $circle-radius-large-phone: 80px;
+      $circle-radius-large-pc: 112px;
+      $circle-radius-large-phone: 55px;
 
       .bg-circle {
         @include size($circle-radius-large-pc, $circle-radius-large-pc);
@@ -782,7 +782,7 @@ header {
         );
 
         svg {
-          @include size($circle-radius-large-pc, $circle-radius-large-pc);
+          @include size(100%, 100%);
         }
 
         @include phone-width() {
@@ -791,10 +791,6 @@ header {
             (#{$circle-radius-large-phone} / 2 * (-1)) + (#{$main-symbol-size-phone} * 0.75 / 2) +
               ((#{$main-symbol-size-phone} - (#{$main-symbol-size-phone} * 0.75)) / 2)
           );
-
-          svg {
-            @include size($circle-radius-large-phone, $circle-radius-large-phone);
-          }
         }
       }
 
@@ -821,8 +817,8 @@ header {
     }
 
     .small-option {
-      $circle-radius-small-pc: 105px;
-      $circle-radius-small-phone: 65px;
+      $circle-radius-small-pc: 80px;
+      $circle-radius-small-phone: 40px;
 
       margin-right: 65px;
 
@@ -835,7 +831,7 @@ header {
         );
 
         svg {
-          @include size($circle-radius-small-pc, $circle-radius-small-pc);
+          @include size(100%, 100%);
         }
 
         @include phone-width() {
@@ -844,10 +840,6 @@ header {
             (#{$circle-radius-small-phone} / 2 * (-1)) + (#{$sub-symbol-size-phone} * 0.75 / 2) +
               ((#{$sub-symbol-size-phone} - (#{$sub-symbol-size-phone} * 0.75)) / 2)
           );
-
-          svg {
-            @include size($circle-radius-small-phone, $circle-radius-small-phone);
-          }
         }
       }
 

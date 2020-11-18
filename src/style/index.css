@@ -1622,10 +1622,6 @@ nav #home img {
   height: 150px;
 }
 
-.btn-more .bg-circle svg circle {
-  fill: #8f8f8f;
-}
-
 .btn-more .arrow_wrap {
   margin-right: 20px;
 }
@@ -3289,26 +3285,22 @@ header #scroll-point #point::before {
 }
 
 .products .options .large-option .bg-circle {
-  width: 150px;
-  height: 150px;
+  width: 112px;
+  height: 112px;
   left: auto;
-  right: calc( (150px / 2 * (-1)) + (50px * 0.75 / 2) + ((50px - (50px * 0.75)) / 2));
+  right: calc( (112px / 2 * (-1)) + (50px * 0.75 / 2) + ((50px - (50px * 0.75)) / 2));
 }
 
 .products .options .large-option .bg-circle svg {
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  height: 100%;
 }
 
 @media all and (max-width: 479px) {
   .products .options .large-option .bg-circle {
-    width: 80px;
-    height: 80px;
-    right: calc( (80px / 2 * (-1)) + (25px * 0.75 / 2) + ((25px - (25px * 0.75)) / 2));
-  }
-  .products .options .large-option .bg-circle svg {
-    width: 80px;
-    height: 80px;
+    width: 55px;
+    height: 55px;
+    right: calc( (55px / 2 * (-1)) + (25px * 0.75 / 2) + ((25px - (25px * 0.75)) / 2));
   }
 }
 
@@ -3357,26 +3349,22 @@ header #scroll-point #point::before {
 }
 
 .products .options .small-option .bg-circle {
-  width: 105px;
-  height: 105px;
+  width: 80px;
+  height: 80px;
   left: auto;
-  right: calc( (105px / 2 * (-1)) + (25px * 0.75 / 2) + ((25px - (25px * 0.75)) / 2));
+  right: calc( (80px / 2 * (-1)) + (25px * 0.75 / 2) + ((25px - (25px * 0.75)) / 2));
 }
 
 .products .options .small-option .bg-circle svg {
-  width: 105px;
-  height: 105px;
+  width: 100%;
+  height: 100%;
 }
 
 @media all and (max-width: 479px) {
   .products .options .small-option .bg-circle {
-    width: 65px;
-    height: 65px;
-    right: calc( (65px / 2 * (-1)) + (14px * 0.75 / 2) + ((14px - (14px * 0.75)) / 2));
-  }
-  .products .options .small-option .bg-circle svg {
-    width: 65px;
-    height: 65px;
+    width: 40px;
+    height: 40px;
+    right: calc( (40px / 2 * (-1)) + (14px * 0.75 / 2) + ((14px - (14px * 0.75)) / 2));
   }
 }
 

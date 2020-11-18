@@ -1075,10 +1075,6 @@ nav {
 
     svg {
       @include size($circle-radius, $circle-radius);
-
-      circle {
-        fill: rgb(143, 143, 143);
-      }
     }
   }
 
