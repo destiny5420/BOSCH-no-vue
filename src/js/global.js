@@ -173,7 +173,10 @@ function onGlobalBinding() {
         subElement.classList.add('hover');
         subElement.style.maxHeight = openHeight + 'px';
 
-        if (menuBlockConfigure.mainBlockOffsetValue[mainIndex][subIndex] === 0) {
+        if (
+          deviceMode === 'phone' &&
+          menuBlockConfigure.mainBlockOffsetValue[mainIndex][subIndex] === 0
+        ) {
           menuBlockConfigure.mainBlockOffsetValue[mainIndex][subIndex] = openHeight - originHeight;
           updateMenuBlockMaxHeight(mainIndex, subIndex, true);
         }

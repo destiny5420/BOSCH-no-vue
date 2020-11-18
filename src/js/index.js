@@ -68,7 +68,26 @@ async function onLoadingData() {
   console.log('*** onLoadingData ***');
 }
 
+var minX = 15;
+var maxX = -15;
+var minY = 15;
+var maxY = -15;
+
 function onEventBinding() {
+  if (deviceMode === '>=1920') {
+    window.addEventListener('mousemove', (event) => {
+      var modifyX = ((event.clientX - 0) / window.screen.width) * (maxX - minX) + minX;
+      var modifyY = ((event.clientY - 0) / window.screen.height) * (maxY - minY) + minY;
+
+      $('#gray_circle_mouse_offset')[0].style.transform =
+        'translate(' + modifyX + 'px, ' + modifyY + 'px)';
+
+      $('#header_img_mouse_offset')[0].style.transform =
+        'translate(' + modifyX * 3 + 'px, ' + modifyY * 3 + 'px)';
+      // console.log(event);
+    });
+  }
+
   // about more
   $('#more-about').on('click', function (e) {
     console.log('be clicked!!');
@@ -358,6 +377,30 @@ function onSVGAnimation() {
     loop: true,
     autoplay: true,
     path: '../js/jsons/about_head_anim_02.json',
+  });
+
+  bodymovin.loadAnimation({
+    container: $('#svg-anim-product-01')[0],
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: '../js/jsons/product_01.json',
+  });
+
+  bodymovin.loadAnimation({
+    container: $('#svg-anim-product-03')[0],
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: '../js/jsons/product_03.json',
+  });
+
+  bodymovin.loadAnimation({
+    container: $('#svg-anim-product-04')[0],
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: '../js/jsons/product_04.json',
   });
 }
 

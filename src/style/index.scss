@@ -366,13 +366,23 @@ header {
       > :nth-child(1) {
         @include size(840px, 830px);
         @include flex-layout(column, center, center);
+      }
 
-        svg {
-          @include size(100%, 100%);
-          @include independent(transparent);
-          top: 0;
-          left: 0;
-          z-index: 2;
+      #svg-anim-product-01 {
+        $svg-width-pc: 630px;
+        $svg-height-pc: 630px;
+        $svg-width-phone: 360px;
+        $svg-height-phone: 360px;
+        @include size($svg-width-pc, $svg-height-pc);
+        @include independent(transparent);
+        top: calc(50% - (#{$svg-width-pc} / 2));
+        left: calc(50% - (#{$svg-height-pc} / 2));
+        z-index: 2;
+
+        @include phone-width() {
+          @include size($svg-width-phone, $svg-height-phone);
+          top: calc(50% - (#{$svg-width-phone} / 2));
+          left: calc(50% - (#{$svg-height-phone} / 2));
         }
       }
 
@@ -504,8 +514,8 @@ header {
         @include size(840px, 830px);
 
         .product-name {
-          top: 43%;
-          left: 16%;
+          top: 49%;
+          left: 23%;
           line-height: 1;
 
           p {
@@ -520,12 +530,22 @@ header {
         }
       }
 
-      svg {
-        @include size(100%, 100%);
+      #svg-anim-product-03 {
+        $svg-width-pc: 630px;
+        $svg-height-pc: 630px;
+        $svg-width-phone: 360px;
+        $svg-height-phone: 360px;
+        @include size($svg-width-pc, $svg-height-pc);
         @include independent(transparent);
-        top: 0;
-        left: 0;
+        top: calc(50% - (#{$svg-width-pc} / 2));
+        left: calc(50% - (#{$svg-height-pc} / 2));
         z-index: 2;
+
+        @include phone-width() {
+          @include size($svg-width-phone, $svg-height-phone);
+          top: calc(50% - (#{$svg-width-phone} / 2));
+          left: calc(50% - (#{$svg-height-phone} / 2));
+        }
       }
 
       @include phone-width() {
@@ -539,6 +559,16 @@ header {
             top: 10%;
             left: 48%;
           }
+
+          .product-name {
+            top: 49%;
+            left: 18%;
+            line-height: 1;
+
+            p {
+              font-size: 38px;
+            }
+          }
         }
       }
     }
@@ -547,13 +577,23 @@ header {
       > :nth-child(1) {
         @include size(840px, 830px);
         @include flex-layout(column, center, center);
+      }
 
-        svg {
-          @include size(100%, 100%);
-          @include independent(transparent);
-          top: 0;
-          left: 0;
-          z-index: 2;
+      #svg-anim-product-04 {
+        $svg-width-pc: 630px;
+        $svg-height-pc: 630px;
+        $svg-width-phone: 360px;
+        $svg-height-phone: 360px;
+        @include size($svg-width-pc, $svg-height-pc);
+        @include independent(transparent);
+        top: calc(50% - (#{$svg-width-pc} / 2));
+        left: calc(50% - (#{$svg-height-pc} / 2));
+        z-index: 2;
+
+        @include phone-width() {
+          @include size($svg-width-phone, $svg-height-phone);
+          top: calc(50% - (#{$svg-width-phone} / 2));
+          left: calc(50% - (#{$svg-height-phone} / 2));
         }
       }
 
@@ -917,8 +957,8 @@ header {
         }
 
         @include phone-width() {
-          @include size(20px, 20px);
-          top: 40px;
+          @include size(30px, 30px);
+          top: 0px;
           right: 20px;
         }
       }
