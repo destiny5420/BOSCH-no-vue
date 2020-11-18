@@ -25,9 +25,11 @@ let anim_open_menu;
 let anim_close_menu;
 var isDebug = true;
 var deviceMode;
+var mainBlocks = [];
 var menuBlockConfigure = {
   mainBlockOriginHeightList: [],
   mainBlockOpenHeightList: [],
+  mainBlockOffsetValue: [],
   subBlockOriginHeightList: [],
   subBlockOpenHeightList: [],
 };
@@ -65,8 +67,7 @@ var menu = (function () {
               return accumulator + currentValue.clientHeight;
             };
             var childrenList = Array.from(e.children);
-            childrenList.shift();
-
+            childrenList.shift(); // because the first element is trigger, exclusive it.
             let resultValue = childrenList.reduce(reduceFun, 0);
 
             menuBlockConfigure.mainBlockOpenHeightList.push(resultValue);
@@ -130,55 +131,76 @@ function onGlobalBinding() {
     menu.toggleMenu();
   });
 
-  // menu main title mouse event
-  Array.from($('#menu-window .menu-block')).forEach((element) => {
+  mainBlocks = Array.from($('#menu-window .menu-block'));
+  mainBlocks.forEach((element, mainIndex) => {
     menuBlockConfigure.mainBlockOriginHeightList.push(element.clientHeight);
-  });
+    menuBlockConfigure.mainBlockOffsetValue.push([]);
 
-  let mainBlockList = Array.from($('#menu-window .menu-block'));
-  mainBlockList.forEach((element, index) => {
+    // setting main-block trigger event.
     element.getElementsByClassName('trigger')[0].addEventListener('click', () => {
-      element.style.transitionDuration = '0.5s';
+      element.style.transitionDuration = '0.35s';
 
-      if (element.style.maxHeight === menuBlockConfigure.mainBlockOpenHeightList[index] + 'px') {
-        element.style.maxHeight = menuBlockConfigure.mainBlockOriginHeightList[index] + 'px';
+      if (
+        element.style.maxHeight ===
+        menuBlockConfigure.mainBlockOpenHeightList[mainIndex] + 'px'
+      ) {
+        element.style.maxHeight = menuBlockConfigure.mainBlockOriginHeightList[mainIndex] + 'px';
         element.getElementsByClassName('btn-symbol')[0].classList.remove('show');
       } else {
-        element.style.maxHeight = menuBlockConfigure.mainBlockOpenHeightList[index] + 'px';
+        element.style.maxHeight = menuBlockConfigure.mainBlockOpenHeightList[mainIndex] + 'px';
+        element.style.maxHeight = 'auto';
         element.getElementsByClassName('btn-symbol')[0].classList.add('show');
       }
     });
-  });
 
-  Array.from($('.menu-block .option-layout')).forEach((element) => {
-    var childrenArray = Array.from(element.children);
-    childrenArray.shift();
+    // setting sub-block trigger event.
+    Array.from(element.querySelectorAll('.option-layout')).forEach((subElement, subIndex) => {
+      menuBlockConfigure.mainBlockOffsetValue[mainIndex].push(0);
 
-    var originHeight = element.getElementsByClassName('option')[0].clientHeight;
+      var originHeight = subElement.getElementsByClassName('option')[0].clientHeight;
 
-    var childrenArray = Array.from(element.children);
-    childrenArray.shift();
-    var openHeight = childrenArray.reduce((before, current) => {
-      return before + current.clientHeight;
-    }, 0);
+      var childrenArray = Array.from(subElement.children);
+      childrenArray.shift(); // because the first element is trigger, exclusive it.
+      var openHeight = childrenArray.reduce((before, current) => {
+        return before + current.clientHeight;
+      }, 0);
 
-    menuBlockConfigure.subBlockOpenHeightList.push(openHeight);
-    menuBlockConfigure.subBlockOriginHeightList.push(originHeight);
+      subElement.style.maxHeight = originHeight + 'px';
 
-    element.style.maxHeight = originHeight + 'px';
+      var trigger = subElement.getElementsByClassName('trigger')[0];
 
-    var trigger = element.getElementsByClassName('trigger')[0];
+      trigger.addEventListener('mouseenter', () => {
+        subElement.classList.add('hover');
+        subElement.style.maxHeight = openHeight + 'px';
 
-    trigger.addEventListener('mouseenter', (event) => {
-      element.classList.add('hover');
-      element.style.maxHeight = openHeight + 'px';
+        if (menuBlockConfigure.mainBlockOffsetValue[mainIndex][subIndex] === 0) {
+          menuBlockConfigure.mainBlockOffsetValue[mainIndex][subIndex] = openHeight - originHeight;
+          updateMenuBlockMaxHeight(mainIndex, subIndex, true);
+        }
+      });
+
+      trigger.addEventListener('mouseleave', () => {
+        subElement.classList.remove('hover');
+
+        // subElement.style.maxHeight = originHeight + 'px';
+        // if (menuBlockConfigure.mainBlockOffsetValue[mainIndex][subIndex] !== 0) {
+        //   menuBlockConfigure.mainBlockOffsetValue[mainIndex][subIndex] = 0;
+        //   updateMenuBlockMaxHeight(mainIndex, subIndex, false);
+        // }
+      });
     });
-
-    trigger.addEventListener('mouseleave', (event) => {
-      element.classList.remove('hover');
-      // element.style.maxHeight = originHeight + 'px';
-    });
   });
+}
+
+function updateMenuBlockMaxHeight(mainIndex, subIndex, plus) {
+  plus === true
+    ? (menuBlockConfigure.mainBlockOpenHeightList[mainIndex] +=
+        menuBlockConfigure.mainBlockOffsetValue[mainIndex][subIndex])
+    : (menuBlockConfigure.mainBlockOpenHeightList[mainIndex] -=
+        menuBlockConfigure.mainBlockOffsetValue[mainIndex][subIndex]);
+
+  mainBlocks[mainIndex].style.maxHeight =
+    menuBlockConfigure.mainBlockOpenHeightList[mainIndex] + 'px';
 }
 
 function onGlobalGSAP() {
