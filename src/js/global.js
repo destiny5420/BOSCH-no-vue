@@ -169,13 +169,15 @@ function onGlobalBinding() {
 
     var trigger = element.getElementsByClassName('trigger')[0];
 
-    trigger.addEventListener('mouseenter', () => {
+    trigger.addEventListener('mouseenter', (event) => {
+      element.classList.add('hover');
       element.style.maxHeight = openHeight + 'px';
     });
 
-    // trigger.addEventListener('mouseleave', () => {
-    //   element.style.maxHeight = originHeight + 'px';
-    // });
+    trigger.addEventListener('mouseleave', (event) => {
+      element.classList.remove('hover');
+      // element.style.maxHeight = originHeight + 'px';
+    });
   });
 }
 

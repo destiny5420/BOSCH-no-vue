@@ -423,12 +423,40 @@ ul {
   display: unset;
 }
 
-#menu-window .top .menu-block .option-layout .trigger:hover + .option p {
+#menu-window .top .menu-block .option-layout.hover .option > p {
   color: #116198;
 }
 
-#menu-window .top .menu-block .option-layout .trigger:hover + .option svg {
+#menu-window .top .menu-block .option-layout.hover .option > svg {
+  -webkit-animation: hover-anim 0.2s cubic-bezier(0.47, 0, 0.745, 0.715) forwards;
+          animation: hover-anim 0.2s cubic-bezier(0.47, 0, 0.745, 0.715) forwards;
   fill: #116198;
+}
+
+@-webkit-keyframes hover-anim {
+  0% {
+    -webkit-transform: translate(-10px, -10px) scale(0.75);
+            transform: translate(-10px, -10px) scale(0.75);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translate(0px, 0px) scale(0.75);
+            transform: translate(0px, 0px) scale(0.75);
+    opacity: 1;
+  }
+}
+
+@keyframes hover-anim {
+  0% {
+    -webkit-transform: translate(-10px, -10px) scale(0.75);
+            transform: translate(-10px, -10px) scale(0.75);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translate(0px, 0px) scale(0.75);
+            transform: translate(0px, 0px) scale(0.75);
+    opacity: 1;
+  }
 }
 
 #menu-window .top .menu-block .option {

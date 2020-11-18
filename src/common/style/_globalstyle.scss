@@ -326,16 +326,27 @@ $color_font_main: #868e9c;
           @include independent(transparent);
           z-index: 3;
           display: unset;
+        }
 
-          &:hover {
-            + .option {
-              p {
-                color: #116198;
-              }
+        &.hover .option {
+          > p {
+            color: #116198;
+          }
 
-              svg {
-                fill: #116198;
-              }
+          > svg {
+            animation: hover-anim 0.2s cubic-bezier(0.47, 0, 0.745, 0.715) forwards;
+            fill: #116198;
+          }
+
+          @keyframes hover-anim {
+            0% {
+              transform: translate(-10px, -10px) scale(0.75);
+              opacity: 0;
+            }
+
+            100% {
+              transform: translate(0px, 0px) scale(0.75);
+              opacity: 1;
             }
           }
         }
