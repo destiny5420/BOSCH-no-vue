@@ -1007,31 +1007,30 @@ header {
 
         .btn-more {
           $symbol-size-pc: 20px;
-          $circle-radius-pc: 150px;
+          $circle-radius-pc: 80px;
           $symbol-size-phone: 14px;
-          $circle-radius-phone: 80px;
+          $circle-radius-phone: 40px;
 
-          // @include size(112px, 52px);
           @include independent(transparent);
           font-size: 30px;
-          // left: calc(50% - (112px / 2));
-          // bottom: calc(50% - (52px / 2));
 
           .bg-circle {
             @include size($circle-radius-pc, $circle-radius-pc);
-            left: calc((#{$circle-radius-pc} / 2 * (-1)) + (#{$symbol-size-pc} * 0.75 / 2));
+            left: calc(
+              (#{$circle-radius-pc} / 2 * (-1)) + (#{$symbol-size-pc} * 0.75 / 2) +
+                ((#{$symbol-size-pc} - (#{$symbol-size-pc} * 0.75)) / 2)
+            );
 
             svg {
-              @include size($circle-radius-pc, $circle-radius-pc);
+              @include size(100%, 100%);
             }
 
             @include phone-width() {
               @include size($circle-radius-phone, $circle-radius-phone);
-              left: calc((#{$circle-radius-phone} / 2 * (-1)) + (#{$symbol-size-phone} * 0.75 / 2));
-
-              svg {
-                @include size($circle-radius-phone, $circle-radius-phone);
-              }
+              left: calc(
+                (#{$circle-radius-phone} / 2 * (-1)) + (#{$symbol-size-phone} * 0.75 / 2) +
+                  ((#{$symbol-size-phone} - (#{$symbol-size-phone} * 0.75)) / 2)
+              );
             }
           }
 
