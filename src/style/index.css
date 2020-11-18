@@ -3636,9 +3636,9 @@ header #scroll-point #point::before {
 }
 
 .about-us .bottom #content .btn-block .btn-more .bg-circle {
-  width: 80px;
-  height: 80px;
-  left: calc( (80px / 2 * (-1)) + (20px * 0.75 / 2) + ((20px - (20px * 0.75)) / 2));
+  width: 100px;
+  height: 100px;
+  left: calc( (100px / 2 * (-1)) + (20px * 0.75 / 2) + ((20px - (20px * 0.75)) / 2));
 }
 
 .about-us .bottom #content .btn-block .btn-more .bg-circle svg {
