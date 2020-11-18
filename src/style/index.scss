@@ -1308,17 +1308,13 @@ header {
     }
   }
 
-  #install-asset-01 {
+  #svg-anim-install-01 {
     $rect-size: 650px;
     @include size($rect-size, $rect-size);
     @include independent(transparent);
-    bottom: calc(#{$rect-size} / 3 * 1 * -1);
-    left: calc(#{$rect-size} / 3 * 1 * -1);
 
-    @include phone-width() {
-      @include size(300px, 300px);
-      left: calc(1500px / 3 * 1 * -1);
-    }
+    bottom: -200px;
+    left: -240px;
   }
 
   @include phone-width() {

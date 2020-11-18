@@ -4015,23 +4015,15 @@ header #scroll-point #point::before {
   }
 }
 
-.install-container #install-asset-01 {
+.install-container #svg-anim-install-01 {
   width: 650px;
   height: 650px;
   position: absolute;
   content: '';
   background-color: transparent;
   z-index: 1;
-  bottom: calc(650px / 3 * 1 * -1);
-  left: calc(650px / 3 * 1 * -1);
-}
-
-@media all and (max-width: 479px) {
-  .install-container #install-asset-01 {
-    width: 300px;
-    height: 300px;
-    left: calc(1500px / 3 * 1 * -1);
-  }
+  bottom: -200px;
+  left: -240px;
 }
 
 @media all and (max-width: 479px) {

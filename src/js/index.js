@@ -402,6 +402,14 @@ function onSVGAnimation() {
     autoplay: true,
     path: '../js/jsons/product_04.json',
   });
+
+  bodymovin.loadAnimation({
+    container: $('#svg-anim-install-01')[0],
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: '../js/jsons/install.json',
+  });
 }
 
 async function onAwake() {
