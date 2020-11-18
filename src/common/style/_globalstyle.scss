@@ -896,6 +896,7 @@ nav {
 
     .social-media-block {
       @include flex-layout(row, flex-start, flex-start);
+      margin-top: 7px;
 
       .social-media-symbol {
         $symbol-border-size: 32px;
@@ -948,8 +949,21 @@ nav {
     }
 
     .sub-link {
+      @include flex-layout(row, center, center);
       font-size: 14px;
       padding-left: 18px;
+
+      .arrow_wrap {
+        @include flex-layout(row, center, center);
+        @include size(12px, 12px);
+        margin-left: 5px;
+
+        svg {
+          @include size(100%, 100%);
+          fill: black;
+          transition: fill 0.1s linear;
+        }
+      }
     }
 
     @include phone-width() {
@@ -959,14 +973,15 @@ nav {
 
   .link {
     cursor: pointer;
+    color: black;
+    transition: color 0.1s linear;
 
-    a {
-      text-decoration: none;
-      color: black;
-      transition: 0.2s linear;
-
-      &:hover {
-        color: gray;
+    &:hover {
+      color: #ccc;
+      .arrow_wrap {
+        svg {
+          fill: #ccc;
+        }
       }
     }
   }
