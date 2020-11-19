@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;500;700&display=swap");
 * {
   margin: 0;
@@ -11,7 +12,7 @@ html {
 }
 
 body {
-  font-family: 'Noto Sans TC', sans-serif, Arial !important;
+  font-family: 'Noto Sans TC', '微軟正黑體', sans-serif, Arial !important;
   font-size: 1.7rem;
   line-height: 1.75;
   color: #1a1a1a;
@@ -2843,130 +2844,12 @@ header #scroll-point #point::before {
 .products .introduction .intro-2 {
   width: 650px;
   height: 650px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.products .introduction .intro-2 > :nth-child(n) {
-  position: absolute;
-  content: '';
-  background-color: transparent;
-  z-index: 1;
-}
-
-.products .introduction .intro-2 > :nth-child(1) {
-  width: 363px;
-  height: 359px;
-  bottom: -40px;
-  left: 0px;
-}
-
-.products .introduction .intro-2 > :nth-child(1) .product-name {
-  top: 163px;
-  left: 57px;
-}
-
-.products .introduction .intro-2 > :nth-child(1) .product-name p {
-  line-height: 1;
-}
-
-.products .introduction .intro-2 > :nth-child(1) .product-item {
-  width: 93px;
-  height: 217px;
-  top: 68px;
-  left: 145px;
-}
-
-.products .introduction .intro-2 > :nth-child(2) {
-  width: 666px;
-  height: 658px;
-  top: -56px;
-  right: -250px;
-}
-
-.products .introduction .intro-2 > :nth-child(2) .product-name {
-  top: 46%;
-  left: 16%;
-}
-
-.products .introduction .intro-2 > :nth-child(2) .product-name p {
-  font-size: 48px;
-  line-height: 1;
-}
-
-.products .introduction .intro-2 > :nth-child(2) .product-item {
-  width: 193px;
-  height: 416px;
-  top: 16%;
-  left: 41%;
-}
-
-.products .introduction .intro-2 svg {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  content: '';
-  background-color: transparent;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  z-index: 2;
 }
 
 @media all and (max-width: 479px) {
   .products .introduction .intro-2 {
     width: 300px;
     height: 300px;
-  }
-  .products .introduction .intro-2 > :nth-child(1) {
-    width: 187px;
-    height: 190px;
-    bottom: -65px;
-    left: -7px;
-  }
-  .products .introduction .intro-2 > :nth-child(1) .product-name {
-    top: 80px;
-    left: 23px;
-  }
-  .products .introduction .intro-2 > :nth-child(1) .product-name p {
-    font-size: 18px;
-  }
-  .products .introduction .intro-2 > :nth-child(1) .product-item {
-    width: 51px;
-    height: 120px;
-    top: 31px;
-    left: 85px;
-  }
-  .products .introduction .intro-2 > :nth-child(2) {
-    width: 300px;
-    height: 296px;
-    top: -57px;
-    right: -44px;
-  }
-  .products .introduction .intro-2 > :nth-child(2) .product-name {
-    top: 46%;
-    left: 16%;
-  }
-  .products .introduction .intro-2 > :nth-child(2) .product-name p {
-    font-size: 30px;
-    line-height: 1;
-  }
-  .products .introduction .intro-2 > :nth-child(2) .product-item {
-    width: 93px;
-    height: 203px;
-    top: 14%;
-    left: 44%;
   }
 }
 
@@ -3112,6 +2995,18 @@ header #scroll-point #point::before {
 .products .introduction .intro-5 {
   width: 650px;
   height: 650px;
+}
+
+@media all and (max-width: 479px) {
+  .products .introduction .intro-5 {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+.products .introduction .page {
+  width: 100%;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3127,57 +3022,7 @@ header #scroll-point #point::before {
           align-items: center;
 }
 
-.products .introduction .intro-5 > :nth-child(n) {
-  position: absolute;
-  content: '';
-  background-color: transparent;
-  z-index: 1;
-}
-
-.products .introduction .intro-5 > :nth-child(1) {
-  width: 363px;
-  height: 359px;
-  bottom: -40px;
-  left: 0px;
-}
-
-.products .introduction .intro-5 > :nth-child(1) .product-name {
-  top: 163px;
-  left: 57px;
-}
-
-.products .introduction .intro-5 > :nth-child(1) .product-item {
-  width: 117px;
-  height: 300px;
-  top: 7%;
-  left: 38%;
-}
-
-.products .introduction .intro-5 > :nth-child(2) {
-  width: 666px;
-  height: 658px;
-  top: -56px;
-  right: -250px;
-}
-
-.products .introduction .intro-5 > :nth-child(2) .product-name {
-  top: 46%;
-  left: 16%;
-}
-
-.products .introduction .intro-5 > :nth-child(2) .product-name p {
-  font-size: 48px;
-  line-height: 1;
-}
-
-.products .introduction .intro-5 > :nth-child(2) .product-item {
-  width: 119px;
-  height: 490px;
-  top: 10%;
-  left: 45%;
-}
-
-.products .introduction .intro-5 svg {
+.products .introduction .page svg {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -3189,49 +3034,148 @@ header #scroll-point #point::before {
   z-index: 2;
 }
 
+.products .introduction .intro-multiple-item-1,
+.products .introduction .intro-multiple-item-2 {
+  position: absolute;
+  content: '';
+  background-color: transparent;
+  z-index: 1;
+}
+
+.products .introduction .intro-multiple-item-1 {
+  width: 363px;
+  height: 359px;
+  bottom: -40px;
+  left: 0px;
+}
+
+.products .introduction .intro-multiple-item-1 .product-name {
+  top: 163px;
+  left: 57px;
+}
+
+.products .introduction .intro-multiple-item-1 .product-item {
+  width: 117px;
+  height: 300px;
+  top: 7%;
+  left: 38%;
+}
+
 @media all and (max-width: 479px) {
-  .products .introduction .intro-5 {
-    width: 300px;
-    height: 300px;
-  }
-  .products .introduction .intro-5 > :nth-child(1) {
+  .products .introduction .intro-multiple-item-1 {
     width: 187px;
     height: 190px;
     bottom: -65px;
     left: -7px;
   }
-  .products .introduction .intro-5 > :nth-child(1) .product-name {
+  .products .introduction .intro-multiple-item-1 .product-name {
     top: 80px;
     left: 23px;
   }
-  .products .introduction .intro-5 > :nth-child(1) .product-name p {
+  .products .introduction .intro-multiple-item-1 .product-name p {
     font-size: 18px;
   }
-  .products .introduction .intro-5 > :nth-child(1) .product-item {
+  .products .introduction .intro-multiple-item-1 .product-item {
     width: 53px;
     height: 137px;
     top: 23px;
     left: 75px;
   }
-  .products .introduction .intro-5 > :nth-child(2) {
+}
+
+.products .introduction .intro-multiple-item-2 {
+  width: 666px;
+  height: 658px;
+  top: -56px;
+  right: -250px;
+}
+
+.products .introduction .intro-multiple-item-2 .product-name {
+  top: 46%;
+  left: 16%;
+}
+
+.products .introduction .intro-multiple-item-2 .product-name p {
+  font-size: 48px;
+  line-height: 1;
+}
+
+.products .introduction .intro-multiple-item-2 .product-item {
+  width: 119px;
+  height: 490px;
+  top: 10%;
+  left: 45%;
+}
+
+@media all and (max-width: 479px) {
+  .products .introduction .intro-multiple-item-2 {
     width: 300px;
     height: 296px;
     top: -57px;
     right: -44px;
   }
-  .products .introduction .intro-5 > :nth-child(2) .product-name {
+  .products .introduction .intro-multiple-item-2 .product-name {
     top: 46%;
     left: 16%;
   }
-  .products .introduction .intro-5 > :nth-child(2) .product-name p {
+  .products .introduction .intro-multiple-item-2 .product-name p {
     font-size: 30px;
     line-height: 1;
   }
-  .products .introduction .intro-5 > :nth-child(2) .product-item {
+  .products .introduction .intro-multiple-item-2 .product-item {
     width: 53px;
     height: 220px;
     top: 10%;
     left: 49%;
+  }
+}
+
+.products .introduction .arrow-wrap {
+  width: 850px;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  left: 0px;
+  bottom: -85px;
+}
+
+.products .introduction .arrow-wrap .left-arrow,
+.products .introduction .arrow-wrap .right-arrow {
+  width: 60px;
+  height: 57px;
+  cursor: pointer;
+}
+
+.products .introduction .arrow-wrap .left-arrow svg,
+.products .introduction .arrow-wrap .right-arrow svg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+@media all and (max-width: 479px) {
+  .products .introduction .arrow-wrap {
+    width: 340px;
+    height: auto;
+    left: -20px;
+    bottom: -30px;
+  }
+  .products .introduction .arrow-wrap .left-arrow,
+  .products .introduction .arrow-wrap .right-arrow {
+    width: 30px;
+    height: 28px;
   }
 }
 
