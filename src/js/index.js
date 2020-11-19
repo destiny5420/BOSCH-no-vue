@@ -89,7 +89,9 @@ function onEventBinding() {
   }
 
   // about more
-  $('#more-about').on('click', function (e) {
+  $('#more-about').on('click', function (event) {
+    event.preventDefault();
+
     console.log('be clicked!!');
     window.location.href = './about.html';
   });

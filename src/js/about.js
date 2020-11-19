@@ -128,3 +128,13 @@ async function onAwake() {
 $(function () {
   onAwake();
 });
+
+// function parsingUrl() {
+//   console.warn('--------  parsingUrl  --------');
+//   let parseUrl = new URL(location.href);
+//   console.warn(parseUrl.href);
+//   var tmpSearch = new URLSearchParams(parseUrl.search);
+//   for (const pair of tmpSearch.entries()) {
+//     console.warn(`Key: ${pair[0]} / Value: ${pair[1]}`);
+//   }
+// }
