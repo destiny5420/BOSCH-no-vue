@@ -450,9 +450,39 @@ header {
     }
 
     .product-multiple-svg-1 {
+      $svg-width-pc: 280px;
+      $svg-height-pc: 280px;
+      $svg-width-phone: 145px;
+      $svg-height-phone: 145px;
+      @include size($svg-width-pc, $svg-height-pc);
+      @include independent(transparent);
+      top: calc(50% - (#{$svg-width-pc} / 2));
+      left: calc(50% - (#{$svg-height-pc} / 2));
+      z-index: 2;
+
+      @include phone-width() {
+        @include size($svg-width-phone, $svg-height-phone);
+        top: calc(50% - (#{$svg-width-phone} / 2));
+        left: calc(50% - (#{$svg-height-phone} / 2));
+      }
     }
 
     .product-multiple-svg-2 {
+      $svg-width-pc: 510px;
+      $svg-height-pc: 510px;
+      $svg-width-phone: 230px;
+      $svg-height-phone: 230px;
+      @include size($svg-width-pc, $svg-height-pc);
+      @include independent(transparent);
+      top: calc(50% - (#{$svg-width-pc} / 2));
+      left: calc(50% - (#{$svg-height-pc} / 2));
+      z-index: 2;
+
+      @include phone-width() {
+        @include size($svg-width-phone, $svg-height-phone);
+        top: calc(50% - (#{$svg-width-phone} / 2));
+        left: calc(50% - (#{$svg-height-phone} / 2));
+      }
     }
 
     .page {
@@ -557,14 +587,14 @@ header {
       left: -75px;
 
       .product-name {
-        top: 163px;
-        left: 57px;
+        top: 177px;
+        left: 72px;
       }
 
       .product-item {
         @include size(117px, 300px);
-        top: 7%;
-        left: 38%;
+        top: 20%;
+        left: 49%;
       }
 
       @include phone-width() {
@@ -573,8 +603,8 @@ header {
         left: -35px;
 
         .product-name {
-          top: 80px;
-          left: 23px;
+          top: 87px;
+          left: 31px;
 
           p {
             font-size: 18px;
@@ -584,8 +614,8 @@ header {
 
         .product-item {
           @include size(53px, 137px);
-          top: 23px;
-          left: 75px;
+          top: 35px;
+          left: 94px;
         }
       }
     }
@@ -596,8 +626,8 @@ header {
       right: -180px;
 
       .product-name {
-        top: 46%;
-        left: 16%;
+        top: 48%;
+        left: 20%;
 
         p {
           font-size: 48px;
@@ -607,7 +637,7 @@ header {
 
       .product-item {
         @include size(119px, 490px);
-        top: 10%;
+        top: 18%;
         left: 45%;
       }
 
@@ -617,8 +647,8 @@ header {
         right: -70px;
 
         .product-name {
-          top: 46%;
-          left: 16%;
+          top: 48%;
+          left: 20%;
 
           p {
             font-size: 24px;
@@ -628,8 +658,8 @@ header {
 
         .product-item {
           @include size(53px, 220px);
-          top: 10%;
-          left: 49%;
+          top: 15%;
+          left: 48%;
         }
       }
     }
@@ -756,52 +786,36 @@ header {
 
     #intro-item-size-2-1-1 {
       .product-name {
-        top: 163px;
-        left: 57px;
       }
 
       .product-item {
         @include size(93px, 217px);
-        top: 18%;
-        left: 43%;
       }
 
       @include phone-width() {
         .product-name {
-          top: 80px;
-          left: 24px;
         }
 
         .product-item {
           @include size(52px, 122px);
-          top: 17%;
-          left: 44%;
         }
       }
     }
 
     #intro-item-size-2-1-2 {
       .product-name {
-        top: 290px;
-        left: 105px;
       }
 
       .product-item {
         @include size(193px, 416px);
-        top: 16%;
-        left: 42%;
       }
 
       @include phone-width() {
         .product-name {
-          top: 130px;
-          left: 60px;
         }
 
         .product-item {
           @include size(95px, 205px);
-          top: 14%;
-          left: 44%;
         }
       }
     }
@@ -830,96 +844,44 @@ header {
 
     #intro-item-size-5-1-1 {
       .product-name {
-        top: 155px;
-        left: 65px;
       }
 
       .product-item {
         @include size(117px, 300px);
         top: 7%;
-        left: 38%;
+        left: 43%;
       }
 
       @include phone-width() {
         .product-name {
-          top: 80px;
-          left: 24px;
         }
 
         .product-item {
           @include size(52px, 122px);
           top: 17%;
-          left: 44%;
+          left: 46%;
         }
       }
     }
 
     #intro-item-size-5-1-2 {
       .product-name {
-        top: 295px;
-        left: 105px;
       }
 
       .product-item {
         @include size(119px, 490px);
-        top: 10%;
-        left: 45%;
+        top: 13%;
+        left: 51%;
       }
 
       @include phone-width() {
         .product-name {
-          top: 130px;
-          left: 60px;
         }
 
         .product-item {
           @include size(52px, 217px);
-          top: 11%;
-          left: 50%;
-        }
-      }
-    }
-
-    #intro-item-size-5-2-1 {
-      .product-name {
-      }
-
-      .product-item {
-        @include size(163px, 541px);
-      }
-
-      @include phone-width() {
-        .product-name {
-          top: 185px;
-          left: 85px;
-        }
-
-        .product-item {
-          @include size(84px, 280px);
-          top: 12%;
-          left: 48%;
-        }
-      }
-    }
-
-    #intro-item-size-5-3-1 {
-      .product-name {
-      }
-
-      .product-item {
-        @include size(163px, 541px);
-      }
-
-      @include phone-width() {
-        .product-name {
-          top: 185px;
-          left: 85px;
-        }
-
-        .product-item {
-          @include size(84px, 280px);
-          top: 12%;
-          left: 48%;
+          top: 13%;
+          left: 51%;
         }
       }
     }
