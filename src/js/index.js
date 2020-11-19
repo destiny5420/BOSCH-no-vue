@@ -139,7 +139,6 @@ function onEventBinding() {
       productArray[index].currentIndex > 0
         ? (productArray[index].currentIndex -= 1)
         : productArray[index].currentIndex;
-      console.log('click left at ', index, ' / currentIndex: ', productArray[index].currentIndex);
 
       if (productArray[index].currentTmpIndex === productArray[index].currentIndex) {
         return;
@@ -156,7 +155,6 @@ function onEventBinding() {
       productArray[index].currentIndex < productArray[index].totalLength - 1
         ? (productArray[index].currentIndex += 1)
         : productArray[index].currentIndex;
-      console.log('click left at ', index, ' / currentIndex: ', productArray[index].currentIndex);
 
       if (productArray[index].currentTmpIndex === productArray[index].currentIndex) {
         return;

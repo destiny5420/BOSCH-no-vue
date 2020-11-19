@@ -642,14 +642,95 @@ header {
       bottom: -100%;
       z-index: 3;
       user-select: none;
+
+      $arrow-width-pc: 60px;
+      $arrow-height-pc: 56px;
+      $circle-radius-pc: 50px;
+      $arrow-width-phone: 30px;
+      $arrow-height-phone: 28px;
+      $circle-radius-phone: 28px;
       .left-arrow,
       .right-arrow {
-        @include size(60px, 57px);
+        @include size($arrow-width-pc, $arrow-height-pc);
+        position: relative;
         cursor: pointer;
 
-        svg {
+        > svg {
           position: relative;
+          z-index: 4;
           @include size(100%, 100%);
+        }
+
+        .bg-circle {
+          @include size(calc(#{$circle-radius-pc} * 2), calc(#{$circle-radius-pc} * 2));
+          @include independent(transparent);
+          transform: scale(0.3);
+          opacity: 0;
+          transition: transform 0.3s ease-out;
+          > svg {
+            @include size(100%, 100%);
+          }
+
+          @include phone-width() {
+            @include size(calc(#{$circle-radius-phone} * 2), calc(#{$circle-radius-phone} * 2));
+          }
+        }
+
+        &:hover {
+          .bg-circle {
+            transform: scale(1);
+            opacity: 1;
+          }
+        }
+      }
+
+      .left-arrow {
+        &:hover {
+          > svg {
+            animation: left-arrow-hover-anim 0.3s ease-out forwards;
+          }
+        }
+
+        .bg-circle {
+          left: calc((#{$circle-radius-pc} * (-1)) + (#{$arrow-width-pc} / 2));
+          top: calc((#{$circle-radius-pc} * (-1)) + (#{$arrow-height-pc} / 2));
+
+          @include phone-width() {
+            left: calc((#{$circle-radius-phone} * (-1)) + (#{$arrow-width-phone} / 2));
+            top: calc((#{$circle-radius-phone} * (-1)) + (#{$arrow-height-phone} / 2));
+          }
+        }
+
+        @keyframes left-arrow-hover-anim {
+          from {
+            opacity: 0;
+            transform: translateX(30px);
+          }
+        }
+      }
+
+      .right-arrow {
+        &:hover {
+          > svg {
+            animation: right-arrow-hover-anim 0.3s ease-out forwards;
+          }
+        }
+
+        .bg-circle {
+          right: calc((#{$circle-radius-pc} * (-1)) + (#{$arrow-width-pc} / 2));
+          top: calc((#{$circle-radius-pc} * (-1)) + (#{$arrow-height-pc} / 2));
+
+          @include phone-width() {
+            right: calc((#{$circle-radius-phone} * (-1)) + (#{$arrow-width-phone} / 2));
+            top: calc((#{$circle-radius-phone} * (-1)) + (#{$arrow-height-phone} / 2));
+          }
+        }
+
+        @keyframes right-arrow-hover-anim {
+          from {
+            opacity: 0;
+            transform: translateX(-30px);
+          }
         }
       }
 
@@ -660,7 +741,7 @@ header {
 
         .left-arrow,
         .right-arrow {
-          @include size(30px, 28px);
+          @include size($arrow-width-phone, $arrow-height-phone);
         }
       }
 
@@ -1268,10 +1349,11 @@ header {
     }
 
     .effect-sub-title {
-      height: 75px;
+      margin-top: 30px;
+      height: 46px;
 
       :first-child {
-        max-height: 75px;
+        max-height: 46px;
         overflow: hidden;
 
         @include phone-width() {
@@ -1294,9 +1376,12 @@ header {
     }
 
     .install-sub-title {
-      &::after {
-        background-color: #fff;
-      }
+      display: inline-block;
+    }
+
+    #install-underline {
+      @include size(100%, 4px);
+      background-color: #fff;
     }
 
     .info-container {
