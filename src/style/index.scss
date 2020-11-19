@@ -310,7 +310,11 @@ header {
     }
 
     .info {
+      $info-height: 300px;
+      @include size(100%, $info-height);
       @include flex-layout(column, center, center);
+      @include independent(transparent);
+      top: calc(50% - (#{$info-height} / 2));
       color: #fff;
       position: relative;
       z-index: 3;
@@ -365,33 +369,11 @@ header {
     }
 
     .intro-1 {
-      > :nth-child(1) {
-        @include size(840px, 830px);
-        @include flex-layout(column, center, center);
-      }
-
-      #svg-anim-product-01 {
-        $svg-width-pc: 630px;
-        $svg-height-pc: 630px;
-        $svg-width-phone: 360px;
-        $svg-height-phone: 360px;
-        @include size($svg-width-pc, $svg-height-pc);
-        @include independent(transparent);
-        top: calc(50% - (#{$svg-width-pc} / 2));
-        left: calc(50% - (#{$svg-height-pc} / 2));
-        z-index: 2;
-
-        @include phone-width() {
-          @include size($svg-width-phone, $svg-height-phone);
-          top: calc(50% - (#{$svg-width-phone} / 2));
-          left: calc(50% - (#{$svg-height-phone} / 2));
-        }
-      }
+      $rect-size: 650px;
+      @include size($rect-size, $rect-size);
 
       @include phone-width() {
-        > :nth-child(1) {
-          @include size(380px, 380px);
-        }
+        @include size(300px, 300px);
       }
     }
 
@@ -408,34 +390,14 @@ header {
       $rect-size: 650px;
       @include size($rect-size, $rect-size);
 
-      #svg-anim-product-03 {
-        $svg-width-pc: 630px;
-        $svg-height-pc: 630px;
-        $svg-width-phone: 360px;
-        $svg-height-phone: 360px;
-        @include size($svg-width-pc, $svg-height-pc);
-        @include independent(transparent);
-        top: calc(50% - (#{$svg-width-pc} / 2));
-        left: calc(50% - (#{$svg-height-pc} / 2));
-        z-index: 2;
-
-        @include phone-width() {
-          @include size($svg-width-phone, $svg-height-phone);
-          top: calc(50% - (#{$svg-width-phone} / 2));
-          left: calc(50% - (#{$svg-height-phone} / 2));
-        }
-      }
-
       @include phone-width() {
         @include size(300px, 300px);
       }
     }
 
     .intro-4 {
-      > :nth-child(1) {
-        @include size(840px, 830px);
-        @include flex-layout(column, center, center);
-      }
+      $rect-size: 650px;
+      @include size($rect-size, $rect-size);
 
       #svg-anim-product-04 {
         $svg-width-pc: 630px;
@@ -456,9 +418,7 @@ header {
       }
 
       @include phone-width() {
-        > :nth-child(1) {
-          @include size(375px, 375px);
-        }
+        @include size(300px, 300px);
       }
     }
 
@@ -471,9 +431,34 @@ header {
       }
     }
 
+    .product-single-svg {
+      $svg-width-pc: 630px;
+      $svg-height-pc: 630px;
+      $svg-width-phone: 360px;
+      $svg-height-phone: 360px;
+      @include size($svg-width-pc, $svg-height-pc);
+      @include independent(transparent);
+      top: calc(50% - (#{$svg-width-pc} / 2));
+      left: calc(50% - (#{$svg-height-pc} / 2));
+      z-index: 2;
+
+      @include phone-width() {
+        @include size($svg-width-phone, $svg-height-phone);
+        top: calc(50% - (#{$svg-width-phone} / 2));
+        left: calc(50% - (#{$svg-height-phone} / 2));
+      }
+    }
+
+    .product-multiple-svg-1 {
+    }
+
+    .product-multiple-svg-2 {
+    }
+
     .page {
       @include size(100%, 100%);
       @include flex-layout(column, center, center);
+      @include independent(transparent);
 
       svg {
         @include size(100%, 100%);
@@ -485,11 +470,11 @@ header {
     }
 
     .intro-single-item {
-      @include size(840px, 830px);
+      @include size(100%, 100%);
 
       .product-name {
-        top: 49%;
-        left: 23%;
+        top: 46%;
+        left: 18%;
         line-height: 1;
 
         p {
@@ -498,9 +483,9 @@ header {
       }
 
       .product-item {
-        @include size(163px, 541px);
-        top: 16%;
-        left: 42%;
+        @include size(150px, 150px);
+        top: 5%;
+        left: 50%;
       }
 
       @include phone-width() {
@@ -701,14 +686,10 @@ header {
 
     #intro-item-size-3-1-1 {
       .product-name {
-        top: 385px;
-        left: 230px;
       }
 
       .product-item {
         @include size(163px, 541px);
-        top: 16%;
-        left: 50%;
       }
 
       @include phone-width() {
@@ -773,6 +754,28 @@ header {
           @include size(52px, 217px);
           top: 11%;
           left: 50%;
+        }
+      }
+    }
+
+    #intro-item-size-5-2-1 {
+      .product-name {
+      }
+
+      .product-item {
+        @include size(163px, 541px);
+      }
+
+      @include phone-width() {
+        .product-name {
+          top: 185px;
+          left: 85px;
+        }
+
+        .product-item {
+          @include size(84px, 280px);
+          top: 12%;
+          left: 48%;
         }
       }
     }

@@ -126,7 +126,7 @@ function onEventBinding() {
   Array.from($('.products .intro')).forEach((element, index) => {
     var pageObj = $(element).find('.page');
     if (pageObj.length <= 1) {
-      $(element).find('.arrow-wrap').addClass('hide-arrow-wrap');
+      // $(element).find('.arrow-wrap').addClass('hide-arrow-wrap');
     }
   });
 }
@@ -411,6 +411,14 @@ function onSVGAnimation() {
     loop: true,
     autoplay: true,
     path: '../js/jsons/product_04.json',
+  });
+
+  bodymovin.loadAnimation({
+    container: $('#svg-anim-product-05-2-1')[0],
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: '../js/jsons/product_03.json',
   });
 
   bodymovin.loadAnimation({

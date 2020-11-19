@@ -197,7 +197,6 @@ function onGlobalBinding() {
 
   // top-point
   $('#top-point').on('click', (element) => {
-    console.log('hit top-point!');
     window.scrollTo(0, 0);
   });
 }

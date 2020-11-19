@@ -68,6 +68,7 @@ ul {
   padding: 0px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  border: 1px solid black;
 }
 
 .main-container {
@@ -2715,6 +2716,8 @@ header #scroll-point #point::before {
 }
 
 .products .introduction .info {
+  width: 100%;
+  height: 300px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2728,6 +2731,11 @@ header #scroll-point #point::before {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: absolute;
+  content: '';
+  background-color: transparent;
+  z-index: 1;
+  top: calc(50% - (300px / 2));
   color: #fff;
   position: relative;
   z-index: 3;
@@ -2795,49 +2803,15 @@ header #scroll-point #point::before {
   visibility: hidden;
 }
 
-.products .introduction .intro-1 > :nth-child(1) {
-  width: 840px;
-  height: 830px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.products .introduction .intro-1 #svg-anim-product-01 {
-  width: 630px;
-  height: 630px;
-  position: absolute;
-  content: '';
-  background-color: transparent;
-  z-index: 1;
-  top: calc(50% - (630px / 2));
-  left: calc(50% - (630px / 2));
-  z-index: 2;
+.products .introduction .intro-1 {
+  width: 650px;
+  height: 650px;
 }
 
 @media all and (max-width: 479px) {
-  .products .introduction .intro-1 #svg-anim-product-01 {
-    width: 360px;
-    height: 360px;
-    top: calc(50% - (360px / 2));
-    left: calc(50% - (360px / 2));
-  }
-}
-
-@media all and (max-width: 479px) {
-  .products .introduction .intro-1 > :nth-child(1) {
-    width: 380px;
-    height: 380px;
+  .products .introduction .intro-1 {
+    width: 300px;
+    height: 300px;
   }
 }
 
@@ -2858,27 +2832,6 @@ header #scroll-point #point::before {
   height: 650px;
 }
 
-.products .introduction .intro-3 #svg-anim-product-03 {
-  width: 630px;
-  height: 630px;
-  position: absolute;
-  content: '';
-  background-color: transparent;
-  z-index: 1;
-  top: calc(50% - (630px / 2));
-  left: calc(50% - (630px / 2));
-  z-index: 2;
-}
-
-@media all and (max-width: 479px) {
-  .products .introduction .intro-3 #svg-anim-product-03 {
-    width: 360px;
-    height: 360px;
-    top: calc(50% - (360px / 2));
-    left: calc(50% - (360px / 2));
-  }
-}
-
 @media all and (max-width: 479px) {
   .products .introduction .intro-3 {
     width: 300px;
@@ -2886,22 +2839,9 @@ header #scroll-point #point::before {
   }
 }
 
-.products .introduction .intro-4 > :nth-child(1) {
-  width: 840px;
-  height: 830px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+.products .introduction .intro-4 {
+  width: 650px;
+  height: 650px;
 }
 
 .products .introduction .intro-4 #svg-anim-product-04 {
@@ -2926,9 +2866,9 @@ header #scroll-point #point::before {
 }
 
 @media all and (max-width: 479px) {
-  .products .introduction .intro-4 > :nth-child(1) {
-    width: 375px;
-    height: 375px;
+  .products .introduction .intro-4 {
+    width: 300px;
+    height: 300px;
   }
 }
 
@@ -2941,6 +2881,27 @@ header #scroll-point #point::before {
   .products .introduction .intro-5 {
     width: 300px;
     height: 300px;
+  }
+}
+
+.products .introduction .product-single-svg {
+  width: 630px;
+  height: 630px;
+  position: absolute;
+  content: '';
+  background-color: transparent;
+  z-index: 1;
+  top: calc(50% - (630px / 2));
+  left: calc(50% - (630px / 2));
+  z-index: 2;
+}
+
+@media all and (max-width: 479px) {
+  .products .introduction .product-single-svg {
+    width: 360px;
+    height: 360px;
+    top: calc(50% - (360px / 2));
+    left: calc(50% - (360px / 2));
   }
 }
 
@@ -2960,6 +2921,10 @@ header #scroll-point #point::before {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: absolute;
+  content: '';
+  background-color: transparent;
+  z-index: 1;
 }
 
 .products .introduction .page svg {
@@ -2975,13 +2940,13 @@ header #scroll-point #point::before {
 }
 
 .products .introduction .intro-single-item {
-  width: 840px;
-  height: 830px;
+  width: 100%;
+  height: 100%;
 }
 
 .products .introduction .intro-single-item .product-name {
-  top: 49%;
-  left: 23%;
+  top: 46%;
+  left: 18%;
   line-height: 1;
 }
 
@@ -2990,10 +2955,10 @@ header #scroll-point #point::before {
 }
 
 .products .introduction .intro-single-item .product-item {
-  width: 163px;
-  height: 541px;
-  top: 16%;
-  left: 42%;
+  width: 150px;
+  height: 150px;
+  top: 5%;
+  left: 50%;
 }
 
 @media all and (max-width: 479px) {
@@ -3214,16 +3179,9 @@ header #scroll-point #point::before {
   }
 }
 
-.products .introduction #intro-item-size-3-1-1 .product-name {
-  top: 385px;
-  left: 230px;
-}
-
 .products .introduction #intro-item-size-3-1-1 .product-item {
   width: 163px;
   height: 541px;
-  top: 16%;
-  left: 50%;
 }
 
 @media all and (max-width: 479px) {
@@ -3286,6 +3244,24 @@ header #scroll-point #point::before {
     height: 217px;
     top: 11%;
     left: 50%;
+  }
+}
+
+.products .introduction #intro-item-size-5-2-1 .product-item {
+  width: 163px;
+  height: 541px;
+}
+
+@media all and (max-width: 479px) {
+  .products .introduction #intro-item-size-5-2-1 .product-name {
+    top: 185px;
+    left: 85px;
+  }
+  .products .introduction #intro-item-size-5-2-1 .product-item {
+    width: 84px;
+    height: 280px;
+    top: 12%;
+    left: 48%;
   }
 }
 
