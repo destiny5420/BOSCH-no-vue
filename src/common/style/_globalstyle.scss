@@ -960,6 +960,8 @@ nav {
           transition: fill 0.1s linear;
         }
       }
+
+      @include flex-layout(row, flex-start, center);
     }
 
     @include phone-width() {

@@ -1476,6 +1476,12 @@ nav #home img {
           align-items: center;
   font-size: 14px;
   padding-left: 18px;
+  display: flex;
+  flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  align-items: center;
 }
 
 .footer .footer-content .sub-link .arrow_wrap {
@@ -3190,7 +3196,7 @@ header #scroll-point #point::before {
     width: 340px;
     height: auto;
     left: -20px;
-    bottom: 0px;
+    bottom: -310px;
   }
   .products .introduction .arrow-wrap .left-arrow,
   .products .introduction .arrow-wrap .right-arrow {
@@ -3410,7 +3416,7 @@ header #scroll-point #point::before {
 
 @media all and (max-width: 479px) {
   .products .options .option .main-title {
-    font-size: 30px;
+    font-size: 32px;
   }
 }
 

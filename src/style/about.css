@@ -1476,6 +1476,12 @@ nav #home img {
           align-items: center;
   font-size: 14px;
   padding-left: 18px;
+  display: flex;
+  flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  align-items: center;
 }
 
 .footer .footer-content .sub-link .arrow_wrap {
