@@ -121,6 +121,14 @@ function onEventBinding() {
       anim_intro_show_list[index].restart();
     });
   });
+
+  // product arrow event
+  Array.from($('.products .intro')).forEach((element, index) => {
+    var pageObj = $(element).find('.page');
+    if (pageObj.length <= 1) {
+      $(element).find('.arrow-wrap').addClass('hide-arrow-wrap');
+    }
+  });
 }
 
 function onGSAP() {

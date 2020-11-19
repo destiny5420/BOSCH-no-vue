@@ -407,31 +407,6 @@ header {
     .intro-3 {
       $rect-size: 650px;
       @include size($rect-size, $rect-size);
-      @include flex-layout(column, center, center);
-
-      > :nth-child(n) {
-        @include independent(transparent);
-      }
-
-      > :nth-child(1) {
-        @include size(840px, 830px);
-
-        .product-name {
-          top: 49%;
-          left: 23%;
-          line-height: 1;
-
-          p {
-            font-size: 48px;
-          }
-        }
-
-        .product-item {
-          @include size(163px, 541px);
-          top: 16%;
-          left: 42%;
-        }
-      }
 
       #svg-anim-product-03 {
         $svg-width-pc: 630px;
@@ -453,26 +428,6 @@ header {
 
       @include phone-width() {
         @include size(300px, 300px);
-
-        > :nth-child(1) {
-          @include size(375px, 370px);
-
-          .product-item {
-            @include size(83px, 278px);
-            top: 10%;
-            left: 48%;
-          }
-
-          .product-name {
-            top: 49%;
-            left: 18%;
-            line-height: 1;
-
-            p {
-              font-size: 38px;
-            }
-          }
-        }
       }
     }
 
@@ -529,6 +484,47 @@ header {
       }
     }
 
+    .intro-single-item {
+      @include size(840px, 830px);
+
+      .product-name {
+        top: 49%;
+        left: 23%;
+        line-height: 1;
+
+        p {
+          font-size: 48px;
+        }
+      }
+
+      .product-item {
+        @include size(163px, 541px);
+        top: 16%;
+        left: 42%;
+      }
+
+      @include phone-width() {
+        @include size(375px, 370px);
+
+        .product-item {
+          @include size(83px, 278px);
+          top: 10%;
+          left: 48%;
+        }
+
+        .product-name {
+          top: 49%;
+          left: 18%;
+          line-height: 1;
+
+          p {
+            font-size: 24px;
+          }
+        }
+      }
+    }
+
+    .intro-single-item,
     .intro-multiple-item-1,
     .intro-multiple-item-2 {
       @include independent(transparent);
@@ -552,8 +548,8 @@ header {
 
       @include phone-width() {
         @include size(187px, 190px);
-        bottom: -65px;
-        left: -7px;
+        bottom: -10px;
+        left: -35px;
 
         .product-name {
           top: 80px;
@@ -561,6 +557,7 @@ header {
 
           p {
             font-size: 18px;
+            line-height: 1;
           }
         }
 
@@ -595,15 +592,15 @@ header {
 
       @include phone-width() {
         @include size(300px, 296px);
-        top: -57px;
-        right: -44px;
+        top: -70px;
+        right: -70px;
 
         .product-name {
           top: 46%;
           left: 16%;
 
           p {
-            font-size: 30px;
+            font-size: 24px;
             line-height: 1;
           }
         }
@@ -621,7 +618,7 @@ header {
       @include flex-layout(row, space-between, center);
       position: relative;
       left: 0px;
-      bottom: -85px;
+      bottom: -10px;
 
       .left-arrow,
       .right-arrow {
@@ -637,11 +634,145 @@ header {
       @include phone-width() {
         @include size(340px, auto);
         left: -20px;
-        bottom: -30px;
+        bottom: 0px;
 
         .left-arrow,
         .right-arrow {
           @include size(30px, 28px);
+        }
+      }
+    }
+
+    .hide-arrow-wrap {
+      // display: none;
+    }
+
+    #intro-item-size-2-1-1 {
+      .product-name {
+        top: 163px;
+        left: 57px;
+      }
+
+      .product-item {
+        @include size(93px, 217px);
+        top: 18%;
+        left: 43%;
+      }
+
+      @include phone-width() {
+        .product-name {
+          top: 80px;
+          left: 24px;
+        }
+
+        .product-item {
+          @include size(52px, 122px);
+          top: 17%;
+          left: 44%;
+        }
+      }
+    }
+
+    #intro-item-size-2-1-2 {
+      .product-name {
+        top: 290px;
+        left: 105px;
+      }
+
+      .product-item {
+        @include size(193px, 416px);
+        top: 16%;
+        left: 42%;
+      }
+
+      @include phone-width() {
+        .product-name {
+          top: 130px;
+          left: 60px;
+        }
+
+        .product-item {
+          @include size(95px, 205px);
+          top: 14%;
+          left: 44%;
+        }
+      }
+    }
+
+    #intro-item-size-3-1-1 {
+      .product-name {
+        top: 385px;
+        left: 230px;
+      }
+
+      .product-item {
+        @include size(163px, 541px);
+        top: 16%;
+        left: 50%;
+      }
+
+      @include phone-width() {
+        .product-name {
+          top: 185px;
+          left: 85px;
+        }
+
+        .product-item {
+          @include size(84px, 280px);
+          top: 12%;
+          left: 48%;
+        }
+      }
+    }
+
+    #intro-item-size-5-1-1 {
+      .product-name {
+        top: 155px;
+        left: 65px;
+      }
+
+      .product-item {
+        @include size(117px, 300px);
+        top: 7%;
+        left: 38%;
+      }
+
+      @include phone-width() {
+        .product-name {
+          top: 80px;
+          left: 24px;
+        }
+
+        .product-item {
+          @include size(52px, 122px);
+          top: 17%;
+          left: 44%;
+        }
+      }
+    }
+
+    #intro-item-size-5-1-2 {
+      .product-name {
+        top: 295px;
+        left: 105px;
+      }
+
+      .product-item {
+        @include size(119px, 490px);
+        top: 10%;
+        left: 45%;
+      }
+
+      @include phone-width() {
+        .product-name {
+          top: 130px;
+          left: 60px;
+        }
+
+        .product-item {
+          @include size(52px, 217px);
+          top: 11%;
+          left: 50%;
         }
       }
     }
