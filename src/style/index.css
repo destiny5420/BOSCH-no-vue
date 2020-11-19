@@ -2939,6 +2939,72 @@ header #scroll-point #point::before {
   z-index: 2;
 }
 
+.products .introduction .page-unfocus {
+  display: none;
+}
+
+.products .introduction .page-next {
+  -webkit-animation: anim-page-next 1s linear forwards;
+          animation: anim-page-next 1s linear forwards;
+}
+
+.products .introduction .page-pervious {
+  -webkit-animation: anim-page-pervious 1s linear forwards;
+          animation: anim-page-pervious 1s linear forwards;
+}
+
+@-webkit-keyframes anim-page-next {
+  from {
+    -webkit-transform: translateX(-50px);
+            transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes anim-page-next {
+  from {
+    -webkit-transform: translateX(-50px);
+            transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes anim-page-pervious {
+  from {
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes anim-page-pervious {
+  from {
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
 .products .introduction .intro-single-item {
   width: 100%;
   height: 100%;
@@ -3099,6 +3165,11 @@ header #scroll-point #point::before {
   position: relative;
   left: 0px;
   bottom: -10px;
+  z-index: 3;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .products .introduction .arrow-wrap .left-arrow,
@@ -3127,6 +3198,14 @@ header #scroll-point #point::before {
     width: 30px;
     height: 28px;
   }
+}
+
+.products .introduction .arrow-wrap .arrow-hide {
+  visibility: hidden;
+}
+
+.products .introduction .hide-arrow-wrap {
+  display: none;
 }
 
 .products .introduction #intro-item-size-2-1-1 .product-name {
@@ -3258,6 +3337,24 @@ header #scroll-point #point::before {
     left: 85px;
   }
   .products .introduction #intro-item-size-5-2-1 .product-item {
+    width: 84px;
+    height: 280px;
+    top: 12%;
+    left: 48%;
+  }
+}
+
+.products .introduction #intro-item-size-5-3-1 .product-item {
+  width: 163px;
+  height: 541px;
+}
+
+@media all and (max-width: 479px) {
+  .products .introduction #intro-item-size-5-3-1 .product-name {
+    top: 185px;
+    left: 85px;
+  }
+  .products .introduction #intro-item-size-5-3-1 .product-item {
     width: 84px;
     height: 280px;
     top: 12%;

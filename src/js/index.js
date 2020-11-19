@@ -73,6 +73,8 @@ var maxX = -15;
 var minY = 15;
 var maxY = -15;
 
+var productArray = [];
+
 function onEventBinding() {
   if (deviceMode === '>=1920') {
     window.addEventListener('mousemove', (event) => {
@@ -124,11 +126,93 @@ function onEventBinding() {
 
   // product arrow event
   Array.from($('.products .intro')).forEach((element, index) => {
+    // toggle arrow group
     var pageObj = $(element).find('.page');
     if (pageObj.length <= 1) {
-      // $(element).find('.arrow-wrap').addClass('hide-arrow-wrap');
+      $(element).find('.arrow-wrap').addClass('hide-arrow-wrap');
     }
+
+    var leftArrow = $(element).find('.left-arrow')[0];
+    $(leftArrow).on('click', () => {
+      productArray[index].currentTmpIndex = productArray[index].currentIndex;
+
+      productArray[index].currentIndex > 0
+        ? (productArray[index].currentIndex -= 1)
+        : productArray[index].currentIndex;
+      console.log('click left at ', index, ' / currentIndex: ', productArray[index].currentIndex);
+
+      if (productArray[index].currentTmpIndex === productArray[index].currentIndex) {
+        return;
+      }
+
+      checkPage(data, false);
+      checkArrowElement(data);
+    });
+
+    var rightArrow = $(element).find('.right-arrow')[0];
+    $(rightArrow).on('click', () => {
+      productArray[index].currentTmpIndex = productArray[index].currentIndex;
+
+      productArray[index].currentIndex < productArray[index].totalLength - 1
+        ? (productArray[index].currentIndex += 1)
+        : productArray[index].currentIndex;
+      console.log('click left at ', index, ' / currentIndex: ', productArray[index].currentIndex);
+
+      if (productArray[index].currentTmpIndex === productArray[index].currentIndex) {
+        return;
+      }
+
+      checkPage(data, true);
+      checkArrowElement(data);
+    });
+
+    var data = {
+      objects: Array.from(pageObj),
+      totalLength: pageObj.length,
+      currentTmpIndex: 0,
+      currentIndex: 0,
+      leftElement: leftArrow,
+      rightElement: rightArrow,
+    };
+
+    data.objects.forEach((element) => {
+      element.classList.add('page-unfocus');
+    });
+
+    productArray.push(data);
+
+    checkPage(data, true);
+    checkArrowElement(data);
   });
+}
+
+function checkPage(data, isNext) {
+  data.objects[data.currentTmpIndex].classList.add('page-unfocus');
+  data.objects[data.currentTmpIndex].classList.remove('page-next');
+  data.objects[data.currentTmpIndex].classList.remove('page-pervious');
+
+  isNext === true
+    ? data.objects[data.currentIndex].classList.add('page-next')
+    : data.objects[data.currentIndex].classList.add('page-pervious');
+  data.objects[data.currentIndex].classList.remove('page-unfocus');
+  data.currentTmpIndex = data.currentIndex;
+}
+
+function checkArrowElement(data) {
+  console.log('checkArrowElement function / data: ', data);
+  // left arrow
+  if (data.currentIndex === 0) {
+    data.leftElement.classList.add('arrow-hide');
+  } else {
+    data.leftElement.classList.remove('arrow-hide');
+  }
+
+  // right arrow
+  if (data.currentIndex === data.totalLength - 1) {
+    data.rightElement.classList.add('arrow-hide');
+  } else {
+    data.rightElement.classList.remove('arrow-hide');
+  }
 }
 
 function onGSAP() {
@@ -415,6 +499,14 @@ function onSVGAnimation() {
 
   bodymovin.loadAnimation({
     container: $('#svg-anim-product-05-2-1')[0],
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: '../js/jsons/product_03.json',
+  });
+
+  bodymovin.loadAnimation({
+    container: $('#svg-anim-product-05-3-1')[0],
     renderer: 'svg',
     loop: true,
     autoplay: true,
