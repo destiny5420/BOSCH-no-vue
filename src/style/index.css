@@ -3435,6 +3435,26 @@ header #scroll-point #point::before {
   }
 }
 
+.products .introduction #intro-item-size-5-2-1 .product-item {
+  width: 163px;
+  height: 541px;
+  top: 7%;
+  left: 51%;
+}
+
+@media all and (max-width: 479px) {
+  .products .introduction #intro-item-size-5-2-1 .product-name {
+    top: 185px;
+    left: 85px;
+  }
+  .products .introduction #intro-item-size-5-2-1 .product-item {
+    width: 84px;
+    height: 280px;
+    top: 12%;
+    left: 48%;
+  }
+}
+
 .products .options {
   display: -webkit-box;
   display: -ms-flexbox;

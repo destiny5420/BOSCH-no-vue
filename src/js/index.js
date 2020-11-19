@@ -479,19 +479,19 @@ function onSVGAnimation() {
   });
 
   bodymovin.loadAnimation({
-    container: $('#svg-anim-product-02-1')[0],
+    container: $('#svg-anim-product-02-1-1')[0],
     renderer: 'svg',
     loop: true,
     autoplay: true,
-    path: '../js/jsons/product_02_1.json',
+    path: '../js/jsons/product_02_1_1.json',
   });
 
   bodymovin.loadAnimation({
-    container: $('#svg-anim-product-02-2')[0],
+    container: $('#svg-anim-product-02-1-2')[0],
     renderer: 'svg',
     loop: true,
     autoplay: true,
-    path: '../js/jsons/product_02_2.json',
+    path: '../js/jsons/product_02_1_2.json',
   });
 
   bodymovin.loadAnimation({
@@ -511,19 +511,27 @@ function onSVGAnimation() {
   });
 
   bodymovin.loadAnimation({
-    container: $('#svg-anim-product-05-1')[0],
+    container: $('#svg-anim-product-05-1-1')[0],
     renderer: 'svg',
     loop: true,
     autoplay: true,
-    path: '../js/jsons/product_05_1.json',
+    path: '../js/jsons/product_05_1_1.json',
   });
 
   bodymovin.loadAnimation({
-    container: $('#svg-anim-product-05-2')[0],
+    container: $('#svg-anim-product-05-1-2')[0],
     renderer: 'svg',
     loop: true,
     autoplay: true,
-    path: '../js/jsons/product_05_2.json',
+    path: '../js/jsons/product_05_1_2.json',
+  });
+
+  bodymovin.loadAnimation({
+    container: $('#svg-anim-product-05-2-1')[0],
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: '../js/jsons/product_05_2_1.json',
   });
 
   bodymovin.loadAnimation({

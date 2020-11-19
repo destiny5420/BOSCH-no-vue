@@ -885,6 +885,30 @@ header {
         }
       }
     }
+
+    #intro-item-size-5-2-1 {
+      .product-name {
+      }
+
+      .product-item {
+        @include size(163px, 541px);
+        top: 7%;
+        left: 51%;
+      }
+
+      @include phone-width() {
+        .product-name {
+          top: 185px;
+          left: 85px;
+        }
+
+        .product-item {
+          @include size(84px, 280px);
+          top: 12%;
+          left: 48%;
+        }
+      }
+    }
   }
 
   .options {
