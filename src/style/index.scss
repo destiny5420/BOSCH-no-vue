@@ -474,11 +474,11 @@ header {
     }
 
     .page-next {
-      animation: anim-page-next 1s linear forwards;
+      animation: anim-page-next 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
     }
 
     .page-pervious {
-      animation: anim-page-pervious 1s linear forwards;
+      animation: anim-page-pervious 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
     }
 
     @keyframes anim-page-next {
@@ -554,7 +554,7 @@ header {
     .intro-multiple-item-1 {
       @include size(363px, 359px);
       bottom: -40px;
-      left: 0px;
+      left: -75px;
 
       .product-name {
         top: 163px;
@@ -593,7 +593,7 @@ header {
     .intro-multiple-item-2 {
       @include size(666px, 658px);
       top: -56px;
-      right: -250px;
+      right: -180px;
 
       .product-name {
         top: 46%;
@@ -638,8 +638,8 @@ header {
       @include size(850px, auto);
       @include flex-layout(row, space-between, center);
       position: relative;
-      left: 0px;
-      bottom: -10px;
+      left: -100px;
+      bottom: -100%;
       z-index: 3;
       user-select: none;
       .left-arrow,

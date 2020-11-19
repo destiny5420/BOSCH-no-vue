@@ -199,7 +199,6 @@ function checkPage(data, isNext) {
 }
 
 function checkArrowElement(data) {
-  console.log('checkArrowElement function / data: ', data);
   // left arrow
   if (data.currentIndex === 0) {
     data.leftElement.classList.add('arrow-hide');
