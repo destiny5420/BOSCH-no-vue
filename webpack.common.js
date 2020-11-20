@@ -65,21 +65,21 @@ module.exports = {
   plugins: [
     new webpack.BannerPlugin('版權所有，翻版必究'),
     new HtmlWebpackPlugin({
-      title: 'BOSCH',
+      title: '主頁 | 台灣博世',
       filename: 'index.html',
       template: path.join(__dirname, './src/index.html'),
       favicon: './src/images/favicon.ico',
       chunks: ['index'],
     }),
     new HtmlWebpackPlugin({
-      title: '關於',
+      title: '關於我們 | 台灣博世',
       filename: 'about.html',
       template: path.join(__dirname, './src/about.html'),
       favicon: './src/images/favicon.ico',
       chunks: ['about'],
     }),
     new HtmlWebpackPlugin({
-      title: '支援',
+      title: '支援 | 台灣博世',
       filename: 'support.html',
       template: path.join(__dirname, './src/support.html'),
       favicon: './src/images/favicon.ico',
