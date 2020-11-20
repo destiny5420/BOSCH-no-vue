@@ -36,6 +36,11 @@
       width: 70%;
     }
   }
+
+  @include phone-width() {
+    background: rgb(214, 216, 217);
+    background: linear-gradient(90deg, rgba(214, 216, 217, 1) 10%, rgba(253, 251, 251, 1) 60%);
+  }
 }
 
 #test-area {
