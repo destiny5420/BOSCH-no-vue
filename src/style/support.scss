@@ -2,17 +2,17 @@
 @import '../common/style/_globalstyle.scss';
 @import '../common/style/_font.scss';
 
-.slogan {
-  $slogan-configure: (
-    margin_top: (
-      pc: 150px,
-      phone: 115px,
-    ),
-  );
+.main-container {
+  padding-top: 150px;
 
+  @include phone-width {
+    padding-top: 115px;
+  }
+}
+
+.slogan {
   @include size(100%, 400px);
   @include flex-layout(column, center, center);
-  margin-top: map-get(map-get($slogan-configure, margin_top), pc);
   position: relative;
 
   .content {
@@ -170,10 +170,6 @@
         0px
       );
     }
-  }
-
-  @include phone-width() {
-    margin-top: map-get(map-get($slogan-configure, margin_top), phone);
   }
 }
 
