@@ -68,10 +68,14 @@ header {
         position: relative;
 
         #bosch-txt-body {
-          @include size(508px, 112px);
+          // @include size(508px, 112px);
 
           > svg {
-            @include size(100%, 100%);
+            @include size(508px, 112px);
+
+            @include phone-width() {
+              @include size(254px, 56px);
+            }
           }
 
           #text-mask {
@@ -98,14 +102,18 @@ header {
           }
 
           image {
-            @include size(100%, 100%);
+            @include size(508px, 112px);
             transform-origin: left;
             transform: translate(3px, 1px) scale(0.99);
+
+            @include phone-width() {
+              @include size(254px, 56px);
+            }
           }
 
-          @include phone-width() {
-            @include size(254px, 56px);
-          }
+          // @include phone-width() {
+          //   @include size(254px, 56px);
+          // }
         }
 
         #bosch-stroke-line {

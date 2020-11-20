@@ -2355,14 +2355,16 @@ header #content .left #bosch-txt-title {
   position: relative;
 }
 
-header #content .left #bosch-txt-title #bosch-txt-body {
+header #content .left #bosch-txt-title #bosch-txt-body > svg {
   width: 508px;
   height: 112px;
 }
 
-header #content .left #bosch-txt-title #bosch-txt-body > svg {
-  width: 100%;
-  height: 100%;
+@media all and (max-width: 479px) {
+  header #content .left #bosch-txt-title #bosch-txt-body > svg {
+    width: 254px;
+    height: 56px;
+  }
 }
 
 header #content .left #bosch-txt-title #bosch-txt-body #text-mask rect {
@@ -2400,8 +2402,8 @@ header #content .left #bosch-txt-title #bosch-txt-body #text-mask .rect-move-ani
 }
 
 header #content .left #bosch-txt-title #bosch-txt-body image {
-  width: 100%;
-  height: 100%;
+  width: 508px;
+  height: 112px;
   -webkit-transform-origin: left;
           transform-origin: left;
   -webkit-transform: translate(3px, 1px) scale(0.99);
@@ -2409,7 +2411,7 @@ header #content .left #bosch-txt-title #bosch-txt-body image {
 }
 
 @media all and (max-width: 479px) {
-  header #content .left #bosch-txt-title #bosch-txt-body {
+  header #content .left #bosch-txt-title #bosch-txt-body image {
     width: 254px;
     height: 56px;
   }
