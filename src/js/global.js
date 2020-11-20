@@ -23,7 +23,7 @@ import CSSRulePlugin from 'gsap/CSSRulePlugin';
 // *** Parameter ***
 let anim_open_menu;
 let anim_close_menu;
-var isDebug = true;
+var isDebug = false;
 var deviceMode;
 var mainBlocks = [];
 var menuBlockConfigure = {
