@@ -6,6 +6,19 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
+    <div id="loading-bar">
+      <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66">
+        <circle
+          class="path"
+          fill="none"
+          stroke-width="6"
+          stroke-linecap="round"
+          cx="33"
+          cy="33"
+          r="30"
+        ></circle>
+      </svg>
+    </div>
     <div id="menu-window">
       <div class="menu-window-wrap">
         <div class="top">
@@ -131,19 +144,7 @@
           <p class="text-char">美</p>
         </span>
       </div>
-      <div id="loading-bar">
-        <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66">
-          <circle
-            class="path"
-            fill="none"
-            stroke-width="6"
-            stroke-linecap="round"
-            cx="33"
-            cy="33"
-            r="30"
-          ></circle>
-        </svg>
-      </div>
+      
       <div id="menu-button">
         <span></span>
         <span></span>
