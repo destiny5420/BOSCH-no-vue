@@ -221,14 +221,14 @@ $color_font_main: #868e9c;
     @include flex-layout(column, center, center);
 
     @include phone-width() {
-      @include flex-layout(column, flex-start, center);
+      display: unset;
       margin-top: 100px;
       overflow-y: scroll;
     }
   }
 
   .top {
-    @include flex-layout(row, center, center);
+    @include flex-layout(row, center, flex-start);
     width: 100%;
     flex: 9;
 
@@ -246,6 +246,7 @@ $color_font_main: #868e9c;
       // pointer-events: none;
 
       .trigger {
+        cursor: pointer;
         display: none;
 
         @include phone-width() {
@@ -415,6 +416,10 @@ $color_font_main: #868e9c;
         height: auto;
         width: 65%;
       }
+
+      > :last-child {
+        margin-bottom: 0px;
+      }
     }
   }
 
@@ -443,6 +448,8 @@ $color_font_main: #868e9c;
 
     @include phone-width() {
       flex: unset;
+      padding: 40px 0px 66px 0px;
+      box-sizing: content-box;
     }
   }
 
@@ -486,7 +493,6 @@ $color_font_main: #868e9c;
   @include phone-width() {
     @include flex-layout(row, space-around, center);
     height: auto;
-    margin: 10px auto 66px auto;
     flex: unset;
     width: 65%;
     > :last-child {
