@@ -2300,31 +2300,6 @@ ul {
   }
 }
 
-#test-area {
-  width: 100%;
-  height: 100vh;
-  border: 1px solid black;
-  background: #833ab4;
-  background: -webkit-gradient(linear, left top, right top, from(#833ab4), color-stop(50%, #fd1d1d), to(#fcb045));
-  background: linear-gradient(90deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
-}
-
-#test-area > svg {
-  position: absolute;
-  content: '';
-  background-color: transparent;
-  z-index: 1;
-  width: 345px;
-  height: 90px;
-  left: 42%;
-  top: 7%;
-}
-
-#test-area > svg rect {
-  -webkit-transform: translate(0px, 0px);
-          transform: translate(0px, 0px);
-}
-
 header {
   width: 100%;
   height: 100vh;
@@ -2373,44 +2348,41 @@ header #content .left .sub-title {
   line-height: 1;
 }
 
-header #content .left .title {
+header #content .left #bosch-txt-title {
   width: auto;
-  height: 120px;
+  height: auto;
   margin-bottom: 35px;
+  position: relative;
 }
 
-header #content .left .title > svg {
-  width: 100%;
-  height: 100%;
-}
-
-header #content .left .title > svg #mask image {
+header #content .left #bosch-txt-title #bosch-txt-body {
   width: 508px;
-  height: 113px;
+  height: 112px;
 }
 
-@media all and (max-width: 479px) {
-  header #content .left .title > svg #mask image {
-    -webkit-transform: scale(0.5);
-            transform: scale(0.5);
-  }
-}
-
-header #content .left .title > svg #move-black {
+header #content .left #bosch-txt-title #bosch-txt-body > svg {
   width: 100%;
   height: 100%;
-  fill: #e20015;
-  -webkit-transform: translateY(130px);
-          transform: translateY(130px);
-  -webkit-animation: animate-move-block 1s 6.5s cubic-bezier(0.49, 0.255, 0.9, 0.515) forwards;
-          animation: animate-move-block 1s 6.5s cubic-bezier(0.49, 0.255, 0.9, 0.515) forwards;
+}
+
+header #content .left #bosch-txt-title #bosch-txt-body #text-mask rect {
+  fill: #fff;
+  width: 507px;
+  height: 112px;
+  -webkit-transform: translateY(112px);
+          transform: translateY(112px);
 }
 
 @media all and (max-width: 479px) {
-  header #content .left .title > svg #move-black {
+  header #content .left #bosch-txt-title #bosch-txt-body #text-mask rect {
     -webkit-transform: translateY(60px);
             transform: translateY(60px);
   }
+}
+
+header #content .left #bosch-txt-title #bosch-txt-body #text-mask .rect-move-anim {
+  -webkit-animation: animate-move-block 1s cubic-bezier(0.68, 0.29, 0.98, 0.87) forwards;
+          animation: animate-move-block 1s cubic-bezier(0.68, 0.29, 0.98, 0.87) forwards;
 }
 
 @-webkit-keyframes animate-move-block {
@@ -2427,49 +2399,103 @@ header #content .left .title > svg #move-black {
   }
 }
 
-header #content .left .title > svg #stroke-line {
+header #content .left #bosch-txt-title #bosch-txt-body image {
+  width: 100%;
+  height: 100%;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transform: translate(3px, 1px) scale(0.99);
+          transform: translate(3px, 1px) scale(0.99);
+}
+
+@media all and (max-width: 479px) {
+  header #content .left #bosch-txt-title #bosch-txt-body {
+    width: 254px;
+    height: 56px;
+  }
+}
+
+header #content .left #bosch-txt-title #bosch-stroke-line {
+  width: 508px;
+  height: 112px;
+  position: absolute;
+  content: '';
+  background-color: transparent;
+  z-index: 1;
+  top: 0px;
+  left: 0px;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+header #content .left #bosch-txt-title #bosch-stroke-line > svg {
+  width: 100%;
+  height: 100%;
+}
+
+header #content .left #bosch-txt-title #bosch-stroke-line #stroke-line {
   width: 100%;
   height: 100%;
   -webkit-transform: translate(4px, 3px);
           transform: translate(4px, 3px);
 }
 
+header #content .left #bosch-txt-title #bosch-stroke-line #stroke-line path {
+  fill: none;
+  stroke: #e20015;
+  stroke-width: 1;
+}
+
 @media all and (max-width: 479px) {
-  header #content .left .title > svg #stroke-line {
-    -webkit-transform: scale(0.5) translate(4px, 3px);
-            transform: scale(0.5) translate(4px, 3px);
+  header #content .left #bosch-txt-title #bosch-stroke-line #stroke-line :nth-child(n) {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
   }
 }
 
-header #content .left .title > svg #stroke-line path {
-  fill: none;
-  stroke: #e20015;
-  stroke-width: 3;
-}
-
-header #content .left .title > svg #stroke-line :nth-child(1) {
+header #content .left #bosch-txt-title #bosch-stroke-line #stroke-line :nth-child(1) {
   stroke-dasharray: 360;
   stroke-dashoffset: 360;
 }
 
-header #content .left .title > svg #stroke-line :nth-child(2) {
+header #content .left #bosch-txt-title #bosch-stroke-line #stroke-line :nth-child(2) {
   stroke-dasharray: 348;
   stroke-dashoffset: 348;
 }
 
-header #content .left .title > svg #stroke-line :nth-child(3) {
+header #content .left #bosch-txt-title #bosch-stroke-line #stroke-line :nth-child(3) {
   stroke-dasharray: 513;
   stroke-dashoffset: 513;
 }
 
-header #content .left .title > svg #stroke-line :nth-child(4) {
+header #content .left #bosch-txt-title #bosch-stroke-line #stroke-line :nth-child(4) {
   stroke-dasharray: 478;
   stroke-dashoffset: 478;
 }
 
-header #content .left .title > svg #stroke-line :nth-child(5) {
+header #content .left #bosch-txt-title #bosch-stroke-line #stroke-line :nth-child(5) {
   stroke-dasharray: 578;
   stroke-dashoffset: 578;
+}
+
+@media all and (max-width: 479px) {
+  header #content .left #bosch-txt-title #bosch-stroke-line #stroke-line {
+    -webkit-transform: translate(-2px, 0px);
+            transform: translate(-2px, 0px);
+  }
+}
+
+@media all and (max-width: 479px) {
+  header #content .left #bosch-txt-title #bosch-stroke-line {
+    width: 254px;
+    height: 56px;
+  }
+}
+
+@media all and (max-width: 479px) {
+  header #content .left #bosch-txt-title {
+    margin-bottom: 17px;
+  }
 }
 
 header #content .left .sub-title {

@@ -43,30 +43,6 @@
   }
 }
 
-#test-area {
-  @include size(100%, 100vh);
-  @include border();
-
-  background: rgb(131, 58, 180);
-  background: linear-gradient(
-    90deg,
-    rgba(131, 58, 180, 1) 0%,
-    rgba(253, 29, 29, 1) 50%,
-    rgba(252, 176, 69, 1) 100%
-  );
-
-  > svg {
-    @include independent(transparent);
-    @include size(345px, 90px);
-    left: 42%;
-    top: 7%;
-
-    rect {
-      transform: translate(0px, 0px);
-    }
-  }
-}
-
 header {
   @include size(100%, 100vh);
   @include flex-layout(row, center, center);
@@ -86,38 +62,61 @@ header {
         line-height: 1;
       }
 
-      .title {
-        @include size(auto, 120px);
+      #bosch-txt-title {
+        @include size(auto, auto);
         margin-bottom: 35px;
+        position: relative;
 
-        > svg {
-          @include size(100%, 100%);
+        #bosch-txt-body {
+          @include size(508px, 112px);
 
-          #mask {
-            image {
-              @include size(508px, 113px);
+          > svg {
+            @include size(100%, 100%);
+          }
+
+          #text-mask {
+            rect {
+              fill: #fff;
+              @include size(507px, 112px);
+              transform: translateY(112px);
+              // animation: animate-move-block 1s 6.5s cubic-bezier(0.68, 0.29, 0.98, 0.87) forwards;
 
               @include phone-width() {
-                transform: scale(0.5);
+                transform: translateY(60px);
+              }
+            }
+
+            .rect-move-anim {
+              animation: animate-move-block 1s cubic-bezier(0.68, 0.29, 0.98, 0.87) forwards;
+            }
+
+            @keyframes animate-move-block {
+              to {
+                transform: translateY(0px);
               }
             }
           }
 
-          #move-black {
+          image {
             @include size(100%, 100%);
-            fill: #e20015;
-            transform: translateY(130px);
-            animation: animate-move-block 1s 6.5s cubic-bezier(0.49, 0.255, 0.9, 0.515) forwards;
-
-            @include phone-width() {
-              transform: translateY(60px);
-            }
+            transform-origin: left;
+            transform: translate(3px, 1px) scale(0.99);
           }
 
-          @keyframes animate-move-block {
-            to {
-              transform: translateY(0px);
-            }
+          @include phone-width() {
+            @include size(254px, 56px);
+          }
+        }
+
+        #bosch-stroke-line {
+          @include size(508px, 112px);
+          @include independent(transparent);
+          top: 0px;
+          left: 0px;
+          transform: scale(1);
+
+          > svg {
+            @include size(100%, 100%);
           }
 
           #stroke-line {
@@ -127,14 +126,16 @@ header {
             @include size(100%, 100%);
             transform: translate(4px, 3px);
 
-            @include phone-width() {
-              transform: scale(0.5) translate(4px, 3px);
-            }
-
             path {
               fill: none;
               stroke: #e20015;
-              stroke-width: 3;
+              stroke-width: 1;
+            }
+
+            :nth-child(n) {
+              @include phone-width() {
+                transform: scale(0.5);
+              }
             }
 
             :nth-child(1) {
@@ -161,7 +162,19 @@ header {
               stroke-dasharray: 578;
               stroke-dashoffset: 578;
             }
+
+            @include phone-width() {
+              transform: translate(-2px, 0px);
+            }
           }
+
+          @include phone-width() {
+            @include size(254px, 56px);
+          }
+        }
+
+        @include phone-width() {
+          margin-bottom: 17px;
         }
       }
 
