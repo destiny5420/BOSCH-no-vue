@@ -54,6 +54,7 @@ let anim_intro_show_list = [];
 // ***************** Struct Methods *****************
 function onInit() {
   onGlobalInit();
+  
   if (deviceMode === 'phone') {
     $('.about-us .top svg circle').attr('r', 5);
   }
