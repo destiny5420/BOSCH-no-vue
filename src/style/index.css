@@ -3756,15 +3756,20 @@ header #scroll-point #point::before {
   z-index: 0;
 }
 
-.about-us .bottom #head img {
+.about-us .bottom #head #img-block {
+  width: 100%;
+  height: 100%;
   position: absolute;
   content: '';
   background-color: transparent;
   z-index: 1;
-  width: 100%;
-  height: 100%;
   bottom: 0px;
   left: 0px;
+}
+
+.about-us .bottom #head #img-block img {
+  width: 100%;
+  height: 100%;
 }
 
 .about-us .bottom #head #about-head-anim-01 {
@@ -3961,13 +3966,20 @@ header #scroll-point #point::before {
   text-align: center;
 }
 
-.about-us .bottom #description img {
+.about-us .bottom #description #img-block {
+  width: 412px;
+  height: 290px;
   position: absolute;
   content: '';
   background-color: transparent;
   z-index: 1;
   bottom: 0;
   right: 0;
+}
+
+.about-us .bottom #description #img-block img {
+  width: 100%;
+  height: 100%;
 }
 
 @media all and (max-width: 479px) {

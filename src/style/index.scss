@@ -1116,11 +1116,15 @@ header {
       text-align: center;
       z-index: 0;
 
-      img {
-        @include independent(transparent);
+      #img-block {
         @include size(100%, 100%);
+        @include independent(transparent);
         bottom: 0px;
         left: 0px;
+
+        img {
+          @include size(100%, 100%);
+        }
       }
 
       #about-head-anim-01 {
@@ -1270,10 +1274,15 @@ header {
       top: 0px;
       text-align: center;
 
-      img {
+      #img-block {
+        @include size(412px, 290px);
         @include independent(transparent);
         bottom: 0;
         right: 0;
+
+        img {
+          @include size(100%, 100%);
+        }
       }
     }
 
