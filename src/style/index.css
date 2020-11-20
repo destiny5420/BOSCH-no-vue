@@ -256,19 +256,7 @@ ul {
 
 @media all and (max-width: 479px) {
   #menu-window .menu-window-wrap {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    display: unset;
     margin-top: 100px;
     overflow-y: scroll;
   }
@@ -285,9 +273,9 @@ ul {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   width: 100%;
   -webkit-box-flex: 9;
       -ms-flex: 9;
@@ -309,6 +297,7 @@ ul {
 }
 
 #menu-window .top .menu-block .trigger {
+  cursor: pointer;
   display: none;
 }
 
@@ -424,11 +413,11 @@ ul {
   display: unset;
 }
 
-#menu-window .top .menu-block .option-layout.hover .option > p {
+#menu-window .top .menu-block .option-layout.hover .option .option-name {
   color: #116198;
 }
 
-#menu-window .top .menu-block .option-layout.hover .option > svg {
+#menu-window .top .menu-block .option-layout.hover .option .option-symbol svg {
   -webkit-animation: hover-anim 0.2s cubic-bezier(0.47, 0, 0.745, 0.715) forwards;
           animation: hover-anim 0.2s cubic-bezier(0.47, 0, 0.745, 0.715) forwards;
   fill: #116198;
@@ -461,9 +450,9 @@ ul {
 }
 
 #menu-window .top .menu-block .option {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -474,22 +463,59 @@ ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  align-items: center;
 }
 
-#menu-window .top .menu-block .option > p {
+#menu-window .top .menu-block .option .option-name {
   color: black;
   -webkit-transition: color 0.15s linear;
   transition: color 0.15s linear;
   font-size: 20px;
-  margin-right: 10px;
+  padding-right: 10px;
 }
 
-#menu-window .top .menu-block .option > svg {
+#menu-window .top .menu-block .option .option-symbol {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 20px;
   height: 20px;
+}
+
+#menu-window .top .menu-block .option .option-symbol svg {
+  width: 100%;
+  height: 100%;
   -webkit-transition: fill 0.15s linear;
   transition: fill 0.15s linear;
   fill: black;
+}
+
+@media all and (max-width: 479px) {
+  #menu-window .top .menu-block .option {
+    display: unset;
+    position: relative;
+  }
+  #menu-window .top .menu-block .option .option-name {
+    padding-right: 30px;
+  }
+  #menu-window .top .menu-block .option .option-symbol {
+    position: absolute;
+    content: '';
+    background-color: transparent;
+    z-index: 1;
+    top: calc(50% - (20px / 2));
+    right: 0px;
+  }
 }
 
 #menu-window .top .menu-block .option-content {
@@ -517,6 +543,9 @@ ul {
     margin-bottom: 30px;
     height: auto;
     width: 65%;
+  }
+  #menu-window .top > :last-child {
+    margin-bottom: 0px;
   }
 }
 
@@ -571,6 +600,9 @@ ul {
     -webkit-box-flex: unset;
         -ms-flex: unset;
             flex: unset;
+    padding: 40px 0px 66px 0px;
+    -webkit-box-sizing: content-box;
+            box-sizing: content-box;
   }
 }
 
@@ -656,7 +688,6 @@ ul {
         -ms-flex-align: center;
             align-items: center;
     height: auto;
-    margin: 10px auto 66px auto;
     -webkit-box-flex: unset;
         -ms-flex: unset;
             flex: unset;

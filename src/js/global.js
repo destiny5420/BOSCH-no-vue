@@ -68,6 +68,7 @@ var menu = (function () {
             };
             var childrenList = Array.from(e.children);
             childrenList.shift(); // because the first element is trigger, exclusive it.
+
             let resultValue = childrenList.reduce(reduceFun, 0);
 
             menuBlockConfigure.mainBlockOpenHeightList.push(resultValue);
@@ -170,18 +171,28 @@ function onGlobalBinding() {
         element.getElementsByClassName('btn-symbol')[0].classList.add('show');
       }
     });
-
+    
     // setting sub-block trigger event.
     Array.from(element.querySelectorAll('.option-layout')).forEach((subElement, subIndex) => {
       menuBlockConfigure.mainBlockOffsetValue[mainIndex].push(0);
 
       var originHeight = subElement.getElementsByClassName('option')[0].clientHeight;
+      originHeight = 35;
 
       var childrenArray = Array.from(subElement.children);
       childrenArray.shift(); // because the first element is trigger, exclusive it.
+
+      // console.log(`[${subIndex}] `, 'after: ', childrenArray);
+      // childrenArray.forEach((element,index) => {
+      //   console.log(`[${subIndex}-${index}]: `, `client height: `, element.clientHeight);
+      // });
+
       var openHeight = childrenArray.reduce((before, current) => {
         return before + current.clientHeight;
       }, 0);
+
+      // console.log(`openHeight: ${openHeight}`);
+      // console.log('---------------------------------------');
 
       subElement.style.maxHeight = originHeight + 'px';
 
@@ -192,7 +203,7 @@ function onGlobalBinding() {
         subElement.style.maxHeight = openHeight + 'px';
 
         if (
-          deviceMode === 'phone' &&
+          // deviceMode === 'phone' &&
           menuBlockConfigure.mainBlockOffsetValue[mainIndex][subIndex] === 0
         ) {
           menuBlockConfigure.mainBlockOffsetValue[mainIndex][subIndex] = openHeight - originHeight;

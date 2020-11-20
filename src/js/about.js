@@ -125,9 +125,13 @@ async function onAwake() {
   $('#loading-bar').fadeOut();
 }
 
-$(function () {
+window.onload = function() {
   onAwake();
-});
+}
+
+// $(function () {
+//   onAwake();
+// });
 
 // function parsingUrl() {
 //   console.warn('--------  parsingUrl  --------');
