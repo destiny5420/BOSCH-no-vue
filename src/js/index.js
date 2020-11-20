@@ -25,6 +25,7 @@ import {
   onGlobalLoadingData,
   onGlobalBinding,
   onGlobalGSAP,
+  globalFunction,
   $,
   gsap,
   ScrollTrigger,
@@ -54,7 +55,7 @@ let anim_intro_show_list = [];
 // ***************** Struct Methods *****************
 function onInit() {
   onGlobalInit();
-  
+
   if (deviceMode === 'phone') {
     $('.about-us .top svg circle').attr('r', 5);
   }
@@ -546,6 +547,9 @@ function onSVGAnimation() {
 async function onAwake() {
   console.log('*** onAwake ***');
 
+  $(window).scrollTop(0);
+  globalFunction.disableWindowScrolling();
+
   onInit();
   await onLoadingData();
   onEventBinding();
@@ -574,5 +578,6 @@ function onHeadAnimComplete(index) {
     ScrollTrigger.getById(anim_install_pic_1_ID).enable();
     ScrollTrigger.getById(anim_install_pic_2_ID).enable();
     ScrollTrigger.getById(anim_faq_ID).enable();
+    globalFunction.enableScrolling();
   }
 }
