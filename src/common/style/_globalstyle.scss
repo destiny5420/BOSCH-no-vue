@@ -329,13 +329,15 @@ $color_font_main: #868e9c;
         }
 
         &.hover .option {
-          > p {
+          .option-name {
             color: #116198;
           }
 
-          > svg {
-            animation: hover-anim 0.2s cubic-bezier(0.47, 0, 0.745, 0.715) forwards;
-            fill: #116198;
+          .option-symbol {
+            svg {
+              animation: hover-anim 0.2s cubic-bezier(0.47, 0, 0.745, 0.715) forwards;
+              fill: #116198;
+            }
           }
 
           @keyframes hover-anim {
@@ -355,22 +357,41 @@ $color_font_main: #868e9c;
       .option {
         $transition-time: 0.15s;
 
-        display: inline-flex;
-        flex-direction: row;
-        justify-content: flex-start;
+        @include flex-layout(row, flex-start, center);
         align-items: center;
 
-        > p {
+        .option-name {
           color: black;
           transition: color $transition-time linear;
           font-size: 20px;
-          margin-right: 10px;
+          padding-right: 10px;
         }
 
-        > svg {
+        .option-symbol {
+          @include flex-layout(row, center, center);
           @include size($symbol-size, $symbol-size);
-          transition: fill $transition-time linear;
-          fill: black;
+
+          svg {
+            @include size(100%, 100%);
+            transition: fill $transition-time linear;
+            fill: black;
+          }
+        }
+
+        @include phone-width() {
+          display: unset;
+          position: relative;
+
+          .option-name {
+            padding-right: 30px;
+          }
+
+          .option-symbol {
+            @include independent(transparent);
+            top: calc(50% - (#{$symbol-size} / 2));
+            right: 0px;
+          }
+          // display: unset;
         }
       }
 
