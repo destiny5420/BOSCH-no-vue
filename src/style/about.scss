@@ -2,11 +2,19 @@
 @import '../common/style/_globalstyle.scss';
 @import '../common/style/_font.scss';
 
+.main-container {
+  padding-top: 155px;
+
+  @include phone-width {
+    padding-top: 90px;
+  }
+}
+
 .slogan {
   @include size(100%, 330px);
   @include flex-layout(row, center, center);
   position: relative;
-  margin-top: 155px;
+  // margin-top: 155px;
   background: rgb(226, 0, 21);
   background: linear-gradient(90deg, rgba(226, 0, 21, 1) 0%, rgba(185, 2, 118, 1) 100%);
 
@@ -50,7 +58,7 @@
 
   @include phone-width() {
     @include size(100%, 200px);
-    margin-top: 90px;
+    // margin-top: 90px;
   }
 }
 
@@ -160,6 +168,11 @@
   .right {
     flex: 1;
     height: 100%;
+
+    @include phone-width() {
+      flex: unset;
+      height: auto;
+    }
   }
 
   .left {
@@ -201,6 +214,7 @@
   }
 
   @include phone-width() {
+    @include size(100%, auto);
     @include flex-layout(column, flex-start, center);
   }
 }

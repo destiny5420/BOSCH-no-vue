@@ -812,26 +812,20 @@ $menu-width-phone: 20px;
   }
 }
 
-nav {
-  @include size(100%, auto);
-  @include flex-layout(row, space-between, center);
-  position: relative;
+#home {
+  @include independent(transparent);
+  @include size(160px, 54px);
+  cursor: pointer;
+  top: 35px;
+  left: 18%;
 
-  #home {
-    @include independent(transparent);
-    @include size(160px, 54px);
-    cursor: pointer;
-    top: 35px;
-    left: 18%;
+  img {
+    @include size(100%, 100%);
+  }
 
-    img {
-      @include size(100%, 100%);
-    }
-
-    @include phone-width() {
-      @include size(98px, 32px);
-      left: 6%;
-    }
+  @include phone-width() {
+    @include size(98px, 32px);
+    left: 6%;
   }
 }
 
