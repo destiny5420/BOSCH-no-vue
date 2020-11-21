@@ -122,7 +122,7 @@ $color_font_main: #868e9c;
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  // @include border();
+  @include border();
 }
 
 .main-container {
@@ -453,6 +453,10 @@ $color_font_main: #868e9c;
     }
   }
 
+  @include pc2-width() {
+    padding: 140px 185px;
+  }
+
   @include phone-width() {
     padding: 0px 0px;
   }
@@ -469,8 +473,10 @@ $color_font_main: #868e9c;
 
   .social-media-symbol {
     $symbol-border-size-pc: 60px;
+    $symbol-border-size-pc2: 55px;
     $symbol-border-size-phone: 50px;
     $symbol-font-size-pc: 30px;
+    $symbol-font-size-pc2: 26px;
     $symbol-font-size-phone: 22px;
     @include flex-layout(row, center, center);
     @include size($symbol-border-size-pc, $symbol-border-size-pc);
@@ -482,6 +488,11 @@ $color_font_main: #868e9c;
     &:hover {
       color: #116198;
       border-color: #116198;
+    }
+
+    @include pc2-width() {
+      @include size($symbol-border-size-pc2, $symbol-border-size-pc2);
+      font-size: $symbol-font-size-pc2;
     }
 
     @include phone-width() {
@@ -502,13 +513,16 @@ $color_font_main: #868e9c;
 }
 
 $menu-height-pc: 20px;
-$menu-height-phone: 14px;
 $menu-width-pc: 35px;
+$menu-height-pc2: 20px;
+$menu-width-pc2: 35px;
+$menu-height-phone: 14px;
 $menu-width-phone: 20px;
 
 #menu-button {
   $menu-right: (
-    pc: 16%,
+    pc3: 16%,
+    pc2: 8%,
     phone: 5%,
   );
 
@@ -523,7 +537,7 @@ $menu-width-phone: 20px;
   z-index: 1001;
   cursor: pointer;
   top: 35px;
-  right: map-get($menu-right, pc);
+  right: map-get($menu-right, pc3);
 
   :nth-child(n) {
     @include size(100%, $ham-width);
@@ -580,6 +594,11 @@ $menu-width-phone: 20px;
     :nth-child(2) {
       @include size(80%, 2px);
     }
+  }
+
+  @include pc2-width() {
+    @include size($menu-width-pc2, $menu-height-pc2);
+    right: map-get($menu-right, pc2);
   }
 
   @include phone-width() {
@@ -850,6 +869,10 @@ $menu-width-phone: 20px;
     @include size(100%, 100%);
   }
 
+  @include pc2-width() {
+    left: 8%;
+  }
+
   @include phone-width() {
     @include size(98px, 32px);
     left: 6%;
@@ -907,6 +930,10 @@ $menu-width-phone: 20px;
     @include flex-layout(row, center, flex-start);
     padding: 90px 0px 25px 0px;
 
+    > :last-child {
+      margin-right: 0px;
+    }
+
     #special-layout {
       @include flex-layout(column, flex-start, flex-start);
     }
@@ -950,7 +977,7 @@ $menu-width-phone: 20px;
   .footer-content {
     @include size(auto, auto);
     display: inline-block;
-    margin-right: 100px;
+    margin-right: 5%;
     padding: 10px;
 
     .title {
@@ -1083,6 +1110,10 @@ $menu-width-phone: 20px;
     left: 0px;
     bottom: 0px;
     z-index: 10;
+  }
+
+  @include pc2-width() {
+    line-height: 1.75;
   }
 }
 

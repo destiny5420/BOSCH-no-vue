@@ -68,6 +68,7 @@ ul {
   padding: 0px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  border: 1px solid black;
 }
 
 .main-container {
@@ -606,6 +607,12 @@ ul {
   }
 }
 
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  #menu-window {
+    padding: 140px 185px;
+  }
+}
+
 @media all and (max-width: 479px) {
   #menu-window {
     padding: 0px 0px;
@@ -663,6 +670,14 @@ ul {
 .social-media-block .social-media-symbol:hover {
   color: #116198;
   border-color: #116198;
+}
+
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  .social-media-block .social-media-symbol {
+    width: 55px;
+    height: 55px;
+    font-size: 26px;
+  }
 }
 
 @media all and (max-width: 479px) {
@@ -805,6 +820,14 @@ ul {
 #menu-button:hover :nth-child(2) {
   width: 80%;
   height: 2px;
+}
+
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  #menu-button {
+    width: 35px;
+    height: 20px;
+    right: 8%;
+  }
 }
 
 @media all and (max-width: 479px) {
@@ -1277,6 +1300,12 @@ ul {
   height: 100%;
 }
 
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  #home {
+    left: 8%;
+  }
+}
+
 @media all and (max-width: 479px) {
   #home {
     width: 98px;
@@ -1371,6 +1400,10 @@ ul {
   padding: 90px 0px 25px 0px;
 }
 
+.footer .top > :last-child {
+  margin-right: 0px;
+}
+
 .footer .top #special-layout {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1456,7 +1489,7 @@ ul {
   width: auto;
   height: auto;
   display: inline-block;
-  margin-right: 100px;
+  margin-right: 5%;
   padding: 10px;
 }
 
@@ -1636,6 +1669,12 @@ ul {
   left: 0px;
   bottom: 0px;
   z-index: 10;
+}
+
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  .bottom-line {
+    line-height: 1.75;
+  }
 }
 
 .btn-more {
