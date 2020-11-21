@@ -1583,6 +1583,13 @@ ul {
   padding: 5px;
 }
 
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  #copy-right {
+    font-size: 1.4rem;
+    margin-left: 15px;
+  }
+}
+
 @media all and (max-width: 479px) {
   #copy-right {
     margin: 0px;
@@ -3689,6 +3696,13 @@ header #scroll-point #point::before {
   margin-right: 14px;
 }
 
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  .products .options .option .main-title {
+    margin-right: 10px;
+    font-size: 44px;
+  }
+}
+
 @media all and (max-width: 479px) {
   .products .options .option .main-title {
     font-size: 32px;
@@ -3700,9 +3714,22 @@ header #scroll-point #point::before {
   margin-right: 14px;
 }
 
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  .products .options .option .sub-title {
+    margin-right: 10px;
+    font-size: 24px;
+  }
+}
+
 @media all and (max-width: 479px) {
   .products .options .option .sub-title {
     font-size: 18px;
+  }
+}
+
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  .products .options .option {
+    margin-bottom: 15px;
   }
 }
 
@@ -3742,6 +3769,14 @@ header #scroll-point #point::before {
 .products .options .large-option .bg-circle svg {
   width: 100%;
   height: 100%;
+}
+
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  .products .options .large-option .bg-circle {
+    width: 80px;
+    height: 80px;
+    right: calc( (80px / 2 * (-1)) + (26px * 0.75 / 2) + ((26px - (26px * 0.75)) / 2));
+  }
 }
 
 @media all and (max-width: 479px) {
@@ -3785,6 +3820,13 @@ header #scroll-point #point::before {
   z-index: 2;
 }
 
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  .products .options .large-option .arrow_wrap > svg {
+    width: 26px;
+    height: 26px;
+  }
+}
+
 @media all and (max-width: 479px) {
   .products .options .large-option .arrow_wrap > svg {
     width: 25px;
@@ -3806,6 +3848,14 @@ header #scroll-point #point::before {
 .products .options .small-option .bg-circle svg {
   width: 100%;
   height: 100%;
+}
+
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  .products .options .small-option .bg-circle {
+    width: 65px;
+    height: 65px;
+    right: calc( (65px / 2 * (-1)) + (16px * 0.75 / 2) + ((16px - (16px * 0.75)) / 2));
+  }
 }
 
 @media all and (max-width: 479px) {
@@ -3849,10 +3899,23 @@ header #scroll-point #point::before {
   z-index: 2;
 }
 
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  .products .options .small-option .arrow_wrap > svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
 @media all and (max-width: 479px) {
   .products .options .small-option .arrow_wrap > svg {
     width: 14px;
     height: 14px;
+  }
+}
+
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  .products .options .small-option {
+    margin-right: 38px;
   }
 }
 
@@ -3864,7 +3927,7 @@ header #scroll-point #point::before {
 
 @media all and (min-width: 1280px) and (max-width: 1919px) {
   .products {
-    padding: 0px 10%;
+    padding: 0px 15%;
     width: 100%;
     height: 450px;
   }

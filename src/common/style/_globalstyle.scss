@@ -1038,6 +1038,11 @@ $menu-width-phone: 20px;
   margin: 10px 0px 0px 30px;
   padding: 5px;
 
+  @include pc2-width() {
+    font-size: 1.4rem;
+    margin-left: 15px;
+  }
+
   @include phone-width() {
     margin: 0px;
     padding: 0px 0px 0px 30px;

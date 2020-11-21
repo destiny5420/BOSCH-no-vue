@@ -1583,6 +1583,13 @@ ul {
   padding: 5px;
 }
 
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  #copy-right {
+    font-size: 1.4rem;
+    margin-left: 15px;
+  }
+}
+
 @media all and (max-width: 479px) {
   #copy-right {
     margin: 0px;
