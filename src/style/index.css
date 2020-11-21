@@ -68,7 +68,6 @@ ul {
   padding: 0px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border: 1px solid black;
 }
 
 .main-container {
@@ -260,6 +259,13 @@ ul {
     display: unset;
     margin-top: 100px;
     overflow-y: scroll;
+  }
+}
+
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  #menu-window .menu-window-wrap {
+    min-width: 870px;
+    max-height: 600px;
   }
 }
 
@@ -1674,7 +1680,7 @@ ul {
 
 @media all and (min-width: 1280px) and (max-width: 1919px) {
   .bottom-line {
-    line-height: 1.75;
+    line-height: 2.75;
   }
 }
 
@@ -2281,10 +2287,6 @@ ul {
 }
 
 .slogan-wrap {
-  position: absolute;
-  content: '';
-  background-color: transparent;
-  z-index: 1;
   width: 100%;
   height: 100vh;
   background: #d6d8d9;
@@ -2361,7 +2363,6 @@ header {
       -ms-flex-align: center;
           align-items: center;
   position: relative;
-  margin-bottom: 6%;
 }
 
 header #content {
@@ -2689,7 +2690,7 @@ header #content .right .pic-frame img {
 
 @media all and (min-width: 1280px) and (max-width: 1919px) {
   header #content {
-    min-width: 1100px;
+    min-width: 1030px;
     width: 60%;
     height: 500px;
   }
@@ -2774,6 +2775,12 @@ header #scroll-point #point::before {
   header #scroll-point {
     right: -30px;
     bottom: 100px;
+  }
+}
+
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  header {
+    overflow: hidden;
   }
 }
 
@@ -2872,7 +2879,7 @@ header #scroll-point #point::before {
 
 @media all and (min-width: 1280px) and (max-width: 1919px) {
   .products .introduction .info .title {
-    font-size: 28px;
+    font-size: 48px;
   }
 }
 
@@ -2892,7 +2899,7 @@ header #scroll-point #point::before {
 
 @media all and (min-width: 1280px) and (max-width: 1919px) {
   .products .introduction .info .content {
-    font-size: 18px;
+    font-size: 30px;
   }
 }
 
@@ -2954,10 +2961,10 @@ header #scroll-point #point::before {
 
 @media all and (min-width: 1280px) and (max-width: 1919px) {
   .products .introduction .product-single-svg {
-    width: 450px;
-    height: 450px;
-    top: calc(50% - (450px / 2));
-    left: calc(50% - (450px / 2));
+    width: 630px;
+    height: 630px;
+    top: calc(50% - (630px / 2));
+    left: calc(50% - (630px / 2));
   }
 }
 
@@ -2984,10 +2991,10 @@ header #scroll-point #point::before {
 
 @media all and (min-width: 1280px) and (max-width: 1919px) {
   .products .introduction .product-multiple-svg-1 {
-    width: 190px;
-    height: 190px;
-    top: calc(50% - (190px / 2));
-    left: calc(50% - (190px / 2));
+    width: 280px;
+    height: 280px;
+    top: calc(50% - (280px / 2));
+    left: calc(50% - (280px / 2));
   }
 }
 
@@ -3014,10 +3021,10 @@ header #scroll-point #point::before {
 
 @media all and (min-width: 1280px) and (max-width: 1919px) {
   .products .introduction .product-multiple-svg-2 {
-    width: 350px;
-    height: 350px;
-    top: calc(50% - (350px / 2));
-    left: calc(50% - (350px / 2));
+    width: 510px;
+    height: 510px;
+    top: calc(50% - (510px / 2));
+    left: calc(50% - (510px / 2));
   }
 }
 
@@ -3201,23 +3208,6 @@ header #scroll-point #point::before {
   left: 49%;
 }
 
-@media all and (min-width: 1280px) and (max-width: 1919px) {
-  .products .introduction .intro-multiple-item-1 {
-    width: 210px;
-    height: 207px;
-  }
-  .products .introduction .intro-multiple-item-1 .product-name {
-    top: 90px;
-    left: 20px;
-  }
-  .products .introduction .intro-multiple-item-1 .product-item {
-    width: 117px;
-    height: 300px;
-    top: 6%;
-    left: 54%;
-  }
-}
-
 @media all and (max-width: 479px) {
   .products .introduction .intro-multiple-item-1 {
     width: 187px;
@@ -3263,28 +3253,6 @@ header #scroll-point #point::before {
   height: 490px;
   top: 18%;
   left: 45%;
-}
-
-@media all and (min-width: 1280px) and (max-width: 1919px) {
-  .products .introduction .intro-multiple-item-2 {
-    width: 350px;
-    height: 345px;
-    right: -55px;
-  }
-  .products .introduction .intro-multiple-item-2 .product-name {
-    top: 48%;
-    left: 9%;
-  }
-  .products .introduction .intro-multiple-item-2 .product-name p {
-    font-size: 38px;
-    line-height: 1;
-  }
-  .products .introduction .intro-multiple-item-2 .product-item {
-    width: 119px;
-    height: 490px;
-    top: 18%;
-    left: 45%;
-  }
 }
 
 @media all and (max-width: 479px) {
@@ -3456,13 +3424,6 @@ header #scroll-point #point::before {
   }
 }
 
-@media all and (min-width: 1280px) and (max-width: 1919px) {
-  .products .introduction .arrow-wrap {
-    width: 580px;
-    height: auto;
-  }
-}
-
 @media all and (max-width: 479px) {
   .products .introduction .arrow-wrap {
     width: 340px;
@@ -3490,13 +3451,6 @@ header #scroll-point #point::before {
   height: 217px;
 }
 
-@media all and (min-width: 1280px) and (max-width: 1919px) {
-  .products .introduction #intro-item-size-2-1-1 .product-item {
-    width: 77px;
-    height: 180px;
-  }
-}
-
 @media all and (max-width: 479px) {
   .products .introduction #intro-item-size-2-1-1 .product-item {
     width: 52px;
@@ -3509,15 +3463,6 @@ header #scroll-point #point::before {
   height: 416px;
 }
 
-@media all and (min-width: 1280px) and (max-width: 1919px) {
-  .products .introduction #intro-item-size-2-1-2 .product-item {
-    width: 157px;
-    height: 340px;
-    top: 0%;
-    left: 48%;
-  }
-}
-
 @media all and (max-width: 479px) {
   .products .introduction #intro-item-size-2-1-2 .product-item {
     width: 95px;
@@ -3528,22 +3473,6 @@ header #scroll-point #point::before {
 .products .introduction #intro-item-size-3-1-1 .product-item {
   width: 163px;
   height: 541px;
-}
-
-@media all and (min-width: 1280px) and (max-width: 1919px) {
-  .products .introduction #intro-item-size-3-1-1 .product-name {
-    top: 47%;
-    left: 6%;
-  }
-  .products .introduction #intro-item-size-3-1-1 .product-name p {
-    font-size: 36px;
-  }
-  .products .introduction #intro-item-size-3-1-1 .product-item {
-    width: 129px;
-    height: 430px;
-    top: -9%;
-    left: 47%;
-  }
 }
 
 @media all and (max-width: 479px) {
@@ -3566,14 +3495,6 @@ header #scroll-point #point::before {
   left: 43%;
 }
 
-@media all and (min-width: 1280px) and (max-width: 1919px) {
-  .products .introduction #intro-item-size-5-1-1 .product-item {
-    width: 71px;
-    height: 183px;
-    left: 45%;
-  }
-}
-
 @media all and (max-width: 479px) {
   .products .introduction #intro-item-size-5-1-1 .product-item {
     width: 52px;
@@ -3590,15 +3511,6 @@ header #scroll-point #point::before {
   left: 51%;
 }
 
-@media all and (min-width: 1280px) and (max-width: 1919px) {
-  .products .introduction #intro-item-size-5-1-2 .product-item {
-    width: 81px;
-    height: 337px;
-    top: -1%;
-    left: 51%;
-  }
-}
-
 @media all and (max-width: 479px) {
   .products .introduction #intro-item-size-5-1-2 .product-item {
     width: 52px;
@@ -3613,22 +3525,6 @@ header #scroll-point #point::before {
   height: 541px;
   top: 7%;
   left: 51%;
-}
-
-@media all and (min-width: 1280px) and (max-width: 1919px) {
-  .products .introduction #intro-item-size-5-2-1 .product-name {
-    top: 47%;
-    left: 6%;
-  }
-  .products .introduction #intro-item-size-5-2-1 .product-name p {
-    font-size: 36px;
-  }
-  .products .introduction #intro-item-size-5-2-1 .product-item {
-    width: 129px;
-    height: 430px;
-    top: -9%;
-    left: 47%;
-  }
 }
 
 @media all and (max-width: 479px) {
@@ -3693,8 +3589,8 @@ header #scroll-point #point::before {
 
 @media all and (min-width: 1280px) and (max-width: 1919px) {
   .products .options .option .main-title {
-    margin-right: 10px;
-    font-size: 44px;
+    margin-right: 14px;
+    font-size: 64px;
   }
 }
 
@@ -3711,8 +3607,8 @@ header #scroll-point #point::before {
 
 @media all and (min-width: 1280px) and (max-width: 1919px) {
   .products .options .option .sub-title {
-    margin-right: 10px;
-    font-size: 24px;
+    margin-right: 14px;
+    font-size: 36px;
   }
 }
 
@@ -3724,7 +3620,7 @@ header #scroll-point #point::before {
 
 @media all and (min-width: 1280px) and (max-width: 1919px) {
   .products .options .option {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
   }
 }
 
@@ -3768,9 +3664,9 @@ header #scroll-point #point::before {
 
 @media all and (min-width: 1280px) and (max-width: 1919px) {
   .products .options .large-option .bg-circle {
-    width: 80px;
-    height: 80px;
-    right: calc( (80px / 2 * (-1)) + (26px * 0.75 / 2) + ((26px - (26px * 0.75)) / 2));
+    width: 112px;
+    height: 112px;
+    right: calc( (112px / 2 * (-1)) + (50px * 0.75 / 2) + ((50px - (50px * 0.75)) / 2));
   }
 }
 
@@ -3817,8 +3713,8 @@ header #scroll-point #point::before {
 
 @media all and (min-width: 1280px) and (max-width: 1919px) {
   .products .options .large-option .arrow_wrap > svg {
-    width: 26px;
-    height: 26px;
+    width: 50px;
+    height: 50px;
   }
 }
 
@@ -3847,9 +3743,9 @@ header #scroll-point #point::before {
 
 @media all and (min-width: 1280px) and (max-width: 1919px) {
   .products .options .small-option .bg-circle {
-    width: 65px;
-    height: 65px;
-    right: calc( (65px / 2 * (-1)) + (16px * 0.75 / 2) + ((16px - (16px * 0.75)) / 2));
+    width: 80px;
+    height: 80px;
+    right: calc( (80px / 2 * (-1)) + (25px * 0.75 / 2) + ((25px - (25px * 0.75)) / 2));
   }
 }
 
@@ -3896,8 +3792,8 @@ header #scroll-point #point::before {
 
 @media all and (min-width: 1280px) and (max-width: 1919px) {
   .products .options .small-option .arrow_wrap > svg {
-    width: 16px;
-    height: 16px;
+    width: 25px;
+    height: 25px;
   }
 }
 
@@ -3910,7 +3806,7 @@ header #scroll-point #point::before {
 
 @media all and (min-width: 1280px) and (max-width: 1919px) {
   .products .options .small-option {
-    margin-right: 38px;
+    margin-right: 65px;
   }
 }
 
@@ -3951,14 +3847,14 @@ header #scroll-point #point::before {
 }
 
 .about-us {
-  margin-bottom: 200px;
+  margin-bottom: 140px;
 }
 
 .about-us .top {
   width: 100%;
   height: 160px;
   text-align: center;
-  margin-bottom: 75px;
+  margin-bottom: 100px;
 }
 
 .about-us .top svg {
@@ -4079,7 +3975,7 @@ header #scroll-point #point::before {
   .about-us .bottom #head {
     width: 329px;
     height: 420px;
-    top: 100px;
+    top: 120px;
     left: -375px;
   }
 }
@@ -4272,7 +4168,7 @@ header #scroll-point #point::before {
   .about-us .bottom #description #img-block {
     width: 340px;
     height: 240px;
-    bottom: 155px;
+    bottom: 110px;
     right: 0px;
   }
 }
@@ -4297,6 +4193,12 @@ header #scroll-point #point::before {
   }
 }
 
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  .about-us {
+    margin-bottom: 100px;
+  }
+}
+
 @media all and (max-width: 479px) {
   .about-us {
     margin-bottom: 75px;
@@ -4309,7 +4211,7 @@ header #scroll-point #point::before {
 .install-container {
   width: 100%;
   height: auto;
-  margin-bottom: 100px;
+  margin-bottom: 115px;
   position: relative;
 }
 
@@ -4879,13 +4781,6 @@ header #scroll-point #point::before {
 @media all and (max-width: 479px) {
   .faq-container .faq-blocks #faq-blocks-content .empty-content {
     display: none;
-  }
-}
-
-@media all and (min-width: 1280px) and (max-width: 1919px) {
-  .faq-container .faq-blocks #faq-blocks-content {
-    width: 100%;
-    height: auto;
   }
 }
 

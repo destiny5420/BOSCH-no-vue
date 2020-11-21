@@ -68,7 +68,6 @@ ul {
   padding: 0px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border: 1px solid black;
 }
 
 .main-container {
@@ -260,6 +259,13 @@ ul {
     display: unset;
     margin-top: 100px;
     overflow-y: scroll;
+  }
+}
+
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  #menu-window .menu-window-wrap {
+    min-width: 870px;
+    max-height: 600px;
   }
 }
 
@@ -1674,7 +1680,7 @@ ul {
 
 @media all and (min-width: 1280px) and (max-width: 1919px) {
   .bottom-line {
-    line-height: 1.75;
+    line-height: 2.75;
   }
 }
 
