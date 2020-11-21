@@ -233,7 +233,7 @@ ul {
   pointer-events: none;
   opacity: 0;
   z-index: 1000;
-  padding: 200px 450px;
+  padding: 10% 22%;
 }
 
 #menu-window .menu-window-wrap {
@@ -259,6 +259,13 @@ ul {
     display: unset;
     margin-top: 100px;
     overflow-y: scroll;
+  }
+}
+
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  #menu-window .menu-window-wrap {
+    min-width: 870px;
+    max-height: 600px;
   }
 }
 
@@ -665,6 +672,14 @@ ul {
   border-color: #116198;
 }
 
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  .social-media-block .social-media-symbol {
+    width: 55px;
+    height: 55px;
+    font-size: 26px;
+  }
+}
+
 @media all and (max-width: 479px) {
   .social-media-block .social-media-symbol {
     width: 50px;
@@ -718,7 +733,7 @@ ul {
   z-index: 1001;
   cursor: pointer;
   top: 35px;
-  right: 15%;
+  right: 16%;
   /* animation keyframes --------> */
   /* <-------- animation keyframes */
 }
@@ -805,6 +820,14 @@ ul {
 #menu-button:hover :nth-child(2) {
   width: 80%;
   height: 2px;
+}
+
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  #menu-button {
+    width: 35px;
+    height: 20px;
+    right: 16%;
+  }
 }
 
 @media all and (max-width: 479px) {
@@ -1269,12 +1292,18 @@ ul {
   height: 54px;
   cursor: pointer;
   top: 35px;
-  left: 18%;
+  left: 16%;
 }
 
 #home img {
   width: 100%;
   height: 100%;
+}
+
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  #home {
+    left: 16%;
+  }
 }
 
 @media all and (max-width: 479px) {
@@ -1371,6 +1400,10 @@ ul {
   padding: 90px 0px 25px 0px;
 }
 
+.footer .top > :last-child {
+  margin-right: 0px;
+}
+
 .footer .top #special-layout {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1456,7 +1489,7 @@ ul {
   width: auto;
   height: auto;
   display: inline-block;
-  margin-right: 100px;
+  margin-right: 5%;
   padding: 10px;
 }
 
@@ -1550,6 +1583,13 @@ ul {
   padding: 5px;
 }
 
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  #copy-right {
+    font-size: 1.4rem;
+    margin-left: 15px;
+  }
+}
+
 @media all and (max-width: 479px) {
   #copy-right {
     margin: 0px;
@@ -1636,6 +1676,12 @@ ul {
   left: 0px;
   bottom: 0px;
   z-index: 10;
+}
+
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  .bottom-line {
+    line-height: 2.75;
+  }
 }
 
 .btn-more {
@@ -2241,10 +2287,6 @@ ul {
 }
 
 .slogan-wrap {
-  position: absolute;
-  content: '';
-  background-color: transparent;
-  z-index: 1;
   width: 100%;
   height: 100vh;
   background: #d6d8d9;
@@ -2265,6 +2307,10 @@ ul {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  font-size: 34px;
+}
+
+.slogan-wrap #slogan .text-char {
   font-size: 34px;
 }
 
@@ -2317,11 +2363,10 @@ header {
       -ms-flex-align: center;
           align-items: center;
   position: relative;
-  margin-bottom: 200px;
 }
 
 header #content {
-  width: 58%;
+  width: 60%;
   height: 500px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2499,6 +2544,12 @@ header #content .left #bosch-txt-title #bosch-stroke-line #stroke-line :nth-chil
   }
 }
 
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  header #content .left #bosch-txt-title {
+    margin-bottom: 35px;
+  }
+}
+
 @media all and (max-width: 479px) {
   header #content .left #bosch-txt-title {
     margin-bottom: 17px;
@@ -2561,6 +2612,20 @@ header #content .right #svg-gray-circle-block {
           transform: translate(-50%, -50%);
 }
 
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  header #content .right #svg-gray-circle-block {
+    width: 600px;
+    height: 600px;
+  }
+}
+
+@media all and (max-width: 479px) {
+  header #content .right #svg-gray-circle-block {
+    width: 350px;
+    height: 350px;
+  }
+}
+
 header #content .right .pic-frame {
   position: absolute;
   content: '';
@@ -2592,27 +2657,10 @@ header #content .right .pic-frame img {
   height: 100%;
 }
 
-@media all and (max-width: 479px) {
+@media all and (min-width: 1280px) and (max-width: 1919px) {
   header #content .right .pic-frame {
-    width: 195px;
-    height: 416px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    width: 316px;
+    height: 724px;
   }
 }
 
@@ -2638,9 +2686,13 @@ header #content .right .pic-frame img {
             transform: translateY(-50px);
     overflow: hidden;
   }
-  header #content .right #svg-gray-circle-block {
-    width: 350px;
-    height: 350px;
+}
+
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  header #content {
+    min-width: 1030px;
+    width: 60%;
+    height: 500px;
   }
 }
 
@@ -2669,8 +2721,8 @@ header #scroll-point {
   content: '';
   background-color: transparent;
   z-index: 1;
-  right: 215px;
-  bottom: 85px;
+  right: 3%;
+  bottom: 13%;
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
 }
@@ -2726,6 +2778,12 @@ header #scroll-point #point::before {
   }
 }
 
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  header {
+    overflow: hidden;
+  }
+}
+
 @media all and (max-width: 479px) {
   header {
     width: 100%;
@@ -2763,6 +2821,8 @@ header #scroll-point #point::before {
 }
 
 .products .introduction .intro {
+  width: 650px;
+  height: 650px;
   position: absolute;
   content: '';
   background-color: transparent;
@@ -2771,6 +2831,20 @@ header #scroll-point #point::before {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  .products .introduction .intro {
+    width: 650px;
+    height: 650px;
+  }
+}
+
+@media all and (max-width: 479px) {
+  .products .introduction .intro {
+    width: 300px;
+    height: 300px;
+  }
 }
 
 .products .introduction .info {
@@ -2803,6 +2877,12 @@ header #scroll-point #point::before {
   font-size: 48px;
 }
 
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  .products .introduction .info .title {
+    font-size: 48px;
+  }
+}
+
 @media all and (max-width: 479px) {
   .products .introduction .info .title {
     font-size: 24px;
@@ -2815,6 +2895,12 @@ header #scroll-point #point::before {
   height: auto;
   font-size: 30px;
   text-align: center;
+}
+
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  .products .introduction .info .content {
+    font-size: 30px;
+  }
 }
 
 @media all and (max-width: 479px) {
@@ -2861,87 +2947,6 @@ header #scroll-point #point::before {
   visibility: hidden;
 }
 
-.products .introduction .intro-1 {
-  width: 650px;
-  height: 650px;
-}
-
-@media all and (max-width: 479px) {
-  .products .introduction .intro-1 {
-    width: 300px;
-    height: 300px;
-  }
-}
-
-.products .introduction .intro-2 {
-  width: 650px;
-  height: 650px;
-}
-
-@media all and (max-width: 479px) {
-  .products .introduction .intro-2 {
-    width: 300px;
-    height: 300px;
-  }
-}
-
-.products .introduction .intro-3 {
-  width: 650px;
-  height: 650px;
-}
-
-@media all and (max-width: 479px) {
-  .products .introduction .intro-3 {
-    width: 300px;
-    height: 300px;
-  }
-}
-
-.products .introduction .intro-4 {
-  width: 650px;
-  height: 650px;
-}
-
-.products .introduction .intro-4 #svg-anim-product-04 {
-  width: 630px;
-  height: 630px;
-  position: absolute;
-  content: '';
-  background-color: transparent;
-  z-index: 1;
-  top: calc(50% - (630px / 2));
-  left: calc(50% - (630px / 2));
-  z-index: 2;
-}
-
-@media all and (max-width: 479px) {
-  .products .introduction .intro-4 #svg-anim-product-04 {
-    width: 360px;
-    height: 360px;
-    top: calc(50% - (360px / 2));
-    left: calc(50% - (360px / 2));
-  }
-}
-
-@media all and (max-width: 479px) {
-  .products .introduction .intro-4 {
-    width: 300px;
-    height: 300px;
-  }
-}
-
-.products .introduction .intro-5 {
-  width: 650px;
-  height: 650px;
-}
-
-@media all and (max-width: 479px) {
-  .products .introduction .intro-5 {
-    width: 300px;
-    height: 300px;
-  }
-}
-
 .products .introduction .product-single-svg {
   width: 630px;
   height: 630px;
@@ -2952,6 +2957,15 @@ header #scroll-point #point::before {
   top: calc(50% - (630px / 2));
   left: calc(50% - (630px / 2));
   z-index: 2;
+}
+
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  .products .introduction .product-single-svg {
+    width: 630px;
+    height: 630px;
+    top: calc(50% - (630px / 2));
+    left: calc(50% - (630px / 2));
+  }
 }
 
 @media all and (max-width: 479px) {
@@ -2975,6 +2989,15 @@ header #scroll-point #point::before {
   z-index: 2;
 }
 
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  .products .introduction .product-multiple-svg-1 {
+    width: 280px;
+    height: 280px;
+    top: calc(50% - (280px / 2));
+    left: calc(50% - (280px / 2));
+  }
+}
+
 @media all and (max-width: 479px) {
   .products .introduction .product-multiple-svg-1 {
     width: 145px;
@@ -2994,6 +3017,15 @@ header #scroll-point #point::before {
   top: calc(50% - (510px / 2));
   left: calc(50% - (510px / 2));
   z-index: 2;
+}
+
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  .products .introduction .product-multiple-svg-2 {
+    width: 510px;
+    height: 510px;
+    top: calc(50% - (510px / 2));
+    left: calc(50% - (510px / 2));
+  }
 }
 
 @media all and (max-width: 479px) {
@@ -3542,7 +3574,7 @@ header #scroll-point #point::before {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .products .options .option .main-title,
@@ -3553,6 +3585,13 @@ header #scroll-point #point::before {
 .products .options .option .main-title {
   font-size: 64px;
   margin-right: 14px;
+}
+
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  .products .options .option .main-title {
+    margin-right: 14px;
+    font-size: 64px;
+  }
 }
 
 @media all and (max-width: 479px) {
@@ -3566,9 +3605,22 @@ header #scroll-point #point::before {
   margin-right: 14px;
 }
 
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  .products .options .option .sub-title {
+    margin-right: 14px;
+    font-size: 36px;
+  }
+}
+
 @media all and (max-width: 479px) {
   .products .options .option .sub-title {
     font-size: 18px;
+  }
+}
+
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  .products .options .option {
+    margin-bottom: 20px;
   }
 }
 
@@ -3608,6 +3660,14 @@ header #scroll-point #point::before {
 .products .options .large-option .bg-circle svg {
   width: 100%;
   height: 100%;
+}
+
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  .products .options .large-option .bg-circle {
+    width: 112px;
+    height: 112px;
+    right: calc( (112px / 2 * (-1)) + (50px * 0.75 / 2) + ((50px - (50px * 0.75)) / 2));
+  }
 }
 
 @media all and (max-width: 479px) {
@@ -3651,6 +3711,13 @@ header #scroll-point #point::before {
   z-index: 2;
 }
 
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  .products .options .large-option .arrow_wrap > svg {
+    width: 50px;
+    height: 50px;
+  }
+}
+
 @media all and (max-width: 479px) {
   .products .options .large-option .arrow_wrap > svg {
     width: 25px;
@@ -3672,6 +3739,14 @@ header #scroll-point #point::before {
 .products .options .small-option .bg-circle svg {
   width: 100%;
   height: 100%;
+}
+
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  .products .options .small-option .bg-circle {
+    width: 80px;
+    height: 80px;
+    right: calc( (80px / 2 * (-1)) + (25px * 0.75 / 2) + ((25px - (25px * 0.75)) / 2));
+  }
 }
 
 @media all and (max-width: 479px) {
@@ -3715,6 +3790,13 @@ header #scroll-point #point::before {
   z-index: 2;
 }
 
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  .products .options .small-option .arrow_wrap > svg {
+    width: 25px;
+    height: 25px;
+  }
+}
+
 @media all and (max-width: 479px) {
   .products .options .small-option .arrow_wrap > svg {
     width: 14px;
@@ -3722,9 +3804,23 @@ header #scroll-point #point::before {
   }
 }
 
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  .products .options .small-option {
+    margin-right: 65px;
+  }
+}
+
 @media all and (max-width: 479px) {
   .products .options .small-option {
     margin-right: 25px;
+  }
+}
+
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  .products {
+    padding: 0px 15%;
+    width: 100%;
+    height: 750px;
   }
 }
 
@@ -3751,14 +3847,14 @@ header #scroll-point #point::before {
 }
 
 .about-us {
-  margin-bottom: 200px;
+  margin-bottom: 140px;
 }
 
 .about-us .top {
   width: 100%;
   height: 160px;
   text-align: center;
-  margin-bottom: 75px;
+  margin-bottom: 100px;
 }
 
 .about-us .top svg {
@@ -3780,7 +3876,7 @@ header #scroll-point #point::before {
 
 .about-us .bottom {
   width: auto;
-  height: 550px;
+  height: 700px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3794,6 +3890,7 @@ header #scroll-point #point::before {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  overflow: hidden;
 }
 
 .about-us .bottom #head {
@@ -3804,7 +3901,7 @@ header #scroll-point #point::before {
   background-color: transparent;
   z-index: 1;
   left: -500px;
-  top: 120px;
+  top: 150px;
   text-align: center;
   z-index: 0;
 }
@@ -3874,6 +3971,15 @@ header #scroll-point #point::before {
   }
 }
 
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  .about-us .bottom #head {
+    width: 329px;
+    height: 420px;
+    top: 120px;
+    left: -375px;
+  }
+}
+
 @media all and (max-width: 479px) {
   .about-us .bottom #head {
     width: 205px;
@@ -3896,6 +4002,12 @@ header #scroll-point #point::before {
   color: #525f6b;
 }
 
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  .about-us .bottom #content .title {
+    font-size: 48px;
+  }
+}
+
 @media all and (max-width: 479px) {
   .about-us .bottom #content .title {
     font-size: 36px;
@@ -3905,8 +4017,13 @@ header #scroll-point #point::before {
 .about-us .bottom #content .sub-title {
   position: relative;
   display: inline-block;
-  line-height: 2.5;
   margin-bottom: 55px;
+}
+
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  .about-us .bottom #content .sub-title {
+    margin-bottom: 50px;
+  }
 }
 
 @media all and (max-width: 479px) {
@@ -3919,6 +4036,12 @@ header #scroll-point #point::before {
 .about-us .bottom #content .content {
   font-size: 30px;
   line-height: 1.25;
+}
+
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  .about-us .bottom #content .content {
+    font-size: 22px;
+  }
 }
 
 @media all and (max-width: 479px) {
@@ -3995,6 +4118,12 @@ header #scroll-point #point::before {
   }
 }
 
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  .about-us .bottom #content .btn-block {
+    height: 180px;
+  }
+}
+
 @media all and (max-width: 479px) {
   .about-us .bottom #content .btn-block {
     height: 130px;
@@ -4026,8 +4155,8 @@ header #scroll-point #point::before {
   content: '';
   background-color: transparent;
   z-index: 1;
-  bottom: 0;
-  right: 0;
+  bottom: 145px;
+  right: 0px;
 }
 
 .about-us .bottom #description #img-block img {
@@ -4035,9 +4164,38 @@ header #scroll-point #point::before {
   height: 100%;
 }
 
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  .about-us .bottom #description #img-block {
+    width: 340px;
+    height: 240px;
+    bottom: 110px;
+    right: 0px;
+  }
+}
+
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  .about-us .bottom #description {
+    width: 345px;
+    height: 100%;
+  }
+}
+
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  .about-us .bottom {
+    width: auto;
+    height: 580px;
+  }
+}
+
 @media all and (max-width: 479px) {
   .about-us .bottom {
     height: auto;
+  }
+}
+
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  .about-us {
+    margin-bottom: 100px;
   }
 }
 
@@ -4053,7 +4211,7 @@ header #scroll-point #point::before {
 .install-container {
   width: 100%;
   height: auto;
-  margin-bottom: 100px;
+  margin-bottom: 115px;
   position: relative;
 }
 
@@ -4063,6 +4221,13 @@ header #scroll-point #point::before {
   background: #008ecf;
   background: -webkit-gradient(linear, left top, right top, from(#008ecf), to(#00a8b0));
   background: linear-gradient(90deg, #008ecf 0%, #00a8b0 100%);
+}
+
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  .install-container .background {
+    width: 87%;
+    height: 1153px;
+  }
 }
 
 @media all and (max-width: 479px) {
@@ -4190,6 +4355,13 @@ header #scroll-point #point::before {
   height: 100%;
   position: relative;
   display: inline-block;
+}
+
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  .install-container .content .info-container > :nth-child(n) {
+    width: 380px;
+    height: 100%;
+  }
 }
 
 @media all and (max-width: 479px) {
@@ -4343,7 +4515,16 @@ header #scroll-point #point::before {
   background-color: transparent;
   z-index: 1;
   bottom: -200px;
-  left: -240px;
+  left: -300px;
+}
+
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  .install-container #svg-anim-install-01 {
+    width: 450px;
+    height: 450px;
+    bottom: -170px;
+    left: -160px;
+  }
 }
 
 @media all and (max-width: 479px) {
@@ -4384,6 +4565,12 @@ header #scroll-point #point::before {
   text-align: center;
   color: #525f6b;
   margin: 0px auto;
+}
+
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  .faq-container .faq-title {
+    font-size: 48px;
+  }
 }
 
 @media all and (max-width: 479px) {
@@ -4566,6 +4753,13 @@ header #scroll-point #point::before {
   }
 }
 
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  .faq-container .faq-blocks #faq-blocks-content > :nth-child(n) {
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+}
+
 @media all and (max-width: 479px) {
   .faq-container .faq-blocks #faq-blocks-content > :nth-child(n) {
     width: 375px;
@@ -4660,6 +4854,12 @@ header #scroll-point #point::before {
     -webkit-transform: scale(1.8);
             transform: scale(1.8);
     bottom: 25%;
+  }
+}
+
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  .faq-container {
+    margin-bottom: 110px;
   }
 }
 

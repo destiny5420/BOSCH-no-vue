@@ -233,7 +233,7 @@ ul {
   pointer-events: none;
   opacity: 0;
   z-index: 1000;
-  padding: 200px 450px;
+  padding: 10% 22%;
 }
 
 #menu-window .menu-window-wrap {
@@ -259,6 +259,13 @@ ul {
     display: unset;
     margin-top: 100px;
     overflow-y: scroll;
+  }
+}
+
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  #menu-window .menu-window-wrap {
+    min-width: 870px;
+    max-height: 600px;
   }
 }
 
@@ -665,6 +672,14 @@ ul {
   border-color: #116198;
 }
 
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  .social-media-block .social-media-symbol {
+    width: 55px;
+    height: 55px;
+    font-size: 26px;
+  }
+}
+
 @media all and (max-width: 479px) {
   .social-media-block .social-media-symbol {
     width: 50px;
@@ -718,7 +733,7 @@ ul {
   z-index: 1001;
   cursor: pointer;
   top: 35px;
-  right: 15%;
+  right: 16%;
   /* animation keyframes --------> */
   /* <-------- animation keyframes */
 }
@@ -805,6 +820,14 @@ ul {
 #menu-button:hover :nth-child(2) {
   width: 80%;
   height: 2px;
+}
+
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  #menu-button {
+    width: 35px;
+    height: 20px;
+    right: 16%;
+  }
 }
 
 @media all and (max-width: 479px) {
@@ -1269,12 +1292,18 @@ ul {
   height: 54px;
   cursor: pointer;
   top: 35px;
-  left: 18%;
+  left: 16%;
 }
 
 #home img {
   width: 100%;
   height: 100%;
+}
+
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  #home {
+    left: 16%;
+  }
 }
 
 @media all and (max-width: 479px) {
@@ -1371,6 +1400,10 @@ ul {
   padding: 90px 0px 25px 0px;
 }
 
+.footer .top > :last-child {
+  margin-right: 0px;
+}
+
 .footer .top #special-layout {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1456,7 +1489,7 @@ ul {
   width: auto;
   height: auto;
   display: inline-block;
-  margin-right: 100px;
+  margin-right: 5%;
   padding: 10px;
 }
 
@@ -1550,6 +1583,13 @@ ul {
   padding: 5px;
 }
 
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  #copy-right {
+    font-size: 1.4rem;
+    margin-left: 15px;
+  }
+}
+
 @media all and (max-width: 479px) {
   #copy-right {
     margin: 0px;
@@ -1636,6 +1676,12 @@ ul {
   left: 0px;
   bottom: 0px;
   z-index: 10;
+}
+
+@media all and (min-width: 1280px) and (max-width: 1919px) {
+  .bottom-line {
+    line-height: 2.75;
+  }
 }
 
 .btn-more {

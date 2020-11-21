@@ -3,7 +3,7 @@
 @import '../common/style/_font.scss';
 
 .slogan-wrap {
-  @include independent(transparent);
+  // @include independent(transparent);
   @include size(100%, 100vh);
   background: rgb(214, 216, 217);
   background: linear-gradient(
@@ -26,6 +26,7 @@
     font-size: 34px;
 
     .text-char {
+      font-size: 34px;
       @include phone-width() {
         font-size: 20px;
       }
@@ -47,10 +48,10 @@ header {
   @include size(100%, 100vh);
   @include flex-layout(row, center, center);
   position: relative;
-  margin-bottom: 200px;
+  // margin-bottom: 6%;
 
   #content {
-    @include size(58%, 500px);
+    @include size(60%, 500px);
     @include flex-layout(row, space-between, center);
 
     .left {
@@ -63,8 +64,12 @@ header {
       }
 
       #bosch-txt-title {
+        $margin-bottom-pc3: 35px;
+        $margin-bottom-pc2: 35px;
+        $margin-bottom-phone: 17px;
+
         @include size(auto, auto);
-        margin-bottom: 35px;
+        margin-bottom: $margin-bottom-pc3;
         position: relative;
 
         #bosch-txt-body {
@@ -178,8 +183,12 @@ header {
           }
         }
 
+        @include pc2-width() {
+          margin-bottom: $margin-bottom-pc2;
+        }
+
         @include phone-width() {
-          margin-bottom: 17px;
+          margin-bottom: $margin-bottom-phone;
         }
       }
 
@@ -215,6 +224,14 @@ header {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+
+        @include pc2-width() {
+          @include size(600px, 600px);
+        }
+
+        @include phone-width() {
+          @include size(350px, 350px);
+        }
       }
 
       .pic-frame {
@@ -227,20 +244,10 @@ header {
 
         img {
           @include size(100%, 100%);
-          // @include independent(transparent);
-          // top: 50%;
-          // left: 50%;
-          // transform: translate(-50%, -50%);
-          // position: relative;
-          // z-index: 2;
         }
 
-        @include phone-width() {
-          @include size(195px, 416px);
-          @include flex-layout(row, center, center);
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
+        @include pc2-width() {
+          @include size(316px, 724px);
         }
       }
 
@@ -250,11 +257,12 @@ header {
         margin-right: 0px;
         transform: translateY(-50px);
         overflow: hidden;
-
-        #svg-gray-circle-block {
-          @include size(350px, 350px);
-        }
       }
+    }
+
+    @include pc2-width() {
+      min-width: 1030px;
+      @include size(60%, 500px);
     }
 
     @include phone-width() {
@@ -265,8 +273,8 @@ header {
 
   #scroll-point {
     @include independent(transparent);
-    right: 215px;
-    bottom: 85px;
+    right: 3%;
+    bottom: 13%;
     transform: rotate(90deg);
 
     > P {
@@ -308,6 +316,10 @@ header {
     }
   }
 
+  @include pc2-width() {
+    overflow: hidden;
+  }
+
   @include phone-width() {
     @include size(100%, 95vh);
     margin-bottom: 45px;
@@ -326,14 +338,30 @@ header {
     position: relative;
 
     .intro {
+      $rect-size-pc-2: 650px;
+      $rect-size-pc: 650px;
+      $rect-size-phone: 300px;
+      @include size($rect-size-pc, $rect-size-pc);
       @include independent(transparent);
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+
+      @include pc2-width() {
+        @include size($rect-size-pc-2, $rect-size-pc-2);
+      }
+
+      @include phone-width() {
+        @include size($rect-size-phone, $rect-size-phone);
+      }
     }
 
     .info {
       $info-height: 300px;
+      $title-font-size-pc3: 48px;
+      $title-font-size-pc2: 48px;
+      $title-font-size-phone: 24px;
+
       @include size(100%, $info-height);
       @include flex-layout(column, center, center);
       @include independent(transparent);
@@ -343,10 +371,14 @@ header {
       z-index: 3;
 
       .title {
-        font-size: 48px;
+        font-size: $title-font-size-pc3;
+
+        @include pc2-width() {
+          font-size: $title-font-size-pc2;
+        }
 
         @include phone-width() {
-          font-size: 24px;
+          font-size: $title-font-size-phone;
           margin-bottom: 10px;
         }
       }
@@ -355,6 +387,10 @@ header {
         @include size(auto, auto);
         font-size: 30px;
         text-align: center;
+
+        @include pc2-width() {
+          font-size: 30px;
+        }
 
         @include phone-width() {
           @include size(230px, auto);
@@ -392,78 +428,38 @@ header {
     }
 
     .intro-1 {
-      $rect-size: 650px;
-      @include size($rect-size, $rect-size);
-
-      @include phone-width() {
-        @include size(300px, 300px);
-      }
     }
 
     .intro-2 {
-      $rect-size: 650px;
-      @include size($rect-size, $rect-size);
-
-      @include phone-width() {
-        @include size(300px, 300px);
-      }
     }
 
     .intro-3 {
-      $rect-size: 650px;
-      @include size($rect-size, $rect-size);
-
-      @include phone-width() {
-        @include size(300px, 300px);
-      }
     }
 
     .intro-4 {
-      $rect-size: 650px;
-      @include size($rect-size, $rect-size);
-
-      #svg-anim-product-04 {
-        $svg-width-pc: 630px;
-        $svg-height-pc: 630px;
-        $svg-width-phone: 360px;
-        $svg-height-phone: 360px;
-        @include size($svg-width-pc, $svg-height-pc);
-        @include independent(transparent);
-        top: calc(50% - (#{$svg-width-pc} / 2));
-        left: calc(50% - (#{$svg-height-pc} / 2));
-        z-index: 2;
-
-        @include phone-width() {
-          @include size($svg-width-phone, $svg-height-phone);
-          top: calc(50% - (#{$svg-width-phone} / 2));
-          left: calc(50% - (#{$svg-height-phone} / 2));
-        }
-      }
-
-      @include phone-width() {
-        @include size(300px, 300px);
-      }
     }
 
     .intro-5 {
-      $rect-size: 650px;
-      @include size($rect-size, $rect-size);
-
-      @include phone-width() {
-        @include size(300px, 300px);
-      }
     }
 
     .product-single-svg {
-      $svg-width-pc: 630px;
-      $svg-height-pc: 630px;
+      $svg-width-pc3: 630px;
+      $svg-height-pc3: 630px;
+      $svg-width-pc2: 630px;
+      $svg-height-pc2: 630px;
       $svg-width-phone: 360px;
       $svg-height-phone: 360px;
-      @include size($svg-width-pc, $svg-height-pc);
+      @include size($svg-width-pc3, $svg-height-pc3);
       @include independent(transparent);
-      top: calc(50% - (#{$svg-width-pc} / 2));
-      left: calc(50% - (#{$svg-height-pc} / 2));
+      top: calc(50% - (#{$svg-width-pc3} / 2));
+      left: calc(50% - (#{$svg-height-pc3} / 2));
       z-index: 2;
+
+      @include pc2-width() {
+        @include size($svg-width-pc2, $svg-height-pc2);
+        top: calc(50% - (#{$svg-width-pc2} / 2));
+        left: calc(50% - (#{$svg-height-pc2} / 2));
+      }
 
       @include phone-width() {
         @include size($svg-width-phone, $svg-height-phone);
@@ -475,6 +471,8 @@ header {
     .product-multiple-svg-1 {
       $svg-width-pc: 280px;
       $svg-height-pc: 280px;
+      $svg-width-pc2: 280px;
+      $svg-height-pc2: 280px;
       $svg-width-phone: 145px;
       $svg-height-phone: 145px;
       @include size($svg-width-pc, $svg-height-pc);
@@ -482,6 +480,12 @@ header {
       top: calc(50% - (#{$svg-width-pc} / 2));
       left: calc(50% - (#{$svg-height-pc} / 2));
       z-index: 2;
+
+      @include pc2-width() {
+        @include size($svg-width-pc2, $svg-height-pc2);
+        top: calc(50% - (#{$svg-width-pc2} / 2));
+        left: calc(50% - (#{$svg-height-pc2} / 2));
+      }
 
       @include phone-width() {
         @include size($svg-width-phone, $svg-height-phone);
@@ -493,6 +497,8 @@ header {
     .product-multiple-svg-2 {
       $svg-width-pc: 510px;
       $svg-height-pc: 510px;
+      $svg-width-pc2: 510px;
+      $svg-height-pc2: 510px;
       $svg-width-phone: 230px;
       $svg-height-phone: 230px;
       @include size($svg-width-pc, $svg-height-pc);
@@ -500,6 +506,12 @@ header {
       top: calc(50% - (#{$svg-width-pc} / 2));
       left: calc(50% - (#{$svg-height-pc} / 2));
       z-index: 2;
+
+      @include pc2-width() {
+        @include size($svg-width-pc2, $svg-height-pc2);
+        top: calc(50% - (#{$svg-width-pc2} / 2));
+        left: calc(50% - (#{$svg-height-pc2} / 2));
+      }
 
       @include phone-width() {
         @include size($svg-width-phone, $svg-height-phone);
@@ -620,6 +632,20 @@ header {
         left: 49%;
       }
 
+      @include pc2-width() {
+        // @include size(210px, 207px);
+        // .product-name {
+        //   top: 177px;
+        //   left: 72px;
+        // }
+
+        // .product-item {
+        //   @include size(117px, 300px);
+        //   top: 20%;
+        //   left: 49%;
+        // }
+      }
+
       @include phone-width() {
         @include size(187px, 190px);
         bottom: -10px;
@@ -662,6 +688,26 @@ header {
         @include size(119px, 490px);
         top: 18%;
         left: 45%;
+      }
+
+      @include pc2-width() {
+        // @include size(350px, 345px);
+
+        // .product-name {
+        //   top: 48%;
+        //   left: 20%;
+
+        //   p {
+        //     font-size: 38px;
+        //     line-height: 1;
+        //   }
+        // }
+
+        // .product-item {
+        //   @include size(119px, 490px);
+        //   top: 18%;
+        //   left: 45%;
+        // }
       }
 
       @include phone-width() {
@@ -787,6 +833,10 @@ header {
         }
       }
 
+      @include pc2-width() {
+        // @include size(580px, auto);
+      }
+
       @include phone-width() {
         @include size(340px, auto);
         left: -20px;
@@ -808,17 +858,17 @@ header {
     }
 
     #intro-item-size-2-1-1 {
-      .product-name {
-      }
-
       .product-item {
         @include size(93px, 217px);
       }
 
-      @include phone-width() {
-        .product-name {
+      @include pc2-width() {
+        .product-item {
+          // @include size(77px, 180px);
         }
+      }
 
+      @include phone-width() {
         .product-item {
           @include size(52px, 122px);
         }
@@ -826,17 +876,19 @@ header {
     }
 
     #intro-item-size-2-1-2 {
-      .product-name {
-      }
-
       .product-item {
         @include size(193px, 416px);
       }
 
-      @include phone-width() {
-        .product-name {
+      @include pc2-width() {
+        .product-item {
+          // @include size(157px, 340px);
+          // top: 0%;
+          // left: 48%;
         }
+      }
 
+      @include phone-width() {
         .product-item {
           @include size(95px, 205px);
         }
@@ -849,6 +901,23 @@ header {
 
       .product-item {
         @include size(163px, 541px);
+      }
+
+      @include pc2-width() {
+        .product-name {
+          // top: 47%;
+          // left: 6%;
+
+          // p {
+          //   font-size: 36px;
+          // }
+        }
+
+        .product-item {
+          // @include size(129px, 430px);
+          // top: -9%;
+          // left: 47%;
+        }
       }
 
       @include phone-width() {
@@ -866,19 +935,20 @@ header {
     }
 
     #intro-item-size-5-1-1 {
-      .product-name {
-      }
-
       .product-item {
         @include size(117px, 300px);
         top: 7%;
         left: 43%;
       }
 
-      @include phone-width() {
-        .product-name {
+      @include pc2-width() {
+        .product-item {
+          // @include size(71px, 183px);
+          // left: 45%;
         }
+      }
 
+      @include phone-width() {
         .product-item {
           @include size(52px, 122px);
           top: 17%;
@@ -888,19 +958,21 @@ header {
     }
 
     #intro-item-size-5-1-2 {
-      .product-name {
-      }
-
       .product-item {
         @include size(119px, 490px);
         top: 13%;
         left: 51%;
       }
 
-      @include phone-width() {
-        .product-name {
+      @include pc2-width() {
+        .product-item {
+          // @include size(81px, 337px);
+          // top: -1%;
+          // left: 51%;
         }
+      }
 
+      @include phone-width() {
         .product-item {
           @include size(52px, 217px);
           top: 13%;
@@ -917,6 +989,23 @@ header {
         @include size(163px, 541px);
         top: 7%;
         left: 51%;
+      }
+
+      @include pc2-width() {
+        .product-name {
+          // top: 47%;
+          // left: 6%;
+
+          // p {
+          //   font-size: 36px;
+          // }
+        }
+
+        .product-item {
+          // @include size(129px, 430px);
+          // top: -9%;
+          // left: 47%;
+        }
       }
 
       @include phone-width() {
@@ -936,8 +1025,10 @@ header {
 
   .options {
     $main-symbol-size-pc: 50px;
+    $main-symbol-size-pc2: 50px;
     $main-symbol-size-phone: 25px;
     $sub-symbol-size-pc: 25px;
+    $sub-symbol-size-pc2: 25px;
     $sub-symbol-size-phone: 14px;
     @include flex-layout(column, center, flex-end);
     flex: 5;
@@ -947,7 +1038,7 @@ header {
 
     .option {
       @include flex-layout(row, flex-end, center);
-      margin-bottom: 25px;
+      margin-bottom: 20px;
 
       .main-title,
       .sub-title {
@@ -958,6 +1049,11 @@ header {
         font-size: 64px;
         margin-right: 14px;
 
+        @include pc2-width() {
+          margin-right: 14px;
+          font-size: 64px;
+        }
+
         @include phone-width() {
           font-size: 32px;
         }
@@ -967,9 +1063,18 @@ header {
         font-size: 36px;
         margin-right: 14px;
 
+        @include pc2-width() {
+          margin-right: 14px;
+          font-size: 36px;
+        }
+
         @include phone-width() {
           font-size: 18px;
         }
+      }
+
+      @include pc2-width() {
+        margin-bottom: 20px;
       }
 
       @include phone-width() {
@@ -994,6 +1099,7 @@ header {
 
     .large-option {
       $circle-radius-large-pc: 112px;
+      $circle-radius-large-pc2: 112px;
       $circle-radius-large-phone: 55px;
 
       .bg-circle {
@@ -1006,6 +1112,14 @@ header {
 
         svg {
           @include size(100%, 100%);
+        }
+
+        @include pc2-width() {
+          @include size($circle-radius-large-pc2, $circle-radius-large-pc2);
+          right: calc(
+            (#{$circle-radius-large-pc2} / 2 * (-1)) + (#{$main-symbol-size-pc2} * 0.75 / 2) +
+              ((#{$main-symbol-size-pc2} - (#{$main-symbol-size-pc2} * 0.75)) / 2)
+          );
         }
 
         @include phone-width() {
@@ -1032,6 +1146,10 @@ header {
           position: relative;
           z-index: 2;
 
+          @include pc2-width() {
+            @include size($main-symbol-size-pc2, $main-symbol-size-pc2);
+          }
+
           @include phone-width() {
             @include size($main-symbol-size-phone, $main-symbol-size-phone);
           }
@@ -1041,6 +1159,7 @@ header {
 
     .small-option {
       $circle-radius-small-pc: 80px;
+      $circle-radius-small-pc2: 80px;
       $circle-radius-small-phone: 40px;
 
       margin-right: 65px;
@@ -1055,6 +1174,14 @@ header {
 
         svg {
           @include size(100%, 100%);
+        }
+
+        @include pc2-width() {
+          @include size($circle-radius-small-pc2, $circle-radius-small-pc2);
+          right: calc(
+            (#{$circle-radius-small-pc2} / 2 * (-1)) + (#{$sub-symbol-size-pc2} * 0.75 / 2) +
+              ((#{$sub-symbol-size-pc2} - (#{$sub-symbol-size-pc2} * 0.75)) / 2)
+          );
         }
 
         @include phone-width() {
@@ -1081,16 +1208,29 @@ header {
           position: relative;
           z-index: 2;
 
+          @include pc2-width() {
+            @include size($sub-symbol-size-pc2, $sub-symbol-size-pc2);
+          }
+
           @include phone-width() {
             @include size($sub-symbol-size-phone, $sub-symbol-size-phone);
           }
         }
       }
 
+      @include pc2-width() {
+        margin-right: 65px;
+      }
+
       @include phone-width() {
         margin-right: 25px;
       }
     }
+  }
+
+  @include pc2-width() {
+    padding: 0px 15%;
+    @include size(100%, 750px);
   }
 
   @include phone-width() {
@@ -1102,12 +1242,12 @@ header {
 }
 
 .about-us {
-  margin-bottom: 200px;
+  margin-bottom: 140px;
 
   .top {
     @include size(100%, 160px);
     text-align: center;
-    margin-bottom: 75px;
+    margin-bottom: 100px;
 
     svg {
       @include size(100px, 100%);
@@ -1128,14 +1268,15 @@ header {
   }
 
   .bottom {
-    @include size(auto, 550px);
+    @include size(auto, 700px);
     @include flex-layout(row, center, flex-start);
+    overflow: hidden;
 
     #head {
       @include size(391px, 498px);
       @include independent(transparent);
       left: -500px;
-      top: 120px;
+      top: 150px;
       text-align: center;
       z-index: 0;
 
@@ -1184,6 +1325,12 @@ header {
         }
       }
 
+      @include pc2-width() {
+        @include size(329px, 420px);
+        top: 120px;
+        left: -375px;
+      }
+
       @include phone-width() {
         @include size(205px, 261px);
         left: -115px;
@@ -1201,6 +1348,10 @@ header {
       .title {
         color: #525f6b;
 
+        @include pc2-width() {
+          font-size: 48px;
+        }
+
         @include phone-width() {
           font-size: 36px;
         }
@@ -1209,8 +1360,11 @@ header {
       .sub-title {
         position: relative;
         display: inline-block;
-        line-height: 2.5;
         margin-bottom: 55px;
+
+        @include pc2-width() {
+          margin-bottom: 50px;
+        }
 
         @include phone-width() {
           margin-bottom: 50px;
@@ -1221,6 +1375,10 @@ header {
       .content {
         font-size: 30px;
         line-height: 1.25;
+
+        @include pc2-width() {
+          font-size: 22px;
+        }
 
         @include phone-width() {
           font-size: 18px;
@@ -1280,6 +1438,10 @@ header {
           }
         }
 
+        @include pc2-width() {
+          height: 180px;
+        }
+
         @include phone-width() {
           height: 130px;
         }
@@ -1300,18 +1462,36 @@ header {
       #img-block {
         @include size(412px, 290px);
         @include independent(transparent);
-        bottom: 0;
-        right: 0;
+        bottom: 145px;
+        right: 0px;
 
         img {
           @include size(100%, 100%);
         }
+
+        @include pc2-width() {
+          @include size(340px, 240px);
+          bottom: 110px;
+          right: 0px;
+        }
       }
+
+      @include pc2-width() {
+        @include size(345px, 100%);
+      }
+    }
+
+    @include pc2-width() {
+      @include size(auto, 580px);
     }
 
     @include phone-width() {
       height: auto;
     }
+  }
+
+  @include pc2-width() {
+    margin-bottom: 100px;
   }
 
   @include phone-width() {
@@ -1324,20 +1504,28 @@ header {
 }
 
 .install-container {
+  $background-width-pc: 80%;
   $background-heigh-pc: 1153px;
+  $background-width-pc2: 87%;
+  $background-heigh-pc2: 1153px;
+  $background-width-phone: 90%;
   $background-heigh-phone: 1183px;
 
   @include size(100%, auto);
-  margin-bottom: 100px;
+  margin-bottom: 115px;
   position: relative;
 
   .background {
-    @include size(80%, $background-heigh-pc);
+    @include size($background-width-pc, $background-heigh-pc);
     background: rgb(0, 142, 207);
     background: linear-gradient(90deg, rgba(0, 142, 207, 1) 0%, rgba(0, 168, 176, 1) 100%);
 
+    @include pc2-width() {
+      @include size($background-width-pc2, $background-heigh-pc2);
+    }
+
     @include phone-width() {
-      @include size(90%, 1183px);
+      @include size($background-width-phone, $background-heigh-phone);
     }
   }
 
@@ -1425,6 +1613,10 @@ header {
         @include size(450px, 100%);
         position: relative;
         display: inline-block;
+
+        @include pc2-width() {
+          @include size(380px, 100%);
+        }
 
         @include phone-width() {
           width: 100%;
@@ -1538,15 +1730,24 @@ header {
   }
 
   #svg-anim-install-01 {
-    $rect-size: 650px;
-    @include size($rect-size, $rect-size);
+    $rect-size-pc3: 650px;
+    $rect-size-pc2: 450px;
+    $rect-size-phone: 300px;
+
+    @include size($rect-size-pc3, $rect-size-pc3);
     @include independent(transparent);
 
     bottom: -200px;
-    left: -240px;
+    left: -300px;
+
+    @include pc2-width() {
+      @include size($rect-size-pc2, $rect-size-pc2);
+      bottom: -170px;
+      left: -160px;
+    }
 
     @include phone-width {
-      @include size(300px, 300px);
+      @include size($rect-size-phone, $rect-size-phone);
       display: none;
       left: -350px;
     }
@@ -1574,15 +1775,21 @@ header {
 // }
 
 .faq-container {
+  $margin-bottom-pc3: 150px;
+  $margin-bottom-pc2: 110px;
   @include flex-layout(column, flex-start, center);
   position: relative;
-  margin-bottom: 150px;
+  margin-bottom: $margin-bottom-pc3;
   overflow: hidden;
 
   .faq-title {
     text-align: center;
     color: #525f6b;
     margin: 0px auto;
+
+    @include pc2-width() {
+      font-size: 48px;
+    }
 
     @include phone-width() {
       font-size: 36px;
@@ -1724,6 +1931,11 @@ header {
           }
         }
 
+        @include pc2-width() {
+          margin-right: 20px;
+          margin-bottom: 20px;
+        }
+
         @include phone-width() {
           width: 375px;
           margin-right: 0px;
@@ -1745,6 +1957,10 @@ header {
         @include phone-width() {
           display: none;
         }
+      }
+
+      @include pc2-width() {
+        // @include size(100%, auto);
       }
 
       @include phone-width() {
@@ -1775,6 +1991,10 @@ header {
       transform: scale(1.8);
       bottom: 25%;
     }
+  }
+
+  @include pc2-width() {
+    margin-bottom: $margin-bottom-pc2;
   }
 
   @include phone-width() {
