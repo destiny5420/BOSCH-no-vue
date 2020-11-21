@@ -65,7 +65,7 @@ header {
 
       #bosch-txt-title {
         $margin-bottom-pc3: 35px;
-        $margin-bottom-pc2: 23px;
+        $margin-bottom-pc2: 35px;
         $margin-bottom-phone: 17px;
 
         @include size(auto, auto);
@@ -226,7 +226,7 @@ header {
         transform: translate(-50%, -50%);
 
         @include pc2-width() {
-          @include size(480px, 480px);
+          @include size(600px, 600px);
         }
 
         @include phone-width() {
@@ -247,7 +247,7 @@ header {
         }
 
         @include pc2-width() {
-          @include size(244px, 560px);
+          @include size(316px, 724px);
         }
       }
 
@@ -261,7 +261,8 @@ header {
     }
 
     @include pc2-width() {
-      @include size(80%, 500px);
+      min-width: 1100px;
+      @include size(60%, 500px);
     }
 
     @include phone-width() {
@@ -333,7 +334,7 @@ header {
     position: relative;
 
     .intro {
-      $rect-size-pc-2: 383px;
+      $rect-size-pc-2: 650px;
       $rect-size-pc: 650px;
       $rect-size-phone: 300px;
       @include size($rect-size-pc, $rect-size-pc);
@@ -1033,7 +1034,7 @@ header {
 
     .option {
       @include flex-layout(row, flex-end, center);
-      margin-bottom: 25px;
+      margin-bottom: 20px;
 
       .main-title,
       .sub-title {
@@ -1225,7 +1226,7 @@ header {
 
   @include pc2-width() {
     padding: 0px 15%;
-    @include size(100%, 450px);
+    @include size(100%, 750px);
   }
 
   @include phone-width() {
@@ -1263,14 +1264,15 @@ header {
   }
 
   .bottom {
-    @include size(auto, 620px);
+    @include size(auto, 700px);
     @include flex-layout(row, center, flex-start);
     overflow: hidden;
+
     #head {
       @include size(391px, 498px);
       @include independent(transparent);
       left: -500px;
-      top: 120px;
+      top: 150px;
       text-align: center;
       z-index: 0;
 
@@ -1456,7 +1458,7 @@ header {
       #img-block {
         @include size(412px, 290px);
         @include independent(transparent);
-        bottom: 0px;
+        bottom: 145px;
         right: 0px;
 
         img {
@@ -1728,7 +1730,7 @@ header {
     @include independent(transparent);
 
     bottom: -200px;
-    left: -240px;
+    left: -300px;
 
     @include pc2-width() {
       @include size($rect-size-pc2, $rect-size-pc2);

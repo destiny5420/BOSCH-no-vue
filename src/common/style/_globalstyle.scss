@@ -214,7 +214,7 @@ $color_font_main: #868e9c;
   opacity: 0;
   z-index: 1000;
 
-  padding: 200px 450px;
+  padding: 10% 22%;
 
   .menu-window-wrap {
     @include size(100%, 100%);
@@ -453,9 +453,9 @@ $color_font_main: #868e9c;
     }
   }
 
-  @include pc2-width() {
-    padding: 140px 185px;
-  }
+  // @include pc2-width() {
+  //   padding: 140px 185px;
+  // }
 
   @include phone-width() {
     padding: 0px 0px;
@@ -522,7 +522,7 @@ $menu-width-phone: 20px;
 #menu-button {
   $menu-right: (
     pc3: 16%,
-    pc2: 8%,
+    pc2: 16%,
     phone: 5%,
   );
 
@@ -870,7 +870,7 @@ $menu-width-phone: 20px;
   }
 
   @include pc2-width() {
-    left: 8%;
+    left: 16%;
   }
 
   @include phone-width() {

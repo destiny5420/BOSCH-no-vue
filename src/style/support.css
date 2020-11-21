@@ -234,7 +234,7 @@ ul {
   pointer-events: none;
   opacity: 0;
   z-index: 1000;
-  padding: 200px 450px;
+  padding: 10% 22%;
 }
 
 #menu-window .menu-window-wrap {
@@ -607,12 +607,6 @@ ul {
   }
 }
 
-@media all and (min-width: 1280px) and (max-width: 1919px) {
-  #menu-window {
-    padding: 140px 185px;
-  }
-}
-
 @media all and (max-width: 479px) {
   #menu-window {
     padding: 0px 0px;
@@ -826,7 +820,7 @@ ul {
   #menu-button {
     width: 35px;
     height: 20px;
-    right: 8%;
+    right: 16%;
   }
 }
 
@@ -1302,7 +1296,7 @@ ul {
 
 @media all and (min-width: 1280px) and (max-width: 1919px) {
   #home {
-    left: 8%;
+    left: 16%;
   }
 }
 
