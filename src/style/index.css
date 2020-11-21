@@ -718,7 +718,7 @@ ul {
   z-index: 1001;
   cursor: pointer;
   top: 35px;
-  right: 15%;
+  right: 16%;
   /* animation keyframes --------> */
   /* <-------- animation keyframes */
 }
@@ -1269,7 +1269,7 @@ ul {
   height: 54px;
   cursor: pointer;
   top: 35px;
-  left: 18%;
+  left: 16%;
 }
 
 #home img {
@@ -2321,7 +2321,7 @@ header {
 }
 
 header #content {
-  width: 58%;
+  width: 60%;
   height: 500px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3794,6 +3794,7 @@ header #scroll-point #point::before {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  overflow: hidden;
 }
 
 .about-us .bottom #head {

@@ -50,7 +50,7 @@ header {
   margin-bottom: 200px;
 
   #content {
-    @include size(58%, 500px);
+    @include size(60%, 500px);
     @include flex-layout(row, space-between, center);
 
     .left {
@@ -1130,7 +1130,7 @@ header {
   .bottom {
     @include size(auto, 550px);
     @include flex-layout(row, center, flex-start);
-
+    overflow: hidden;
     #head {
       @include size(391px, 498px);
       @include independent(transparent);

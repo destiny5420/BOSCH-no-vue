@@ -508,7 +508,7 @@ $menu-width-phone: 20px;
 
 #menu-button {
   $menu-right: (
-    pc: 15%,
+    pc: 16%,
     phone: 5%,
   );
 
@@ -844,7 +844,7 @@ $menu-width-phone: 20px;
   @include size(160px, 54px);
   cursor: pointer;
   top: 35px;
-  left: 18%;
+  left: 16%;
 
   img {
     @include size(100%, 100%);
