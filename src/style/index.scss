@@ -68,14 +68,10 @@ header {
         position: relative;
 
         #bosch-txt-body {
-          // @include size(508px, 112px);
+          @include size(508px, 112px);
 
           > svg {
-            @include size(508px, 112px);
-
-            @include phone-width() {
-              @include size(254px, 56px);
-            }
+            @include size(100%, 100%);
           }
 
           #text-mask {
@@ -83,7 +79,6 @@ header {
               fill: #fff;
               @include size(507px, 112px);
               transform: translateY(112px);
-              // animation: animate-move-block 1s 6.5s cubic-bezier(0.68, 0.29, 0.98, 0.87) forwards;
 
               @include phone-width() {
                 transform: translateY(60px);
@@ -101,19 +96,21 @@ header {
             }
           }
 
-          image {
-            @include size(508px, 112px);
-            transform-origin: left;
-            transform: translate(3px, 1px) scale(0.99);
+          g {
+            transform: translate(3px, 1px);
 
             @include phone-width() {
-              @include size(254px, 56px);
+              transform: translate(0px, 0px);
+
+              > :nth-child(n) {
+                transform: scale(0.5);
+              }
             }
           }
 
-          // @include phone-width() {
-          //   @include size(254px, 56px);
-          // }
+          @include phone-width() {
+            @include size(254px, 56px);
+          }
         }
 
         #bosch-stroke-line {
