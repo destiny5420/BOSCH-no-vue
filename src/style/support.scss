@@ -1,0 +1,430 @@
+@import '../common/style/globalconfigure';
+@import '../common/style/_globalstyle.scss';
+@import '../common/style/_font.scss';
+
+.main-container {
+  padding-top: 150px;
+
+  @include phone-width {
+    padding-top: 115px;
+  }
+}
+
+.slogan {
+  @include size(100%, 400px);
+  @include flex-layout(column, center, center);
+  position: relative;
+
+  .content {
+    $content-configure: (
+      issue_margin_bottom: (
+        pc: 0px,
+        phone: 10px,
+      ),
+      eng_font_size: (
+        pc: 60px,
+        phone: 30px,
+      ),
+    );
+
+    $width: 150px;
+    $height: 300px;
+    @include size($width, $height);
+    @include independent(transform);
+    @include flex-layout(column, center, center);
+    @include translate-center($width, $height, 0px, -75px);
+
+    > p {
+      line-height: 1;
+      color: #525f6b;
+    }
+
+    p[name='issue'] {
+      font-size: 20px;
+      margin-bottom: map-get(map-get($content-configure, issue_margin_bottom), pc);
+    }
+
+    p[name='eng'] {
+      font-size: map-get(map-get($content-configure, eng_font_size), pc);
+      margin-bottom: 30px;
+    }
+
+    @include phone-width() {
+      p[name='issue'] {
+        margin-bottom: map-get(map-get($content-configure, issue_margin_bottom), phone);
+      }
+
+      p[name='eng'] {
+        font-size: map-get(map-get($content-configure, eng_font_size), phone);
+      }
+    }
+  }
+
+  .bg {
+    @include size(100%, auto);
+    @include flex-layout(column, flex-start, center);
+    opacity: 0.45;
+
+    .txt-question {
+      @include flex-layout(row, center, center);
+    }
+
+    .txt-faq {
+      @include flex-layout(row, flex-start, center);
+      overflow: hidden;
+      white-space: nowrap;
+    }
+  }
+
+  div[name='pic-01'] {
+    $configure: (
+      offset: (
+        pc: -300px,
+        phone: -60px,
+      ),
+      width: (
+        pc: 128px,
+        phone: 105px,
+      ),
+      height: (
+        pc: 285px,
+        phone: 235px,
+      ),
+    );
+
+    @include size(
+      map-get(map-get($configure, width), pc),
+      map-get(map-get($configure, height), pc)
+    );
+    @include independent(transform);
+    @include flex-layout(column, center, center);
+    @include translate-center(
+      map-get(map-get($configure, width), pc),
+      map-get(map-get($configure, height), pc),
+      map-get(map-get($configure, offset), pc),
+      50px
+    );
+
+    transform: rotateZ(-20deg);
+    img {
+      @include size(100%, 100%);
+    }
+
+    @include phone-width() {
+      @include size(
+        map-get(map-get($configure, width), phone),
+        map-get(map-get($configure, height), phone)
+      );
+      @include translate-center(
+        map-get(map-get($configure, width), phone),
+        map-get(map-get($configure, height), phone),
+        map-get(map-get($configure, offset), phone),
+        45px
+      );
+    }
+  }
+
+  div[name='pic-02'] {
+    $configure: (
+      offset: (
+        pc: 375px,
+        phone: 95px,
+      ),
+      width: (
+        pc: 81px,
+        phone: 57px,
+      ),
+      height: (
+        pc: 329px,
+        phone: 235px,
+      ),
+    );
+
+    @include size(
+      map-get(map-get($configure, width), pc),
+      map-get(map-get($configure, height), pc)
+    );
+    @include independent(transparent);
+    @include flex-layout(column, center, center);
+    @include translate-center(
+      map-get(map-get($configure, width), pc),
+      map-get(map-get($configure, height), pc),
+      map-get(map-get($configure, offset), pc),
+      0px
+    );
+    transform: rotateZ(30deg);
+
+    img {
+      @include size(100%, 100%);
+    }
+
+    @include phone-width() {
+      @include size(
+        map-get(map-get($configure, width), phone),
+        map-get(map-get($configure, height), phone)
+      );
+      @include translate-center(
+        map-get(map-get($configure, width), phone),
+        map-get(map-get($configure, height), phone),
+        map-get(map-get($configure, offset), phone),
+        0px
+      );
+    }
+  }
+}
+
+.lists {
+  $configure: (
+    list-container: (
+      padding: (
+        pc: 0px 20% 220px 20%,
+        phone: 0px 5% 110px 5%,
+      ),
+      title: (
+        font-size: (
+          pc: 36px,
+          phone: 24px,
+        ),
+        margin-left: (
+          pc: 0px,
+          phone: 16px,
+        ),
+      ),
+    ),
+    info: (
+      title: (
+        margin: (
+          pc: 0px,
+          phone: 10px 0px 10px 16px,
+        ),
+      ),
+    ),
+    question: (
+      padding: (
+        pc: 22px 70px 22px 35px,
+        phone: 22px 55px 22px 17px,
+      ),
+    ),
+    answer: (
+      padding: (
+        pc: 0px 35px 22px 35px,
+        phone: 0px 35px 22px 17px,
+      ),
+    ),
+  );
+
+  @include size(100%, auto);
+  position: relative;
+
+  .lists-container {
+    @include size(100%, auto);
+    padding: map-get(map-get(map-get($configure, list-container), padding), pc);
+
+    > :nth-child(n) {
+      margin-bottom: 75px;
+    }
+
+    > :last-child {
+      margin-bottom: 0px;
+    }
+
+    #company {
+      .title {
+        position: relative;
+        font-size: 72px;
+        line-height: 2;
+
+        &::before {
+          @include independent(black);
+          @include size(8%, 9px);
+          content: '';
+          background-color: $color_purple;
+          opacity: 0.5;
+          box-shadow: 7px 7px 15px 0px rgba(0, 0, 0, 0.25);
+          bottom: 0px;
+          left: 0px;
+        }
+
+        @include phone-width() {
+          font-size: 48px;
+
+          &::before {
+            @include size(28%, 9px);
+          }
+        }
+      }
+
+      .info {
+        @include size(100%, auto);
+        @include flex-layout(row, center, flex-start);
+
+        #title {
+          flex: 1;
+          height: 100%;
+          font-size: 36px;
+          display: inline-block;
+
+          @include phone-width() {
+            margin: map-get(map-get(map-get(map-get($configure, info), title), margin), phone);
+          }
+        }
+
+        #content {
+          flex: 4;
+          height: 100%;
+          display: inline-block;
+          background-color: $color_purple;
+          padding: 37px;
+
+          font-size: 20px;
+          color: $color_white;
+
+          > div {
+            :first-child {
+              @include size(125px, auto);
+            }
+          }
+
+          p {
+            display: inline-block;
+          }
+        }
+
+        @include phone-width() {
+          @include flex-layout(column, center, flex-start);
+        }
+      }
+    }
+
+    .title {
+      font-size: map-get(
+        map-get(map-get(map-get($configure, list-container), title), font-size),
+        pc
+      );
+      margin-left: map-get(
+        map-get(map-get(map-get($configure, list-container), title), margin-left),
+        pc
+      );
+
+      line-height: 3;
+
+      @include phone-width() {
+        font-size: map-get(
+          map-get(map-get(map-get($configure, list-container), title), font-size),
+          phone
+        );
+
+        margin-left: map-get(
+          map-get(map-get(map-get($configure, list-container), title), margin-left),
+          phone
+        );
+      }
+    }
+
+    .block {
+      .list {
+        $view-height: 80px;
+        color: $color_white;
+        max-height: $view-height;
+        overflow: hidden;
+        position: relative;
+        font-size: 20px;
+        margin-bottom: 30px;
+        transition: all 0.35s ease-out;
+        cursor: pointer;
+        color: $color_white;
+        box-shadow: 7px 7px 15px 0px rgba(0, 0, 0, 0.25);
+
+        div[name='list-block'] {
+          @include size(100%, auto);
+          background-color: $color_purple;
+          opacity: 0.5;
+          pointer-events: none;
+          position: relative;
+        }
+
+        .question {
+          @include size(100%, $view-height);
+          @include flex-layout(row, flex-start, flex-start);
+          position: relative;
+          padding: map-get(map-get(map-get($configure, question), padding), pc);
+
+          cursor: pointer;
+
+          @include phone-width() {
+            padding: map-get(map-get(map-get($configure, question), padding), phone);
+          }
+        }
+
+        &:hover {
+          transform: translateX(-25px);
+        }
+
+        .answer {
+          @include flex-layout(row, flex-start, flex-start);
+          padding: map-get(map-get(map-get($configure, answer), padding), pc);
+          line-height: 1.75;
+
+          @include phone-width() {
+            padding: map-get(map-get(map-get($configure, answer), padding), phone);
+          }
+        }
+
+        .list-symbol {
+          display: inline-block;
+          margin-right: 20px;
+        }
+
+        .list-text {
+          display: inline-block;
+        }
+
+        .que-btn {
+          $vh-unit: 20px;
+          $line-width: 4px;
+          @include independent(transparent);
+          @include size($vh-unit, $vh-unit);
+          top: 30px;
+          right: 20px;
+          pointer-events: none;
+          float: right;
+
+          &::before {
+            @include independent($color_white);
+            @include size(100%, $line-width);
+            content: '';
+            top: calc(50% - (#{$line-width} / 2));
+            transform: rotateZ(0deg);
+            transition: transform 0.25s linear;
+          }
+
+          &::after {
+            @include independent($color_white);
+            @include size($line-width, 100%);
+            content: '';
+            left: calc(50% - (#{$line-width} / 2));
+            transform: rotateZ(0deg);
+            transition: transform 0.25s linear;
+          }
+        }
+
+        .que-btn.show {
+          &::before,
+          &::after {
+            transform: rotateZ(45deg);
+          }
+        }
+
+        @include phone-width() {
+          &:hover {
+            transform: translateX(0px);
+          }
+        }
+      }
+    }
+
+    @include phone-width() {
+      padding: map-get(map-get(map-get($configure, list-container), padding), phone);
+    }
+  }
+}

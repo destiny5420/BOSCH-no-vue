@@ -1,0 +1,2009 @@
+@import '../common/style/globalconfigure';
+@import '../common/style/_globalstyle.scss';
+@import '../common/style/_font.scss';
+
+.slogan-wrap {
+  // @include independent(transparent);
+  @include size(100%, 100vh);
+  background: rgb(214, 216, 217);
+  background: linear-gradient(
+    90deg,
+    rgba(214, 216, 217, 1) 0%,
+    rgba(253, 251, 251, 1) 50%,
+    rgba(214, 216, 217, 1) 100%
+  );
+  position: fixed;
+  z-index: 1002;
+  opacity: 1;
+
+  #slogan {
+    // @include size(325px, 60px);
+    @include independent(transparent);
+    z-index: 100;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 34px;
+
+    .text-char {
+      font-size: 34px;
+      @include phone-width() {
+        font-size: 20px;
+      }
+    }
+
+    @include phone-width() {
+      @include flex-layout(row, space-around, center);
+      width: 70%;
+    }
+  }
+
+  @include phone-width() {
+    background: rgb(214, 216, 217);
+    background: linear-gradient(90deg, rgba(214, 216, 217, 1) 10%, rgba(253, 251, 251, 1) 60%);
+  }
+}
+
+header {
+  @include size(100%, 100vh);
+  @include flex-layout(row, center, center);
+  position: relative;
+  // margin-bottom: 6%;
+
+  #content {
+    @include size(60%, 500px);
+    @include flex-layout(row, space-between, center);
+
+    .left {
+      position: relative;
+      z-index: 2;
+
+      .title,
+      .sub-title {
+        line-height: 1;
+      }
+
+      #bosch-txt-title {
+        $margin-bottom-pc3: 35px;
+        $margin-bottom-pc2: 35px;
+        $margin-bottom-phone: 17px;
+
+        @include size(auto, auto);
+        margin-bottom: $margin-bottom-pc3;
+        position: relative;
+
+        #bosch-txt-body {
+          @include size(508px, 112px);
+
+          > svg {
+            @include size(100%, 100%);
+          }
+
+          #text-mask {
+            rect {
+              fill: #fff;
+              @include size(507px, 112px);
+              transform: translateY(112px);
+
+              @include phone-width() {
+                transform: translateY(60px);
+              }
+            }
+
+            .rect-move-anim {
+              animation: animate-move-block 1s cubic-bezier(0.68, 0.29, 0.98, 0.87) forwards;
+            }
+
+            @keyframes animate-move-block {
+              to {
+                transform: translateY(0px);
+              }
+            }
+          }
+
+          g {
+            transform: translate(3px, 1px);
+
+            @include phone-width() {
+              transform: translate(0px, 0px);
+
+              > :nth-child(n) {
+                transform: scale(0.5);
+              }
+            }
+          }
+
+          @include phone-width() {
+            @include size(254px, 56px);
+          }
+        }
+
+        #bosch-stroke-line {
+          @include size(508px, 112px);
+          @include independent(transparent);
+          top: 0px;
+          left: 0px;
+          transform: scale(1);
+
+          > svg {
+            @include size(100%, 100%);
+          }
+
+          #stroke-line {
+            $animate-time: 3s;
+            $delay-time: 4s;
+
+            @include size(100%, 100%);
+            transform: translate(4px, 3px);
+
+            path {
+              fill: none;
+              stroke: #e20015;
+              stroke-width: 1;
+            }
+
+            :nth-child(n) {
+              @include phone-width() {
+                transform: scale(0.5);
+              }
+            }
+
+            :nth-child(1) {
+              stroke-dasharray: 360;
+              stroke-dashoffset: 360;
+            }
+
+            :nth-child(2) {
+              stroke-dasharray: 348;
+              stroke-dashoffset: 348;
+            }
+
+            :nth-child(3) {
+              stroke-dasharray: 513;
+              stroke-dashoffset: 513;
+            }
+
+            :nth-child(4) {
+              stroke-dasharray: 478;
+              stroke-dashoffset: 478;
+            }
+
+            :nth-child(5) {
+              stroke-dasharray: 578;
+              stroke-dashoffset: 578;
+            }
+
+            @include phone-width() {
+              transform: translate(-2px, 0px);
+            }
+          }
+
+          @include phone-width() {
+            @include size(254px, 56px);
+          }
+        }
+
+        @include pc2-width() {
+          margin-bottom: $margin-bottom-pc2;
+        }
+
+        @include phone-width() {
+          margin-bottom: $margin-bottom-phone;
+        }
+      }
+
+      .sub-title {
+        font-size: 80px;
+      }
+
+      @include phone-width() {
+        @include independent(transparent);
+        left: 30px;
+        bottom: 60px;
+
+        .title {
+          @include size(272px, 60px);
+          margin-bottom: 8px;
+        }
+
+        .sub-title {
+          font-size: 36px;
+        }
+      }
+    }
+
+    .right {
+      @include flex-layout(row, center, center);
+      @include size(200px, 100%);
+      position: relative;
+      margin-right: 90px;
+
+      #svg-gray-circle-block {
+        @include size(600px, 600px);
+        @include independent(transparent);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        @include pc2-width() {
+          @include size(600px, 600px);
+        }
+
+        @include phone-width() {
+          @include size(350px, 350px);
+        }
+      }
+
+      .pic-frame {
+        @include independent(transparent);
+        @include size(316px, 724px);
+        @include flex-layout(row, center, center);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        img {
+          @include size(100%, 100%);
+        }
+
+        @include pc2-width() {
+          @include size(316px, 724px);
+        }
+      }
+
+      @include phone-width() {
+        @include flex-layout(row, center, center);
+        @include size(100vw, 450px);
+        margin-right: 0px;
+        transform: translateY(-50px);
+        overflow: hidden;
+      }
+    }
+
+    @include pc2-width() {
+      min-width: 1030px;
+      @include size(60%, 500px);
+    }
+
+    @include phone-width() {
+      @include size(100%, 100%);
+      @include flex-layout(column-reverse, center, center);
+    }
+  }
+
+  #scroll-point {
+    @include independent(transparent);
+    right: 3%;
+    bottom: 13%;
+    transform: rotate(90deg);
+
+    > P {
+      display: inline-block;
+      margin: 0;
+      font-size: 12px;
+    }
+
+    #point {
+      @include size(85px, 10px);
+      display: inline-block;
+      position: relative;
+      margin-left: 10px;
+
+      &::after {
+        @include independent(transparent);
+        @include size(100%, 1px);
+        content: '';
+        background-color: black;
+        bottom: 50%;
+        left: 0px;
+      }
+
+      &::before {
+        @include independent(transparent);
+        @include size(12px, 1px);
+        content: '';
+        background-color: black;
+        right: 0px;
+        bottom: 50%;
+        transform-origin: right center;
+        transform: rotate(25deg);
+      }
+    }
+
+    @include phone-width() {
+      right: -30px;
+      bottom: 100px;
+    }
+  }
+
+  @include pc2-width() {
+    overflow: hidden;
+  }
+
+  @include phone-width() {
+    @include size(100%, 95vh);
+    margin-bottom: 45px;
+  }
+}
+
+.products {
+  @include size(100%, 750px);
+  @include flex-layout(row, center, flex-start);
+  padding: 0px 15%;
+  margin-bottom: 100px;
+
+  .introduction {
+    flex: 7;
+    height: 100%;
+    position: relative;
+
+    .intro {
+      $rect-size-pc-2: 650px;
+      $rect-size-pc: 650px;
+      $rect-size-phone: 300px;
+      @include size($rect-size-pc, $rect-size-pc);
+      @include independent(transparent);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      @include pc2-width() {
+        @include size($rect-size-pc-2, $rect-size-pc-2);
+      }
+
+      @include phone-width() {
+        @include size($rect-size-phone, $rect-size-phone);
+      }
+    }
+
+    .info {
+      $info-height: 300px;
+      $title-font-size-pc3: 48px;
+      $title-font-size-pc2: 48px;
+      $title-font-size-phone: 24px;
+
+      @include size(100%, $info-height);
+      @include flex-layout(column, center, center);
+      @include independent(transparent);
+      top: calc(50% - (#{$info-height} / 2));
+      color: #fff;
+      position: relative;
+      z-index: 3;
+
+      .title {
+        font-size: $title-font-size-pc3;
+
+        @include pc2-width() {
+          font-size: $title-font-size-pc2;
+        }
+
+        @include phone-width() {
+          font-size: $title-font-size-phone;
+          margin-bottom: 10px;
+        }
+      }
+
+      .content {
+        @include size(auto, auto);
+        font-size: 30px;
+        text-align: center;
+
+        @include pc2-width() {
+          font-size: 30px;
+        }
+
+        @include phone-width() {
+          @include size(230px, auto);
+          font-size: 16px;
+        }
+      }
+    }
+
+    .product-name {
+      @include independent(transparent);
+      top: 0px;
+      left: 0px;
+      display: inline-block;
+      z-index: 3;
+      color: #fff;
+      p {
+        font-size: 24px;
+      }
+    }
+
+    .product-item {
+      @include independent(transparent);
+      top: 0px;
+      left: 0px;
+      display: inline-block;
+      z-index: 3;
+
+      img {
+        @include size(100%, 100%);
+      }
+    }
+
+    .unfocus {
+      visibility: hidden;
+    }
+
+    .intro-1 {
+    }
+
+    .intro-2 {
+    }
+
+    .intro-3 {
+    }
+
+    .intro-4 {
+    }
+
+    .intro-5 {
+    }
+
+    .product-single-svg {
+      $svg-width-pc3: 630px;
+      $svg-height-pc3: 630px;
+      $svg-width-pc2: 630px;
+      $svg-height-pc2: 630px;
+      $svg-width-phone: 360px;
+      $svg-height-phone: 360px;
+      @include size($svg-width-pc3, $svg-height-pc3);
+      @include independent(transparent);
+      top: calc(50% - (#{$svg-width-pc3} / 2));
+      left: calc(50% - (#{$svg-height-pc3} / 2));
+      z-index: 2;
+
+      @include pc2-width() {
+        @include size($svg-width-pc2, $svg-height-pc2);
+        top: calc(50% - (#{$svg-width-pc2} / 2));
+        left: calc(50% - (#{$svg-height-pc2} / 2));
+      }
+
+      @include phone-width() {
+        @include size($svg-width-phone, $svg-height-phone);
+        top: calc(50% - (#{$svg-width-phone} / 2));
+        left: calc(50% - (#{$svg-height-phone} / 2));
+      }
+    }
+
+    .product-multiple-svg-1 {
+      $svg-width-pc: 280px;
+      $svg-height-pc: 280px;
+      $svg-width-pc2: 280px;
+      $svg-height-pc2: 280px;
+      $svg-width-phone: 145px;
+      $svg-height-phone: 145px;
+      @include size($svg-width-pc, $svg-height-pc);
+      @include independent(transparent);
+      top: calc(50% - (#{$svg-width-pc} / 2));
+      left: calc(50% - (#{$svg-height-pc} / 2));
+      z-index: 2;
+
+      @include pc2-width() {
+        @include size($svg-width-pc2, $svg-height-pc2);
+        top: calc(50% - (#{$svg-width-pc2} / 2));
+        left: calc(50% - (#{$svg-height-pc2} / 2));
+      }
+
+      @include phone-width() {
+        @include size($svg-width-phone, $svg-height-phone);
+        top: calc(50% - (#{$svg-width-phone} / 2));
+        left: calc(50% - (#{$svg-height-phone} / 2));
+      }
+    }
+
+    .product-multiple-svg-2 {
+      $svg-width-pc: 510px;
+      $svg-height-pc: 510px;
+      $svg-width-pc2: 510px;
+      $svg-height-pc2: 510px;
+      $svg-width-phone: 230px;
+      $svg-height-phone: 230px;
+      @include size($svg-width-pc, $svg-height-pc);
+      @include independent(transparent);
+      top: calc(50% - (#{$svg-width-pc} / 2));
+      left: calc(50% - (#{$svg-height-pc} / 2));
+      z-index: 2;
+
+      @include pc2-width() {
+        @include size($svg-width-pc2, $svg-height-pc2);
+        top: calc(50% - (#{$svg-width-pc2} / 2));
+        left: calc(50% - (#{$svg-height-pc2} / 2));
+      }
+
+      @include phone-width() {
+        @include size($svg-width-phone, $svg-height-phone);
+        top: calc(50% - (#{$svg-width-phone} / 2));
+        left: calc(50% - (#{$svg-height-phone} / 2));
+      }
+    }
+
+    .page {
+      @include size(100%, 100%);
+      @include flex-layout(column, center, center);
+      @include independent(transparent);
+
+      svg {
+        @include size(100%, 100%);
+        @include independent(transparent);
+        top: 0;
+        left: 0;
+        z-index: 2;
+      }
+    }
+
+    .page-unfocus {
+      display: none;
+    }
+
+    .page-next {
+      animation: anim-page-next 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    }
+
+    .page-pervious {
+      animation: anim-page-pervious 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    }
+
+    @keyframes anim-page-next {
+      from {
+        transform: translateX(-50px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateX(0px);
+        opacity: 1;
+      }
+    }
+
+    @keyframes anim-page-pervious {
+      from {
+        transform: translateX(50px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateX(0px);
+        opacity: 1;
+      }
+    }
+
+    .intro-single-item {
+      @include size(100%, 100%);
+
+      .product-name {
+        top: 46%;
+        left: 18%;
+        line-height: 1;
+
+        p {
+          font-size: 48px;
+        }
+      }
+
+      .product-item {
+        @include size(150px, 150px);
+        top: 5%;
+        left: 50%;
+      }
+
+      @include phone-width() {
+        @include size(375px, 370px);
+
+        .product-item {
+          @include size(83px, 278px);
+          top: 10%;
+          left: 48%;
+        }
+
+        .product-name {
+          top: 49%;
+          left: 18%;
+          line-height: 1;
+
+          p {
+            font-size: 24px;
+          }
+        }
+      }
+    }
+
+    .intro-single-item,
+    .intro-multiple-item-1,
+    .intro-multiple-item-2 {
+      @include independent(transparent);
+    }
+
+    .intro-multiple-item-1 {
+      @include size(363px, 359px);
+      bottom: -40px;
+      left: -75px;
+
+      .product-name {
+        top: 177px;
+        left: 72px;
+      }
+
+      .product-item {
+        @include size(117px, 300px);
+        top: 20%;
+        left: 49%;
+      }
+
+      @include pc2-width() {
+        // @include size(210px, 207px);
+        // .product-name {
+        //   top: 177px;
+        //   left: 72px;
+        // }
+
+        // .product-item {
+        //   @include size(117px, 300px);
+        //   top: 20%;
+        //   left: 49%;
+        // }
+      }
+
+      @include phone-width() {
+        @include size(187px, 190px);
+        bottom: -10px;
+        left: -35px;
+
+        .product-name {
+          top: 87px;
+          left: 31px;
+
+          p {
+            font-size: 18px;
+            line-height: 1;
+          }
+        }
+
+        .product-item {
+          @include size(53px, 137px);
+          top: 35px;
+          left: 94px;
+        }
+      }
+    }
+
+    .intro-multiple-item-2 {
+      @include size(666px, 658px);
+      top: -56px;
+      right: -180px;
+
+      .product-name {
+        top: 48%;
+        left: 20%;
+
+        p {
+          font-size: 48px;
+          line-height: 1;
+        }
+      }
+
+      .product-item {
+        @include size(119px, 490px);
+        top: 18%;
+        left: 45%;
+      }
+
+      @include pc2-width() {
+        // @include size(350px, 345px);
+
+        // .product-name {
+        //   top: 48%;
+        //   left: 20%;
+
+        //   p {
+        //     font-size: 38px;
+        //     line-height: 1;
+        //   }
+        // }
+
+        // .product-item {
+        //   @include size(119px, 490px);
+        //   top: 18%;
+        //   left: 45%;
+        // }
+      }
+
+      @include phone-width() {
+        @include size(300px, 296px);
+        top: -70px;
+        right: -70px;
+
+        .product-name {
+          top: 48%;
+          left: 20%;
+
+          p {
+            font-size: 24px;
+            line-height: 1;
+          }
+        }
+
+        .product-item {
+          @include size(53px, 220px);
+          top: 15%;
+          left: 48%;
+        }
+      }
+    }
+
+    .arrow-wrap {
+      @include size(850px, auto);
+      @include flex-layout(row, space-between, center);
+      position: relative;
+      left: -100px;
+      bottom: -100%;
+      z-index: 3;
+      user-select: none;
+
+      $arrow-width-pc: 60px;
+      $arrow-height-pc: 56px;
+      $circle-radius-pc: 50px;
+      $arrow-width-phone: 30px;
+      $arrow-height-phone: 28px;
+      $circle-radius-phone: 28px;
+      .left-arrow,
+      .right-arrow {
+        @include size($arrow-width-pc, $arrow-height-pc);
+        position: relative;
+        cursor: pointer;
+
+        > svg {
+          position: relative;
+          z-index: 4;
+          @include size(100%, 100%);
+        }
+
+        .bg-circle {
+          @include size(calc(#{$circle-radius-pc} * 2), calc(#{$circle-radius-pc} * 2));
+          @include independent(transparent);
+          transform: scale(0.3);
+          opacity: 0;
+          transition: transform 0.3s ease-out;
+          > svg {
+            @include size(100%, 100%);
+          }
+
+          @include phone-width() {
+            @include size(calc(#{$circle-radius-phone} * 2), calc(#{$circle-radius-phone} * 2));
+          }
+        }
+
+        &:hover {
+          .bg-circle {
+            transform: scale(1);
+            opacity: 1;
+          }
+        }
+      }
+
+      .left-arrow {
+        &:hover {
+          > svg {
+            animation: left-arrow-hover-anim 0.3s ease-out forwards;
+          }
+        }
+
+        .bg-circle {
+          left: calc((#{$circle-radius-pc} * (-1)) + (#{$arrow-width-pc} / 2));
+          top: calc((#{$circle-radius-pc} * (-1)) + (#{$arrow-height-pc} / 2));
+
+          @include phone-width() {
+            left: calc((#{$circle-radius-phone} * (-1)) + (#{$arrow-width-phone} / 2));
+            top: calc((#{$circle-radius-phone} * (-1)) + (#{$arrow-height-phone} / 2));
+          }
+        }
+
+        @keyframes left-arrow-hover-anim {
+          from {
+            opacity: 0;
+            transform: translateX(30px);
+          }
+        }
+      }
+
+      .right-arrow {
+        &:hover {
+          > svg {
+            animation: right-arrow-hover-anim 0.3s ease-out forwards;
+          }
+        }
+
+        .bg-circle {
+          right: calc((#{$circle-radius-pc} * (-1)) + (#{$arrow-width-pc} / 2));
+          top: calc((#{$circle-radius-pc} * (-1)) + (#{$arrow-height-pc} / 2));
+
+          @include phone-width() {
+            right: calc((#{$circle-radius-phone} * (-1)) + (#{$arrow-width-phone} / 2));
+            top: calc((#{$circle-radius-phone} * (-1)) + (#{$arrow-height-phone} / 2));
+          }
+        }
+
+        @keyframes right-arrow-hover-anim {
+          from {
+            opacity: 0;
+            transform: translateX(-30px);
+          }
+        }
+      }
+
+      @include pc2-width() {
+        // @include size(580px, auto);
+      }
+
+      @include phone-width() {
+        @include size(340px, auto);
+        left: -20px;
+        bottom: -310px;
+
+        .left-arrow,
+        .right-arrow {
+          @include size($arrow-width-phone, $arrow-height-phone);
+        }
+      }
+
+      .arrow-hide {
+        visibility: hidden;
+      }
+    }
+
+    .hide-arrow-wrap {
+      display: none;
+    }
+
+    #intro-item-size-2-1-1 {
+      .product-item {
+        @include size(93px, 217px);
+      }
+
+      @include pc2-width() {
+        .product-item {
+          // @include size(77px, 180px);
+        }
+      }
+
+      @include phone-width() {
+        .product-item {
+          @include size(52px, 122px);
+        }
+      }
+    }
+
+    #intro-item-size-2-1-2 {
+      .product-item {
+        @include size(193px, 416px);
+      }
+
+      @include pc2-width() {
+        .product-item {
+          // @include size(157px, 340px);
+          // top: 0%;
+          // left: 48%;
+        }
+      }
+
+      @include phone-width() {
+        .product-item {
+          @include size(95px, 205px);
+        }
+      }
+    }
+
+    #intro-item-size-3-1-1 {
+      .product-name {
+      }
+
+      .product-item {
+        @include size(163px, 541px);
+      }
+
+      @include pc2-width() {
+        .product-name {
+          // top: 47%;
+          // left: 6%;
+
+          // p {
+          //   font-size: 36px;
+          // }
+        }
+
+        .product-item {
+          // @include size(129px, 430px);
+          // top: -9%;
+          // left: 47%;
+        }
+      }
+
+      @include phone-width() {
+        .product-name {
+          top: 185px;
+          left: 85px;
+        }
+
+        .product-item {
+          @include size(84px, 280px);
+          top: 12%;
+          left: 48%;
+        }
+      }
+    }
+
+    #intro-item-size-5-1-1 {
+      .product-item {
+        @include size(117px, 300px);
+        top: 7%;
+        left: 43%;
+      }
+
+      @include pc2-width() {
+        .product-item {
+          // @include size(71px, 183px);
+          // left: 45%;
+        }
+      }
+
+      @include phone-width() {
+        .product-item {
+          @include size(52px, 122px);
+          top: 17%;
+          left: 46%;
+        }
+      }
+    }
+
+    #intro-item-size-5-1-2 {
+      .product-item {
+        @include size(119px, 490px);
+        top: 13%;
+        left: 51%;
+      }
+
+      @include pc2-width() {
+        .product-item {
+          // @include size(81px, 337px);
+          // top: -1%;
+          // left: 51%;
+        }
+      }
+
+      @include phone-width() {
+        .product-item {
+          @include size(52px, 217px);
+          top: 13%;
+          left: 51%;
+        }
+      }
+    }
+
+    #intro-item-size-5-2-1 {
+      .product-name {
+      }
+
+      .product-item {
+        @include size(163px, 541px);
+        top: 7%;
+        left: 51%;
+      }
+
+      @include pc2-width() {
+        .product-name {
+          // top: 47%;
+          // left: 6%;
+
+          // p {
+          //   font-size: 36px;
+          // }
+        }
+
+        .product-item {
+          // @include size(129px, 430px);
+          // top: -9%;
+          // left: 47%;
+        }
+      }
+
+      @include phone-width() {
+        .product-name {
+          top: 185px;
+          left: 85px;
+        }
+
+        .product-item {
+          @include size(84px, 280px);
+          top: 12%;
+          left: 48%;
+        }
+      }
+    }
+  }
+
+  .options {
+    $main-symbol-size-pc: 50px;
+    $main-symbol-size-pc2: 50px;
+    $main-symbol-size-phone: 25px;
+    $sub-symbol-size-pc: 25px;
+    $sub-symbol-size-pc2: 25px;
+    $sub-symbol-size-phone: 14px;
+    @include flex-layout(column, center, flex-end);
+    flex: 5;
+    height: 100%;
+
+    // @include size(400px, 100%);
+
+    .option {
+      @include flex-layout(row, flex-end, center);
+      margin-bottom: 20px;
+
+      .main-title,
+      .sub-title {
+        display: inline-block;
+      }
+
+      .main-title {
+        font-size: 64px;
+        margin-right: 14px;
+
+        @include pc2-width() {
+          margin-right: 14px;
+          font-size: 64px;
+        }
+
+        @include phone-width() {
+          font-size: 32px;
+        }
+      }
+
+      .sub-title {
+        font-size: 36px;
+        margin-right: 14px;
+
+        @include pc2-width() {
+          margin-right: 14px;
+          font-size: 36px;
+        }
+
+        @include phone-width() {
+          font-size: 18px;
+        }
+      }
+
+      @include pc2-width() {
+        margin-bottom: 20px;
+      }
+
+      @include phone-width() {
+        margin-bottom: 14px;
+      }
+    }
+
+    .category-option {
+      margin-right: 65px;
+
+      div[name='category-title'] {
+        font-size: 24px;
+        @include phone-width() {
+          font-size: 24px;
+        }
+      }
+
+      @include phone-width() {
+        margin-right: 35px;
+      }
+    }
+
+    .large-option {
+      $circle-radius-large-pc: 112px;
+      $circle-radius-large-pc2: 112px;
+      $circle-radius-large-phone: 55px;
+
+      .bg-circle {
+        @include size($circle-radius-large-pc, $circle-radius-large-pc);
+        left: auto;
+        right: calc(
+          (#{$circle-radius-large-pc} / 2 * (-1)) + (#{$main-symbol-size-pc} * 0.75 / 2) +
+            ((#{$main-symbol-size-pc} - (#{$main-symbol-size-pc} * 0.75)) / 2)
+        );
+
+        svg {
+          @include size(100%, 100%);
+        }
+
+        @include pc2-width() {
+          @include size($circle-radius-large-pc2, $circle-radius-large-pc2);
+          right: calc(
+            (#{$circle-radius-large-pc2} / 2 * (-1)) + (#{$main-symbol-size-pc2} * 0.75 / 2) +
+              ((#{$main-symbol-size-pc2} - (#{$main-symbol-size-pc2} * 0.75)) / 2)
+          );
+        }
+
+        @include phone-width() {
+          @include size($circle-radius-large-phone, $circle-radius-large-phone);
+          right: calc(
+            (#{$circle-radius-large-phone} / 2 * (-1)) + (#{$main-symbol-size-phone} * 0.75 / 2) +
+              ((#{$main-symbol-size-phone} - (#{$main-symbol-size-phone} * 0.75)) / 2)
+          );
+        }
+      }
+
+      > p {
+        transition: transform 0.85s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+
+      .arrow_wrap {
+        margin-right: 0px;
+
+        > svg {
+          @include size($main-symbol-size-pc, $main-symbol-size-pc);
+          @include flex-layout(row, center, center);
+          margin-right: 0px;
+          display: inline-block;
+          position: relative;
+          z-index: 2;
+
+          @include pc2-width() {
+            @include size($main-symbol-size-pc2, $main-symbol-size-pc2);
+          }
+
+          @include phone-width() {
+            @include size($main-symbol-size-phone, $main-symbol-size-phone);
+          }
+        }
+      }
+    }
+
+    .small-option {
+      $circle-radius-small-pc: 80px;
+      $circle-radius-small-pc2: 80px;
+      $circle-radius-small-phone: 40px;
+
+      margin-right: 65px;
+
+      .bg-circle {
+        @include size($circle-radius-small-pc, $circle-radius-small-pc);
+        left: auto;
+        right: calc(
+          (#{$circle-radius-small-pc} / 2 * (-1)) + (#{$sub-symbol-size-pc} * 0.75 / 2) +
+            ((#{$sub-symbol-size-pc} - (#{$sub-symbol-size-pc} * 0.75)) / 2)
+        );
+
+        svg {
+          @include size(100%, 100%);
+        }
+
+        @include pc2-width() {
+          @include size($circle-radius-small-pc2, $circle-radius-small-pc2);
+          right: calc(
+            (#{$circle-radius-small-pc2} / 2 * (-1)) + (#{$sub-symbol-size-pc2} * 0.75 / 2) +
+              ((#{$sub-symbol-size-pc2} - (#{$sub-symbol-size-pc2} * 0.75)) / 2)
+          );
+        }
+
+        @include phone-width() {
+          @include size($circle-radius-small-phone, $circle-radius-small-phone);
+          right: calc(
+            (#{$circle-radius-small-phone} / 2 * (-1)) + (#{$sub-symbol-size-phone} * 0.75 / 2) +
+              ((#{$sub-symbol-size-phone} - (#{$sub-symbol-size-phone} * 0.75)) / 2)
+          );
+        }
+      }
+
+      > p {
+        transition: transform 0.85s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+
+      .arrow_wrap {
+        margin-right: 0px;
+
+        > svg {
+          @include size($sub-symbol-size-pc, $sub-symbol-size-pc);
+          @include flex-layout(row, center, center);
+          margin-right: 0px;
+          display: inline-block;
+          position: relative;
+          z-index: 2;
+
+          @include pc2-width() {
+            @include size($sub-symbol-size-pc2, $sub-symbol-size-pc2);
+          }
+
+          @include phone-width() {
+            @include size($sub-symbol-size-phone, $sub-symbol-size-phone);
+          }
+        }
+      }
+
+      @include pc2-width() {
+        margin-right: 65px;
+      }
+
+      @include phone-width() {
+        margin-right: 25px;
+      }
+    }
+  }
+
+  @include pc2-width() {
+    padding: 0px 15%;
+    @include size(100%, 750px);
+  }
+
+  @include phone-width() {
+    @include size(100%, 800px);
+    @include flex-layout(column-reverse, center, center);
+    margin-bottom: 0px;
+    overflow: hidden;
+  }
+}
+
+.about-us {
+  margin-bottom: 140px;
+
+  .top {
+    @include size(100%, 160px);
+    text-align: center;
+    margin-bottom: 100px;
+
+    svg {
+      @include size(100px, 100%);
+
+      display: inline-block;
+
+      line {
+        stroke: #bfc0c2;
+        stroke-width: 1;
+      }
+
+      circle {
+        stroke: #bfc0c2;
+        stroke-width: 2px;
+        fill: #fff;
+      }
+    }
+  }
+
+  .bottom {
+    @include size(auto, 700px);
+    @include flex-layout(row, center, flex-start);
+    overflow: hidden;
+
+    #head {
+      @include size(391px, 498px);
+      @include independent(transparent);
+      left: -500px;
+      top: 150px;
+      text-align: center;
+      z-index: 0;
+
+      #img-block {
+        @include size(100%, 100%);
+        @include independent(transparent);
+        bottom: 0px;
+        left: 0px;
+
+        img {
+          @include size(100%, 100%);
+        }
+      }
+
+      #about-head-anim-01 {
+        @include independent(transparent);
+        @include size(150px, 150px);
+        bottom: -10px;
+        left: 0px;
+        z-index: 2;
+
+        > svg {
+          @include size(100%, 100%);
+        }
+
+        @include phone-width() {
+          bottom: -10px;
+          left: -50px;
+        }
+      }
+
+      #about-head-anim-02 {
+        @include independent(transparent);
+        @include size(40px, 40px);
+        top: 25px;
+        right: 50px;
+
+        > svg {
+          @include size(100%, 100%);
+        }
+
+        @include phone-width() {
+          @include size(30px, 30px);
+          top: 0px;
+          right: 20px;
+        }
+      }
+
+      @include pc2-width() {
+        @include size(329px, 420px);
+        top: 120px;
+        left: -375px;
+      }
+
+      @include phone-width() {
+        @include size(205px, 261px);
+        left: -115px;
+        top: 90px;
+      }
+    }
+
+    #content {
+      @include size(450px, 100%);
+      text-align: center;
+      font-size: 30px;
+      position: relative;
+      overflow: unset;
+
+      .title {
+        color: #525f6b;
+
+        @include pc2-width() {
+          font-size: 48px;
+        }
+
+        @include phone-width() {
+          font-size: 36px;
+        }
+      }
+
+      .sub-title {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 55px;
+
+        @include pc2-width() {
+          margin-bottom: 50px;
+        }
+
+        @include phone-width() {
+          margin-bottom: 50px;
+          font-size: 24px;
+        }
+      }
+
+      .content {
+        font-size: 30px;
+        line-height: 1.25;
+
+        @include pc2-width() {
+          font-size: 22px;
+        }
+
+        @include phone-width() {
+          font-size: 18px;
+        }
+      }
+
+      .btn-block {
+        @include size(100%, 200px);
+        @include flex-layout(column, center, center);
+        position: relative;
+
+        .btn-more {
+          $symbol-size-pc: 20px;
+          $circle-radius-pc: 100px;
+          $symbol-size-phone: 14px;
+          $circle-radius-phone: 60px;
+
+          @include independent(transparent);
+          font-size: 30px;
+
+          .bg-circle {
+            @include size($circle-radius-pc, $circle-radius-pc);
+            left: calc(
+              (#{$circle-radius-pc} / 2 * (-1)) + (#{$symbol-size-pc} * 0.75 / 2) +
+                ((#{$symbol-size-pc} - (#{$symbol-size-pc} * 0.75)) / 2)
+            );
+
+            svg {
+              @include size(100%, 100%);
+            }
+
+            @include phone-width() {
+              @include size($circle-radius-phone, $circle-radius-phone);
+              left: calc(
+                (#{$circle-radius-phone} / 2 * (-1)) + (#{$symbol-size-phone} * 0.75 / 2) +
+                  ((#{$symbol-size-phone} - (#{$symbol-size-phone} * 0.75)) / 2)
+              );
+            }
+          }
+
+          .arrow_wrap {
+            > svg {
+              @include size($symbol-size-pc, $symbol-size-pc);
+
+              @include phone-width() {
+                @include size($symbol-size-phone, $symbol-size-phone);
+              }
+            }
+          }
+
+          > p {
+            font-size: 30px;
+
+            @include phone-width() {
+              font-size: 24px;
+            }
+          }
+        }
+
+        @include pc2-width() {
+          height: 180px;
+        }
+
+        @include phone-width() {
+          height: 130px;
+        }
+      }
+
+      @include phone-width() {
+        overflow: hidden;
+      }
+    }
+
+    #description {
+      @include size(450px, 100%);
+      @include independent(transparent);
+      left: 500px;
+      top: 0px;
+      text-align: center;
+
+      #img-block {
+        @include size(412px, 290px);
+        @include independent(transparent);
+        bottom: 145px;
+        right: 0px;
+
+        img {
+          @include size(100%, 100%);
+        }
+
+        @include pc2-width() {
+          @include size(340px, 240px);
+          bottom: 110px;
+          right: 0px;
+        }
+      }
+
+      @include pc2-width() {
+        @include size(345px, 100%);
+      }
+    }
+
+    @include pc2-width() {
+      @include size(auto, 580px);
+    }
+
+    @include phone-width() {
+      height: auto;
+    }
+  }
+
+  @include pc2-width() {
+    margin-bottom: 100px;
+  }
+
+  @include phone-width() {
+    .top {
+      margin-bottom: 65px;
+    }
+
+    margin-bottom: 75px;
+  }
+}
+
+.install-container {
+  $background-width-pc: 80%;
+  $background-heigh-pc: 1153px;
+  $background-width-pc2: 87%;
+  $background-heigh-pc2: 1153px;
+  $background-width-phone: 90%;
+  $background-heigh-phone: 1183px;
+
+  @include size(100%, auto);
+  margin-bottom: 115px;
+  position: relative;
+
+  .background {
+    @include size($background-width-pc, $background-heigh-pc);
+    background: rgb(0, 142, 207);
+    background: linear-gradient(90deg, rgba(0, 142, 207, 1) 0%, rgba(0, 168, 176, 1) 100%);
+
+    @include pc2-width() {
+      @include size($background-width-pc2, $background-heigh-pc2);
+    }
+
+    @include phone-width() {
+      @include size($background-width-phone, $background-heigh-phone);
+    }
+  }
+
+  .content {
+    @include size(auto, auto);
+    @include independent(transparent);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+
+    .effect-title {
+      height: 85px;
+
+      :first-child {
+        max-height: 85px;
+        overflow: hidden;
+
+        @include phone-width() {
+          max-height: 45px;
+        }
+      }
+
+      @include phone-width() {
+        height: 45px;
+      }
+    }
+
+    .effect-sub-title {
+      margin-top: 30px;
+      height: 46px;
+
+      :first-child {
+        max-height: 46px;
+        overflow: hidden;
+
+        @include phone-width() {
+          max-height: 66px;
+        }
+      }
+
+      @include phone-width() {
+        height: 66px;
+      }
+    }
+
+    .install-title {
+      // @include size(650px, auto);
+      line-height: 1.25;
+
+      @include phone-width() {
+        font-size: 36px;
+      }
+    }
+
+    .install-sub-title {
+      display: inline-block;
+    }
+
+    #install-underline {
+      @include size(100%, 4px);
+      background-color: #fff;
+    }
+
+    .info-container {
+      @include size(auto, 650px);
+      @include flex-layout(row, center, flex-start);
+      margin-top: 60px;
+
+      .info-image-block {
+        @include size(400px, 256px);
+        margin-bottom: 20px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 10px 10px 18px -8px rgba(0, 0, 0, 0.32);
+
+        img {
+          @include size(100%, 100%);
+        }
+
+        @include size(335px, 214px);
+      }
+
+      > :nth-child(n) {
+        @include size(450px, 100%);
+        position: relative;
+        display: inline-block;
+
+        @include pc2-width() {
+          @include size(380px, 100%);
+        }
+
+        @include phone-width() {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      > :first-child {
+        margin-right: 75px;
+
+        @include phone-width() {
+          margin-right: 0px;
+          margin-bottom: 70px;
+        }
+      }
+
+      .right {
+        position: absolute;
+        right: 0px;
+        bottom: 60px;
+
+        @include phone-width() {
+          position: relative;
+
+          right: 0px;
+          bottom: 0px;
+        }
+      }
+
+      @include phone-width() {
+        margin-top: 55px;
+        height: auto;
+        @include flex-layout(column, flex-start, center);
+      }
+    }
+
+    .info-title {
+      font-size: 36px;
+    }
+
+    .info-content {
+      font-size: 20px;
+
+      @include phone-width() {
+        font-size: 18px;
+      }
+    }
+
+    .btn-more {
+      $symbol-size-pc: 20px;
+      $circle-radius-pc: 100px;
+      $symbol-size-phone: 14px;
+      $circle-radius-phone: 70px;
+
+      margin-top: 60px;
+      font-size: 30px;
+
+      .bg-circle {
+        @include size($circle-radius-pc, $circle-radius-pc);
+        left: calc(
+          (#{$circle-radius-pc} / 2 * (-1)) + (#{$symbol-size-pc} * 0.75 / 2) +
+            ((#{$symbol-size-pc} - (#{$symbol-size-pc} * 0.75)) / 2)
+        );
+
+        svg {
+          @include size($circle-radius-pc, $circle-radius-pc);
+        }
+
+        @include phone-width() {
+          @include size($circle-radius-phone, $circle-radius-phone);
+          left: calc(
+            (#{$circle-radius-phone} / 2 * (-1)) + (#{$symbol-size-phone} * 0.75 / 2) +
+              ((#{$symbol-size-phone} - (#{$symbol-size-phone} * 0.75)) / 2)
+          );
+
+          svg {
+            @include size($circle-radius-phone, $circle-radius-phone);
+          }
+        }
+      }
+
+      .arrow_wrap {
+        > svg {
+          @include size($symbol-size-pc, $symbol-size-pc);
+          fill: #fff;
+
+          @include phone-width() {
+            @include size($symbol-size-phone, $symbol-size-phone);
+          }
+        }
+      }
+
+      > p {
+        font-size: 30px;
+
+        @include phone-width() {
+          font-size: 24px;
+        }
+      }
+
+      @include phone-width() {
+        margin-top: 35px;
+        margin-left: 10px;
+      }
+    }
+
+    @include phone-width() {
+      height: $background-heigh-phone;
+      @include flex-layout(column, center, flex-start);
+    }
+  }
+
+  #svg-anim-install-01 {
+    $rect-size-pc3: 650px;
+    $rect-size-pc2: 450px;
+    $rect-size-phone: 300px;
+
+    @include size($rect-size-pc3, $rect-size-pc3);
+    @include independent(transparent);
+
+    bottom: -200px;
+    left: -300px;
+
+    @include pc2-width() {
+      @include size($rect-size-pc2, $rect-size-pc2);
+      bottom: -170px;
+      left: -160px;
+    }
+
+    @include phone-width {
+      @include size($rect-size-phone, $rect-size-phone);
+      display: none;
+      left: -350px;
+    }
+  }
+
+  @include phone-width() {
+    margin-bottom: 30px;
+  }
+}
+
+// #info-group-1 .info-image-block::after {
+//   @include independent(black);
+//   @include size(100%, 100%);
+//   top: 0px;
+//   left: 0px;
+//   transform: translateX(400px);
+// }
+
+// #info-group-2 .info-image-block::after {
+//   @include independent(black);
+//   @include size(100%, 100%);
+//   top: 0px;
+//   left: 0px;
+//   transform: translateX(400px);
+// }
+
+.faq-container {
+  $margin-bottom-pc3: 150px;
+  $margin-bottom-pc2: 110px;
+  @include flex-layout(column, flex-start, center);
+  position: relative;
+  margin-bottom: $margin-bottom-pc3;
+  overflow: hidden;
+
+  .faq-title {
+    text-align: center;
+    color: #525f6b;
+    margin: 0px auto;
+
+    @include pc2-width() {
+      font-size: 48px;
+    }
+
+    @include phone-width() {
+      font-size: 36px;
+    }
+  }
+
+  .faq-sub-title {
+    text-align: center;
+    margin-bottom: 40px;
+
+    @include phone-width() {
+      font-size: 24px;
+      margin-bottom: 90px;
+    }
+  }
+
+  .faq-blocks {
+    position: relative;
+    margin-bottom: 40px;
+
+    #faq-blocks-content {
+      @include size(1300px, auto);
+      @include flex-layout(row, center, flex-start);
+      flex-wrap: wrap;
+      color: #ffffff;
+      position: relative;
+      z-index: 2;
+
+      .block {
+        @include size(360px, 320px);
+        min-width: 360px;
+        display: inline-block;
+        position: relative;
+        padding: 20px 50px;
+
+        background-color: #50237f;
+        box-shadow: 10px 10px 15px 0px rgba(0, 0, 0, 0.35);
+
+        .title {
+          font-size: 24px;
+          line-height: 2.75;
+        }
+
+        .content {
+          font-size: 20px;
+          line-height: 1.25;
+        }
+
+        .btn-more {
+          $symbol-size-pc: 20px;
+          $circle-radius-pc: 85px;
+          $symbol-size-phone: 14px;
+          $circle-radius-phone: 70px;
+
+          @include independent(transparent);
+          font-size: 30px;
+          bottom: 20px;
+          right: 55px;
+
+          .bg-circle {
+            @include size($circle-radius-pc, $circle-radius-pc);
+            left: calc(
+              (#{$circle-radius-pc} / 2 * (-1)) + (#{$symbol-size-pc} * 0.75 / 2) +
+                ((#{$symbol-size-pc} - (#{$symbol-size-pc} * 0.75)) / 2)
+            );
+
+            svg {
+              @include size($circle-radius-pc, $circle-radius-pc);
+            }
+
+            @include phone-width() {
+              @include size($circle-radius-phone, $circle-radius-phone);
+
+              left: calc(
+                (#{$circle-radius-phone} / 2 * (-1)) + (#{$symbol-size-phone} * 0.75 / 2) +
+                  ((#{$symbol-size-phone} - (#{$symbol-size-phone} * 0.75)) / 2)
+              );
+
+              svg {
+                @include size($circle-radius-phone, $circle-radius-phone);
+              }
+            }
+          }
+
+          .arrow_wrap {
+            > svg {
+              @include size($symbol-size-pc, $symbol-size-pc);
+              fill: #fff;
+
+              @include phone-width() {
+                @include size($symbol-size-phone, $symbol-size-phone);
+              }
+            }
+          }
+
+          > p {
+            font-size: 30px;
+
+            @include phone-width() {
+              font-size: 24px;
+            }
+          }
+        }
+
+        @include phone-width() {
+          width: 320px;
+          min-width: 320px;
+          padding: 20px 40px;
+        }
+      }
+
+      .block-layout {
+        text-align: justify;
+      }
+
+      .empty-block {
+        @include size(360px, 320px);
+        display: inline-block;
+
+        @include phone-width() {
+          display: none;
+        }
+      }
+
+      > :nth-child(n) {
+        width: 390px;
+        margin-right: 40px;
+        margin-bottom: 40px;
+
+        > :first-child {
+          max-width: 390px;
+          height: 350px;
+          overflow: hidden;
+
+          @include phone-width() {
+            max-width: 100%;
+            height: 365px;
+            @include flex-layout(row, center, center);
+          }
+        }
+
+        @include pc2-width() {
+          margin-right: 20px;
+          margin-bottom: 20px;
+        }
+
+        @include phone-width() {
+          width: 375px;
+          margin-right: 0px;
+          margin-bottom: 0px;
+        }
+      }
+
+      > :nth-child(3n) {
+        margin-right: 0px;
+      }
+
+      > :nth-child(4),
+      > :nth-child(5),
+      > :nth-child(6) {
+        margin-bottom: 0px;
+      }
+
+      .empty-content {
+        @include phone-width() {
+          display: none;
+        }
+      }
+
+      @include pc2-width() {
+        // @include size(100%, auto);
+      }
+
+      @include phone-width() {
+        @include size(100%, auto);
+        @include flex-layout(column, center, center);
+      }
+    }
+  }
+
+  #faq-blocks-bg {
+    @include size(100%, auto);
+    @include independent(transparent);
+    @include flex-layout(column, center, center);
+
+    bottom: 0px;
+    opacity: 0.125;
+
+    > div {
+      @include flex-layout(row, center, flex-start);
+      white-space: nowrap;
+
+      &:last-child {
+        margin-bottom: 0px;
+      }
+    }
+
+    @include phone-width() {
+      transform: scale(1.8);
+      bottom: 25%;
+    }
+  }
+
+  @include pc2-width() {
+    margin-bottom: $margin-bottom-pc2;
+  }
+
+  @include phone-width() {
+    margin-bottom: 0px;
+  }
+}
+
+.text-char {
+  margin: 0;
+  display: inline-block;
+  line-height: 1;
+}
